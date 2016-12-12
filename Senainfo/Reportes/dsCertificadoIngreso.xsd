@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCertificadoIngreso" targetNamespace="http://tempuri.org/dsCertificadoIngreso.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsCertificadoIngreso.xsd" xmlns:mstns="http://tempuri.org/dsCertificadoIngreso.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Get_CertificadoIngreso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Medio" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaDerivacion" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="CodNino" type="xs:int" minOccurs="0" />
+        <xs:element name="Nombres" type="xs:string" />
+        <xs:element name="Apellido_Paterno" type="xs:string" />
+        <xs:element name="Apellido_Materno" type="xs:string" />
+        <xs:element name="Rut" type="xs:string" />
+        <xs:element name="FechaNacimiento" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="Sexo" type="xs:string" />
+        <xs:element name="Delito" type="xs:string" />
+        <xs:element name="CodNumCausal1" type="xs:int" minOccurs="0" />
+        <xs:element name="CodTribunal" type="xs:int" minOccurs="0" />
+        <xs:element name="Tribunal" type="xs:string" />
+        <xs:element name="RUC" type="xs:string" minOccurs="0" />
+        <xs:element name="RIT" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaOrden" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="Proyecto_x002F_Centro_x0020_Derivacion" type="xs:string" minOccurs="0" />
+        <xs:element name="Nemotecnico" type="xs:string" minOccurs="0" />
+        <xs:element name="Region" type="xs:string" />
+        <xs:element name="CodNumCausal" type="xs:int" minOccurs="0" />
+        <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+        <xs:element name="ICodOrdenTribunal" type="xs:int" />
+        <xs:element name="direccion" type="xs:string" />
+        <xs:element name="telefono" type="xs:string" />
+        <xs:element name="mail" type="xs:string" />
+        <xs:element name="director" type="xs:string" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="CodNacionalidad" type="xs:int" />
+        <xs:element name="Nacionalidad" type="xs:string" />
+        <xs:element name="CodModeloIntervencion" type="xs:int" />
+        <xs:element name="CodRegion" type="xs:int" />
+        <xs:element name="CodigoRegion" type="xs:int" />
+        <xs:element name="IdUsuarioActualizacion" type="xs:int" />
+        <xs:element name="NombresCJ" type="xs:string" />
+        <xs:element name="Paterno" type="xs:string" />
+        <xs:element name="Materno" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

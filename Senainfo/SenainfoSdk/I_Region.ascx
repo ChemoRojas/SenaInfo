@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="I_Region.ascx.cs" Inherits="SenainfoSdk.UI.I_Region" %>
+<asp:DropDownList ID="ddl_region" runat="server" AutoPostBack="True" CssClass="form-control input-sm" OnSelectedIndexChanged="ddl_region_SelectedIndexChanged"></asp:DropDownList>

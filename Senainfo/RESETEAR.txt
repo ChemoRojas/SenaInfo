@@ -1,0 +1,79 @@
+ESCOLAR
+
+ttxt001_wn.Value = "";
+ttxt002_te.Text = "";
+
+
+
+
+MALTRATO
+
+ttxt_003a.Text = "";
+ttxt002_te.Text = "";
+
+
+
+
+DROGA
+
+ttxt002b.Text = "";
+
+
+
+
+PSICOLOGICO
+
+ttxt001c.Value = "";
+ttxt002_wtc.Text = "";
+
+
+
+
+SOCIAL
+
+ttxt_001d.Value = "";
+ttxt_002d.Value = "";
+ttxt_003d.Value = "";
+ttxt_004d.Value = "";
+ttxt_005d.Value = "";
+ttxt_006d.Text = "";
+ttxt_007d.Value = "";
+
+
+
+
+CAPACITACION
+
+ttxt001e.Value = "";
+ttxt002e.Text = "";
+
+
+
+
+SITUACION LABORAL
+
+ttxt_001f.Value = "";
+ttxt_002f.Value = "";
+ttxt_003f.Value = "";
+ttxt_004f.Value = "";
+ttxt_005f.Value = "";
+
+
+
+
+HECHOS JUDICIALES
+
+ttxt_001g.Value = "";
+ttxt_002g.Text = "";
+tchk001g.Checked = false;
+tchk002g.Checked = false;
+tchk003g.Checked = false;
+
+
+
+
+PEORES FORMAS DE TRABAJO
+
+ttxt_001_wth.Text = "";
+trdo001h.Checked = true;
+tchk001h.Checked = false;

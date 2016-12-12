@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCatastroJueces" targetNamespace="http://tempuri.org/dsCatastroJueces.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsCatastroJueces.xsd" xmlns:mstns="http://tempuri.org/dsCatastroJueces.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="CatastroJueces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CodRegion" type="xs:int" />
+        <xs:element name="nCodRegion" type="xs:string" />
+        <xs:element name="CodComuna" type="xs:int" />
+        <xs:element name="nComuna" type="xs:string" />
+        <xs:element name="CodProvincia" type="xs:int" />
+        <xs:element name="nCodProvincia" type="xs:string" minOccurs="0" />
+        <xs:element name="CodProyecto" type="xs:int" />
+        <xs:element name="Nombre" type="xs:string" />
+        <xs:element name="Direccion" type="xs:string" />
+        <xs:element name="Telefono" type="xs:string" />
+        <xs:element name="Mail" type="xs:string" />
+        <xs:element name="Fax" type="xs:string" />
+        <xs:element name="Director" type="xs:string" />
+        <xs:element name="TipoProyecto" type="xs:int" />
+        <xs:element name="nTipoProyecto" type="xs:string" />
+        <xs:element name="TipoSubvencion" type="xs:int" />
+        <xs:element name="nTipoSubvencion" type="xs:string" />
+        <xs:element name="CodTematicaProyecto" type="xs:int" />
+        <xs:element name="nCodTematica" type="xs:string" />
+        <xs:element name="CodModeloIntervencion" type="xs:int" />
+        <xs:element name="nModelo" type="xs:string" />
+        <xs:element name="NumeroPlazas" type="xs:int" />
+        <xs:element name="Sexo" type="xs:string" minOccurs="0" />
+        <xs:element name="CodDiasAtencion" type="xs:int" />
+        <xs:element name="IndVigencia" type="xs:string" />
+        <xs:element name="TerminoProyecto" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="FechaInicio" type="xs:dateTime" />
+        <xs:element name="FechaTermino" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="NemoTecnico" type="xs:string" minOccurs="0" />
+        <xs:element name="CodDepartamentosSename" type="xs:int" />
+        <xs:element name="FechaCreacion" type="xs:dateTime" />
+        <xs:element name="Tematica" type="xs:string" />
+        <xs:element name="Peso" type="xs:int" minOccurs="0" />
+        <xs:element name="VigenciaTematica" type="xs:string" />
+        <xs:element name="FechaConvenio" type="xs:dateTime" />
+        <xs:element name="FechaConvenio2" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="CodInstitucion" type="xs:int" />
+        <xs:element name="NombreInstitucion" type="xs:string" />
+        <xs:element name="CodSistemaAsistencial" type="xs:int" />
+        <xs:element name="NombreSistemaAsistencial" type="xs:string" />
+        <xs:element name="NombreDepartamentosSename" type="xs:string" />
+        <xs:element name="EdadMinima" type="xs:int" />
+        <xs:element name="EdadMaxima" type="xs:int" />
+        <xs:element name="FechaVigenciaMes" type="xs:int" />
+        <xs:element name="FechaVigenciaAgno" type="xs:int" />
+        <xs:element name="NomRegion" type="xs:string" />
+        <xs:element name="Monto" type="xs:integer" />
+        <xs:element name="Criterio" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

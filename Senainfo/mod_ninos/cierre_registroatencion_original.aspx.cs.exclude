@@ -1,0 +1,965 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+//using neocsharp.NeoDatabase;
+using System.Data.SqlClient;
+using Infragistics.WebUI;
+using Infragistics.WebUI.UltraWebGrid;
+using System.Drawing;
+
+public partial class mod_institucion_cierre_registroatencion : System.Web.UI.Page
+{
+    private ArrayList arrindexm
+    {
+        get
+        {
+            if (ViewState["arrindexm"] == null)
+            {
+                ViewState["arrindexm"] = new ArrayList();
+            }
+
+            return (ArrayList)ViewState["arrindexm"];
+        }
+        set { ViewState["arrindexm"] = value; }
+    }
+    private ArrayList arrcolumn
+    {
+        get
+        {
+            if (ViewState["arrcolumn"] == null)
+            {
+                ViewState["arrcolumn"] = new ArrayList();
+            }
+
+            return (ArrayList)ViewState["arrcolumn"];
+        }
+        set { ViewState["arrcolumn"] = value; }
+    }
+
+    private bool IsClosed
+    {
+        get
+        {
+            if (ViewState["IsClosed"] == null)
+            {
+                ViewState["IsClosed"] = new bool();
+            }
+
+            return (bool)ViewState["IsClosed"];
+        }
+        set { ViewState["IsClosed"] = value; }
+    }
+
+    private int CodProyecto
+    {
+        get { return Convert.ToInt32(ViewState["CodProyecto"]); }
+        set { ViewState["CodProyecto"] = value; }
+    }
+    private bool Bloquear
+    {
+        get { return Convert.ToBoolean(ViewState["Bloquear"]); }
+        set { ViewState["Bloquear"] = value; }
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            getinstituciones();
+            getproyectos();
+            getanos();
+            IsClosed = false;
+
+            try
+            {
+                if (Request.QueryString["sw"] == "4")
+                {
+                    buscador_institucion bsc = new buscador_institucion();
+                    int codinst = bsc.GetCodInstxCodProy(Convert.ToInt32(Request.QueryString["codinst"]));
+                    ddown001.SelectedValue = Convert.ToString(codinst);
+                    getproyectos();
+                    ddown002.SelectedValue = Request.QueryString["codinst"];
+                    ddown_AnoCierre.Items.FindByValue(Request.QueryString["A"]).Selected = true;
+                    ddown_MesCierre.Items.FindByValue(Request.QueryString["M"]).Selected = true;
+                    getinmueble();
+                    fn_buscar();
+                }
+            }
+            catch { }
+           
+        }
+        if (!IsClosed)
+        {
+           // imb005.Visible = grd001.Visible;
+            Imb004.Visible = grd001.Visible;
+            Imb003.Visible = !Imb006.Visible;
+        } validatescurity();
+    }
+
+    #region VISIBILIDAD DE FUNCIONALIDADES SEGUN PERMISOS
+
+    private void validatescurity()
+    {
+        //C06E3BDB-1478-4307-BDFA-64C8CB28E296 2.8_MODIFICAR
+        if (!window.existetoken("C06E3BDB-1478-4307-BDFA-64C8CB28E296"))
+        {
+            Imb003.Visible = false; //9
+        }
+        //F1315126-A9BB-443D-8040-44F721B97EB2 2.8_Regenerar
+        if (!window.existetoken("F1315126-A9BB-443D-8040-44F721B97EB2"))
+        {
+            imb005.Visible = false; //9
+        }
+        if (!window.existetoken("49E9FC7F-D444-43EE-8061-8845AB345DF1"))
+        {
+           Imb006.Visible = false;
+        }
+    }
+    #endregion
+
+    private void getanos()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            ddown_AnoCierre.Items.Add(Convert.ToString(DateTime.Now.Year - i));
+
+        }
+
+    }
+    private void getinstituciones()
+    {
+        institucioncoll icoll = new institucioncoll();
+
+        DataTable dtinst = icoll.GetData(Convert.ToInt32(Session["IdUsuario"]));
+        DataView dv = new DataView(dtinst);
+        dv.Sort = "Nombre";
+        ddown001.DataSource = dv;
+        ddown001.DataTextField = "Nombre";
+        ddown001.DataValueField = "Codinstitucion";
+        ddown001.DataBind();
+
+    }
+    private void getproyectos()
+    {
+        if (ddown001.Items.Count > 0 && Convert.ToInt32(ddown001.SelectedValue) > 0)
+        {
+            proyectocoll pcoll = new proyectocoll();
+
+            DataTable dtproy = pcoll.GetData(Convert.ToInt32(Session["IdUsuario"]), "V", Convert.ToInt32(ddown001.SelectedValue));
+            DataView dv = new DataView(dtproy);
+            dv.Sort = "Nombre";
+            ddown002.DataSource = dv;
+            ddown002.DataTextField = "Nombre";
+            ddown002.DataValueField = "CodProyecto";
+            ddown002.DataBind();
+        }
+
+
+    }
+    private void getinmueble()
+    {
+        inmueblecoll icoll = new inmueblecoll();
+        DataTable dt = icoll.GetInmueble(ddown002.SelectedValue);
+        ddown003.DataSource = dt;
+        ddown003.DataTextField = "Nombre";
+        ddown003.DataValueField = "ICodInmueble";
+        ddown003.DataBind();
+
+    }
+
+    #region llama a la base
+    private DataTable callto_cierre_cabeceraproyecto(int codproyecto, int mesano)
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + ";Database= " + objconn.DatabaseName + "; User ID= " + objconn.User + " ;Password= " + objconn.Password + ";Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "cierre_cabeceraproyecto";
+        sqlc.Parameters.Add("@codproyecto", SqlDbType.Int, 4).Value = codproyecto;
+        sqlc.Parameters.Add("@mesano", SqlDbType.Int, 4).Value = mesano;
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+
+    private DataTable callto_cierre_registroatencion(int codproyecto, int mesano, string sexo)
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + " ;Database= " + objconn.DatabaseName + " ; User ID= " + objconn.User + " ;Password= " + objconn.Password + " ;Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "cierre_registroatencion";
+        sqlc.Parameters.Add("@codproyecto", SqlDbType.Int, 4).Value = codproyecto;
+        sqlc.Parameters.Add("@mesano", SqlDbType.Int, 4).Value = mesano;
+        sqlc.Parameters.Add("@sexo", SqlDbType.Char, 1).Value = sexo;
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+    private DataTable callto_cierre_diashabiles(int codproyecto, int mesano)
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + " ;Database= " + objconn.DatabaseName + " ; User ID= " + objconn.User + " ;Password= " + objconn.Password + " ;Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "cierre_diashabiles";
+        sqlc.Parameters.Add("@codproyecto", SqlDbType.Int, 4).Value = codproyecto;
+        sqlc.Parameters.Add("@mesano", SqlDbType.Int, 4).Value = mesano;
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+    private DataTable callto_cierre_guardaregistro(int icodie, int mesano, string d1, string d2, string d3, string d4, string d5, string d6, string d7, string d8, string d9, string d10, string d11, string d12, string d13, string d14, string d15, string d16, string d17, string d18, string d19, string d20, string d21, string d22, string d23, string d24, string d25, string d26, string d27, string d28, string d29, string d30, string d31, int idusuarioactualizacion)
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + " ;Database= " + objconn.DatabaseName + " ; User ID= " + objconn.User + " ;Password= " + objconn.Password + " ;Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "cierre_guardaregistro";
+        sqlc.Parameters.Add("@ICodIE", SqlDbType.Int, 4).Value = icodie;
+        sqlc.Parameters.Add("@MesAno", SqlDbType.Int, 4).Value = mesano;
+        sqlc.Parameters.Add("@d1", SqlDbType.NVarChar, 4).Value = d1;
+        sqlc.Parameters.Add("@d2", SqlDbType.NVarChar, 4).Value = d2;
+        sqlc.Parameters.Add("@d3", SqlDbType.NVarChar, 4).Value = d3;
+        sqlc.Parameters.Add("@d4", SqlDbType.NVarChar, 4).Value = d4;
+        sqlc.Parameters.Add("@d5", SqlDbType.NVarChar, 4).Value = d5;
+        sqlc.Parameters.Add("@d6", SqlDbType.NVarChar, 4).Value = d6;
+        sqlc.Parameters.Add("@d7", SqlDbType.NVarChar, 4).Value = d7;
+        sqlc.Parameters.Add("@d8", SqlDbType.NVarChar, 4).Value = d8;
+        sqlc.Parameters.Add("@d9", SqlDbType.NVarChar, 4).Value = d9;
+        sqlc.Parameters.Add("@d10", SqlDbType.NVarChar, 4).Value = d10;
+        sqlc.Parameters.Add("@d11", SqlDbType.NVarChar, 4).Value = d11;
+        sqlc.Parameters.Add("@d12", SqlDbType.NVarChar, 4).Value = d12;
+        sqlc.Parameters.Add("@d13", SqlDbType.NVarChar, 4).Value = d13;
+        sqlc.Parameters.Add("@d14", SqlDbType.NVarChar, 4).Value = d14;
+        sqlc.Parameters.Add("@d15", SqlDbType.NVarChar, 4).Value = d15;
+        sqlc.Parameters.Add("@d16", SqlDbType.NVarChar, 4).Value = d16;
+        sqlc.Parameters.Add("@d17", SqlDbType.NVarChar, 4).Value = d17;
+        sqlc.Parameters.Add("@d18", SqlDbType.NVarChar, 4).Value = d18;
+        sqlc.Parameters.Add("@d19", SqlDbType.NVarChar, 4).Value = d19;
+        sqlc.Parameters.Add("@d20", SqlDbType.NVarChar, 4).Value = d20;
+        sqlc.Parameters.Add("@d21", SqlDbType.NVarChar, 4).Value = d21;
+        sqlc.Parameters.Add("@d22", SqlDbType.NVarChar, 4).Value = d22;
+        sqlc.Parameters.Add("@d23", SqlDbType.NVarChar, 4).Value = d23;
+        sqlc.Parameters.Add("@d24", SqlDbType.NVarChar, 4).Value = d24;
+        sqlc.Parameters.Add("@d25", SqlDbType.NVarChar, 4).Value = d25;
+        sqlc.Parameters.Add("@d26", SqlDbType.NVarChar, 4).Value = d26;
+        sqlc.Parameters.Add("@d27", SqlDbType.NVarChar, 4).Value = d27;
+        sqlc.Parameters.Add("@d28", SqlDbType.NVarChar, 4).Value = d28;
+        sqlc.Parameters.Add("@d29", SqlDbType.NVarChar, 4).Value = d29;
+        sqlc.Parameters.Add("@d30", SqlDbType.NVarChar, 4).Value = d30;
+        sqlc.Parameters.Add("@d31", SqlDbType.NVarChar, 4).Value = d31;
+        sqlc.Parameters.Add("@IdUsuarioActualizacion", SqlDbType.Int, 4).Value = idusuarioactualizacion;
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+    private DataTable callto_cierre_regenerar(int codproyecto, int mesano, int idusuarioactualizacion)
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + " ;Database= " + objconn.DatabaseName + " ; User ID= " + objconn.User + " ;Password= " + objconn.Password + " ;Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "cierre_regenerar";
+        sqlc.Parameters.Add("@codproyecto", SqlDbType.Int, 4).Value = codproyecto;
+        sqlc.Parameters.Add("@mesano", SqlDbType.Int, 4).Value = mesano;
+        sqlc.Parameters.Add("@IdUsuarioActualizacion", SqlDbType.Int, 4).Value = idusuarioactualizacion;
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+
+    #endregion
+   
+    protected void Imb001_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+    {
+        if (ddown_MesCierre.SelectedIndex > 0)
+        {
+            Response.Redirect("cierre_movmensual.aspx?sw=4&codinst=" + ddown002.SelectedValue + "&M=" + ddown_MesCierre.SelectedValue + "&A=" + ddown_AnoCierre.SelectedValue);
+        }
+    }
+    private DataTable callto_proyectos_asistencia()
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + ";Database= " + objconn.DatabaseName + "; User ID= " + objconn.User + " ;Password= " + objconn.Password + ";Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "Get_ProyectosAsistencia";
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+    private void fn_buscar()
+    {
+        Imb006.Visible = false;
+        Imb003.Visible = false;
+        if (ddown002.SelectedIndex > -1 && ddown003.SelectedIndex > -1 && ddown_MesCierre.SelectedIndex > 0)
+        {
+            if (validatefields())
+            {
+
+                string sexo = "A";
+                if (rdo_SexoM.Checked)
+                {
+                    sexo = "M";
+                }
+                if (rdo_SexoF.Checked)
+                {
+                    sexo = "F";
+                }
+                DataTable dt0 = callto_cierre_cabeceraproyecto(Convert.ToInt32(ddown002.SelectedValue), Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue));
+                
+
+                lbl001.Text = dt0.Rows[0][10].ToString() + " " + dt0.Rows[0][11].ToString();
+                if (Convert.ToInt32(dt0.Rows[0][12]) == 1)
+                {
+                    IsClosed = true;
+                }
+                else
+                {
+                    IsClosed = false;
+                }
+                DataTable dt = callto_cierre_registroatencion(Convert.ToInt32(ddown002.SelectedValue), Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue), sexo);
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dt.Columns.Count; j++)
+                    {
+                        if (dt.Columns[j].ColumnName.Length < 4)
+                        {
+                            if (dt.Rows[i][j].ToString() == "X")
+                            {
+                                dt.Rows[i][j] = "";                            
+                            }
+                        }
+                    }
+                }
+
+                DataView dv = new DataView(dt);
+                DataTable dtdias = callto_cierre_diashabiles(Convert.ToInt32(ddown002.SelectedValue), Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue));
+
+                for (int i = 0; i < dtdias.Columns.Count; i++)
+                {
+                    if (dtdias.Rows[0][i].ToString() == "0")
+                    {
+                        dt.Columns.Remove(dtdias.Columns[i].ColumnName);
+                    }
+                }
+
+                grd001.ResetColumns();
+                grd001.DataSource = dv;
+                grd001.DataBind();
+
+                if (Convert.ToInt32(DateTime.Now.Month) == Convert.ToInt32(ddown_MesCierre.SelectedValue) && Convert.ToInt32(DateTime.Now.Year) == Convert.ToInt32(ddown_AnoCierre.SelectedItem.Text))
+                {
+                    DataTable dtProyectosAsistencia = callto_proyectos_asistencia(); // traigo los proyectos para aplicar filtros (Proyectos SENAME)
+                    if (dtProyectosAsistencia.Rows.Count > 0)
+                    {
+                        Bloquear = false;
+                        for (int i = 0; i < dtProyectosAsistencia.Rows.Count; i++)
+                        {
+                            if (dtProyectosAsistencia.Rows[i][1].ToString() == ddown002.SelectedValue.ToString())
+                            {
+                                CodProyecto = Convert.ToInt32(dtProyectosAsistencia.Rows[i][0]);
+                                if (Convert.ToInt32(dtProyectosAsistencia.Rows[i][2]) == 0)
+                                {
+                                    Bloquear = true;
+                                    CodProyecto = Convert.ToInt32(dtProyectosAsistencia.Rows[i][0]);
+                                    Imb006.Visible = true;
+                                    Imb003.Visible = false;
+                                }
+                                else
+                                {
+                                    
+                                }
+                            }
+                            else
+                            {
+                                
+                            }
+                        }
+                    }
+                    DataTable dt1 = get_asistenciavalidado(Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue), Convert.ToInt32(DateTime.Now.Day), CodProyecto);
+                    if (dt1.Rows.Count > 0) // tiene registro en el mismo dia, no se destaca la celda
+                    {
+                        grd001.Columns[Convert.ToInt32(DateTime.Now.Day) + 6].CellStyle.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        grd001.Columns[Convert.ToInt32(DateTime.Now.Day) + 6].CellStyle.BackColor = Color.Orange;
+                    }
+                }
+                GridItemStyle gis = new GridItemStyle();
+
+                for (int i = 0; i < grd001.Columns.Count; i++)
+                {
+                    switch (grd001.Columns[i].BaseColumnName.ToLower())
+                    {
+                        case "nombres":
+                            grd001.Columns[i].Header.Caption = "Nombres";
+                            break;
+                        case "apellido_paterno":
+                            grd001.Columns[i].Header.Caption = "Apellido Paterno";
+                            break;
+                        case "apellido_materno":
+                            grd001.Columns[i].Header.Caption = "Apellido Materno";
+                            break;
+                        case "icodie":
+                            grd001.Columns[i].Header.Caption = "Cod. Ingreso Egreso";
+                            break;
+                        case "codnino":
+                            grd001.Columns[i].Header.Caption = "Codigo Niño";
+                            break;
+                        case "sexo":
+                            grd001.Columns[i].Header.Caption = "Sexo";
+                            break;
+                        case "coddiasatencion":
+                            grd001.Columns[i].Header.Caption = "Cod. Dias Atención";
+                            grd001.Columns[i].Hidden = true;
+                            break;
+                        case "diasatendido":
+                            grd001.Columns[i].Header.Caption = "Dias Atendidos";
+                            break;
+                        default:
+                            if (grd001.Columns[i].BaseColumnName.Length < 4)
+                            {
+                                grd001.Columns[i].Header.Caption = grd001.Columns[i].BaseColumnName.Substring(1);
+                                
+                            }
+                            break;
+                    }
+                    if (grd001.Columns[i].BaseColumnName.Length < 4)
+                    {
+                        grd001.Columns[i].Type = ColumnType.NotSet;                        
+                        grd001.Columns[i].CellButtonDisplay = CellButtonDisplay.OnMouseEnter;
+                        grd001.Columns[i].CellButtonStyle.Width = 20;
+                        grd001.Columns[i].Width = 21;
+                    }
+                }
+                // int gg = grd001.Columns[20].;
+                //for (int i = 0; i < dtdias.Columns.Count; i++)
+                //{
+                //  int gg =   grd001.Columns[i].Find("P");
+
+                //}
+
+                if (dt.Rows.Count > 0)
+                {
+                    grd001.Visible = true;
+                    grd002.Visible = true;
+                    Imb003.Visible = true;
+                    Imb007.Visible = true;
+                    lbl003.Visible = false;
+
+                    DataTable dtProyectosAsistencia = callto_proyectos_asistencia(); // traigo los proyectos para aplicar filtros (Proyectos SENAME)
+                    if (dtProyectosAsistencia.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dtProyectosAsistencia.Rows.Count; i++)
+                        {
+                            if (dtProyectosAsistencia.Rows[i][1].ToString() == ddown002.SelectedValue.ToString())
+                            {
+                                CodProyecto = Convert.ToInt32(dtProyectosAsistencia.Rows[i][0]);
+                                Imb006.Visible = true;
+                                Imb003.Visible = false;
+                            }
+                        }
+                    }
+                    try
+                    {
+                        contadorgeneral();
+                    }
+                    catch { }
+                    // WebImageButton1.Visible = true;
+                }
+                else
+                {
+                    grd001.Visible = false;
+                    Imb003.Visible = true;
+                    grd002.Visible = false;
+                    Imb007.Visible = false;
+                    lbl003.Visible = true;
+                    //WebImageButton1.Visible = false;
+                }
+                if (IsClosed)
+                {
+                    Imb003.Visible = false;
+                    imb005.Visible = false;
+                }
+            }
+        }
+        lbl004.Visible = false;
+        lbl005.Visible = false;
+        lbl_error_dia.Visible = false;
+    }
+    protected void Imb002_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+    {
+      
+    }
+
+    private bool validatefields()
+    {
+        bool v = true;
+        if (ddown001.SelectedValue == null)
+        {
+            ddown001.BackColor = System.Drawing.Color.Pink;
+            v = false;
+        }
+        if (ddown002.SelectedValue == null || ddown002.SelectedValue == "")
+        {
+            ddown002.BackColor = System.Drawing.Color.Pink;
+            v = false;
+        }
+        else
+        {
+            ddown002.BackColor = System.Drawing.Color.White;
+        }
+        if (ddown_MesCierre.SelectedIndex == 0)
+        {
+            ddown_MesCierre.BackColor = System.Drawing.Color.Pink;
+            v = false;
+        }
+        else
+        {
+            ddown_MesCierre.BackColor = System.Drawing.Color.White;
+        }
+        //if (!v)
+        //{
+        //    grd001.Visible = false;
+        //}
+        return v;
+    }
+
+    protected void ddown001_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        getproyectos();
+       
+        if (ddown002.SelectedIndex > -1)
+        {
+            getinmueble();
+        }
+        validatefields();
+        fn_buscar();
+    }
+    protected void ddown002_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        getinmueble();
+        validatefields();
+        fn_buscar();
+        
+    }
+    protected void grd001_ClickCellButton(object sender, CellEventArgs e)
+    {
+        e.Cell.Text = "A";
+    }
+    protected void grd001_Click(object sender, ClickEventArgs e)
+    {
+        if (e.Cell != null && !IsClosed && e.Cell.Key.Length < 4 )
+        {
+            DataTable dt = new DataTable();
+            proyectocoll pc = new proyectocoll();
+            dt = pc.GetProyectos2(Convert.ToInt32(ddown002.SelectedValue));
+
+            if (Bloquear)
+            {
+                if (Convert.ToInt32(e.Cell.Column.Index) == Convert.ToInt32(DateTime.Now.Day) + 6
+                    && Convert.ToInt32(ddown_MesCierre.SelectedValue) == Convert.ToInt32(DateTime.Now.Month)
+                    && Convert.ToInt32(ddown_AnoCierre.SelectedItem.ToString()) == Convert.ToInt32(DateTime.Now.Year))
+                {
+                    lbl_error_dia.Visible = false;
+                    if (e.Cell.Text == "P")
+                    {
+                        e.Cell.Text = "A";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Red;
+                    }
+                    else if (e.Cell.Text == "A")
+                    {
+                        e.Cell.Text = "F";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Yellow;
+                    }
+                    //kvega
+                    else if (e.Cell.Text == "F")
+                    {
+                        e.Cell.Text = "H";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Aquamarine;
+                    }
+                    //else if (e.Cell.Text == "F") kvega
+                    else if (e.Cell.Text == "H")
+                    {
+                        if (dt.Rows[0]["CodInstitucion"].ToString() == "6050" && dt.Rows[0]["CodCausalTerminoProyecto"].ToString() == "20084" && dt.Rows[0]["CodRegion"].ToString() == "13")    // AADD de la LRPA en la RM
+                        {
+                            e.Cell.Text = "C";
+                            e.Cell.Style.BackColor = System.Drawing.Color.PaleVioletRed;
+                        }
+                        else
+                        {
+                            e.Cell.Text = "P";
+                            e.Cell.Style.BackColor = System.Drawing.Color.Green;
+                        }
+                    }
+                    else if (e.Cell.Text == "C")
+                    {
+                        e.Cell.Text = "P";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Green;
+                    }
+                    addmodindex(e.Cell.Row.Index, e.Cell.Column.Index - 6);
+                }
+                else
+                {
+                    lbl_error_dia.Visible = true;
+                }
+            }
+            else
+            {
+                //if (Convert.ToInt32(e.Cell.Column.Index) == Convert.ToInt32(DateTime.Now.Day) + 6
+                //    && Convert.ToInt32(ddown_MesCierre.SelectedValue) == Convert.ToInt32(DateTime.Now.Month)
+                //    && Convert.ToInt32(ddown_AnoCierre.SelectedItem.ToString()) == Convert.ToInt32(DateTime.Now.Year))
+                //{
+                    if (e.Cell.Text == "P")
+                    {
+                        e.Cell.Text = "A";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Red;
+                    }
+                    else if (e.Cell.Text == "A")
+                    {
+                        e.Cell.Text = "F";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Yellow;
+                    }
+                    //kvega
+                    else if (e.Cell.Text == "F")
+                    {
+                        e.Cell.Text = "H";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Aquamarine;
+                    }
+                    //else if (e.Cell.Text == "F") kvega
+                    else if (e.Cell.Text == "H")
+                    {
+                        if (dt.Rows[0]["CodInstitucion"].ToString() == "6050" && dt.Rows[0]["CodCausalTerminoProyecto"].ToString() == "20084")    // AADD de la LRPA
+                        {
+                            e.Cell.Text = "C";
+                            e.Cell.Style.BackColor = System.Drawing.Color.PaleVioletRed;
+                        }
+                        else
+                        {
+                            e.Cell.Text = "P";
+                            e.Cell.Style.BackColor = System.Drawing.Color.Green;
+                        }
+                    }
+                    else if (e.Cell.Text == "C")
+                    {
+                        e.Cell.Text = "P";
+                        e.Cell.Style.BackColor = System.Drawing.Color.Green;
+                    }
+                    addmodindex(e.Cell.Row.Index, e.Cell.Column.Index - 6);
+                //}
+                //else
+                //{
+                //    lbl_error_dia.Visible = true;
+                //}
+                
+            }
+            lbl004.Visible = false;
+            lbl005.Visible = false;
+            //addmodcolumn();
+        }
+        
+    }
+
+    private void addmodindex(int index, int column)
+    {
+        if (arrindexm.IndexOf(index) == -1)
+        {
+            arrindexm.Add(index);
+            arrcolumn.Add(column);
+        }
+    }
+    
+    protected void Imb007_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+    {
+        UltraWebGridExcelExporter1.Export(grd001);
+    }
+    private string getgv(int rowindex, string cellkey)
+    {
+        string r = "X";
+        try
+        {
+             r = grd001.Rows[rowindex].Cells.FromKey(cellkey).Text;
+        }
+        catch { }
+        return r;
+    }
+    protected void Imb003_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+   {
+        for (int i = 0; i < grd001.Rows.Count; i++)
+        {
+            for (int j = 0; j < arrindexm.Count; j++)
+            {
+                if (Convert.ToInt32(arrindexm[j]) == i)
+                {
+                    callto_cierre_guardaregistro(Convert.ToInt32(grd001.Rows[i].Cells.FromKey("ICodIE").Text), Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue),
+                        getgv(i, "d1"), getgv(i, "d2"), getgv(i, "d3"), getgv(i, "d4"), getgv(i, "d5"), getgv(i, "d6"),
+                        getgv(i, "d7"), getgv(i, "d8"), getgv(i, "d9"), getgv(i, "d10"), getgv(i, "d11"), getgv(i, "d12"),
+                        getgv(i, "d13"), getgv(i, "d14"), getgv(i, "d15"), getgv(i, "d16"), getgv(i, "d17"), getgv(i, "d18"),
+                        getgv(i, "d19"), getgv(i, "d20"), getgv(i, "d21"), getgv(i, "d22"), getgv(i, "d23"), getgv(i, "d24"),
+                        getgv(i, "d25"), getgv(i, "d26"), getgv(i, "d27"), getgv(i, "d28"), getgv(i, "d29"), getgv(i, "d30"),
+                        getgv(i, "d31"), 1);
+                }
+            }
+        }
+        try
+        {
+            arrindexm = new ArrayList();
+            fn_buscar();
+            contadorgeneral();
+        }
+        catch { }
+    }
+
+    private void contadorgeneral()
+    {
+        DataTable dtdias = callto_cierre_diashabiles(Convert.ToInt32(ddown002.SelectedValue), Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue));
+
+       DataRow dr = dtdias.NewRow();
+       DataRow drA = dtdias.NewRow();
+       string celltext = string.Empty;
+       int totalesIPF = 0;
+       int totalesA = 0; 
+       for (int i = 0; i < grd001.Rows.Count; i++)
+       {
+           for (int j = 0; j < dtdias.Columns.Count; j++)
+           {
+                              
+               if ((int) dtdias.Rows[0][j] == 1)
+               {
+                   celltext = grd001.Rows[i].Cells.FromKey(dtdias.Columns[j].ColumnName).Text.ToUpper();
+
+                   if (celltext == "P" || celltext == "I" || celltext == "F" || celltext == "H")
+                   {
+                       try
+                       {
+                           dr[j] = Convert.ToInt32(dr[j]) + 1;
+                       }
+                       catch
+                       {
+                           dr[j] = 1;
+                          
+                       }
+                       totalesIPF += 1;
+                   }
+                   if (celltext == "A" || celltext == "C")
+                   {
+                       try
+                       {
+                           drA[j] = Convert.ToInt32(drA[j]) + 1;
+                       }
+                       catch
+                       {
+                           drA[j] = 1;
+                       }
+                       totalesA += 1;
+                   }
+               }
+           }
+       }
+       dtdias.Rows.Add(dr);
+       dtdias.Rows.Add(drA);
+       
+       ArrayList arrdias = new ArrayList();     
+       for (int i = 0; i < dtdias.Columns.Count; i++)
+       {
+           if (dtdias.Rows[0][i].ToString() == "0")
+           {
+              arrdias.Add(dtdias.Columns[i].ColumnName);
+           }          
+       }
+        for(int i=0; i < arrdias.Count;i++)
+        {
+            dtdias.Columns.Remove(arrdias[i].ToString());        
+        }
+
+       dtdias.Rows.RemoveAt(0);
+       dtdias.Columns.Add("Item");
+       dtdias.Rows[0]["Item"] = "Total Atendidos";
+       dtdias.Rows[1]["Item"] = "Total Inasistencia";
+
+       dtdias.Columns.Add("Totales");
+       dtdias.Rows[0]["Totales"] = totalesIPF.ToString();
+       dtdias.Rows[1]["Totales"] = totalesA.ToString();
+        
+       grd002.ResetColumns();
+       grd002.DataSource = dtdias;
+       grd002.DataBind();
+       for (int i = 0; i < grd002.Columns.Count; i++)
+       {
+
+           if (grd002.Columns[i].BaseColumnName.Length < 4)
+           {
+               grd002.Columns[i].Type = ColumnType.NotSet;
+               grd002.Columns[i].CellButtonDisplay = CellButtonDisplay.OnMouseEnter;
+               grd002.Columns[i].CellButtonStyle.Width = 20;
+               grd002.Columns[i].Header.Caption = grd002.Columns[i].BaseColumnName.Substring(1);
+               grd002.Columns[i].Width = 21;
+           }
+           if (grd002.Columns[i].BaseColumnName == "Item")
+           {
+               grd002.Columns[i].Move(0);          
+           }
+       }
+       grd002.Visible = true;
+      // imb005.Visible = grd001.Visible;
+       Imb004.Visible = grd001.Visible;
+       Imb003.Visible = !Imb006.Visible;
+    }
+    protected void imb005_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+    {
+        DataTable dt0 =  callto_cierre_regenerar(Convert.ToInt32(ddown002.SelectedValue), Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue),1);
+    }
+    protected void ddown003_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        lbl_error_dia.Visible = false;
+        fn_buscar();
+    }
+    protected void rdo_SexoA_CheckedChanged(object sender, EventArgs e)
+    {
+        fn_buscar();
+    }
+    protected void imb_volver_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+    {
+        Response.Redirect("index_ninos.aspx");
+    }
+    protected void Imb004_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+    { 
+         if (ddown002.Items.Count > 0 && Convert.ToInt32(ddown002.SelectedValue) > 0)
+         {
+            string url = "CodProyecto=" + ddown002.SelectedValue + "&AnoMes=" + ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue + "&IdUsr=" + Session["IdUsuario"].ToString();
+            window.open(Page, "Cierre_RegistroAtencionReporte.aspx?" + url, 600, 800);
+         }
+    }
+    protected void imb006_Click(object sender, Infragistics.WebUI.WebDataInput.ButtonEventArgs e)
+    {
+        for (int i = 0; i < grd001.Rows.Count; i++)
+        {
+            for (int j = 0; j < arrindexm.Count; j++)
+            {
+                if (Convert.ToInt32(arrindexm[j]) == i)
+                {
+                    callto_cierre_guardaregistro(Convert.ToInt32(grd001.Rows[i].Cells.FromKey("ICodIE").Text), Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue),
+                        getgv(i, "d1"), getgv(i, "d2"), getgv(i, "d3"), getgv(i, "d4"), getgv(i, "d5"), getgv(i, "d6"),
+                        getgv(i, "d7"), getgv(i, "d8"), getgv(i, "d9"), getgv(i, "d10"), getgv(i, "d11"), getgv(i, "d12"),
+                        getgv(i, "d13"), getgv(i, "d14"), getgv(i, "d15"), getgv(i, "d16"), getgv(i, "d17"), getgv(i, "d18"),
+                        getgv(i, "d19"), getgv(i, "d20"), getgv(i, "d21"), getgv(i, "d22"), getgv(i, "d23"), getgv(i, "d24"),
+                        getgv(i, "d25"), getgv(i, "d26"), getgv(i, "d27"), getgv(i, "d28"), getgv(i, "d29"), getgv(i, "d30"),
+                        getgv(i, "d31"), 1);
+                }
+            }
+        }
+        try
+        {
+            arrindexm = new ArrayList();
+            fn_buscar();
+            contadorgeneral();
+        }
+        catch { }
+
+
+        DataTable dt1 = get_asistenciavalidado(Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue), Convert.ToInt32(DateTime.Now.Day), CodProyecto);
+        if (dt1.Rows.Count > 0) // tiene registro en el mismo dia, no se puede volver a grabar
+        {
+            lbl004.Visible = true;
+            lbl005.Visible = false;
+            lbl_error_dia.Visible = false;
+        }
+        else
+        {            
+            try
+            {
+                callto_cierre_ConfirmaRegistro(Convert.ToInt32(ddown_AnoCierre.SelectedValue + ddown_MesCierre.SelectedValue),
+                    //Convert.ToInt32(arrcolumn[j]), 
+                    Convert.ToInt32(DateTime.Now.Day),
+                    CodProyecto, Convert.ToInt32(Session["IdUsuario"]), DateTime.Now);               
+                arrindexm = new ArrayList();
+                fn_buscar();
+                contadorgeneral();
+                lbl004.Visible = false;
+                lbl005.Visible = true;
+                lbl_error_dia.Visible = false;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        //get_asistenciavalidado
+    }
+    private DataTable get_asistenciavalidado(int mesano, int dia, int ProyectoId)
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + " ;Database= " + objconn.DatabaseName + " ; User ID= " + objconn.User + " ;Password= " + objconn.Password + " ;Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "get_asistenciavalidado";
+        sqlc.Parameters.Add("@MesAno", SqlDbType.Int, 4).Value = mesano;
+        sqlc.Parameters.Add("@Dia", SqlDbType.Int, 5).Value = dia;
+        sqlc.Parameters.Add("@ProyectoId", SqlDbType.Int, 5).Value = ProyectoId;
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+
+    private DataTable callto_cierre_ConfirmaRegistro(int mesano, int dia, int ProyectoId, int IdUsuarioActualizacion, DateTime fecha)
+    {
+        //System.Data.SqlClient.SqlConnection sconn = new System.Data.SqlClient.SqlConnection("Server= " + objconn.Server + " ;Database= " + objconn.DatabaseName + " ; User ID= " + objconn.User + " ;Password= " + objconn.Password + " ;Trusted_Connection=False");
+        SqlConnection sconn = new SqlConnection(ConfigurationManager.ConnectionStrings["Conexiones"].ToString());
+        System.Data.SqlClient.SqlCommand sqlc = new System.Data.SqlClient.SqlCommand();
+        sqlc.Connection = sconn;
+        sqlc.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlc.CommandText = "insert_asistenciaValidado";
+        sqlc.Parameters.Add("@MesAno", SqlDbType.Int, 4).Value = mesano;
+        sqlc.Parameters.Add("@Dia", SqlDbType.Int, 5).Value = dia;
+        sqlc.Parameters.Add("@ProyectoId", SqlDbType.Int, 5).Value = ProyectoId;        
+        sqlc.Parameters.Add("@IdUsuarioActualizacion", SqlDbType.Int, 6).Value = IdUsuarioActualizacion;
+        sqlc.Parameters.Add("@Estado", SqlDbType.Bit).Value = 1;
+        sqlc.Parameters.Add("@FechaActualizacion", SqlDbType.DateTime).Value = fecha;
+        System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(sqlc);
+        DataTable dt = new DataTable();
+        sconn.Open();
+        da.Fill(dt);
+        sconn.Close();
+        return dt;
+    }
+}

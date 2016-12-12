@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEgresos" targetNamespace="http://tempuri.org/dsEgresos.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsEgresos.xsd" xmlns:mstns="http://tempuri.org/dsEgresos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="dsEgresos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FechaComprobante" type="xs:dateTime" />
+        <xs:element name="NroComprobante" type="xs:int" />
+        <xs:element name="Correlativo" type="xs:int" />
+        <xs:element name="Objetivo" type="xs:string" />
+        <xs:element name="Uso" type="xs:string" />
+        <xs:element name="Monto" type="xs:int" />
+        <xs:element name="MontoNoNulo" type="xs:int" />
+        <xs:element name="MedioDePago" type="xs:string" />
+        <xs:element name="Glosa" type="xs:string" />
+        <xs:element name="Destino" type="xs:string" />
+        <xs:element name="NumeroCheque" type="xs:string" />
+        <xs:element name="Nulo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,747 @@
+﻿------ Operación Compilar iniciada: proyecto: C:\Senainfo2015(3)\, configuración: Debug Any CPU ------
+Advertencia: No se puede actualizar la referencia de actualización automática 'argentiswebtextbox.dll'. No se encuentra el ensamblado 'C:\Documents and Settings\argentis3\Escritorio\dll\SenameWebTextbox.dll'.
+Advertencia: No se puede actualizar la referencia de actualización automática 'ajax.dll'. No se encuentra el ensamblado 'C:\Documents and Settings\jupiter\Escritorio\AJAX\Ajax.dll'.
+------ Publicación iniciada: proyecto: C:\Senainfo2015(3)\, configuración: Debug Any CPU ------
+Copiando todos los archivos en la ubicación temporal siguiente para el empaquetado y publicación:
+C:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source.
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_compiler.exe -v "/Senainfo2015(3)" -p "C:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source" -u -fixednames "C:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\TempBuildDir" 
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\App_Code\RendicionEgresoColl.cs(456,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\App_Code\diagnosticoscoll.cs(2739,0): Advertencia CS0472: El resultado de la expresión siempre es 'false', dado que un valor de tipo 'int' nunca es igual a 'null' de tipo 'int?'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\App_Code\ninocoll.cs(278,0): Advertencia CS0219: La variable 'TipoConsulta' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\App_Code\ninocoll.cs(502,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\App_Code\ninocoll.cs(4057,0): Advertencia CS0219: La variable 'datareader' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\Coordinadores_Ingreso.aspx.cs(504,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\Coordinadores_Ingreso.aspx.cs(744,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\Coordinadores_Ingreso.aspx.cs(797,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\Coordinadores_Ingreso.aspx.cs(907,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\Coordinadores_Ingreso.aspx.cs(1020,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\Coordinadores_Ingreso.aspx.cs(1242,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\Coordinadores_Ingreso.aspx.cs(1328,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\ingreso_coordinadores.aspx.cs(1188,0): Advertencia CS0219: La variable 'vtab7' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\ingreso_coordinadores.aspx.cs(1846,0): Advertencia CS0162: Se ha detectado código inaccesible
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\ingreso_coordinadores.aspx.cs(3125,0): Advertencia CS0219: La variable 'sentenciaejec' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\ingreso_coordinadores.aspx.cs(3894,0): Advertencia CS0219: La variable 'sw1' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\ingreso_coordinadores.aspx.cs(6090,0): Advertencia CS0219: La variable 'nuevo' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\ingreso_coordinadores.aspx.cs(6091,0): Advertencia CS0219: La variable 'mixta' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_coordinadores\ingreso_coordinadores.aspx.cs(6147,0): Advertencia CS0219: La variable 'sw' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_faltas\edit_falta.aspx.cs(12,0): Advertencia CS0105: La directiva using para 'System.Data' aparece previamente en este espacio de nombres
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_instituciones\Reg_Reportes.aspx.cs(68,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_instituciones\Reg_Reportes.aspx.cs(140,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_area_intervencion.aspx.cs(34,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_area_intervencion.aspx.cs(74,0): Advertencia CS0168: La variable 'dr' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_con_quien.aspx.cs(30,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_con_quien.aspx.cs(126,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_datos.aspx.cs(100,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_datos.aspx.cs(136,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_datos.aspx.cs(145,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_datos.aspx.cs(177,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_seguimiento.aspx.cs(25,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_seguimiento.aspx.cs(29,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_seguimiento.aspx.cs(89,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_termino_intervencion.aspx.cs(51,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\pi_crear\plan_intervencion_termino_intervencion.aspx.cs(68,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\cierre_informeatencion.aspx.cs(396,0): Advertencia CS0252: Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el tipo de la izquierda en el tipo 'string'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\cierre_registroatencion.aspx.cs(1010,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Cierre_RegistroAtencionReporte.aspx.cs(42,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Cierre_ResumenAtencionReporte.aspx.cs(60,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_busqueda.ascx.cs(311,0): Advertencia CS0219: La variable 'counter' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_busqueda.ascx.cs(536,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\DatosdeGestion.aspx.cs(157,0): Advertencia CS0219: La variable 'v' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\DatosdeGestion.aspx.cs(1484,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\DatosdeGestion.aspx.cs(2992,0): Advertencia CS0162: Se ha detectado código inaccesible
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\DiagnosticoPsicologico.aspx.cs(159,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\DiagnosticoPsicologico.aspx.cs(177,0): Advertencia CS0168: La variable 'ex1' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\DiagnosticoPsicologico.aspx.cs(206,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\DiagnosticoPsicologico.aspx.cs(213,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\eventos_intervencion.aspx.cs(457,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Ingresoninolistaespera.aspx.cs(506,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Ingresoninolistaespera.aspx.cs(677,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Ingresoninolistaespera.aspx.cs(1335,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Ingresoninolistaespera.aspx.cs(1427,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Ingresoninolistaespera.aspx.cs(1600,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\Ingresoninolistaespera.aspx.cs(1684,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ingreso_adulto.aspx.cs(1879,0): Advertencia CS1717: Asignación a la misma variable. ¿Pretendía asignar otro elemento?
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ingreso_adulto.aspx.cs(1857,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_diagnosticoninos.aspx.cs(123,0): Advertencia CS0219: La variable 'v' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_Egreso.aspx.cs(1215,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_Egreso.aspx.cs(1912,0): Advertencia CS0219: La variable 'counter' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_hechosdesalud.aspx.cs(158,0): Advertencia CS0114: 'mod_ninos_hechosdesalud.Validate()' oculta el miembro heredado 'System.Web.UI.Page.Validate()'. Para hacer que el miembro actual invalide esa implementación, agregue la palabra clave override. De lo contrario, agregue la palabra clave new.
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(219,0): Advertencia CS0252: Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el tipo de la izquierda en el tipo 'string'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(225,0): Advertencia CS0252: Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el tipo de la izquierda en el tipo 'string'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(265,0): Advertencia CS0219: La variable 'v' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(2473,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(2490,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(2626,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(4426,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_index.aspx.cs(5137,0): Advertencia CS0162: Se ha detectado código inaccesible
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_ingresonuevo.aspx.cs(1262,0): Advertencia CS1717: Asignación a la misma variable. ¿Pretendía asignar otro elemento?
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_ingresonuevo.aspx.cs(1240,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_LRPA.aspx.cs(1871,0): Advertencia CS0219: La variable 'grdval' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_LRPA.aspx.cs(1994,0): Advertencia CS0472: El resultado de la expresión siempre es 'false', dado que un valor de tipo 'bool' nunca es igual a 'null' de tipo 'bool?'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_ninos\ninos_visitados.aspx.cs(385,0): Advertencia CS0219: La variable 'var2' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_proyectos\proyectoreferente.aspx.cs(1581,0): Advertencia CS0252: Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el tipo de la izquierda en el tipo 'string'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_recepcion\Reporte.aspx.cs(72,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_recepcion\Reporte.aspx.cs(247,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Index_ReporteDatosGestion.aspx.cs(25,0): Advertencia CS0618: 'System.Web.UI.Page.RegisterClientScriptBlock(string, string)' está obsoleto: 'The recommended alternative is ClientScript.RegisterClientScriptBlock(Type type, string key, string script). http://go.microsoft.com/fwlink/?linkid=14202'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Reg_Reportes.aspx.cs(120,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Reg_Reportes.aspx.cs(141,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Reg_Reportes.aspx.cs(196,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Reg_Reportes.aspx.cs(279,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Catastro.aspx.cs(63,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Catastro.aspx.cs(71,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Catastro.aspx.cs(110,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Catastro.aspx.cs(121,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(42,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(52,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(64,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(128,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(146,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(163,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(181,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Estadistico.aspx.cs(195,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_eventos.aspx.cs(483,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_eventos.aspx.cs(488,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_historial.aspx.cs(284,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Informes_Coordinador.aspx.cs(277,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_Informes_Coordinador.aspx.cs(285,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_TrabajadoresRut.aspx.cs(50,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_TrabajadoresRut.aspx.cs(232,0): Advertencia CS0168: La variable 'ex' se ha declarado pero nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_VigenciaDiariaCentros.aspx.cs(81,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\mod_reportes\Rep_VigenciaDiariaCentros.aspx.cs(89,0): Advertencia CS0618: 'System.Configuration.ConfigurationSettings.AppSettings' está obsoleto: 'This method is obsolete, it has been replaced by System.Configuration!System.Configuration.ConfigurationManager.AppSettings'
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\EncuestaProyectosFuncionarios.aspx.cs(417,0): Advertencia CS0219: La variable 'sw' está asignada, pero su valor nunca se utiliza
+c:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\Source\PopUpSenainfo.aspx.cs(28,0): Advertencia CS0168: La variable 'CodInstitucion' se ha declarado pero nunca se utiliza
+El elemento ConnectionString automático transformó C:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\AspnetCompileMerge\TempBuildDir\Web.Config en C:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\CSAutoParameterize\transformed\Web.Config.
+Copiando todos los archivos en la ubicación temporal siguiente para el empaquetado y publicación:
+C:\Users\jonathan.valencia\AppData\Local\Temp\WebSitePublish\Senainfo2015(3)--496639704\obj\Debug\Package\PackageTmp.
+Actualizando el archivo (SenaInfo\ActualizacionProyectos.aspx).
+Actualizando el archivo (SenaInfo\autenticacion.aspx).
+Actualizando el archivo (SenaInfo\bin\App_Code.compiled).
+Actualizando el archivo (SenaInfo\bin\App_Code.dll).
+Actualizando el archivo (SenaInfo\bin\App_global.asax.compiled).
+Actualizando el archivo (SenaInfo\bin\App_global.asax.dll).
+Actualizando el archivo (SenaInfo\bin\App_GlobalResources.compiled).
+Actualizando el archivo (SenaInfo\bin\App_GlobalResources.dll).
+Actualizando el archivo (SenaInfo\bin\App_WebReferences.compiled).
+Actualizando el archivo (SenaInfo\bin\App_WebReferences.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_1rut.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_accionesinformediagnostico.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_actualizacionproyectos.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_autenticacion.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_bsc_egreso_institucion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_bsc_institucion.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_bsc_pii.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_busca_proyectosnuevaley.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_busca_proyectosnuevaleyrep.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cambia_password.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_capacitacionnino.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_informeatencion.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_informeatencion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_movmensual.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_movmensual.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_registroatencion.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_registroatencion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_registroatencionreporte.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_resumenatencion.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_resumenatencion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_cierre_resumenatencionreporte.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_consultarinforeportes.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_coordinadores_ingreso.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_coord_historiconino_audiencia .aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_coord_historiconino_busca.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_coord_historiconino_modifica.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_datosdegestion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_default.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_default2.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diagnosticoescolar.ascx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diagnosticopsicologico.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diagnosticosocial.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diag_droga.ascx.a7bb364a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diag_escolar.ascx.a7bb364a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diag_maltrato.ascx.a7bb364a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diag_peores_forma.ascx.a7bb364a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diag_psicologico.ascx.a7bb364a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_diag_social.ascx.a7bb364a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_edit_falta.aspx.6eca73f5.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_elimina_falta.aspx.6eca73f5.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_encuestaproyectosfuncionarios.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_encuestas.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_encuestasenhistorico.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_encuestasfes.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_encuestas_generales.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_encuestas_lista_espera.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_encuesta_digitadores.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_etapasrealizadasdiagnosticos.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_eventos_intervencion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_filtro_lrpa.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_header.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_hechosjudiciales.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_historial_ninos_jueces.aspx.c23f266c.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_imagenow_capturainf.aspx.c23f266c.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_coordinadores.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_instituciones.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_mantenedores.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_mantenedores.aspx.eb71f606.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_mesa.aspx.f35a685.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_ninos.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_pintervencion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_recepcion.aspx.b9dbf00f.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_reportedatosgestion.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_reportes.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_index_reportes.aspx.df3051cb.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ingresoninolistaespera.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ingresoplandeintervenciones.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ingreso_adulto.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ingreso_coordinadores.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_link.aspx.54dae1db.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_link_sitiohistorico.aspx.54dae1db.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_maca.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mantenedores.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mantenedorninos.aspx.f35a685.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_manttipohechosalud.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_actividad.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_actoreseventos.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_areacapacitacion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_areaespecializacion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_areainsercionlaboral.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_areasproyecto.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_atencionhechosalud.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_bancos.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_calidadjuridica.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_calificacionintervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_cargopresupuestario.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_cargos.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_categoriaspfmi.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_causalegreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_causalegresotrabajador.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_causalesingreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_causalterminoproyecto.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_clases.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_comunas.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_conquienegresa.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_corteapelaciones.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_delito.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_departamentossename.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_detalleingreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_diasatencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_diligencia.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_dimensiones.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_direccionesregionales.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_drogas.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_enfermedadescronicas.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_escolaridad.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_escolaridadadulto.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_estadoabandono.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_estadoabandono_situaciontuicion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_estadocapacitacion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_estadocuota.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_estadointervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_etapasintervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_etnias.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_gradocumplimientointervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_hechossalud.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_instrumentomedicion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_instrumentosdiagnosticos.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_item.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_localidad.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_lugarhechosalud.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_mailreliquidacion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_maltrato.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_materiacausa.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_medicionesdiagnosticas.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_medidassugeridas.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_mediopago.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_modelointervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_nacionalidades.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_niveldiscapacidad.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_nivelintervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_objetivo.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_organismocapacitador.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_profesionoficio.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_provincia.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_quienocasionalesion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_region.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_sistemaadministrativo.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_sistemaasistencial.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_situacioncalle.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_situacionesespeciales.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_situacionlaboral.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_situacionlegalinmueble.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_situacionpersonarelacionada.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_situacionsocioeconomica.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_situaciontuicion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_solicitanteingreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tematicaproyecto.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_terminodiagnostico.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoasistenciaescolar.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoatencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipocapacitacion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipocargo.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipocausalingreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoconsumodroga.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipodeuda.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipodiagnotico.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipodiscapacidad.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoegreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoeventointervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoeventos.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoingreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoinmueble.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoinstitucion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipointervencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipolesiones.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipomaltrato.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipomateriacausa.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoorganizacionsocial.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipoproyecto.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiporeconocimiento.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiporelacion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiporelacionconquienvive.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiporelacionintervencionegreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiporelacionpersonacontacto.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiposolicitanteingreso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiposubvencion.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tiposupervision.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_tipotribunal.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mant_uso.aspx.355ac54a.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_masa_rectificacionidentidad.aspx.f35a685.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mensajeegreso.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mesa_historiconino.aspx.f35a685.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_mesa_rectificacionidentidad.aspx.f35a685.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_new_coordinadoresmodif.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_adn.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_agregartomaadn.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_busqueda.ascx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_diagnisticoescolar.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_diagnosticodroga.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_diagnosticomaltrato.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_diagnosticoninos.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_diagnosticopeoresformastrabajo.ascx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_direccionnino.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_discapacidad.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_egreso.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_egreso_direccion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_enfermedadescronicas.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_eventosareaintervencion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_hechosdesalud.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodediagnosticos.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticocapacitacion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticodroga.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticoescolar.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticohechosjudiciales.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticomaltrato.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticopeoresformas.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticopsicologico.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticosituacionlaboral.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_historicodiagnosticosocial.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_identificacionninooadolecente.ascx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_index.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_ingreso.ascx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_ingresonuevo.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_ingresonuevo.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_lrpa.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_nuevapersonarel.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_relacionados.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_selected.ascx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_situacionlaboralnino.ascx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_solicituddiligencias.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_ninos_visitados.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_panel1.ascx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_peoresformas.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_pii_msj.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_pi_gestion.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_pi_gestion_areasdelplan.aspx.a6a8036d.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_pi_gestion_datosdelplan.aspx.a6a8036d.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_pi_gestion_seguimientodeplan.aspx.a6a8036d.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_pi_gestion_terminoplan.aspx.a6a8036d.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_pi_gestion_trabajaegreso.aspx.a6a8036d.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_plan_intervencion_area_intervencion.aspx.c659ab2b.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_plan_intervencion_con_quien.aspx.c659ab2b.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_plan_intervencion_datos.aspx.c659ab2b.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_plan_intervencion_new.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_plan_intervencion_seguimiento.aspx.c659ab2b.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_plan_intervencion_seleccion_nino.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_plan_intervencion_termino_intervencion.aspx.c659ab2b.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_popupsenainfo.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_proyectoadjudicadoenejecucion.aspx.7751e6aa.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_proyectoreferente.aspx.7751e6aa.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_p_ajax.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_quientraslada.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_recep_rendcuenta.aspx.b9dbf00f.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_recep_resatencion.aspx.b9dbf00f.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_regenerarcierre.aspx.f35a685.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_registro_faltas.aspx.6eca73f5.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_egresos.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_egresos_instituciones.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_eventosproy.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_ingresos.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_ingresos_instituciones.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_inmuebles.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_inmueblesproy.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_instituciones.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_rendicion.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_rendicion.aspx.b9dbf00f.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_rendicion_instituciones.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_reportes.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_reportes.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_trabajadores.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reg_trabajadoresproy.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rendicion_cuentas.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reporte.aspx.b9dbf00f.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_reptrabajadoresexcel.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_catastro.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_diag_e_inter.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_diag_e_inter.aspx.df3051cb.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_diag_ninos.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_diligencias.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_estadistico.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_eventos.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_eventos.aspx.df3051cb.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_evproyecto.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_historial.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_informes_coordinador.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_informes_coordinador.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_infracciondisciplinaria.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_instituciones.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_instituciones.aspx.df3051cb.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_listadeespera.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_lrpa.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_monitoreoindicadores.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_ninos.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_ninos.aspx.df3051cb.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_ninosadoptabilidad.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_ninosdeteccionprecoz.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_ninosvisitados.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_nominaadolescente.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_ocupaciondiariacentros.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_personacontacto.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_personasrelacionadas.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_proyectos.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_proyectos.aspx.df3051cb.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_proyectosjueces.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_reporteslrpa.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_resoluciones.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_resoluciones.aspx.df3051cb.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_trabajadoresrut.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_trabajadorusuario.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_rep_vigenciadiariacentros.aspx.201a02ec.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_situacionlaboral.aspx.c3406701.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_successwindow.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_testaviso.aspx.cdcab7d2.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_test_sancion.aspx.38653101.dll).
+Actualizando el archivo (SenaInfo\bin\App_Web_transferencias.aspx.10239d10.dll).
+Actualizando el archivo (SenaInfo\cambia_password.aspx).
+Actualizando el archivo (SenaInfo\ConsultarInfoReportes.aspx).
+Actualizando el archivo (SenaInfo\Default.aspx).
+Actualizando el archivo (SenaInfo\Default2.aspx).
+Actualizando el archivo (SenaInfo\EncuestaProyectosFuncionarios.aspx).
+Actualizando el archivo (SenaInfo\Encuestas.aspx).
+Actualizando el archivo (SenaInfo\EncuestaSenHistorico.aspx).
+Actualizando el archivo (SenaInfo\EncuestasFES.aspx).
+Actualizando el archivo (SenaInfo\Encuestas_Generales.aspx).
+Actualizando el archivo (SenaInfo\Encuestas_Lista_Espera.aspx).
+Actualizando el archivo (SenaInfo\Encuesta_Digitadores.aspx).
+Actualizando el archivo (SenaInfo\filtro_lrpa.aspx).
+Actualizando el archivo (SenaInfo\header.aspx).
+Actualizando el archivo (SenaInfo\index.aspx).
+Actualizando el archivo (SenaInfo\links\link.aspx).
+Actualizando el archivo (SenaInfo\links\link_SitioHistorico.aspx).
+Actualizando el archivo (SenaInfo\Mantenedores\index_mantenedores.aspx).
+Actualizando el archivo (SenaInfo\Mantenedores.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\busca_proyectosNuevaLey.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\Coordinadores_Ingreso.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\coord_historiconino_audiencia .aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\coord_HistoricoNino_busca.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\coord_HistoricoNino_modifica.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\index_coordinadores.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\ingreso_coordinadores.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\New_CoordinadoresModif.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\ninos_ingresonuevo.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\Rep_Informes_Coordinador.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\Successwindow.aspx).
+Actualizando el archivo (SenaInfo\mod_coordinadores\test_sancion.aspx).
+Actualizando el archivo (SenaInfo\mod_faltas\edit_falta.aspx).
+Actualizando el archivo (SenaInfo\mod_faltas\Elimina_falta.aspx).
+Actualizando el archivo (SenaInfo\mod_faltas\Registro_Faltas.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\bsc_institucion.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\cierre_informeatencion.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\cierre_movmensual.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\cierre_registroatencion.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\cierre_resumenatencion.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\index_instituciones.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Reg_Egresos.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Reg_Egresos_Instituciones.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\reg_eventosproy.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Reg_Ingresos.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Reg_Ingresos_Instituciones.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\reg_inmuebles.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\reg_inmueblesproy.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\reg_instituciones.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Reg_Rendicion.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Reg_Rendicion_Instituciones.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Reg_Reportes.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\reg_trabajadores.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\reg_trabajadoresproy.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\rendicion_cuentas.aspx).
+Actualizando el archivo (SenaInfo\mod_instituciones\Transferencias.aspx).
+Actualizando el archivo (SenaInfo\mod_jueces\Historial_Ninos_Jueces.aspx).
+Actualizando el archivo (SenaInfo\mod_jueces\ImageNow_CapturaInf.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\index_mantenedores.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\maca.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\MantTipoHechoSalud.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Actividad.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_ActoresEventos.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_AreaCapacitacion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_AreaEspecializacion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_AreaInsercionLaboral.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_AreasProyecto.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_AtencionHechoSalud.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Bancos.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CalidadJuridica.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CalificacionIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CargoPresupuestario.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Cargos.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CategoriasPFMI.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CausalEgreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CausalEgresoTrabajador.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CausalesIngreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CausalTerminoProyecto.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Clases.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Comunas.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_ConQuienEgresa.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_CorteApelaciones.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Delito.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_DepartamentosSENAME.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_DetalleIngreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_DiasAtencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Diligencia.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Dimensiones.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_DireccionesRegionales.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Drogas.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EnfermedadesCronicas.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Escolaridad.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EscolaridadAdulto.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EstadoAbandono.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EstadoAbandono_SituacionTuicion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EstadoCapacitacion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EstadoCuota.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EstadoIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_EtapasIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Etnias.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_GradoCumplimientoIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_HechosSalud.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_InstrumentoMedicion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_InstrumentosDiagnosticos.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Item.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Localidad.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_LugarHechoSalud.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_MailReliquidacion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Maltrato.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_MateriaCausa.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_MedicionesDiagnosticas.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_MedidasSugeridas.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_MedioPago.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_ModeloIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Nacionalidades.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_NivelDiscapacidad.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_NivelIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Objetivo.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_OrganismoCapacitador.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_ProfesionOficio.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Provincia.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_QuienOcasionaLesion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Region.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SistemaAdministrativo.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SistemaAsistencial.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SituacionCalle.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SituacionesEspeciales.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SituacionLaboral.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SituacionLegalInmueble.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SituacionPersonaRelacionada.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SituacionSocioEconomica.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SituacionTuicion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_SolicitanteIngreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TematicaProyecto.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TerminoDiagnostico.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoAsistenciaEscolar.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoAtencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoCapacitacion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoCargo.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoCausalIngreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoConsumoDroga.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoDeuda.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoDiagnotico.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoDiscapacidad.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoEgreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoEventoIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoEventos.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoIngreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoInmueble.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoInstitucion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoIntervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoLesiones.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoMaltrato.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoMateriaCausa.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoOrganizacionSocial.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoProyecto.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoReconocimiento.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoRelacion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoRelacionConQuienVive.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoRelacionIntervencionEgreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoRelacionPersonaContacto.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoSolicitanteIngreso.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoSubvencion.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoSupervision.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_TipoTribunal.aspx).
+Actualizando el archivo (SenaInfo\mod_mantenedores\Mant_Uso.aspx).
+Actualizando el archivo (SenaInfo\mod_mesa\index_mesa.aspx).
+Actualizando el archivo (SenaInfo\mod_mesa\MantenedorNinos.aspx).
+Actualizando el archivo (SenaInfo\mod_mesa\masa_Rectificacionidentidad.aspx).
+Actualizando el archivo (SenaInfo\mod_mesa\mesa_HistoricoNino.aspx).
+Actualizando el archivo (SenaInfo\mod_mesa\mesa_Rectificacionidentidad.aspx).
+Actualizando el archivo (SenaInfo\mod_mesa\RegenerarCierre.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\1rut.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\accionesinformediagnostico.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\bsc_egreso_institucion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\bsc_PII.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\CapacitacionNino.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\cierre_informeatencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\cierre_movmensual.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\cierre_registroatencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\Cierre_RegistroAtencionReporte.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\cierre_resumenatencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\Cierre_ResumenAtencionReporte.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\DatosdeGestion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\DiagnosticoEscolar.ascx).
+Actualizando el archivo (SenaInfo\mod_ninos\DiagnosticoPsicologico.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\DiagnosticoSocial.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\EtapasRealizadasDiagnosticos.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\eventos_intervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\HechosJudiciales.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\index_ninos.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\index_pintervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\Ingresoninolistaespera.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ingresoplandeintervenciones.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ingreso_adulto.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\MensajeEgreso.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_adn.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_AgregarTomaADN.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_busqueda.ascx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_DiagnisticoEscolar.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_DiagnosticoDroga.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_DiagnosticoMaltrato.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_diagnosticoninos.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_diagnosticopeoresformastrabajo.ascx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_DireccionNino.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_discapacidad.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_Egreso.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_Egreso_Direccion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_enfermedadescronicas.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_eventosareaintervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_hechosdesalud.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricodeDiagnosticos.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoCapacitacion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoDroga.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoEscolar.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoHechosJudiciales.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoMaltrato.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoPeoresFormas.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoPsicologico.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticoSituacionLaboral.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_HistoricoDiagnosticosocial.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_identificacionninooadolecente.ascx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_index.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_ingreso.ascx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_ingresonuevo.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_LRPA.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_nuevapersonarel.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_relacionados.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_selected.ascx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_solicituddiligencias.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\ninos_visitados.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\panel1.ascx).
+Actualizando el archivo (SenaInfo\mod_ninos\PeoresFormas.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\PII_MSJ.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_crear\plan_intervencion_area_intervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_crear\plan_intervencion_con_quien.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_crear\plan_intervencion_datos.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_crear\plan_intervencion_seguimiento.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_crear\plan_intervencion_termino_intervencion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_gestion\pi_gestion_AreasdelPlan.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_gestion\pi_gestion_DatosDelPlan.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_gestion\pi_gestion_SeguimientodePlan.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_gestion\pi_gestion_TerminoPlan.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_gestion\pi_gestion_TrabajaEgreso.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\pi_gestion.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\plan_intervencion_new.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\plan_intervencion_seleccion_nino.aspx).
+Actualizando el archivo (SenaInfo\mod_ninos\SituacionLaboral.aspx).
+Actualizando el archivo (SenaInfo\mod_proyectos\proyectoadjudicadoenejecucion.aspx).
+Actualizando el archivo (SenaInfo\mod_proyectos\proyectoreferente.aspx).
+Actualizando el archivo (SenaInfo\mod_recepcion\index_recepcion.aspx).
+Actualizando el archivo (SenaInfo\mod_recepcion\Recep_RendCuenta.aspx).
+Actualizando el archivo (SenaInfo\mod_recepcion\Recep_ResAtencion.aspx).
+Actualizando el archivo (SenaInfo\mod_recepcion\Reg_Rendicion.aspx).
+Actualizando el archivo (SenaInfo\mod_recepcion\Reporte.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\busca_proyectosNuevaLeyRep.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Index_ReporteDatosGestion.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Index_Reportes.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Reg_Reportes.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\RepTrabajadoresExcel.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Catastro.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_diag_e_inter.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diag_Ninos\DIAG_DROGA.ascx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diag_Ninos\DIAG_ESCOLAR.ascx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diag_Ninos\DIAG_MALTRATO.ascx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diag_Ninos\DIAG_PEORES_FORMA.ascx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diag_Ninos\DIAG_PSICOLOGICO.ascx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diag_Ninos\DIAG_SOCIAL.ascx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diag_Ninos.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Diligencias.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Estadistico.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_eventos.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_EvProyecto.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_historial.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_Informes_Coordinador.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_InfraccionDisciplinaria.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_instituciones.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_ListadeEspera.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_LRPA.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_MonitoreoIndicadores.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_ninos.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_ninosAdoptabilidad.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_NinosDeteccionPrecoz.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_ninosvisitados.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_NominaAdolescente.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_OcupacionDiariaCentros.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_PersonaContacto.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_PersonasRelacionadas.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_proyectos.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_ProyectosJueces.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_ReportesLRPA.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_resoluciones.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_TrabajadoresRut.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_TrabajadorUsuario.aspx).
+Actualizando el archivo (SenaInfo\mod_reportes\Rep_VigenciaDiariaCentros.aspx).
+Actualizando el archivo (SenaInfo\ninos_situacionlaboralnino.ascx).
+Actualizando el archivo (SenaInfo\PopUpSenainfo.aspx).
+Actualizando el archivo (SenaInfo\PrecompiledApp.config).
+Actualizando el archivo (SenaInfo\P_AJAX.aspx).
+Actualizando el archivo (SenaInfo\QuienTraslada.aspx).
+Actualizando el archivo (SenaInfo\Reportes\Index_Reportes.aspx).
+Actualizando el archivo (SenaInfo\Reportes\Rep_diag_e_inter.aspx).
+Actualizando el archivo (SenaInfo\Reportes\Rep_eventos.aspx).
+Actualizando el archivo (SenaInfo\Reportes\Rep_instituciones.aspx).
+Actualizando el archivo (SenaInfo\Reportes\Rep_ninos.aspx).
+Actualizando el archivo (SenaInfo\Reportes\Rep_proyectos.aspx).
+Actualizando el archivo (SenaInfo\Reportes\Rep_resoluciones.aspx).
+Actualizando el archivo (SenaInfo\Senainfo2015(3).sln).
+Actualizando el archivo (SenaInfo\testaviso.aspx).
+Actualizando el archivo (SenaInfo\Web.Config).
+Adding ACL's for path (SenaInfo)
+Adding ACL's for path (SenaInfo)
+Adding ACL's for path (SenaInfo/App_Data)
+Se publicó correctamente.
+
+========== Compilar: 1 correctos o actualizados, 0 incorrectos, 0 omitidos ==========
+========== Publicación: 1 procesados, 0 no procesados, 0 omitidos ==========

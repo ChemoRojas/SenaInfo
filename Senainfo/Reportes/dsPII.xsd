@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPII" targetNamespace="http://tempuri.org/dsPII.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsPII.xsd" xmlns:mstns="http://tempuri.org/dsPII.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="dsPII">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="codregion" type="xs:int" />
+        <xs:element name="CodInstitucion" type="xs:int" />
+        <xs:element name="Institucion" type="xs:string" />
+        <xs:element name="codproyecto" type="xs:int" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="codnino" type="xs:int" />
+        <xs:element name="icodIE" type="xs:int" />
+        <xs:element name="apellido_paterno" type="xs:string" />
+        <xs:element name="apellido_materno" type="xs:string" />
+        <xs:element name="nombres" type="xs:string" />
+        <xs:element name="rut" type="xs:string" />
+        <xs:element name="FecNacimiento" type="xs:string" minOccurs="0" />
+        <xs:element name="FecIngreso" type="xs:string" minOccurs="0" />
+        <xs:element name="FecEgreso" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="PII" type="xs:int" minOccurs="0" />
+        <xs:element name="Grupo" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaElaboracionPII" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaInicioPII" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="FechaTerminoEstimadaPII" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="Tecnico" type="xs:string" minOccurs="0" />
+        <xs:element name="Descripcion" type="xs:string" minOccurs="0" />
+        <xs:element name="Colaboracion_Nino" type="xs:string" minOccurs="0" />
+        <xs:element name="Partipa_Fmlia" type="xs:string" minOccurs="0" />
+        <xs:element name="ObservacionCumplimiento" type="xs:string" minOccurs="0" />
+        <xs:element name="Trabaja_Egreso" type="xs:string" minOccurs="0" />
+        <xs:element name="Relacion" type="xs:string" minOccurs="0" />
+        <xs:element name="Interv_Completa" type="xs:string" minOccurs="0" />
+        <xs:element name="Habilitado_Egreso" type="xs:string" minOccurs="0" />
+        <xs:element name="GradoCumplimiento" type="xs:string" minOccurs="0" />
+        <xs:element name="TerminoRealPII" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="EstadoPlan" type="xs:string" minOccurs="0" />
+        <xs:element name="FecEstado" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="TipoIntervencion" type="xs:string" minOccurs="0" />
+        <xs:element name="Nivel" type="xs:string" minOccurs="0" />
+        <xs:element name="Desde" type="xs:string" minOccurs="0" />
+        <xs:element name="Hasta" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,381 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cierre_registroatencion.aspx.cs" EnableEventValidation="false" ValidateRequest="false" EnableSessionState="True"  EnableViewState="true" Inherits="mod_ninos_cierre_registroatencion" %>
+
+<%@ Import Namespace="System.IO" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Página sin título</title>
+    <link href="../css/sename_aplica.css" rel="stylesheet" type="text/css" />
+    <script src="../Script/jquery-1.6.1.js" type="text/javascript">
+    
+    </script>
+
+    <script type="text/javascript">
+    
+         $(document).ready(function () {
+
+             $("#c1").click(function () {
+                 $("#c1").text("A");
+             });
+
+         });
+
+         $(document).ready(function () {
+
+             $("#c2").click(function () {
+                 $("#c2").text("B");
+             });
+
+         });
+
+         $(document).ready(function () {
+
+             $("#c3").click(function () {
+                 $("#c3").text("C");
+ });
+         });
+
+               
+               
+               
+                $(document).ready(function () {
+             $("#Imb007").click(function () {
+             $("#NuevaGrilla th").removeAttr('align');
+             $("#NuevaGrilla td").removeAttr('style');
+             $("#NuevaGrilla tr").removeAttr('style');
+             $("#NuevaGrilla").removeAttr('style');
+             $("#NuevaGrilla").removeAttr('GridLines');
+             $("#NuevaGrilla").removeAttr('BorderStyle'); 
+             $("#NuevaGrilla").removeAttr('border');                          
+             
+               var grillitaHTML = $("#NuevaGrilla").prop('outerHTML');
+               
+               var newValue = grillitaHTML.replace('<tbody>',''); 
+               newValue = newValue.replace('</tbody>','');
+               grillitaHTML = newValue;
+               $('input[name="GrillaHTML"]').val(grillitaHTML); //limpiar campo hidden            
+               
+               });
+                 });
+                 
+                 
+                         
+         $(document).ready(function () {
+            $("#NuevaGrilla").click(function () {
+           $('input[name="CampoDatosAsistencia"]').val('VACIO'); //limpiar campo hidden
+          
+          var linea_tmp;
+          linea_tmp = "";
+          var numb_linea =1;
+          var TotalNumLineas =  $('#NuevaGrilla >tbody >tr').length;
+          if (TotalNumLineas >= 1) //1 por las cabeceras
+          {
+          TotalNumLineas = TotalNumLineas - 2; //-2 por las lineas pie de grilla resumenes
+          $('#NuevaGrilla tr').each(function () {
+                 if (numb_linea >0 && numb_linea < TotalNumLineas) 
+                    {
+                        var nombre = $(this).find("td").eq(0).html();
+                        var ap_pat = $(this).find("td").eq(1).html();
+                        var ap_mat = $(this).find("td").eq(2).html();
+                        var ICodIE = $(this).find("td").eq(3).html();
+                        var codnino = $(this).find("td").eq(4).html();
+                        var sexo = $(this).find("td").eq(5).html();
+                        var cod_diasat = $(this).find("td").eq(6).html();
+                        //DIAS 1-31
+                        var d1 = $(this).find("td").eq(7).html();
+                        var d2 = $(this).find("td").eq(8).html();
+                        var d3 = $(this).find("td").eq(9).html();
+                        var d4 = $(this).find("td").eq(10).html();
+                        var d5 = $(this).find("td").eq(11).html();
+                        var d6 = $(this).find("td").eq(12).html();
+                        var d7 = $(this).find("td").eq(13).html();
+                        var d8 = $(this).find("td").eq(14).html();
+                        var d9 = $(this).find("td").eq(15).html();
+                        var d10 = $(this).find("td").eq(16).html();
+                        var d11 = $(this).find("td").eq(17).html();
+                        var d12 = $(this).find("td").eq(18).html();
+                        var d13 = $(this).find("td").eq(19).html();
+                        var d14 = $(this).find("td").eq(20).html();
+                        var d15 = $(this).find("td").eq(21).html();
+                        var d16 = $(this).find("td").eq(22).html();
+                        var d17 = $(this).find("td").eq(23).html();
+                        var d18 = $(this).find("td").eq(24).html();
+                        var d19 = $(this).find("td").eq(25).html();
+                        var d20 = $(this).find("td").eq(26).html();
+                        var d21 = $(this).find("td").eq(27).html();
+                        var d22 = $(this).find("td").eq(28).html();
+                        var d23 = $(this).find("td").eq(29).html();
+                        var d24 = $(this).find("td").eq(30).html();
+                        var d25 = $(this).find("td").eq(31).html();
+                        var d26 = $(this).find("td").eq(32).html();
+                        var d27 = $(this).find("td").eq(33).html();
+                        var d28 = $(this).find("td").eq(34).html();
+                        var d29 = $(this).find("td").eq(35).html();
+                        var d30 = $(this).find("td").eq(36).html();
+                        var d31 = $(this).find("td").eq(37).html();
+                        
+                        var dias_at = $(this).find("td").eq(38).html();                    
+                    if ((numb_linea + 1) == TotalNumLineas)  //si llego a la ultima linea
+                    {
+                        linea_tmp = linea_tmp + nombre + ";" + ap_pat + ";" + ap_mat + ";" + ICodIE + ";" + codnino + ";" + sexo + ";" + cod_diasat + ";" + d1 + ";" + d2 + ";" + d3 + ";" +d4 + ";" + d5 + ";" + d6 + ";" + d7 + ";" + d8 + ";" + d9 + ";" + d10 + ";" + d11 + ";" + d12 + ";" + d13 + ";" + d14 + ";" + d15 + ";" + d16 + ";" + d17 + ";" + d18 + ";" + d19 + ";" + d20 + ";" + d21 + ";" + d22 + ";" + d23 + ";" + d24 + ";" + d25 + ";" + d26 + ";" + d27 + ";" + d28 + ";" + d29 + ";" + d30 + ";" + d31 + ";" + dias_at; //agregando fin de linea | y Fin de Campo ;
+                    }
+                    else
+                    {
+                        linea_tmp = linea_tmp + nombre + ";" + ap_pat + ";" + ap_mat + ";" + ICodIE + ";" + codnino + ";" + sexo + ";" + cod_diasat + ";" + d1 + ";" + d2 + ";" + d3 + ";" +d4 + ";" + d5 + ";" + d6 + ";" + d7 + ";" + d8 + ";" + d9 + ";" + d10 + ";" + d11 + ";" + d12 + ";" + d13 + ";" + d14 + ";" + d15 + ";" + d16 + ";" + d17 + ";" + d18 + ";" + d19 + ";" + d20 + ";" + d21 + ";" + d22 + ";" + d23 + ";" + d24 + ";" + d25 + ";" + d26 + ";" + d27 + ";" + d28 + ";" + d29 + ";" + d30 + ";" + d31 + ";" + dias_at + "|"; // Fin de Campo ;
+                    }
+                     }
+                        numb_linea = numb_linea + 1;
+                        });
+                        $('input[name="CampoDatosAsistencia"]').val(linea_tmp);
+           }
+          });
+        });
+    
+    $(document).ready(function () {
+     $("#btnmMostrar").click(function () {
+     var contenido = $('#CampoDatosAsistencia').val();
+     
+     alert(contenido);
+     });
+      });
+      
+      
+            function getVal(e)
+    {
+
+
+        var Table = e.parentNode.parentNode.parentNode;
+        var row= e.parentNode;
+        var rowTotalAtendidos = Table.rows[Table.rows.length-2];
+        var rowTotalInasistencia = Table.rows[Table.rows.length-1];
+        
+        var TotalLinea = parseInt(row.cells[row.cells.length-1].innerHTML) || 0;
+        var TotalAtendidosDia = parseInt(rowTotalAtendidos.cells[e.cellIndex-6].innerHTML) || 0;
+        var TotalAtendidosLinea = parseInt(rowTotalAtendidos.cells[rowTotalAtendidos.cells.length-1].innerHTML) || 0;
+
+        var TotalInasistenciaDia = parseInt(rowTotalInasistencia.cells[e.cellIndex-6].innerHTML) || 0;
+        var TotalInasistenciaLinea = parseInt(rowTotalInasistencia.cells[rowTotalInasistencia.cells.length-1].innerHTML) || 0;
+ 
+        switch (e.innerHTML)
+        {
+        case "P":
+          e.innerHTML = "A";
+          e.style.backgroundColor = '#ff0000';
+          TotalLinea -= 1;
+          TotalAtendidosDia -= 1;
+          TotalAtendidosLinea -= 1;
+          TotalInasistenciaDia += 1;
+          TotalInasistenciaLinea += 1;
+          break;
+        case "A":
+          e.innerHTML = "F";
+          e.style.backgroundColor = '#ffff00';
+          TotalLinea += 1;
+          TotalAtendidosDia += 1;
+          TotalAtendidosLinea += 1;
+          TotalInasistenciaDia -= 1;
+          TotalInasistenciaLinea -= 1;
+          break;
+        case "F":
+          e.innerHTML = "H";
+          e.style.backgroundColor = '#00f5ff';
+          break;
+        case "H":
+          e.innerHTML = "P";
+          e.style.backgroundColor = '#008b00';
+          break;
+        }
+        
+        if (e.innerHTML != "") // && LetraNueva != LetraActual)
+        {
+            row.cells[row.cells.length-1].innerHTML = TotalLinea || "";
+            rowTotalAtendidos.cells[e.cellIndex-6].innerHTML = TotalAtendidosDia || "";
+            rowTotalAtendidos.cells[rowTotalAtendidos.cells.length-1].innerHTML = TotalAtendidosLinea || "";
+
+            rowTotalInasistencia.cells[e.cellIndex-6].innerHTML = TotalInasistenciaDia || "";
+            rowTotalInasistencia.cells[rowTotalInasistencia.cells.length-1].innerHTML = TotalInasistenciaLinea || "";
+        }
+    }    
+    </script>
+
+</head>
+<body>
+    &nbsp;<form id="form1" runat="server">
+        <div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="titulo_form">
+                        &nbsp;Registro de Atención
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <table width="100%" border="0" cellspacing="1" cellpadding="1">
+                            <tr>
+                                <td class="texto_form">
+                                    Institución</td>
+                                <td class="linea_inferior" style="text-align: left; width: 549px;">
+                                    <asp:DropDownList ID="ddown001" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddown001_SelectedIndexChanged"
+                                        Width="439px" Font-Size="11px">
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="225" class="texto_form">
+                                    Proyecto</td>
+                                <td class="linea_inferior" style="text-align: left; width: 549px;">
+                                    <asp:DropDownList ID="ddown002" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddown002_SelectedIndexChanged"
+                                        Width="439px" Font-Size="11px">
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="texto_form" width="225" style="height: 23px">
+                                    Inmueble del Proyecto</td>
+                                <td class="linea_inferior" style="text-align: left; width: 549px; height: 23px;">
+                                    <asp:DropDownList ID="ddown003" runat="server" AutoPostBack="True" Width="439px"
+                                        OnSelectedIndexChanged="ddown003_SelectedIndexChanged" Font-Size="11px">
+                                    </asp:DropDownList></td>
+                            </tr>
+                            <tr>
+                                <td class="texto_form">
+                                    Días Atención
+                                </td>
+                                <td class="linea_inferior" style="text-align: left; width: 549px;">
+                                    <asp:Label ID="lbl001" runat="server" Font-Size="11px">----</asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td class="texto_form">
+                                    Sexo</td>
+                                <td class="linea_inferior" style="text-align: left; width: 549px;">
+                                    <table border="0" cellpadding="1" cellspacing="0">
+                                        <tr>
+                                            <td width="50">
+                                                <asp:RadioButton ID="rdo_SexoA" runat="server" Font-Size="11px" GroupName="rdosexo"
+                                                    Text="Ambos" Checked="True" AutoPostBack="True" OnCheckedChanged="rdo_SexoA_CheckedChanged" /></td>
+                                            <td width="50">
+                                                <asp:RadioButton ID="rdo_SexoM" runat="server" Font-Size="11px" GroupName="rdosexo"
+                                                    Text="Masculino" AutoPostBack="True" OnCheckedChanged="rdo_SexoA_CheckedChanged" /></td>
+                                            <td>
+                                                <asp:RadioButton ID="rdo_SexoF" runat="server" Font-Size="11px" GroupName="rdosexo"
+                                                    Text="Femenino" AutoPostBack="True" OnCheckedChanged="rdo_SexoA_CheckedChanged" /></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="texto_form">
+                                    Período</td>
+                                <td class="linea_inferior" style="text-align: left; width: 549px;">
+                                    <table border="0" cellpadding="1" cellspacing="0">
+                                        <tr>
+                                            <td width="100">
+                                                <asp:DropDownList ID="ddown_MesCierre" runat="server" Font-Size="11px" Width="150px"
+                                                    AutoPostBack="True" OnSelectedIndexChanged="ddown003_SelectedIndexChanged">
+                                                    <asp:ListItem>Seleccione mes</asp:ListItem>
+                                                    <asp:ListItem Value="01">Enero</asp:ListItem>
+                                                    <asp:ListItem Value="02">Febrero</asp:ListItem>
+                                                    <asp:ListItem Value="03">Marzo</asp:ListItem>
+                                                    <asp:ListItem Value="04">Abril</asp:ListItem>
+                                                    <asp:ListItem Value="05">Mayo</asp:ListItem>
+                                                    <asp:ListItem Value="06">Junio</asp:ListItem>
+                                                    <asp:ListItem Value="07">Julio</asp:ListItem>
+                                                    <asp:ListItem Value="08">Agosto</asp:ListItem>
+                                                    <asp:ListItem Value="09">Septiembre</asp:ListItem>
+                                                    <asp:ListItem Value="10">Octubre</asp:ListItem>
+                                                    <asp:ListItem Value="11">Noviembre</asp:ListItem>
+                                                    <asp:ListItem Value="12">Diciembre</asp:ListItem>
+                                                </asp:DropDownList></td>
+                                            <td style="width: 71px">
+                                                <asp:DropDownList ID="ddown_AnoCierre" runat="server" Font-Size="11px" Width="70px"
+                                                    AutoPostBack="True" OnSelectedIndexChanged="ddown003_SelectedIndexChanged">
+                                                </asp:DropDownList></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="height: 30px">
+                        
+                        <asp:Button ID="Imb007" runat="server" Text="Exportar a Excel" Visible="true" OnClick="Imb007_Click1" />
+                        &nbsp;
+                       
+                        <asp:Button ID="Imb001" runat="server" Text="Atras" Visible="true" OnClick="Imb001_Click" />
+                        
+                        
+                        
+                        &nbsp;
+                       
+                        <asp:Button ID="Imb003" runat="server" Text="Guardar" Visible="true" OnClick="Imb003_Click" />
+                        
+                        
+                        &nbsp; 
+                       
+                        <asp:Button ID="Imb004" runat="server" Text="Imprimir" Visible="true" OnClick="Imb004_Click" />
+                        
+                        
+                        &nbsp;
+                       
+                        <asp:Button ID="imb005" runat="server" Text="Regenerar" Visible="true" OnClick="imb005_Click" />
+                        
+                        
+                        &nbsp;
+                        
+                        <asp:Button ID="WebImageButton1" runat="server" Text="Volver" Visible="true" OnClick="imb_volver_Click" />
+                        
+                        
+                        &nbsp;
+                      
+                        <asp:Button ID="Imb006" runat="server" Text="Confirmar y guardar asistencia" Visible="true" OnClick="imb006_Click" />
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="height: 30px">
+                        <asp:Label ID="lbl003" runat="server" CssClass="texto_rojo_peque" Text="No hay datos para el periodo consultado"
+                            Visible="False"></asp:Label>
+                        <asp:Label ID="lbl002" runat="server" Text="Este mes fue cerrado, sólo Administrador podrá realizar cambios."
+                            Visible="False" CssClass="texto_rojo_peque"></asp:Label><br />
+                        <asp:Label ID="lbl004" runat="server" CssClass="texto_rojo_peque" Text="Cambios Realizados."
+                            Visible="False"></asp:Label>
+                        <asp:Label ID="lbl005" runat="server" CssClass="texto_rojo_peque" Text="Asistencia Confirmada"
+                            Visible="False"></asp:Label>
+                        <asp:Label ID="lbl_error_dia" runat="server" CssClass="texto_rojo_peque" Text="Solo se pueden realizar cambios sobre el día en curso."
+                            Visible="False"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top" style="text-align: left">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" style="text-align: right">
+                        <br />
+                    </td>
+                </tr>
+              
+                <tr>
+                    <td align="center" valign="middle">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <div runat="server" id="exportargrilla">
+                            <asp:Table ID="NuevaGrilla" runat="server" EnableViewState="true" GridLines="Both"
+                                Width="98%" BorderStyle="Double" BorderWidth="5px">
+                            </asp:Table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <asp:HiddenField ID="CampoDatosAsistencia" Value="VACIO" runat="server" />
+        <asp:HiddenField ID="GrillaHTML" Value="" runat="server" />
+    </form>
+</body>
+</html>

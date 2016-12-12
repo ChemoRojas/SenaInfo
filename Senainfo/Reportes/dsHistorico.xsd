@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsHistorico" targetNamespace="http://tempuri.org/dsHistorico.xsd" xmlns:mstns="http://tempuri.org/dsHistorico.xsd" xmlns="http://tempuri.org/dsHistorico.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsHistorico" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtHistorico">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" type="xs:int" />
+              <xs:element name="FechaIngreso" type="xs:string" minOccurs="0" />
+              <xs:element name="causal1" type="xs:int" minOccurs="0" />
+              <xs:element name="causal2" type="xs:int" minOccurs="0" />
+              <xs:element name="causal3" type="xs:int" minOccurs="0" />
+              <xs:element name="Causal_Ingreso_1" type="xs:string" minOccurs="0" />
+              <xs:element name="Causal_Ingreso_2" type="xs:string" minOccurs="0" />
+              <xs:element name="Causal_Ingreso_3" type="xs:string" minOccurs="0" />
+              <xs:element name="rut" type="xs:string" minOccurs="0" />
+              <xs:element name="paterno" type="xs:string" minOccurs="0" />
+              <xs:element name="materno" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombres" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" />
+              <xs:element name="proyecto" type="xs:string" />
+              <xs:element name="codinst" type="xs:int" />
+              <xs:element name="Nombreints" type="xs:string" minOccurs="0" />
+              <xs:element name="modelo_cod" type="xs:int" />
+              <xs:element name="Modelo" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaEgreso" type="xs:string" minOccurs="0" />
+              <xs:element name="CodCausalEgreso" type="xs:int" />
+              <xs:element name="Causal_Egreso" type="xs:string" />
+              <xs:element name="CodConQuienEgresa" type="xs:int" />
+              <xs:element name="Con_Quien_Egresa" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisEscolar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="escolaridad" type="xs:string" minOccurs="0" />
+              <xs:element name="ultimo" type="xs:int" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="asistencia" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisMaltrato">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="agresor" type="xs:string" minOccurs="0" />
+              <xs:element name="relacion" type="xs:string" minOccurs="0" />
+              <xs:element name="maltrato" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisDroga">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="droga" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisPsicologico">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="instrumento" type="xs:string" minOccurs="0" />
+              <xs:element name="medicion" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisSocial">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="calle" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="tuicion" type="xs:string" minOccurs="0" />
+              <xs:element name="especial" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisCapacitacion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="area" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="estado" type="xs:string" minOccurs="0" />
+              <xs:element name="organismo" type="xs:string" minOccurs="0" />
+              <xs:element name="inicio" type="xs:string" minOccurs="0" />
+              <xs:element name="termino" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisLaboral">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="ingreso" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="area" type="xs:string" minOccurs="0" />
+              <xs:element name="situacion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisJudiciales">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="tribunal" type="xs:string" minOccurs="0" />
+              <xs:element name="materia" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisPfti">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="agresor" type="xs:string" minOccurs="0" />
+              <xs:element name="relacion" type="xs:string" minOccurs="0" />
+              <xs:element name="categoria" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisDiscapacidad">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaDiagnostico" type="xs:string" minOccurs="0" />
+              <xs:element name="discapacidad" type="xs:string" minOccurs="0" />
+              <xs:element name="nivel" type="xs:string" minOccurs="0" />
+              <xs:element name="Observacion" type="xs:string" />
+              <xs:element name="ICodIE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisSalud">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="codproyecto" type="xs:int" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaDiagnostico" type="xs:string" minOccurs="0" />
+              <xs:element name="hecho" type="xs:string" minOccurs="0" />
+              <xs:element name="atencion" type="xs:string" minOccurs="0" />
+              <xs:element name="lugar" type="xs:string" minOccurs="0" />
+              <xs:element name="ICodIE" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisEnfermedades">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="ICodIE" type="xs:int" />
+              <xs:element name="codproyecto" type="xs:int" />
+              <xs:element name="proyecto" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaDiagnostico" type="xs:string" minOccurs="0" />
+              <xs:element name="enfermedad" type="xs:string" minOccurs="0" />
+              <xs:element name="Observacion" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHisPersonas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo" type="xs:int" />
+              <xs:element name="Nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="relacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Situacion_1" type="xs:string" minOccurs="0" />
+              <xs:element name="Situacion_2" type="xs:string" minOccurs="0" />
+              <xs:element name="Situacion_3" type="xs:string" minOccurs="0" />
+              <xs:element name="comentario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRendicionCuentasFirma" targetNamespace="http://tempuri.org/dsRendicionCuentasFirma.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsRendicionCuentasFirma.xsd" xmlns:mstns="http://tempuri.org/dsRendicionCuentasFirma.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="dsRendicionCuentasFirma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CodProyecto" type="xs:int" />
+        <xs:element name="AnoMes" type="xs:int" />
+        <xs:element name="Correlativo" type="xs:int" />
+        <xs:element name="MesNombre" type="xs:string" />
+        <xs:element name="Folio" type="xs:string" />
+        <xs:element name="CodInstitucion" type="xs:int" />
+        <xs:element name="Institucion" type="xs:string" />
+        <xs:element name="RutInstitucion" type="xs:string" />
+        <xs:element name="Proyecto" type="xs:string" />
+        <xs:element name="CuentaCorrienteNumero" type="xs:string" />
+        <xs:element name="CodBanco" type="xs:int" />
+        <xs:element name="Banco" type="xs:string" />
+        <xs:element name="NumeroPlazas" type="xs:int" />
+        <xs:element name="NumChequeReintegro" type="xs:int" />
+        <xs:element name="MontoReintegro" type="xs:int" />
+        <xs:element name="AnoPptoReintegro" type="xs:int" />
+        <xs:element name="SaldoAnterior" type="xs:int" />
+        <xs:element name="Transferencia_Subvencion" type="xs:int" />
+        <xs:element name="Transferencia_Remesa" type="xs:int" />
+        <xs:element name="OtrosAportesSename_Aguinaldos" type="xs:int" />
+        <xs:element name="OtrosAportesSename_Otros" type="xs:int" />
+        <xs:element name="IngresosDistintosSename_AportesInstituciones" type="xs:int" />
+        <xs:element name="IngresosDistintosSename_Donaciones" type="xs:int" />
+        <xs:element name="IngresosDistintosSename_Otros" type="xs:int" />
+        <xs:element name="IngresosPorInteresesGeneradosMensual_Otros" type="xs:int" />
+        <xs:element name="RescateDelFondoDap_Otros" type="xs:int" />
+        <xs:element name="Ingresos" type="xs:int" />
+        <xs:element name="TotalDisponible" type="xs:int" />
+        <xs:element name="GastosPersonal" type="xs:int" />
+        <xs:element name="GastosOperacion" type="xs:int" />
+        <xs:element name="GastosInversion" type="xs:int" />
+        <xs:element name="Devolucion" type="xs:int" />
+        <xs:element name="PagoProvisionPorIndemnizacion" type="xs:int" />
+        <xs:element name="GastosDeInversionDap" type="xs:int" />
+        <xs:element name="Egresos" type="xs:int" />
+        <xs:element name="SaldoMes" type="xs:int" />
+        <xs:element name="DeudaAnterior" type="xs:int" />
+        <xs:element name="DeudaMes" type="xs:int" />
+        <xs:element name="FechaActualizacion" type="xs:dateTime" />
+        <xs:element name="IdUsuarioActualizacion" type="xs:int" />
+        <xs:element name="Director" type="xs:string" />
+        <xs:element name="Firma" type="xs:string" />
+        <xs:element name="Cargo" type="xs:string" />
+        <xs:element name="Enviado" type="xs:int" />
+        <xs:element name="FechaEnviado" type="xs:dateTime" />
+        <xs:element name="ProvisionIndemnizacion" type="xs:int" />
+        <xs:element name="SaldoReal" type="xs:int" />
+        <xs:element name="IdUsuarioEnvio" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

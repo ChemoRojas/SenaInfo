@@ -1,0 +1,136 @@
+LIMPIAR
+
+    protected void imb_003aa_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void imb_003a_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void imb_003b_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void imb_004c_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void imb_003d_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void imb_003e_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void imb_003f_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void imb_003g_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+    protected void btn003h_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+    }
+
+
+HISTORICO
+
+    protected void btn004aa_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoEscolar.aspx", 550, 450);
+    }
+    protected void imb_004a_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoMaltrato.aspx", 550, 450);
+    }
+    protected void imb_004b_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoDroga.aspx", 550, 450);
+    }
+    protected void imb_005c_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoPsicologico.aspx", 550, 450);
+    }
+    protected void imb_004d_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoSocial.aspx", 550, 450);
+    }
+    protected void imb_004e_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoCapacitacion.aspx", 550, 450);
+    }
+    protected void imb_004f_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoSituacionLaboral.aspx", 550, 450);
+    }
+    protected void imb_004g_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoHechosJudiciales.aspx", 550, 450);
+    }
+    protected void btn004h_Click(object sender, EventArgs e)
+    {
+        window.open(this.Page, "ninos_HistoricoDiagnosticoPeoresFormas.aspx", 550, 450);
+    }
+
+
+VOLVER
+
+    protected void btn005aa_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void imb_005a_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void imb_005b_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void imb_006c_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void imb_005d_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void imb_005e_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void imb_005f_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void imb_005g_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }
+    protected void btn005h_Click(object sender, EventArgs e)
+    {
+        clean_tab4();
+        Ninos_busqueda1.Visible = true;
+        utab4.Visible = false;
+    }

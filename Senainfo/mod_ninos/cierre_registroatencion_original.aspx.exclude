@@ -1,0 +1,316 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableEventValidation="false" CodeFile="cierre_registroatencion.aspx.cs" Inherits="mod_institucion_cierre_registroatencion" %>
+<%--
+<%@ <%--Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>--%>
+
+<%@ Register Assembly="Infragistics.WebUI.UltraWebCalcManager.v5.3, Version=5.3.20053.50, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.WebUI.UltraWebCalcManager" TagPrefix="igcalc" %>
+
+<%@ Register Assembly="Infragistics.WebUI.UltraWebGrid.ExcelExport.v5.3, Version=5.3.20053.50, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.WebUI.UltraWebGrid.ExcelExport" TagPrefix="cc1" %>
+
+<%@ Register Assembly="Infragistics.WebUI.UltraWebGrid.v5.3, Version=5.3.20053.50, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.WebUI.UltraWebGrid" TagPrefix="igtbl" %>
+
+<%@ Register Assembly="Infragistics.WebUI.WebDataInput.v5.3, Version=5.3.20053.50, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb"
+    Namespace="Infragistics.WebUI.WebDataInput" TagPrefix="igtxt" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Página sin título</title>
+    <link href="../css/sename_aplica.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="titulo_form">&nbsp;Registro de Atención  
+          </td>
+        </tr>
+        <tr>
+          <td valign="top"><table width="100%" border="0" cellspacing="1" cellpadding="1">
+
+              <tr>
+                <td class="texto_form">Institución</td>
+                <td class="linea_inferior" style="text-align: left">
+                    <asp:DropDownList ID="ddown001" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddown001_SelectedIndexChanged" Width="439px" Font-Size="11px"></asp:DropDownList>              
+                </td>
+              </tr>
+              <tr>
+                <td width="225" class="texto_form">Proyecto</td>
+                <td class="linea_inferior" style="text-align: left">
+                    <asp:DropDownList ID="ddown002" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddown002_SelectedIndexChanged" Width="439px" Font-Size="11px"></asp:DropDownList>                    
+                </td>
+              </tr>
+              <tr>
+                  <td class="texto_form" width="225">
+                      Inmueble del Proyecto</td>
+                  <td class="linea_inferior" style="text-align: left">
+                      <asp:DropDownList ID="ddown003" runat="server" AutoPostBack="True"
+                          Width="439px" OnSelectedIndexChanged="ddown003_SelectedIndexChanged" Font-Size="11px">
+                      </asp:DropDownList></td>
+              </tr>
+              <tr>
+                <td class="texto_form">Días Atención </td>
+                <td class="linea_inferior" style="text-align: left">
+                    <asp:Label ID="lbl001" runat="server" Font-Size="11px">----</asp:Label></td>
+              </tr>
+              <tr>
+                <td class="texto_form">Sexo</td>
+                <td class="linea_inferior" style="text-align: left">
+                    <table border="0" cellpadding="1" cellspacing="0">
+                        <tr>
+                            <td width="50">
+                                <asp:RadioButton ID="rdo_SexoA" runat="server" Font-Size="11px" GroupName="rdosexo"
+                                    Text="Ambos" Checked="True" AutoPostBack="True" OnCheckedChanged="rdo_SexoA_CheckedChanged" /></td>
+                            <td width="50">
+                                <asp:RadioButton ID="rdo_SexoM" runat="server" Font-Size="11px" GroupName="rdosexo"
+                                    Text="Masculino" AutoPostBack="True" OnCheckedChanged="rdo_SexoA_CheckedChanged" /></td>
+                            <td>
+                                <asp:RadioButton ID="rdo_SexoF" runat="server" Font-Size="11px" GroupName="rdosexo"
+                                    Text="Femenino" AutoPostBack="True" OnCheckedChanged="rdo_SexoA_CheckedChanged" /></td>
+                        </tr>
+                    </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="texto_form">Período</td>
+                <td class="linea_inferior" style="text-align: left">
+                    <table border="0" cellpadding="1" cellspacing="0">
+                        <tr>
+                            <td width="100">
+                                <asp:DropDownList ID="ddown_MesCierre" runat="server" Font-Size="11px" Width="150px" AutoPostBack="True" OnSelectedIndexChanged="ddown003_SelectedIndexChanged">
+                                    <asp:ListItem>Seleccione mes</asp:ListItem>
+                                    <asp:ListItem Value="01">Enero</asp:ListItem>
+                                    <asp:ListItem Value="02">Febrero</asp:ListItem>
+                                    <asp:ListItem Value="03">Marzo</asp:ListItem>
+                                    <asp:ListItem Value="04">Abril</asp:ListItem>
+                                    <asp:ListItem Value="05">Mayo</asp:ListItem>
+                                    <asp:ListItem Value="06">Junio</asp:ListItem>
+                                    <asp:ListItem Value="07">Julio</asp:ListItem>
+                                    <asp:ListItem Value="08">Agosto</asp:ListItem>
+                                    <asp:ListItem Value="09">Septiembre</asp:ListItem>
+                                    <asp:ListItem Value="10">Octubre</asp:ListItem>
+                                    <asp:ListItem Value="11">Noviembre</asp:ListItem>
+                                    <asp:ListItem Value="12">Diciembre</asp:ListItem>
+                                </asp:DropDownList></td>
+                            <td style="width: 71px">
+                                <asp:DropDownList ID="ddown_AnoCierre" runat="server" Font-Size="11px" Width="70px" AutoPostBack="True" OnSelectedIndexChanged="ddown003_SelectedIndexChanged">
+                                </asp:DropDownList></td>
+                        </tr>
+                    </table>
+                </td>
+              </tr>
+
+          </table>
+          </td>
+        </tr>
+        <tr>
+            <td align=center>
+            <igtxt:webimagebutton id="Imb007" runat="server" text="Exportar a Excel" UseBrowserDefaults="False" OnClick="Imb007_Click" Visible="False">
+                  <RoundedCorners HeightOfBottomEdge="0" HoverImageUrl="ig_butMac2.gif" ImageUrl="ig_butMac1.gif"
+                      MaxHeight="23" MaxWidth="300" PressedImageUrl="ig_butMac4.gif" RenderingType="FileImages"
+                      WidthOfRightEdge="13" />
+              </igtxt:webimagebutton>
+              &nbsp;
+              <igtxt:webimagebutton id="Imb001" runat="server" text="Atras" UseBrowserDefaults="False" OnClick="Imb001_Click">
+                  <RoundedCorners HeightOfBottomEdge="0" HoverImageUrl="ig_butMac2.gif" ImageUrl="ig_butMac1.gif"
+                      MaxHeight="23" MaxWidth="300" PressedImageUrl="ig_butMac4.gif" RenderingType="FileImages"
+                      WidthOfRightEdge="13" />
+              </igtxt:webimagebutton>
+              &nbsp;
+              <igtxt:webimagebutton id="Imb003" runat="server" text="Guardar" UseBrowserDefaults="False" OnClick="Imb003_Click">
+                  <RoundedCorners HeightOfBottomEdge="0" HoverImageUrl="ig_butMac2.gif" ImageUrl="ig_butMac1.gif"
+                      MaxHeight="23" MaxWidth="300" PressedImageUrl="ig_butMac4.gif" RenderingType="FileImages"
+                      WidthOfRightEdge="13" />
+              </igtxt:webimagebutton>
+              &nbsp; &nbsp;<igtxt:webimagebutton id="Imb004" runat="server" text="Imprimir" UseBrowserDefaults="False" OnClick="Imb004_Click" Visible="False">
+                  <RoundedCorners HeightOfBottomEdge="0" HoverImageUrl="ig_butMac2.gif" ImageUrl="ig_butMac1.gif"
+                      MaxHeight="23" MaxWidth="300" PressedImageUrl="ig_butMac4.gif" RenderingType="FileImages"
+                      WidthOfRightEdge="13" />
+              </igtxt:webimagebutton>
+              &nbsp;
+              <igtxt:webimagebutton id="imb005" runat="server" text="Regenerar" UseBrowserDefaults="False" OnClick="imb005_Click" Visible="False">
+                  <RoundedCorners HeightOfBottomEdge="0" HoverImageUrl="ig_butMac2.gif" ImageUrl="ig_butMac1.gif"
+                      MaxHeight="23" MaxWidth="300" PressedImageUrl="ig_butMac4.gif" RenderingType="FileImages"
+                      WidthOfRightEdge="13" />
+              </igtxt:WebImageButton>
+                &nbsp;&nbsp;
+                <igtxt:WebImageButton ID="WebImageButton1" runat="server" OnClick="imb_volver_Click"
+                    Text="Volver" UseBrowserDefaults="False">
+                    <RoundedCorners HeightOfBottomEdge="0" HoverImageUrl="ig_butMac2.gif" ImageUrl="ig_butMac1.gif"
+                        MaxHeight="23" MaxWidth="300" PressedImageUrl="ig_butMac4.gif" RenderingType="FileImages"
+                        WidthOfRightEdge="13" />
+                </igtxt:WebImageButton>
+                &nbsp;
+                <igtxt:webimagebutton id="Imb006" runat="server" text="Confirmar y guardar asistencia" UseBrowserDefaults="False" OnClick="imb006_Click" Visible="False">
+                    <RoundedCorners HeightOfBottomEdge="0" HoverImageUrl="ig_butMac2.gif" ImageUrl="ig_butMac1.gif"
+                      MaxHeight="23" MaxWidth="300" PressedImageUrl="ig_butMac4.gif" RenderingType="FileImages"
+                      WidthOfRightEdge="13" />
+                </igtxt:WebImageButton>
+              </td></tr>
+          <tr>
+              <td align="center" style="height: 30px">
+              <asp:Label ID="lbl003" runat="server" CssClass="texto_rojo_peque" Text="No hay datos para el periodo consultado"
+                  Visible="False"></asp:Label>
+              <asp:Label ID="lbl002" runat="server" Text="Este mes fue cerrado, sólo Administrador podrá realizar cambios."
+                  Visible="False" CssClass="texto_rojo_peque"></asp:Label><br />
+              <asp:Label ID="lbl004" runat="server" CssClass="texto_rojo_peque" Text="Cambios Realizados."
+                  Visible="False"></asp:Label>
+              <asp:Label ID="lbl005" runat="server" CssClass="texto_rojo_peque" Text="Asistencia Confirmada"
+                  Visible="False"></asp:Label>
+                  <asp:Label ID="lbl_error_dia" runat="server" CssClass="texto_rojo_peque" Text="Solo se pueden realizar cambios sobre el día en curso."
+                      Visible="False"></asp:Label>
+              </td>
+          </tr>
+          
+        <tr>
+          <td align="center" valign="top" style="text-align: left">
+<igtbl:ultrawebgrid id="grd001" runat="server" height="230px" visible="False" width="99%" OnClick="grd001_Click" OnClickCellButton="grd001_ClickCellButton">
+<DisplayLayout Version="3.00" CellClickActionDefault="Edit" HeaderClickActionDefault="SortSingle" Name="grd001" BorderCollapseDefault="Separate" TableLayout="Fixed" RowHeightDefault="21px" SelectTypeRowDefault="Single">
+<GroupByBox>
+<Style BorderColor="Window" BackColor="ActiveBorder"></Style>
+</GroupByBox>
+
+<FooterStyleDefault BorderWidth="1px" BorderStyle="Solid" BackColor="LightGray">
+<BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White"></BorderDetails>
+</FooterStyleDefault>
+
+<RowStyleDefault BorderWidth="1px" BorderColor="Black" BorderStyle="Solid" Font-Names="Arial" Font-Size="11px">
+<BorderDetails WidthLeft="0px" WidthTop="0px"></BorderDetails>
+
+<Padding Left="3px"></Padding>
+</RowStyleDefault>
+
+<SelectedRowStyleDefault ForeColor="White" BackColor="#F09D21" CustomRules="background-image:url(/ig_common/images/Office2003SelRow.png);background-repeat:repeat-x;"></SelectedRowStyleDefault>
+
+<HeaderStyleDefault ForeColor="#E1E8F5" Wrap="True" BorderStyle="Solid" Font-Size="X-Small" Font-Names="Arial" Font-Bold="True" BackColor="#11459E" CustomRules="background-image:url(/ig_common/images/Office2003BlueBG.png);background-repeat:repeat-x;">
+<BorderDetails ColorTop="173, 197, 235" WidthLeft="1px" WidthTop="1px" ColorLeft="173, 197, 235"></BorderDetails>
+</HeaderStyleDefault>
+
+<RowAlternateStyleDefault BackColor="#EFF3FB" Font-Names="Arial" Font-Size="11px"></RowAlternateStyleDefault>
+
+<EditCellStyleDefault BorderWidth="0px" BorderStyle="None"></EditCellStyleDefault>
+
+<FrameStyle BorderWidth="1px" BorderStyle="Solid" Font-Size="8pt" Font-Names="Verdana" Width="99%" Height="230px"></FrameStyle>
+
+<Pager>
+<Style BorderWidth="1px" BorderStyle="Solid" BackColor="LightGray">
+<BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White"></BorderDetails>
+</Style>
+</Pager>
+
+<AddNewBox>
+<Style BorderWidth="1px" BorderColor="InactiveCaption" BorderStyle="Solid" BackColor="Window">
+<BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White"></BorderDetails>
+</Style>
+</AddNewBox>
+</DisplayLayout>
+<Bands>
+<igtbl:UltraGridBand><RowEditTemplate>
+                              <br  />
+                              <p align="center">
+                                  <input id="igtbl_reOkBtn" onclick="igtbl_gRowEditButtonClick(event);" style="width: 50px"
+                                      type="button" value="OK"  />&nbsp;
+                                  <input id="igtbl_reCancelBtn" onclick="igtbl_gRowEditButtonClick(event);" style="width: 50px"
+                                      type="button" value="Cancel"  /></p>
+                          
+</RowEditTemplate>
+
+<AddNewRow View="NotSet" Visible="NotSet"></AddNewRow>
+
+<RowTemplateStyle BorderColor="Window" BorderStyle="Ridge" BackColor="Window">
+<BorderDetails WidthRight="3px" WidthLeft="3px" WidthTop="3px" WidthBottom="3px"></BorderDetails>
+</RowTemplateStyle>
+</igtbl:UltraGridBand>
+</Bands>
+</igtbl:ultrawebgrid>
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" style="text-align: right"><br /><igtbl:ultrawebgrid id="grd002" runat="server" height="100px" visible="False" width="97%">
+              <DisplayLayout Version="3.00" CellClickActionDefault="Edit" HeaderClickActionDefault="SortSingle" Name="grd002" BorderCollapseDefault="Separate" TableLayout="Fixed" RowHeightDefault="21px" SelectTypeRowDefault="Single">
+                  <GroupByBox>
+                      <Style BackColor="ActiveBorder" BorderColor="Window"></Style>
+                  </GroupByBox>
+                  <FooterStyleDefault BorderWidth="1px" BorderStyle="Solid" BackColor="LightGray">
+                      <BorderDetails ColorLeft="White" ColorTop="White" WidthLeft="1px" WidthTop="1px" />
+                  </FooterStyleDefault>
+                  <RowStyleDefault BorderWidth="1px" BorderColor="Black" BorderStyle="Solid">
+                      <BorderDetails WidthLeft="0px" WidthTop="0px" />
+                      <Padding Left="3px" />
+                  </RowStyleDefault>
+                  <SelectedRowStyleDefault ForeColor="White" BackColor="#F09D21" CustomRules="background-image:url(/ig_common/images/Office2003SelRow.png);background-repeat:repeat-x;">
+                  </SelectedRowStyleDefault>
+                  <HeaderStyleDefault ForeColor="#E1E8F5" Wrap="True" BorderStyle="Solid" Font-Size="X-Small" Font-Names="Arial" Font-Bold="True" BackColor="#11459E" CustomRules="background-image:url(/ig_common/images/Office2003BlueBG.png);background-repeat:repeat-x;">
+                      <BorderDetails ColorLeft="173, 197, 235" ColorTop="173, 197, 235" WidthLeft="1px"
+                          WidthTop="1px" />
+                  </HeaderStyleDefault>
+                  <RowAlternateStyleDefault BackColor="#EFF3FB">
+                  </RowAlternateStyleDefault>
+                  <EditCellStyleDefault BorderWidth="0px" BorderStyle="None">
+                  </EditCellStyleDefault>
+                  <FrameStyle BorderWidth="1px" BorderStyle="Solid" Font-Size="8pt" Font-Names="Verdana" Width="97%" Height="100px">
+                  </FrameStyle>
+                  <Pager>
+                      <Style BackColor="LightGray" BorderStyle="Solid" BorderWidth="1px">
+<BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White"></BorderDetails>
+</Style>
+                  </Pager>
+                  <AddNewBox>
+                      <Style BackColor="Window" BorderColor="InactiveCaption" BorderStyle="Solid" BorderWidth="1px">
+<BorderDetails ColorTop="White" WidthLeft="1px" WidthTop="1px" ColorLeft="White"></BorderDetails>
+</Style>
+                  </AddNewBox>
+                  <ClientSideEvents AfterCellUpdateHandler="" AfterColumnMoveHandler="" AfterColumnSizeChangeHandler=""
+                      AfterEnterEditModeHandler="" AfterExitEditModeHandler="" AfterRowActivateHandler=""
+                      AfterRowCollapsedHandler="" AfterRowDeletedHandler="" AfterRowExpandedHandler=""
+                      AfterRowInsertHandler="" AfterRowSizeChangeHandler="" AfterRowTemplateCloseHandler=""
+                      AfterRowTemplateOpenHandler="" AfterRowUpdateHandler="" AfterSelectChangeHandler=""
+                      AfterSortColumnHandler="" AfterXmlHttpResponseProcessed="" BeforeCellChangeHandler=""
+                      BeforeCellUpdateHandler="" BeforeColumnMoveHandler="" BeforeColumnSizeChangeHandler=""
+                      BeforeEnterEditModeHandler="" BeforeExitEditModeHandler="" BeforeRowActivateHandler=""
+                      BeforeRowCollapsedHandler="" BeforeRowDeletedHandler="" BeforeRowExpandedHandler=""
+                      BeforeRowInsertHandler="" BeforeRowSizeChangeHandler="" BeforeRowTemplateCloseHandler=""
+                      BeforeRowTemplateOpenHandler="" BeforeRowUpdateHandler="" BeforeSelectChangeHandler=""
+                      BeforeSortColumnHandler="" BeforeXmlHttpRequest="" CellChangeHandler="" CellClickHandler=""
+                      ClickCellButtonHandler="" ColumnDragHandler="" ColumnHeaderClickHandler="" DblClickHandler=""
+                      EditKeyDownHandler="" EditKeyUpHandler="" GridCornerImageClickHandler="" InitializeLayoutHandler=""
+                      InitializeRowHandler="" KeyDownHandler="" KeyUpHandler="" MouseDownHandler=""
+                      MouseOutHandler="" MouseOverHandler="" MouseUpHandler="" RowSelectorClickHandler=""
+                      TemplateUpdateCellsHandler="" TemplateUpdateControlsHandler="" ValueListSelChangeHandler=""
+                      XmlHTTPResponseHandler="" />
+              </DisplayLayout>
+              <Bands>
+                  <igtbl:UltraGridBand AddButtonCaption="" AddButtonToolTipText="" DataKeyField="">
+                      <RowEditTemplate>
+                          <br  />
+                          <p align="center">
+                              <input id="igtbl_reOkBtn" onclick="igtbl_gRowEditButtonClick(event);" style="width: 50px"
+                                      type="button" value="OK"  />&nbsp;
+                              <input id="igtbl_reCancelBtn" onclick="igtbl_gRowEditButtonClick(event);" style="width: 50px"
+                                      type="button" value="Cancel"  /></p>
+                      </RowEditTemplate>
+                      <AddNewRow View="NotSet" Visible="NotSet">
+                      </AddNewRow>
+                      <RowTemplateStyle BorderColor="Window" BorderStyle="Ridge" BackColor="Window">
+                          <BorderDetails WidthBottom="3px" WidthLeft="3px" WidthRight="3px" WidthTop="3px" />
+                      </RowTemplateStyle>
+                  </igtbl:UltraGridBand>
+              </Bands>
+          </igtbl:UltraWebGrid>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" valign="top">
+              <cc1:ultrawebgridexcelexporter id="UltraWebGridExcelExporter1" runat="server" DownloadName="registroatencion.XLS" WorksheetName="RESUMEN"></cc1:ultrawebgridexcelexporter>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </form>
+</body>
+</html>

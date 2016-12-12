@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsResumenAtencion" targetNamespace="http://tempuri.org/dsResumenAtencion.xsd" xmlns:mstns="http://tempuri.org/dsResumenAtencion.xsd" xmlns="http://tempuri.org/dsResumenAtencion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsResumenAtencion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtBody">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="aviso" type="xs:int" />
+              <xs:element name="cerrado" type="xs:int" />
+              <xs:element name="NroNinosVigentesMesAnteriorF" type="xs:int" />
+              <xs:element name="NroNinosVigentesMesAnteriorM" type="xs:int" />
+              <xs:element name="NroIngresosMesF" type="xs:int" />
+              <xs:element name="NroIngresosMesM" type="xs:int" />
+              <xs:element name="NroEgresosMesF" type="xs:int" />
+              <xs:element name="NroEgresosMesM" type="xs:int" />
+              <xs:element name="TotalDiasF" type="xs:int" />
+              <xs:element name="TotalDiasM" type="xs:int" />
+              <xs:element name="TotalDiasInasistenciaF" type="xs:int" />
+              <xs:element name="TotalDiasInasistenciaM" type="xs:int" />
+              <xs:element name="TotalDiasAtendidosF" type="xs:int" />
+              <xs:element name="TotalDiasAtendidosM" type="xs:int" />
+              <xs:element name="IntervencionesExigidas" type="xs:int" />
+              <xs:element name="NroIntervencionesMasF" type="xs:int" />
+              <xs:element name="NroIntervencionesMasM" type="xs:int" />
+              <xs:element name="NroIntervencionesMenosF" type="xs:int" />
+              <xs:element name="NroIntervencionesMenosM" type="xs:int" />
+              <xs:element name="NroIntervencionesIgualF" type="xs:int" />
+              <xs:element name="NroIntervencionesIgualM" type="xs:int" />
+              <xs:element name="TotalIntervencionF" type="xs:int" />
+              <xs:element name="TotalIntervencionM" type="xs:int" />
+              <xs:element name="PromedioIntervencionF" type="xs:double" />
+              <xs:element name="PromedioIntervencionM" type="xs:double" />
+              <xs:element name="TotalDiasPagarIntervencionesF" type="xs:int" />
+              <xs:element name="TotalDiasPagarIntervencionesM" type="xs:int" />
+              <xs:element name="fechacierre" type="xs:dateTime" />
+              <xs:element name="pago" type="xs:int" />
+              <xs:element name="TotalDiscapacidadGraveF" type="xs:int" />
+              <xs:element name="TotalDiscapacidadGraveM" type="xs:int" />
+              <xs:element name="TotalDiscapacidadOtrasF" type="xs:int" />
+              <xs:element name="TotalDiscapacidadOtrasM" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtHeader">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codproyecto" type="xs:int" minOccurs="0" />
+              <xs:element name="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="mes" type="xs:string" minOccurs="0" />
+              <xs:element name="ano" type="xs:int" minOccurs="0" />
+              <xs:element name="institucion" type="xs:string" minOccurs="0" />
+              <xs:element name="region" type="xs:string" minOccurs="0" />
+              <xs:element name="asistencial" type="xs:string" minOccurs="0" />
+              <xs:element name="modelo" type="xs:string" minOccurs="0" />
+              <xs:element name="pago" type="xs:string" minOccurs="0" />
+              <xs:element name="tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="diasatencion" type="xs:string" minOccurs="0" />
+              <xs:element name="dias" type="xs:int" minOccurs="0" />
+              <xs:element name="cerrado" type="xs:int" minOccurs="0" />
+              <xs:element name="numeroplazas" type="xs:int" minOccurs="0" />
+              <xs:element name="sexo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

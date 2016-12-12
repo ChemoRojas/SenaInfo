@@ -1,0 +1,830 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="DiagnosticoVulneraciones.aspx.cs" Inherits="mod_ninos_DiagnosticoVulneraciones" %>
+
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Assembly="SenameWebTextbox" Namespace="CustomWebControls" TagPrefix="cc1" %>
+
+
+
+<html lang="es">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="S">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+    <title>Diagnóstico Vulneraciones :: Senainfo :: Servicio Nacional de Menores</title>
+    <script src="../js/jquery-2.1.4.js"></script> 
+    <script src="../js/jquery-2.1.4.min.js"></script> 
+    <script src="../js/bootstrap.min.js"></script>     
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/jquery.validate.js"></script>
+    <script src="../js/jquery.Rut.js"></script>
+    <script src="../js/jquery.msgbox.min.js"></script>
+    <script src="../js/notify.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">   
+         
+
+
+    <script type="text/javascript">
+        function SetProgressPosition(e) {
+            var posx = 0;
+            var posy = 0;
+            if (!e) var e = window.event;
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            }
+            else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.documentElement.scrollLeft;
+                posy = e.clientY + document.documentElement.scrollTop;
+            }
+            document.getElementById('divProgress').style.top = posy + "px";
+        }
+        function MostrarDiagnostico(TipoDiagnostico, BoolMostrar) {
+                //$.alert('Ingreso realizado satisfactoriamente');
+                if (BoolMostrar == true) {
+                    $("#BtnOcultar" + TipoDiagnostico).show("fast");
+                    $("#BtnMostrar" + TipoDiagnostico).hide("fast");
+                }
+                else if (BoolMostrar == false) {
+                    $("#BtnMostrar" + TipoDiagnostico).show("fast");
+                    $("#BtnOcultar" + TipoDiagnostico).hide("fast");
+                }
+            DireccionarCoordenadas(event);
+            return false;
+        }
+        function DireccionarCoordenadas(e) {
+            var posx = 0;
+            var posy = 0;
+            if (!e) var e = window.event;
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            }
+            else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.documentElement.scrollLeft;
+                posy = e.clientY + document.documentElement.scrollTop;
+            }            
+            $('html, body').animate({ scrollTop: posy-44  }, 500);
+        }   
+
+    </script>
+</head>
+<body class="body-form well" onmousemove="SetProgressPosition(event)">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <Triggers>
+            </Triggers>
+            <ContentTemplate>
+
+                <div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br />
+
+                            <table class="table table-bordered table-col-fix table-condensed">
+                                <tbody>
+                                    <tr>
+                                        <th class="titulo-tabla" scope="row">Adulto problematiza vulneración de Derechos</th>
+                                        <td>
+                                            <asp:RadioButton ID="RbtnSi" runat="server" AutoPostBack="True" GroupName="rbtn1" Text="SI" />&nbsp;
+                                            <asp:RadioButton ID="RbtnNo" runat="server" AutoPostBack="True" GroupName="rbtn1" Text="NO" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <%-- COLLAPSE MALTRATO--%>
+
+                        <div class="col-md-12">
+                            <p class="titulo-form">Diagnóstico Maltrato </p>
+
+                            <asp:LinkButton ID="BtnMostrarMaltrato" runat="server" data-toggle="collapse" data-parent="#accordion" href="#CollapseMaltrato" aria-expanded="false" aria-controls="CollapseMaltrato"  Text="Agregar Diagnóstico Maltrato" CssClass="btn btn-primary btn-sm" OnClientClick="return MostrarDiagnostico('Maltrato', true)"  ></asp:LinkButton>
+                            <asp:LinkButton ID="BtnOcultarMaltrato" runat="server" data-toggle="collapse" data-parent="#accordion" href="#CollapseMaltrato" aria-expanded="false" aria-controls="CollapseMaltrato"  Text="Cancelar" CssClass="btn btn-primary btn-sm"  OnClientClick="return MostrarDiagnostico('Maltrato', false)"></asp:LinkButton>
+                            <br /><br />
+
+                            <div id="CollapseMaltrato" runat="server" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                    <tbody>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Fecha diagnóstico</th>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox ID="TxtFechaDiagnosticoMaltrato" CssClass="form-control form-control-fecha input-sm" MaxLength="10" runat="server" placeholder="dd-mm-aaaa" />
+                                                            <ajax:FilteredTextBoxExtender ID="FTEFechaDiagnosticoMaltrato" runat="server" TargetControlID="TxtFechaDiagnosticoMaltrato" ValidChars="0123456789-/" />
+                                                            <ajax:CalendarExtender ID="CeFechaDiagnosticoMaltrato" runat="server" Enabled="true" Format="dd-MM-yyyy" TargetControlID="TxtFechaDiagnosticoMaltrato" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:RangeValidator ID="RvFechaDiagnosticoMaltrato" runat="server" ForeColor="Red" Text="Fecha Invalida" ControlToValidate="TxtFechaDiagnosticoMaltrato" Type="Date" OnInit="rv_fecha_Init" /><br />
+                                                            <asp:RequiredFieldValidator ID="RfvFechaDiagnosticoMaltrato" ValidationGroup="ValidationMaltrato" runat="server" ControlToValidate="TxtFechaDiagnosticoMaltrato" Font-Bold="true" ForeColor="Red" ErrorMessage="Fecha Diagn&oacute;stico Requerida">
+                                                            </asp:RequiredFieldValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Presenta maltrato</th>
+                                            <td>
+                                                <asp:RadioButton ID="RbtnPresentaMSi" runat="server" GroupName="rbtn2" Text="SI" Checked="true" OnCheckedChanged="RbtnPresentaMSi_CheckedChanged" AutoPostBack="true" />&nbsp;
+                                                <asp:RadioButton ID="RbtnPresentaMNo" runat="server" GroupName="rbtn2" Text="NO" OnCheckedChanged="RbtnPresentaMNo_CheckedChanged" AutoPostBack="true" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="DivDatosMaltrato" runat="server">
+                                    <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Tipo naltrato</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlTipoMaltrato" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="DdlTipoMaltrato_SelectedIndexChanged">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Nivel de maltrato</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlNivelMaltrato" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Maltrato</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlMaltrato" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Embarazo producto de abuso sexual o violación</th>
+                                                <td>
+                                                    <asp:RadioButton ID="RbtnEmbarazoAbusoSi" runat="server" GroupName="rbtn3" Text="SI" />&nbsp;
+                                                <asp:RadioButton ID="RbtnEmbarazoAbusoNo" runat="server" GroupName="rbtn3" Text="NO" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Hijos/as producto de abuso sexual o violación</th>
+                                                <td>
+                                                    <asp:RadioButton ID="RbtnHijosSi" runat="server" GroupName="rbtn4" Text="SI" />&nbsp;
+                                                <asp:RadioButton ID="RbtnHijosNO" runat="server" GroupName="rbtn4" Text="NO" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Conoce presunto maltratador</th>
+                                                <td>
+
+                                                    <asp:RadioButton ID="rbtnConoceSi" runat="server" GroupName="rbtn5" Text="SI" />&nbsp;
+                                                <asp:RadioButton ID="rbtnConoceNo" runat="server" GroupName="rbtn5" Text="NO" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Relación con presunto maltratador</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlRelacionMaltratador" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Vive con presunto maltratador</th>
+                                                <td>
+                                                    <asp:RadioButton ID="RbtnViveMaltratadorSi" runat="server" GroupName="rbtn6" Text="SI" />&nbsp;
+                                                <asp:RadioButton ID="RbtnViveMaltratadorNo" runat="server" GroupName="rbtn6" Text="NO" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div id="divCronicidadMaltrato" runat="server">
+                                        <p class="titulo-form">
+                                            <asp:Label ID="Label4" runat="server" Text="Cronicidad del maltrato"></asp:Label>
+                                        </p>
+                                        <br />
+                                        <table class="table table-bordered table-col-fix table-condensed">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Edad de inicio</th>
+                                                    <td>
+                                                        <asp:TextBox ID="TxtEdadInicioMaltrato" CssClass="form-control input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Tiempo en que se ha prolongado</th>
+                                                    <td>&nbsp;&nbsp;Meses:&nbsp;&nbsp;
+                                                    <asp:TextBox ID="TxtMesesMaltrato" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+                                                        &nbsp;&nbsp;Años:&nbsp;&nbsp;
+                                                    <asp:TextBox ID="TxtAnosMaltrato" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Frecuencia</th>
+                                                    <td>
+                                                        <asp:DropDownList ID="DdlFrecuenciaMaltrato" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table table-bordered table-col-fix table-condensed">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Respuesta del entorno ante develación</th>
+                                                    <td>
+                                                        <asp:DropDownList ID="DdlRespuestaMaltrato" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Constatación de lesiones</th>
+                                                    <td>
+                                                        <asp:RadioButton ID="RbtnLesionesSi" runat="server" GroupName="rbtn7" Text="SI" />&nbsp;
+                                                    <asp:RadioButton ID="RbtnLesionesNo" runat="server" GroupName="rbtn7" Text="NO" />
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Profesional / Técnico</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlProfesionalTecnico" CssClass="form-control input-sm" runat="server" AutoPostBack="true" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Observaciones</th>
+                                                <td>
+                                                    <asp:TextBox ID="TxtObservaciones" CssClass="form-control input-sm" runat="server" MaxLength="100" TextMode="MultiLine"></asp:TextBox>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                <div class="right">
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnAgregarDiagnosticoMaltrato" runat="server" ValidationGroup="ValidationMaltrato"  Text="Agregar Diagnóstico" AutoPostback="true" OnClick="BtnAgregarDiagnosticoMaltrato_Click" />
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnModificarDiagnosticoMaltrato" Visible="false" ValidationGroup="ValidationMaltrato" runat="server" Text="Modificar Diagnóstico" AutoPostback="true" OnClick="BtnModificarDiagnosticoMaltrato_Click" />
+                                    <asp:Button CssClass="btn btn-info btn-sm" ID="BtnLimpiarMaltrato" runat="server" Text="Limpiar" AutoPostback="true" CausesValidation="False" OnClick="BtnLimpiarMaltrato_Click" />
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning" role="alert" id="AlertLblSinMaltrato" runat="server" visible="false">
+                                <asp:Label ID="LblSinMaltrato" runat="server"></asp:Label>
+                            </div>
+
+                            <div>
+                                <asp:GridView ID="GrdMaltrato" CssClass="table table table-bordered table-hover caja-tabla "  runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" Width="100%" OnRowCommand="GrdMaltrato_RowCommand">
+                                    <HeaderStyle CssClass="titulo-tabla" />
+                                    <Columns>
+                                        <asp:BoundField DataField="ICodMaltrato" HeaderText="ICodMaltrato"></asp:BoundField>
+                                        <asp:BoundField DataField="CodDiagnostico" HeaderText="Codigo del Diagnostico "></asp:BoundField>
+                                        <asp:BoundField DataField="FechaDiagnostico" DataFormatString="{0:d}" HeaderText="Fecha de Diagnostico" HtmlEncode="False"></asp:BoundField>
+                                        <asp:BoundField DataField="DescripcionTipoMaltrato" HeaderText="Tipo de Maltrato"></asp:BoundField>
+                                        <asp:BoundField DataField="DescripcionMaltrato" HeaderText="Maltrato"></asp:BoundField>
+                                        <asp:BoundField DataField="DescripcionTiporelacion" HeaderText="Relaci&#243;n con el Maltratador"></asp:BoundField>
+                                        <asp:BoundField DataField="NombreProfesionalTecnico" HeaderText="T&#233;cnico"></asp:BoundField>
+                                        <asp:ButtonField Text="Modificar"></asp:ButtonField>
+                                    </Columns>
+                                </asp:GridView>
+
+                            </div>
+                        </div>
+
+                        <%-- COLLAPSE PFTI--%>
+
+                        <div class="col-md-12">
+                            <p class="titulo-form">Diagnóstico de Peores Formas de Trabajo Infantil </p>                           
+
+                            <asp:LinkButton ID="BtnMostrarPFTI" runat="server" Text="Agregar Diagnóstico PFTI" CssClass="btn btn-primary btn-sm" OnClientClick="return MostrarDiagnostico('PFTI', true)" data-toggle="collapse" data-parent="#accordion" href="#CollapsePeoresFormas" aria-expanded="false" aria-controls="CollapsePeoresFormas" ></asp:LinkButton>
+                            <asp:LinkButton ID="BtnOcultarPFTI" runat="server" Text="Cancelar" CssClass="btn btn-primary btn-sm" OnClientClick="return MostrarDiagnostico('PFTI', false)" data-toggle="collapse" data-parent="#accordion" href="#CollapsePeoresFormas" aria-expanded="false" aria-controls="CollapsePeoresFormas" ></asp:LinkButton>
+                            <br /><br />
+
+                            <div id="CollapsePeoresFormas" runat="server" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                    <tbody>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Fecha diagnóstico</th>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox ID="TxtFechaDiagnosticoPFTI" CssClass="form-control form-control-fecha input-sm" MaxLength="10" runat="server" placeholder="dd-mm-aaaa" />
+                                                            <ajax:FilteredTextBoxExtender ID="FTEFechaDiagnosticoPFTI" runat="server" TargetControlID="TxtFechaDiagnosticoPFTI" ValidChars="0123456789-/" />
+                                                            <ajax:CalendarExtender ID="CeFechaDiagnosticoPFTI" runat="server" Enabled="true" Format="dd-MM-yyyy" TargetControlID="TxtFechaDiagnosticoPFTI" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:RangeValidator ID="RvFechaDiagnosticoPFTI" runat="server" ForeColor="Red" Text="Fecha Invalida" ControlToValidate="TxtFechaDiagnosticoPFTI" Type="Date" OnInit="rv_fecha_Init" /><br />
+                                                            <asp:RequiredFieldValidator ID="RfvFechaDiagnosticoPFTI" ValidationGroup="ValidationPFTI" runat="server" ControlToValidate="TxtFechaDiagnosticoPFTI" Font-Bold="true" ForeColor="Red" ErrorMessage="Fecha Diagn&oacute;stico Requerida">
+                                                            </asp:RequiredFieldValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Presenta PFTI</th>
+                                            <td>
+                                                <asp:RadioButton ID="RbtnPresentaPFTISI" runat="server" Checked="true" AutoPostBack="True" GroupName="rbtn8" Text="SI" OnCheckedChanged="RbtnPresentaPFTISI_CheckedChanged" />&nbsp;
+                                                <asp:RadioButton ID="RbtnPresentaPFTINO" runat="server" AutoPostBack="True" GroupName="rbtn8" Text="NO" OnCheckedChanged="RbtnPresentaPFTINO_CheckedChanged" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="DivDatosPFTI" runat="server">
+                                    <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Condiciones de riesgo laboral</th>
+                                                <td>
+                                                    <asp:RadioButton ID="RbtnRiesgoLaboralPFTISi" runat="server" GroupName="rbtn14" Text="SI" />&nbsp;
+                                                <asp:RadioButton ID="RbtnRiesgoLaboralPFTINo" runat="server" GroupName="rbtn14" Text="NO" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Región ocurrencia</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlRegionOcurrencia" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="DdlRegionOcurrencia_SelectedIndexChanged">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Comuna ocurrencia</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlComunaOcurrencia" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Fecha detección PFTI</th>
+                                                <td>
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:TextBox ID="TxtFechaDeteccionPFTI" CssClass="form-control form-control-fecha input-sm" MaxLength="10" runat="server" placeholder="Seleccionar" />
+                                                                <ajax:FilteredTextBoxExtender ID="FTETxtFechaDeteccionPFTI" runat="server" TargetControlID="TxtFechaDeteccionPFTI" ValidChars="0123456789-/" />
+                                                                <ajax:CalendarExtender ID="CeTxtFechaDeteccionPFTI" runat="server" Enabled="true" Format="dd-MM-yyyy" TargetControlID="TxtFechaDeteccionPFTI" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
+                                                            </td>
+                                                            <td>
+                                                                <asp:RangeValidator ID="RvTxtFechaDeteccionPFTI" runat="server" ForeColor="Red" Text="Fecha Invalida" ControlToValidate="TxtFechaDeteccionPFTI" Type="Date" OnInit="rv_fecha_Init" /><br />
+                                                                <asp:RequiredFieldValidator ID="RfvTxtFechaDeteccionPFTI" ValidationGroup="ValidationPFTI" runat="server" ControlToValidate="TxtFechaDeteccionPFTI" Font-Bold="true" ForeColor="Red" ErrorMessage="Fecha Diagn&oacute;stico Requerida">
+                                                                </asp:RequiredFieldValidator>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Categoría Forma de Trabajo PFTI</th>
+                                                <td>
+                                                    <asp:DropDownList ID="ddlCategoríaPFTI" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Presunto explotador laboral</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlExplotadorPFTI" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Relación con presunto explotador laboral</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlRelacionExplotadorPFTI" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Vive con presunto explotador laboral</th>
+                                                <td>
+                                                    <asp:RadioButton ID="RbtnExplotadorPFTISI" runat="server"  GroupName="rbtn9" Text="SI" />&nbsp;
+                                                <asp:RadioButton ID="RbtnExplotadorPFTINO" runat="server"  GroupName="rbtn9" Text="NO" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div id="divCronicidadPFTI" runat="server">
+                                        <p class="titulo-form">
+                                            <asp:Label ID="LblCronicidadPFTI" runat="server" Text="Cronicidad de PFTI"></asp:Label>
+                                        </p>
+                                        <br />
+                                        <table class="table table-bordered table-col-fix table-condensed">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Edad de inicio</th>
+                                                    <td>
+                                                        <asp:TextBox ID="TxtEdadInicioPFTI" CssClass="form-control input-sm form-control-60" runat="server" placeholder="Edad"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Tiempo en que se ha prolongado</th>
+                                                    <td>&nbsp;&nbsp;Meses:&nbsp;&nbsp;
+                                                    <asp:TextBox ID="TxtMesesPFTI" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+                                                        &nbsp;&nbsp;Años:&nbsp;&nbsp;
+                                                    <asp:TextBox ID="TxtAnosPFTI" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Respuesta del entorno ante develación PFTI</th>
+                                                    <td>
+                                                        <asp:DropDownList ID="DdlRespuestaDevelacionPFTI" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                    <tbody>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Profesional / Técnico</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlProfesionalTecnicoPFTI" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                    <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Observaciones</th>
+                                            <td>
+                                                <asp:TextBox ID="TxtObservacionesPFTI" CssClass="form-control input-sm" runat="server" MaxLength="100" TextMode="MultiLine"></asp:TextBox>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                                <div class="right">
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnAgregarDiagnosticoPFTI" ValidationGroup="ValidationPFTI" runat="server" Text="Agregar Diagnostico" AutoPostback="true" OnClick="BtnAgregarDiagnosticoPFTI_Click" />
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnModificarDiagnosticoPFTI" ValidationGroup="ValidationPFTI" Visible="false"  runat="server" Text="Modificar Diagnóstico" AutoPostback="true" OnClick="BtnModificarDiagnosticoPFTI_Click"  />
+                                    <asp:Button CssClass="btn btn-info btn-sm" ID="BtnLimpiarPFTI" runat="server" Text="Limpiar" AutoPostback="true" CausesValidation="False" OnClick="BtnLimpiarPFTI_Click" />
+                                </div>
+
+                            </div>
+
+                            <div class="alert alert-warning" role="alert" id="AlertLblSinPFTI" runat="server" visible="false">
+                                <asp:Label ID="LblSinPFTI" runat="server"></asp:Label>
+                            </div>
+
+                            <div class="table-bordered table-hover">
+
+                                <asp:GridView ID="GrdPFTI" CssClass="table table table-bordered table-hover caja-tabla " runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" Width="100%" OnRowCommand="GrdPFTI_RowCommand">
+                                    <HeaderStyle CssClass="titulo-tabla" />
+                                    <Columns>
+                                        <asp:BoundField DataField="ICodPFTI" HeaderText="ICodPFTI" />
+                                        <asp:BoundField DataField="CodDiagnostico" HeaderText="Codigo del Diagn&#243;stico ">
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="FechaDiagnostico" DataFormatString="{0:d}" HeaderText="Fecha de Diagn&#243;stico" HtmlEncode="False">
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="NombreCateforiaPFMI" HeaderText="Categor&#237;a Formas de Trabajo">
+                                        </asp:BoundField>
+                                        <asp:BoundField DataField="NombreProfesionalTecnico" HeaderText="T&#233;cnico">
+                                        </asp:BoundField>
+                                        <asp:ButtonField Text="Modificar">
+                                        </asp:ButtonField>
+                                    </Columns>
+                                </asp:GridView>
+
+                            </div>
+                        </div>
+
+
+                        <%-- COLLAPSE SITUACION CALLE--%>
+
+                        <div class="col-md-12">
+                            <p class="titulo-form">Diagnóstico Situación Calle </p>
+                            
+                            <asp:LinkButton ID="BtnMostrarSituacionCalle" runat="server" Text="Agregar Diagnóstico Situación Calle" CssClass="btn btn-primary btn-sm" OnClientClick="return MostrarDiagnostico('SituacionCalle', true) " data-toggle="collapse" data-parent="#accordion" href="#CollapseSituacionCalle" aria-expanded="false" aria-controls="CollapseSituacionCalle" ></asp:LinkButton>
+                            <asp:LinkButton ID="BtnOcultarSituacionCalle" runat="server" Text="Cancelar" CssClass="btn btn-primary btn-sm" OnClientClick="return MostrarDiagnostico('SituacionCalle', false)" data-toggle="collapse" data-parent="#accordion" href="#CollapseSituacionCalle" aria-expanded="false" aria-controls="CollapseSituacionCalle" ></asp:LinkButton>
+                            <br /><br />
+
+                            <div id="CollapseSituacionCalle" runat="server" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                    <tbody>
+                                        
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Fecha de diagnóstico</th>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox ID="TxtFechaDiagnosticoSituacionCalle" CssClass="form-control form-control-fecha input-sm" MaxLength="10" runat="server" placeholder="dd-mm-aaaa" />
+                                                            <ajax:FilteredTextBoxExtender ID="FTEFechaDiagnosticoSituacionCalle" runat="server" TargetControlID="TxtFechaDiagnosticoSituacionCalle" ValidChars="0123456789-/" />
+                                                            <ajax:CalendarExtender ID="CeFechaDiagnosticoSituacionCalle" runat="server" Enabled="true" Format="dd-MM-yyyy" TargetControlID="TxtFechaDiagnosticoSituacionCalle" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:RangeValidator ID="RvFechaDiagnosticoSituacionCalle" runat="server" ForeColor="Red" Text="Fecha Invalida" ControlToValidate="TxtFechaDiagnosticoSituacionCalle" Type="Date" OnInit="rv_fecha_Init" /><br />
+                                                            <asp:RequiredFieldValidator ID="RfvFechaDiagnosticoSituacionCalle" ValidationGroup="ValidationSituacionCalle" runat="server" ControlToValidate="TxtFechaDiagnosticoSituacionCalle" Font-Bold="true" ForeColor="Red" ErrorMessage="Fecha Diagn&oacute;stico Requerida">
+                                                            </asp:RequiredFieldValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Presenta situación de calle</th>
+                                            <td>
+                                                <asp:RadioButton ID="RbtnSituacionCalleSI" runat="server" Checked="true" AutoPostBack="True" GroupName="rbtn10" Text="SI" OnCheckedChanged="RbtnSituacionCalleSI_CheckedChanged" />&nbsp;
+                                                <asp:RadioButton ID="RbtnSituacionCalleNO" runat="server" AutoPostBack="True" GroupName="rbtn10" Text="NO" OnCheckedChanged="RbtnSituacionCalleNO_CheckedChanged" />
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                <div id="DivDatosSituacionCalle" runat="server">
+                                    <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Inicio vivir en calle</th>
+                                                <td>&nbsp;&nbsp;Año:&nbsp;&nbsp;
+                                                <asp:TextBox ID="TxtAnoVivirCalle" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar">
+                                                </asp:TextBox>&nbsp;&nbsp;&nbsp;Mes:&nbsp;&nbsp;
+                                                <asp:TextBox ID="TxtMesVivirCalle" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar">
+                                                </asp:TextBox>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="titulo-form">Cronicidad de situación calle</p>
+                                    <br />
+                                    <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Edad de inicio</th>
+                                                <td>
+                                                    <asp:TextBox ID="TxtEdadInicioSituacionCalle" CssClass="form-control input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Tiempo en que se ha prolongado</th>
+                                                <td>&nbsp;&nbsp;Meses:&nbsp;&nbsp;
+                                                <asp:TextBox ID="TxtMesesSituacionCalle" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+                                                    &nbsp;&nbsp;Años:&nbsp;&nbsp;
+                                                <asp:TextBox ID="TxtAnosSituacionCalle" CssClass="form-control-lineal input-sm form-control-fecha" runat="server" placeholder="Ingresar"></asp:TextBox>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Pertenece a caleta</th>
+                                                <td>
+                                                    <asp:RadioButton ID="RbtnPerteneceCaletaSI" runat="server" GroupName="rbtn11" Text="SI" />&nbsp;
+                                                        <asp:RadioButton ID="RbtnPerteneceCaletaNO" runat="server" GroupName="rbtn11" Text="NO" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Estrategias de sobrevivencia</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlEstrategiasSobrevivencia" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Contacto con familiares</th>
+                                                <td>
+                                                    <asp:RadioButton ID="RbtnContactoFamiliaresSI" runat="server" GroupName="rbtn12" Text="SI" />&nbsp;
+                                                <asp:RadioButton ID="RbtnContactoFamiliaresNO" runat="server" GroupName="rbtn12" Text="NO" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Estadía en calle</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlEstadiaCalle" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="DdlEstadiaCalle_SelectedIndexChanged">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Categoría estadía en calle</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlCategoriaCalle" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Lugar en que pernocta con mayor frecuencia</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlLugarPernocta" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                    <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Profesional / Técnico</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlProfesionalTecnicoSituacionCalle" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Observaciones</th>
+                                                <td>
+                                                    <asp:TextBox ID="TxtObservacionesSituacionCalle" CssClass="form-control input-sm" runat="server" MaxLength="100" TextMode="MultiLine"></asp:TextBox>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                <div class="right">
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnAgregarDiagnosticoCalle" ValidationGroup="ValidationSituacionCalle" runat="server" Text="Agregar Diagnostico" AutoPostback="true" OnClick="BtnAgregarDiagnosticoCalle_Click" />
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnModificarDiagnosticoSituacionCalle" ValidationGroup="ValidationSituacionCalle" Visible="false"  runat="server" Text="Modificar Diagnóstico" AutoPostback="true" OnClick="BtnModificarDiagnosticoSituacionCalle_Click"  />
+                                    <asp:Button CssClass="btn btn-info btn-sm" ID="BtnLimpiarCalle" runat="server" Text="Limpiar" AutoPostback="true" CausesValidation="False" OnClick="BtnLimpiarCalle_Click" />
+                                </div>
+
+                            </div>
+
+                            <div class="alert alert-warning" role="alert" id="AlertLblSinSituacionCalle" runat="server" visible="false">
+                                <asp:Label ID="LblSinSituacionCalle" runat="server"></asp:Label>
+                            </div>
+
+                            <div class="table-bordered table-hover">
+
+                                <asp:GridView ID="GrdSituacionCalle" CssClass="table table table-bordered table-hover caja-tabla " runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" Width="100%" OnRowCommand="GrdSituacionCalle_RowCommand">
+                                    <HeaderStyle CssClass="titulo-tabla" />
+                                    <Columns>
+                                        <asp:BoundField DataField="ICodSituacionCalle" HeaderText="ICodSituacionCalle"></asp:BoundField>
+                                        <asp:BoundField DataField="CodDiagnostico" HeaderText="Codigo del Diagnostico "></asp:BoundField>
+                                        <asp:BoundField DataField="NombreProfesionalTecnico" HeaderText="Profesional/Técnico"></asp:BoundField>
+                                        <asp:BoundField DataField="FechaDiagnostico" DataFormatString="{0:d}" HeaderText="Fecha de Diagnostico" HtmlEncode="False"></asp:BoundField>
+                                        <asp:ButtonField Text="Modificar"></asp:ButtonField>
+                                    </Columns>
+                                </asp:GridView>
+
+                            </div>
+                        </div>
+
+
+                        <%-- COLLAPSE TRANSGRESION DERECHOS--%>
+
+                        <div class="col-md-12">
+                            <p class="titulo-form">Diagnóstico Transgresión de Derechos </p>
+
+                            <asp:LinkButton ID="BtnMostrarTransgresionDerechos" runat="server" Text="Agregar Diagnóstico Transgresión de Derechos" CssClass="btn btn-primary btn-sm" OnClientClick="return MostrarDiagnostico('TransgresionDerechos', true)" data-toggle="collapse" data-parent="#accordion" href="#CollapseTransgresionDerechos" aria-expanded="false" aria-controls="CollapseTransgresionDerechos"></asp:LinkButton>
+                            <asp:LinkButton ID="BtnOcultarTransgresionDerechos" runat="server" Text="Cancelar" CssClass="btn btn-primary btn-sm" OnClientClick="return MostrarDiagnostico('TransgresionDerechos', false)" data-toggle="collapse" data-parent="#accordion" href="#CollapseTransgresionDerechos" aria-expanded="false" aria-controls="CollapseTransgresionDerechos"></asp:LinkButton>
+                            <br /><br />
+
+                            <div id="CollapseTransgresionDerechos" runat="server" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                    <tbody>
+                                        
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Fecha diagnóstico</th>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox ID="TxtFechaDiagnosticoTransgresion" CssClass="form-control form-control-fecha input-sm" MaxLength="10" runat="server" placeholder="dd-mm-aaaa" />
+                                                            <ajax:FilteredTextBoxExtender ID="FTEFechaDiagnosticoTransgresion" runat="server" TargetControlID="TxtFechaDiagnosticoTransgresion" ValidChars="0123456789-/" />
+                                                            <ajax:CalendarExtender ID="CeFechaDiagnosticoTransgresion" runat="server" Enabled="true" Format="dd-MM-yyyy" TargetControlID="TxtFechaDiagnosticoTransgresion" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:RangeValidator ID="RvFechaDiagnosticoTransgresion" runat="server" ForeColor="Red" Text="Fecha Invalida" ControlToValidate="TxtFechaDiagnosticoTransgresion" Type="Date" OnInit="rv_fecha_Init" /><br />
+                                                            <asp:RequiredFieldValidator ID="RfvFechaDiagnosticoTransgresion" ValidationGroup="ValidationTransgresion" runat="server" ControlToValidate="TxtFechaDiagnosticoTransgresion" Font-Bold="true" ForeColor="Red" ErrorMessage="Fecha Diagn&oacute;stico Requerida">
+                                                            </asp:RequiredFieldValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Presenta transgresión de derechos</th>
+                                            <td>
+                                                <asp:RadioButton ID="RbtnTransgresionSi" runat="server" Checked="true" AutoPostBack="True" GroupName="rbtn15" Text="SI" OnCheckedChanged="RbtnTransgresionSi_CheckedChanged" />&nbsp;
+                                                <asp:RadioButton ID="RbtnTransgresionNo" runat="server" AutoPostBack="True" GroupName="rbtn15" Text="NO" OnCheckedChanged="RbtnTransgresionNo_CheckedChanged" />
+                                            </td>
+                                        </tr>                                        
+                                        </tbody>
+                                    </table>
+                                <div id="DivDatosTransgresion" runat="server">
+                                    <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Tipo transgresión</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlTipoTransgresion" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="DdlTipoTransgresion_SelectedIndexChanged">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Categoría tipo transgresión</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlCategoriaTransgresion" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="DivIdentificacionVictima" runat="server">
+                                        <p class="titulo-form">Identificación de la victima de la transgresión </p>
+                                        <table class="table table-bordered table-col-fix table-condensed">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Relación con el NNA</th>
+                                                    <td>
+                                                        <asp:DropDownList ID="DdlRelacionNNA" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" >
+                                                            <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="titulo-tabla" scope="row">Vive con el NNA</th>
+                                                    <td>
+                                                        <asp:RadioButton ID="RbtnViveNNASI" runat="server" GroupName="rbtn13" Text="SI" />&nbsp;
+                                                    <asp:RadioButton ID="RbtnViveNNANO" runat="server" GroupName="rbtn13" Text="NO" />
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                        <tbody>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Profesional / Técnico</th>
+                                                <td>
+                                                    <asp:DropDownList ID="DdlProfesionalTecnicoTransgresion" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True">
+                                                        <asp:ListItem Value="0">Seleccionar</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="titulo-tabla" scope="row">Observaciones</th>
+                                                <td>
+                                                    <asp:TextBox ID="TxtObservacionesTransgresion" CssClass="form-control input-sm" runat="server" MaxLength="100" TextMode="MultiLine"></asp:TextBox>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                <div class="right">
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnAgregarDiagnosticoDerechos" ValidationGroup="ValidationTransgresion"  runat="server" Text="Agregar Diagnostico" AutoPostback="true" OnClick="BtnAgregarDiagnosticoDerechos_Click" />
+                                    <asp:Button CssClass="btn btn-danger btn-sm" ID="BtnModificarDiagnosticoDerechos" ValidationGroup="ValidationTransgresion"  Visible="false"  runat="server" Text="Modificar Diagnóstico" AutoPostback="true" OnClick="BtnModificarDiagnosticoDerechos_Click"  />
+                                    <asp:Button CssClass="btn btn-info btn-sm" ID="BtnLimpiarDerechos" runat="server" Text="Limpiar" AutoPostback="true" CausesValidation="False" OnClick="BtnLimpiarDerechos_Click" />
+                                </div>
+
+                            </div>
+
+                            <div class="alert alert-warning" role="alert" id="AlertLblSinTransgresionDerechos" runat="server" visible="false">
+                                <asp:Label ID="LblSinTransgresionDerechos" runat="server"></asp:Label>
+                            </div>
+
+                            <div class="table-bordered table-hover">
+
+                                <asp:GridView ID="GrdTransgresionDerechos" CssClass="table table table-bordered table-hover caja-tabla " runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" Width="100%" OnRowCommand="GrdTransgresionDerechos_RowCommand">
+                                    <HeaderStyle CssClass="titulo-tabla" />
+                                    <Columns>
+                                        <asp:BoundField DataField="ICodTransgresionDerechos" HeaderText="ICodMaltrato"></asp:BoundField>
+                                        <asp:BoundField DataField="CodDiagnostico" HeaderText="Codigo del Diagnostico "></asp:BoundField>
+                                        <asp:BoundField DataField="NombreProfesionalTecnico" HeaderText="Profesional/Técnico"></asp:BoundField>
+                                        <asp:BoundField DataField="FechaDiagnostico" DataFormatString="{0:d}" HeaderText="Fecha de Diagnostico" HtmlEncode="False"></asp:BoundField>
+                                        <asp:ButtonField Text="Modificar"></asp:ButtonField>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
+            <ProgressTemplate>
+                <div id="divProgress" class="ajax_cargando">
+                    <img alt="Cargando" src="../images/Cursors/ajax-loader.gif" />
+                    Cargando...       
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </form>
+</body>
+    
+</html>

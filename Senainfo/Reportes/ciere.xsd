@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ciere" targetNamespace="http://tempuri.org/ciere.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/ciere.xsd" xmlns:mstns="http://tempuri.org/ciere.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="cierre_resumenatencionmensual_Firma_impresion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CodProyecto" type="xs:int" />
+        <xs:element name="MesAno" type="xs:int" />
+        <xs:element name="Correlativo" type="xs:int" />
+        <xs:element name="Folio" type="xs:string" minOccurs="0" />
+        <xs:element name="Proyecto_Nombre" type="xs:string" minOccurs="0" />
+        <xs:element name="CodInstitucion" type="xs:int" />
+        <xs:element name="Institucion" type="xs:string" minOccurs="0" />
+        <xs:element name="CodSistemaAsistencial" type="xs:int" />
+        <xs:element name="SistemaAsistencial" type="xs:string" minOccurs="0" />
+        <xs:element name="CodModeloIntervencion" type="xs:int" />
+        <xs:element name="ModeloIntervencion" type="xs:string" minOccurs="0" />
+        <xs:element name="TipoSubvencion" type="xs:int" />
+        <xs:element name="TipoSubvencion_Des" type="xs:string" minOccurs="0" />
+        <xs:element name="CodRegion" type="xs:int" />
+        <xs:element name="Region" type="xs:string" minOccurs="0" />
+        <xs:element name="TipoProyecto" type="xs:int" />
+        <xs:element name="TipoProyecto_Des" type="xs:string" minOccurs="0" />
+        <xs:element name="NroNinosVigentesMesAnteriorF" type="xs:int" minOccurs="0" />
+        <xs:element name="NroNinosVigentesMesAnteriorM" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIngresosMesF" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIngresosMesM" type="xs:int" minOccurs="0" />
+        <xs:element name="NroEgresosMesF" type="xs:int" minOccurs="0" />
+        <xs:element name="NroEgresosMesM" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiasF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiasM" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiasInasistenciaF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiasInasistenciaM" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiasAtendidosF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiasAtendidosM" type="xs:int" minOccurs="0" />
+        <xs:element name="IntervencionesExigidas" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIntervencionesMasF" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIntervencionesMasM" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIntervencionesMenosF" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIntervencionesMenosM" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIntervencionesIgualF" type="xs:int" minOccurs="0" />
+        <xs:element name="NroIntervencionesIgualM" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalIntervencionF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalIntervencionM" type="xs:int" minOccurs="0" />
+        <xs:element name="PromedioIntervencionF" type="xs:double" minOccurs="0" />
+        <xs:element name="PromedioIntervencionM" type="xs:double" minOccurs="0" />
+        <xs:element name="TotalDiasPagarIntervencionesF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiasPagarIntervencionesM" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiscapacidadGraveF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiscapacidadGraveM" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiscapacidadOtrasF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalDiscapacidadOtrasM" type="xs:int" minOccurs="0" />
+        <xs:element name="Director" type="xs:string" minOccurs="0" />
+        <xs:element name="Firma" type="xs:string" minOccurs="0" />
+        <xs:element name="Cargo" type="xs:string" minOccurs="0" />
+        <xs:element name="Enviado" type="xs:int" minOccurs="0" />
+        <xs:element name="FechaEnviado" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="FechaActualizacion" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="IdUsuarioActualizacion" type="xs:int" minOccurs="0" />
+        <xs:element name="Retencion" type="xs:int" minOccurs="0" />
+        <xs:element name="FechaRetencion" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="EnviadoFinanciero" type="xs:int" minOccurs="0" />
+        <xs:element name="FechaEnviadoFinanciero" type="xs:dateTime" minOccurs="0" />
+        <xs:element name="Total80BisF" type="xs:int" minOccurs="0" />
+        <xs:element name="Total80BisM" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalNo80BisF" type="xs:int" minOccurs="0" />
+        <xs:element name="TotalNo80BisM" type="xs:int" minOccurs="0" />
+        <xs:element name="Plazas" type="xs:int" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

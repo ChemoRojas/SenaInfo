@@ -1,0 +1,202 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="BuscarCalendario.aspx.cs" Inherits="mod_ejecucion_BuscarCalendario" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="~/menu_colgante_buscador.ascx" TagPrefix="uc1" TagName="menu_colgante_buscador" %>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head id="Head2" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+
+    <title>Buscador de Modulo :: Senainfo :: Servicio Nacional de Menores</title>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <%--<script src="../js/jquery-1.7.2.min.js"></script>--%>
+    <%--<script src="../js/ventanas-modales.js"></script>--%>
+
+    <%--<script src="../js/jquery-ui.js"></script>--%>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/ventanas-modales.css" rel="stylesheet" />
+    <!-- gfontbrevis agrega senainfotools con herramientas como fijador de headers de tablas -->
+    <script src="../js/senainfoTools.js"></script>
+
+    <script type="text/javascript">
+
+        function Limpiar() {
+
+            $("#txtCodModulo").val("");
+            $("#txtNombreModulo").val("");
+        }
+
+        function numbersonly(e) {
+            var unicode = e.charCode ? e.charCode : e.keyCode
+            if (unicode != 8 && unicode != 44) {
+                if (unicode < 48 || unicode > 57) //if not a number
+                { return false } //disable key press
+            }
+        }
+
+        
+    </script>
+</head>
+<body role="document" onmousemove="SetProgressPosition(event)">
+    <form id="form1" runat="server">
+
+        <uc1:menu_colgante_buscador runat="server" ID="menu_colgante_buscador" />
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
+                <input type="hidden" id="Buscando" value="0">
+                <input id="TiempoBusqueda" type="hidden" runat="server" name="TiempoBusqueda" />
+                <div>
+
+                    <div class="container theme-showcase" role="main">
+                        <ol class="breadcrumb">
+                            <li><a id="A1" href="~/index.aspx" runat="server">Inicio</a></li>
+                            <li class="active">Niños/as</li>
+                            <li class="active">Búsqueda de Modulo</li>
+                        </ol>
+                        
+                        <div class="well">
+
+                            <h4 class="subtitulo-form">Búsqueda del Modulo</h4>
+                            <hr>
+                            
+                                
+                                    <div class="row">
+                                  <div class="col-md-9">
+                                          <table class="table table-borderless table-condensed table-col-fix">
+                                              <tr>
+                                                  <th class="col-md-3">
+                                                      <label for="">CodModulo:</label>
+                                                  </th>
+                                                  <td>
+                                                      <div class="input-group">
+                                                          <asp:TextBox ID="txtCodModulo" runat="server" ToolTip="Código del modulo" CssClass="form-control input-sm" onkeypress="return numbersonly(event);"></asp:TextBox>
+                                                         
+                                                      </div>
+                                                      
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <th>
+                                                      <label for="">Nombre Modulo:</label>
+                                                  </th>
+                                                  <td>
+                                                      <div class="input-group">
+                                                          <asp:TextBox ID="txtNombreModulo" runat="server" ToolTip="Núm. RUC de causa" CssClass="form-control input-sm"></asp:TextBox>
+                                                      </div>
+                                                  </td>
+                                              </tr>
+                                           
+                                             
+                                          </table>
+                                          <!--gfontbrevis modal institucion -->
+                                </div><!--cierra col-md-9-->  
+                                <div class="col-md-3">       
+                                                        
+                                <asp:Panel ID="panelInfoBusqueda" runat="server" CssClass="panel-info panel-primary-info">
+                                    <div class="panel-heading">
+                                       Información
+                                    </div>
+                                    <div class="panel-footer">
+                                        <asp:Label ID="Lbl_Info1" CssClass="subtitulo-form-info" runat="server" Text="Ingrese al menos uno de los campos a buscar" ></asp:Label><br />
+                                        <asp:Label ID="Lbl_Info2" CssClass="subtitulo-form-info" runat="server" Text="" ></asp:Label>                                      
+                                    </div>
+                                    </asp:Panel>
+                                
+                                  
+                                </div>
+                                        </div>
+                                
+                            <div class="row">
+                                <table class="table table-borderless table-condensed table-col-fix">
+                                <tr>
+                                    <td class="col-md-3">
+                                        
+                                    </td>
+                                    <td>
+                                
+                                    <asp:LinkButton ID="btnBuscar" runat="server" CssClass="btn btn-info btn-sm" OnClick="btnBuscar_Click">
+                                        <span class="glyphicon glyphicon-search"></span>&nbsp;Buscar
+                                    </asp:LinkButton>
+                                    <asp:LinkButton ID="btnLimpiar" runat="server" CssClass="btn btn-danger btn-sm " OnClientClick="Limpiar();">
+                                        <span class="glyphicon glyphicon-remove"></span>&nbsp;Borrar
+                                    </asp:LinkButton>
+                                </td></tr></table>
+                            
+                                </div><!-- cierra row-->
+                            <br>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    
+                                        <asp:Panel ID="lbl002panel" runat="server" Visible="false" CssClass="text-center">
+                                            <h4><label class="subtitulo-form">Resultados Búsqueda: 
+                                            <asp:Label ID="lbl002" runat="server">0</asp:Label></label></h4>
+                                        </asp:Panel>
+                                    
+                                                    <asp:GridView ID="grdBusqueda" runat="server" AutoGenerateColumns="False" CellPadding="4" GridLines="None" CssClass="table table table-bordered table-hover"
+                                                        ShowHeaderWhenEmpty="true" EmptyDataText="No se encontraron resultados" OnRowDataBound="grdBusqueda_RowDataBound">
+                                                        <HeaderStyle CssClass="titulo-tabla" />
+                                                        <Columns>
+                                                            <asp:BoundField DataField="CodCalendario" HeaderText="Código Calendario" />
+
+                                                            <asp:TemplateField HeaderText="Código Modulo">
+                                                                <ItemTemplate>
+                                                                   <asp:Label id="Lbl" Text='<%# Bind("CodModulo") %>' runat="server"></asp:Label>
+                                                                    <asp:TextBox id="TxtComparacion" Text='<%# Bind("Comparacion") %>' runat="server" Visible="false"></asp:TextBox>
+                                                                    <asp:TextBox id="TxtEvaInicialComparacion" Text='<%# Bind("EvaInicialComparacion") %>' runat="server" Visible="false"></asp:TextBox>
+                                                                    <asp:TextBox id="TxtEvaFinalComparacion" Text='<%# Bind("EvaFinalComparacion") %>' runat="server" Visible="false"></asp:TextBox>
+                                                                    <asp:TextBox id="TxtActividadesPlanificadas" Text='<%# Bind("ActividadesPlanificadas") %>' runat="server" Visible="false"></asp:TextBox>
+                                                                    <asp:TextBox id="TxtActividadesRealizadas" Text='<%# Bind("ActividadesRealizadas") %>' runat="server" Visible="false"></asp:TextBox>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+
+
+                                                            
+                                                            <asp:BoundField DataField="NombreModulo" HeaderText="Nombre Modulo" />
+                                                            <asp:BoundField DataField="FechaInicioModulo" HeaderText="Fecha Inicio" />
+                                                            <asp:BoundField DataField="FechaFinModulo" HeaderText="Fecha Fin" />
+                                                            <asp:hyperlinkfield text="Evaluar Inicial" datanavigateurlfields="CodCalendario,CodModulo" datanavigateurlformatstring="Evaluacion_Inicial.aspx?CodCalendario={0}&amp;CodModulo={1}" HeaderText="Seleccionar" ItemStyle-HorizontalAlign="Center" />
+                                                            <asp:hyperlinkfield text="Desarrollo" datanavigateurlfields="CodCalendario,CodModulo" datanavigateurlformatstring="ListadoActividades.aspx?CodCalendario={0}&amp;CodModulo={1}" HeaderText="Seleccionar" ItemStyle-HorizontalAlign="Center" />
+                                                            <asp:hyperlinkfield text="Evaluar Final" datanavigateurlfields="CodCalendario,CodModulo" datanavigateurlformatstring="Evaluacion_Final.aspx?CodCalendario={0}&amp;CodModulo={1}" HeaderText="Seleccionar" ItemStyle-HorizontalAlign="Center" />
+
+
+                                                             <asp:TemplateField HeaderText="Estado">
+                                                                <ItemTemplate>
+                                                                   <asp:Label id="LblEstado"  runat="server"></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <footer class="footer">
+                    <div class="container">
+                        <p>
+                            Para tus dudas y consultas, escribe a:
+                            <br>
+                            mesadeayuda@sename.cl
+                        </p>
+                    </div>
+                </footer>
+
+    </form>
+</body>
+</html>

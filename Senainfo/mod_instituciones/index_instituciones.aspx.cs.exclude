@@ -1,0 +1,122 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class mod_institucion_index_instituciones : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Session["tokens"] == null || ((DataSet)Session["tokens"]).Tables[0].Rows.Count == 0)
+            {
+                Response.Redirect("~/autenticacion.aspx");
+            }
+            else
+            {                              
+                if (!window.existetoken("E3C693D7-13BE-4B98-BB60-7B3159710E16"))
+                {
+                    Response.Redirect("~/autenticacion.aspx");
+                }
+                validatescurity(); //LO ULTIMO DEL LOAD
+            }
+
+         
+        }
+    }
+    protected void Imb_Instituciones_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("reg_instituciones.aspx");
+    }
+    protected void Imb_Reltrabajadores_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("reg_trabajadoresproy.aspx");
+    }
+    protected void Imb_Trabajadores_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("reg_trabajadores.aspx");
+    }
+    protected void Imb_Relinmuebles_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("reg_inmueblesproy.aspx");
+    }
+    protected void Imb_Inmuebles_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("reg_inmuebles.aspx");
+    }
+    protected void Imb_Eventos_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("reg_eventosproy.aspx");
+    }
+    protected void Imb_Proyectos_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("../mod_proyectos/proyectoreferente.aspx");
+    }
+    protected void Imb_Resoluciones_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("../mod_proyectos/proyectoadjudicadoenejecucion.aspx");
+    }
+    protected void Imb_Rendcuentas_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("rendicion_cuentas.aspx");
+    }
+    private void validatescurity()
+    {
+        //200E217F-71E6-4DBB-95EE-816A86198D58 1.1
+        if (!window.existetoken("200E217F-71E6-4DBB-95EE-816A86198D58"))
+        {
+            Imb_Instituciones.Visible = false;
+        }
+        //A757360B-5759-4070-89D0-C9696E5C2DF8 1.2
+        if (!window.existetoken("A757360B-5759-4070-89D0-C9696E5C2DF8"))
+        {
+            Imb_Trabajadores.Visible = false;
+        }
+        //54E1332C-4FD5-4034-8596-E097C6CFA58C 1.3
+        if (!window.existetoken("54E1332C-4FD5-4034-8596-E097C6CFA58C"))
+        {
+            Imb_Inmuebles .Visible = false;
+        }
+        //7D72764A-4835-4B63-8C40-DF766C9952F1 1.4
+        if (!window.existetoken("7D72764A-4835-4B63-8C40-DF766C9952F1"))
+        {
+            Imb_Proyectos.Visible = false;
+        }
+        //49795519-1868-467C-8225-AFD99F8D2C27 1.5
+        if (!window.existetoken("49795519-1868-467C-8225-AFD99F8D2C27"))
+        {
+            Imb_Resoluciones.Visible = false;
+        }
+        //75E2E6CF-C6A2-4C32-A406-A862BCA719F8 1.6
+        if (!window.existetoken("75E2E6CF-C6A2-4C32-A406-A862BCA719F8"))
+        {
+            Imb_Reltrabajadores.Visible = false;
+        }
+        //E6AF7398-72DC-4CAB-A890-026D9C6C3DDF 1.7
+        if (!window.existetoken("E6AF7398-72DC-4CAB-A890-026D9C6C3DDF"))
+        {
+            Imb_Relinmuebles.Visible = false;
+        }
+        //E0430222-2C3A-4CDB-818A-F893A322D9B0 1.8
+        if (!window.existetoken("E0430222-2C3A-4CDB-818A-F893A322D9B0"))
+        {
+            Imb_Eventos.Visible = false;
+        }
+        //D889FD88-85E5-450B-B77C-961598E659F7 1.9
+        if (!window.existetoken("D889FD88-85E5-450B-B77C-961598E659F7"))
+        {
+            Imb_Rendcuentas.Visible = false;
+        }
+    
+    
+    }
+
+
+}

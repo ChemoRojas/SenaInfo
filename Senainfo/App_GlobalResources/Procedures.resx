@@ -1,0 +1,1551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GetAccionesInformeDiagnostico" xml:space="preserve">
+    <value>SELECT T1.Icodaccion, T1.ICodAccionesInformeDiagnostico, T1.ICodInformeDiagnostico, T1.FechaInicioInforme, T1.TipoEventoIntervencion, T1.FechaAccion, T1.CodInstitucion, T1.CodTrabajador, T1.Observaciones, T1.FechaActualizacion, T2.Descripcion as DescripcionTipo
+FROM AccionesInformeDiagnostico T1
+INNER JOIN parTipoEventoIntervencion T2 ON  T1.TipoEventoIntervencion = T2.TipoEventoIntervencion 
+INNER JOIN InformesDiagnosticos T3 ON T1.ICodInformeDiagnostico = T3.ICodInformeDiagnostico
+WHERE  T1.ICodInformeDiagnostico =</value>
+    <comment>SELECT T1.Icodaccion, T1.ICodAccionesInformeDiagnostico, T1.ICodInformeDiagnostico, T1.FechaInicioInforme, T1.TipoEventoIntervencion, T1.FechaAccion, T1.CodInstitucion, T1.CodTrabajador, T1.Observaciones, T1.FechaActualizacion, T2.Descripcion as DescripcionTipo
+FROM AccionesInformeDiagnostico T1
+INNER JOIN parTipoEventoIntervencion T2 ON  T1.TipoEventoIntervencion = T2.TipoEventoIntervencion 
+INNER JOIN InformesDiagnosticos T3 ON T1.ICodInformeDiagnostico = T3.ICodInformeDiagnostico
+WHERE T3.ICodIe = </comment>
+  </data>
+  <data name="GetCapacitacionNino" xml:space="preserve">
+    <value>Select T2.ICodCapacitacionNino, T1.CodDiagnostico,T3.Descripcion ,T1.FechaDiagnostico, T4.Descripcion as Area,
+T2.Termino,T2.FechaInicioCapacitacion, T2.FechaTerminoCapacitacion
+From DiagnosticoGeneral T1 
+Inner Join CapacitacionNino T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+inner join parAreaCapacitacion T3 On T2.CodAreaCapacitacion = T3.CodAreaCapacitacion
+inner join partipocapacitacion T4 ON T4.TipoCapacitacion = T2.TipoCapacitacion
+WHERE /*T1.CodTipoDiagnosticoGlosa = 6 And*/ T1.ICodIE =</value>
+    <comment>Select T1.CodDiagnostico,T3.Descripcion ,T1.FechaDiagnostico, T4.Descripcion as Area,
+T2.Termino,T2.FechaInicioCapacitacion, T2.FechaTerminoCapacitacion
+From DiagnosticoGeneral T1 
+Inner Join CapacitacionNino T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+inner join parAreaCapacitacion T3 On T2.CodAreaCapacitacion = T3.CodAreaCapacitacion
+inner join partipocapacitacion T4 ON T4.TipoCapacitacion = T2.TipoCapacitacion
+WHERE /*T1.CodTipoDiagnosticoGlosa = 6 And*/ T1.ICodIE =</comment>
+  </data>
+  <data name="GetDiagnosticoCApacitacionMostrar" xml:space="preserve">
+    <value>select  TipoCapacitacion,CodAreaCapacitacion,CodOrganismoCapacitador,
+CodEstadoCapacitacion, FechaInicioCapacitacion,HorasCurso,Descripcion,
+Termino,FechaTerminoCapacitacion
+From CapacitacionNino
+Where CodDiagnostico=</value>
+  </data>
+  <data name="GetDiagnosticoDroga" xml:space="preserve">
+    <value>Select T2.ICodDroga,T1.CodDiagnostico, T2.FechaDiagnostico,T3.Descripcion, T4.Descripcion as TipoConsumo, 
+(Paterno +' '+ Materno +' '+ Nombres)AS NombreCompleto
+From DiagnosticoGeneral T1 
+Inner Join DiagnosticosDroga T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+Inner Join parDrogas T3 On T2.CodDroga = T3.CodDroga
+inner join parTipoConsumoDroga T4 on T4.TipoConsumoDroga = T2.TipoConsumoDroga
+inner join Trabajadores T5 On T5.IcodTrabajador = T2.IcodTrabajador
+WHERE T1.CodTipoDiagnosticoGlosa = 3 And T1.ICodIE =</value>
+  </data>
+  <data name="GetDiagnosticoEscolar" xml:space="preserve">
+    <value>Select T2.alingreso, T1.CodDiagnostico, T3.Descripcion, T2.FechaDiagnostico As FechaDiagnostico, T2.AnoUltimoCursoAprobado,
+T4.Descripcion AS AsistenciaEscolar, T2.ICodEscolar
+From DiagnosticoGeneral T1 
+Inner Join DiagnosticosEscolar T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+Inner Join parEscolaridad T3 On T2.CodEscolaridad = T3.CodEscolaridad
+Inner Join parTipoAsistenciaEscolar T4 on T4.TipoAsistenciaEscolar = T2.TipoAsistenciaEscolar 
+WHERE T1.CodTipoDiagnosticoGlosa = 1 And T1.ICodIE =</value>
+    <comment>Select T1.CodDiagnostico, T3.Descripcion, T2.FechaCreacion As FechaDiagnostico, T2.AnoUltimoCursoAprobado,
+T4.Descripcion AS AsistenciaEscolar, T2.ICodEscolar
+From DiagnosticoGeneral T1 
+Inner Join DiagnosticosEscolar T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+Inner Join parEscolaridad T3 On T2.CodEscolaridad = T3.CodEscolaridad
+Inner Join parTipoAsistenciaEscolar T4 on T4.TipoAsistenciaEscolar = T2.TipoAsistenciaEscolar 
+WHERE T1.CodTipoDiagnosticoGlosa = 1 And T1.ICodIE =  </comment>
+  </data>
+  <data name="GetDiagnosticoGeneral" xml:space="preserve">
+    <value>SELECT T1.CodDiagnostico, T1.CodTipoDiagnosticoGlosa, T1.CodNino, T1.ICodIE, T2.Descripcion, T1.FechaDiagnostico
+ from DiagnosticoGeneral T1 
+inner join parTipoDiagnosticoGlosa  T2 on T1.CodTipoDiagnosticoGlosa = T2.CodTipoDiagnosticoGlosa where IndVigencia = 'V' AND ICodIE =</value>
+  </data>
+  <data name="GetDiagnosticoMaltrato" xml:space="preserve">
+    <value>Select  T2.ICodMaltrato,T1.CodDiagnostico,T4.descripcion AS TipomaltratoDes ,T3.Descripcion, 
+
+(T5.paterno+' '+T5.Materno+' '+T5.Nombres) AS NombreCompleto, T2.FechaDiagnostico ,
+
+/*,(T6.Apellido_Paterno+' '+T6.Apellido_Materno+' '+T6.Nombres) AS NombreCompletoPR,*/
+
+t6.descripcion AS NombreCompletoPR
+
+
+From DiagnosticoGeneral T1 
+
+Inner Join DiagnosticosMaltrato T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+
+Inner Join parMaltrato T3 On T2.CodMaltrato = T3.CodMaltrato
+
+Inner join partipomaltrato T4 on T3.TipoMaltrato = T4.TipoMaltrato
+
+inner join Trabajadores T5 on T2.ICodTrabajador = T5.ICodTrabajador
+
+inner join ParTiporelacion T6 on t6.tiporelacion =  t2.TipoRelacion
+
+--left join PersonasRelacionadas T6 ON T6.CodPersonaRelacionada = T2.CodPersonaRelacionada
+
+--left join ninospersonasrelacionadas T7 ON T1.ICodie = T7.ICodie And T6.CodPersonaRelacionada = T7.CodPersonaRelacionada
+
+--left join partiporelacion T8 ON T8.Tiporelacion = t7.tiporelacion
+
+WHERE T1.CodTipoDiagnosticoGlosa = 2 And T1.ICodIE =
+</value>
+    <comment>Select  T2.ICodMaltrato,T1.CodDiagnostico,T4.descripcion AS TipomaltratoDes ,T3.Descripcion, 
+(T5.paterno+' '+T5.Materno+' '+T5.Nombres) AS NombreCompleto, T2.FechaDiagnostico, 
+(T6.Apellido_Paterno+' '+T6.Apellido_Materno+' '+T6.Nombres) AS NombreCompletoPR
+From DiagnosticoGeneral T1 
+Inner Join DiagnosticosMaltrato T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+Inner Join parMaltrato T3 On T2.CodMaltrato = T3.CodMaltrato
+Inner join partipomaltrato T4 on T3.TipoMaltrato = T4.TipoMaltrato
+inner join Trabajadores T5 on T2.ICodTrabajador = T5.ICodTrabajador
+left join PersonasRelacionadas T6 ON T6.CodPersonaRelacionada = T2.CodPersonaRelacionada
+WHERE T1.CodTipoDiagnosticoGlosa = 2 And T1.ICodIE = </comment>
+  </data>
+  <data name="GetDiagnosticoPsicologico" xml:space="preserve">
+    <value>Select T2.ICodPsicologico,T1.CodDiagnostico, T2.FechaDiagnostico, T7.Descripcion As CodTipoDiagnosticoPsi, T3.Descripcion As DescInstrumentoMedicion, 
+T4.descripcion As DescMediciones, T6.Descripcion As CodTrastornoMental, 
+(T5.Paterno + ' ' + T5.Materno + ' ' + T5.Nombres) as NombreCompleto
+
+From DiagnosticoGeneral T1
+
+Inner Join DiagnosticosPsicologico T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+inner join parMedicionesDiagnosticas T3 On T2.CodMedicionesDiagnosticas = T3.CodMedicionesDiagnosticas
+inner join parInstrumentosDiagnosticos T4 On T2.CodInstrumentoDiagnostico = T4.CodInstrumentoDiagnostico
+inner join Trabajadores T5 On T5.IcodTrabajador = T2.IcodTrabajador
+inner join parTrastornosMentales T6 on T6.CodTrastornoMental = T2.CodTrastornoMental
+inner join parTipoDiagnosticoPsi T7 on T7.CodTipoDiagnosticoPsi = T2.CodTipoDiagnosticoPsi
+WHERE T1.ICodIE =</value>
+  </data>
+  <data name="GetDiagnosticosDiscapacidad" xml:space="preserve">
+    <value>SELECT T1.ICodIE,T1.IcodDiscapacidad,T1.TipoDiscapacidad, T1.FechaDiagnostico, T1.Observacion, 
+T1.CodNivelDiscapacidad, T1.CodInstitucion, T1.CodTrabajador, T1.IndVigencia, T1.FechaActualizacion, 
+T1.IdUsuarioActualizacion, T4.Nombres, T4.Paterno, T4.Materno, T3.Descripcion as DescripcionTipo, T5.Descripcion as DescripcionNivel--T1.ICodDiagnosticoDiscapacidad, 
+FROM DiagnosticosDiscapacidad T1
+INNER JOIN parTipoDiscapacidad  T3 ON 
+T1.TipoDiscapacidad  = T3.TipoDiscapacidad 
+INNER JOIN Trabajadores T4 ON 
+T1.ICodTrabajador = T4.ICodTrabajador
+INNER JOIN parNivelDiscapacidad T5 ON 
+T1.CodNivelDiscapacidad = T5.CodNivelDiscapacidad 
+WHERE T1.ICodIE = </value>
+    <comment>SELECT DISTINCT T1.ICodIE,/*T1.CodDiagnostico,*/T1.TipoDiscapacidad, T1.FechaDiagnostico, T1.Observacion, 
+T1.CodNivelDiscapacidad, T1.CodInstitucion, T1.CodTrabajador, T1.IndVigencia, T1.FechaActualizacion, 
+T1.IdUsuarioActualizacion, T4.Nombres, T4.Paterno, T4.Materno, T3.Descripcion as DescripcionTipo, T5.Descripcion as DescripcionNivel--T1.ICodDiagnosticoDiscapacidad, 
+FROM DiagnosticosDiscapacidad T1
+INNER JOIN DiagnosticoGeneral T2 ON T1.ICodIE = T2.ICodIE                  /*T1.CodDiagnostico = T2.CodDiagnostico*/
+INNER JOIN parTipoDiscapacidad  T3 ON T1.TipoDiscapacidad  = T3.TipoDiscapacidad AND T3.IndVigencia = 'V'
+INNER JOIN Trabajadores T4 ON T1.CodTrabajador = T4.ICodTrabajador
+INNER JOIN parNivelDiscapacidad T5 ON T1.CodNivelDiscapacidad = T5.CodNivelDiscapacidad AND T5.IndVigencia = 'V'
+WHERE T2.ICodIE =  </comment>
+  </data>
+  <data name="GetDiagnosticosDiscapacidadById" xml:space="preserve">
+    <value>SELECT T1.ICodDiscapacidad, /*T1.CodDiagnostico,*/ T1.TipoDiscapacidad, T1.FechaDiagnostico, T1.Observacion, T1.CodNivelDiscapacidad, T1.CodInstitucion, T1.CodTrabajador, T1.IndVigencia, T1.FechaActualizacion, T1.IdUsuarioActualizacion, T1.FechaInscripcion, T1.InscritoFonadis
+FROM DiagnosticosDiscapacidad T1
+WHERE T1.ICodDiscapacidad = </value>
+  </data>
+  <data name="GetDiagnosticosHechosJudicialesMostrar" xml:space="preserve">
+    <value>Select 
+T2.FechaHechoJudicial
+
+, T3.TipoTribunal
+, T3.CodRegion
+, T2.CodTribunal
+, T4.CodTipoCausalIngreso
+, T2.CodCausalIngreso
+, T2.RolCausa
+, T2.Ruc
+, T2.Rit
+, T2.TieneQuerellaSename
+, T2.Descripcion
+, T2.Victima
+, T2.Acusado
+, T2.TieneDefensor
+, T2.ICodTrabajador
+FROM HechosJudiciales T2
+inner join parTribunales T3 On T2.CodTribunal = T3.CodTribunal
+INNER join ParCausalesIngreso T4 On T4.CodCausalIngreso = T2.CodCausalIngreso
+WHERE T2.ICodHechosJudiciales =</value>
+    <comment>Select T1.CodDiagnostico,T4.Descripcion ,T1.FechaDiagnostico
+From DiagnosticoGeneral T1 
+Inner Join HechosJudiciales T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+inner join parTribunales T3 On T2.CodTribunal = T3.CodTribunal
+inner join DelitosHechosJudiciales T5 On T2.ICodHechosJudiciales = T5.ICodHechosJudiciales
+inner join parDelito T4 On T4.CodDelito = T5.CodDelito
+WHERE T1.CodTipoDiagnosticoGlosa = 9 AND T1.codDiagnostico =</comment>
+  </data>
+  <data name="GetDiagnosticoSocial" xml:space="preserve">
+    <value>Select T2.ICodSocial, T1.CodDiagnostico,T2.FechaDiagnostico,T3.descripcion as SituacionEspecial,
+T4.Descripcion AS SituacionCalle,
+T5.Descripcion AS EstadodeAbandono,
+T6.Descripcion AS SituacionTuicion,
+(Paterno +' '+ Materno +' '+Nombres) AS NombreCompleto
+From DiagnosticoGeneral T1 
+Inner Join DiagnosticosSocial T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+Inner join parSituacionesEspeciales T3 ON T3.CodSituacionEspecial = T2.CodSituacionEspecial
+inner Join parSituacionCalle T4 ON T4.CodSituacionCalle = T2.CodSituacionCalle
+inner JOin parEstadoAbandono T5 ON T5.CodEstadoAbandono = T2.CodEstadoAbandono
+inner Join parSituacionTuicion T6 On T6.CodSituacionTuicion = T2.CodSituacionTuicion
+inner Join Trabajadores T7 On T7.ICodTrabajador = T2.ICodTrabajador
+WHERE T3.IndVigencia = 'V' AND T1.ICodIE =</value>
+  </data>
+  <data name="GetDiagnosticosPeoresFormasMostrar" xml:space="preserve">
+    <value>select T1.ICodPFTI, T1.CodDiagnostico, T2.FechaDiagnostico,
+(T3.Paterno +' '+T3.Materno +' '+ T3.Nombres) AS NombreCompleto,  
+T4.Nombre
+from  DiagnosticosPeoresFormaTrabajo T1 
+INNER JOIN DiagnosticoGeneral T2 ON T2.CodDiagnostico = T1.CodDiagnostico
+Inner Join Trabajadores T3 ON T3.ICodTrabajador = T1.ICodTrabajador
+inner join parCategoriasPFMI T4 ON T4.CodCategoria = T1.CodCategoria
+where T2.ICodIE =</value>
+  </data>
+  <data name="GetDiagnosticosSocialMostrar" xml:space="preserve">
+    <value>Select  FechaDiagnostico, CodSituacionEspecial,CodSituacionSocioEconomica,
+CodSituacionCalle,AnoMesInicioVivirCalle,NumeroPersonasHogar,
+NumeroPersonasSitio,NumeroHermanosVivenConEl,NumeroHermanos,
+PuntajeCAS,FechaPuntajeCAS,CodTrabajador,Observacion,CodEstadoAbandono,
+CodSituacionTuicion,CodEtnia, Fonasa,ChileSolidario,ChileCreceContigo, FechaFonasa,FechaChileSolidario,FechaChileCreceContigo,
+AdolescenteEmbarazada, NumeroMesesGestacion, EmbarazoAbusoViolacion, AdolescentePadreMadre, NumeroHijos, HijosAbusoViolacion   From DiagnosticosSocial Where CodDiagnostico=</value>
+    <comment>Select FechaDiagnostico, CodSituacionEspecial,CodSituacionSocioEconomica,
+CodSituacionCalle,AnoMesInicioVivirCalle,NumeroPersonasHogar,
+NumeroPersonasSitio,NumeroHermanosVivenConEl,NumeroHermanos,
+PuntajeCAS,FechaPuntajeCAS,CodTrabajador,Observacion,CodEstadoAbandono,
+CodSituacionTuicion From DiagnosticosSocial Where CodDiagnostico=</comment>
+  </data>
+  <data name="GetDiligenciaBycode" xml:space="preserve">
+    <value>SELECT T1.ICodDiligencia, T1.CodDiligencia, T1.ICodIE, /*T1.CodNino,*/ 
+       T1.FechaSolicitud, T1.TipoSolicitanteDiligencia, T1.Realizada, 
+       T1.FechaRealizada, T1.CodInstitucion, T1.ICodTrabajador, T1.PropuestaTecnica, T1.ResultadoDiscernimiento,
+       T2.Nombres, T2.Paterno, T2.Materno, T3.Descripcion, T4.Descripcion as DescripcionTipo 
+FROM Diligencias T1 
+INNER JOIN Trabajadores T2 ON T1.ICodTrabajador = T2.ICodTrabajador
+INNER JOIN parTipoSolicitanteDiligencia T3 ON T3.TipoSolicitanteDiligencia = T1.TipoSolicitanteDiligencia AND T3.IndVigencia = 'V'
+INNER JOIN parDiligencia T4 ON T4.CodDiligencia = T1.CodDiligencia 
+WHERE   T1.ICodDiligencia  =</value>
+    <comment>SELECT T1.ICodDiligencia, T1.CodDiligencia, T1.ICodIE, /*T1.CodNino,*/ 
+       T1.FechaSolicitud, T1.TipoSolicitanteDiligencia, T1.Realizada, 
+       T1.FechaRealizada, T1.CodInstitucion, T1.CodTrabajador, T1.PropuestaTecnica, T1.ResultadoDiscernimiento,
+       T2.Nombres, T2.Paterno, T2.Materno, T3.Descripcion, T4.Descripcion as DescripcionTipo 
+FROM Diligencias T1 
+INNER JOIN Trabajadores T2 ON T1.CodTrabajador = T2.ICodTrabajador
+INNER JOIN parTipoSolicitanteDiligencia T3 ON T3.TipoSolicitanteDiligencia = T1.TipoSolicitanteDiligencia AND T3.IndVigencia = 'V'
+INNER JOIN parDiligencia T4 ON T4.CodDiligencia = T1.CodDiligencia 
+WHERE    T1.ICodDiligencia  = 356339</comment>
+  </data>
+  <data name="GetDiligencias" xml:space="preserve">
+    <value>SELECT T1.ICodDiligencia, T1.CodDiligencia, T1.ICodIE, --T1.CodNino, 
+       T1.FechaSolicitud, T1.TipoSolicitanteDiligencia, T1.Realizada, 
+       T1.FechaRealizada, T1.CodInstitucion, T1.ICodTrabajador, T1.PropuestaTecnica, T1.ResultadoDiscernimiento,
+       T2.Nombres, T2.Paterno, T2.Materno, T3.Descripcion, T4.Descripcion as DescripcionTipo, (T2.Nombres + ' ' + T2.Paterno + ' ' + T2.Materno) as NombreCompleto 
+FROM Diligencias T1 
+INNER JOIN Trabajadores T2 ON T1.ICodTrabajador = T2.ICodTrabajador
+INNER JOIN parTipoSolicitanteDiligencia T3 ON T3.TipoSolicitanteDiligencia = T1.TipoSolicitanteDiligencia AND T3.IndVigencia = 'V'
+INNER JOIN parDiligencia T4 ON T4.CodDiligencia = T1.CodDiligencia 
+WHERE ICodIE = </value>
+  </data>
+  <data name="GetEtapasInformeDiagnostico" xml:space="preserve">
+    <value>SELECT T1.IcodEtapa, T1.ICodInformeDiagnostico, T1.FechaEtapa, T1.CodEtapasIntervencion, T2.Descripcion
+FROM EtapasInformeDiagnostico T1 
+INNER JOIN parEtapasIntervencion T2 ON  T1.CodEtapasIntervencion = T2.CodEtapasIntervencion 
+INNER JOIN InformesDiagnosticos T3 ON T1.ICodInformeDiagnostico = T3.ICodInformeDiagnostico
+WHERE T3.ICodInformeDiagnostico =</value>
+    <comment>SELECT T1.IcodEtapa, T1.ICodInformeDiagnostico, T1.FechaEtapa, T1.CodEtapasIntervencion, T2.Descripcion
+FROM EtapasInformeDiagnostico T1 
+INNER JOIN parEtapasIntervencion T2 ON  T1.CodEtapasIntervencion = T2.CodEtapasIntervencion 
+INNER JOIN InformesDiagnosticos T3 ON T1.ICodInformeDiagnostico = T3.ICodInformeDiagnostico
+WHERE T3.ICodIe = </comment>
+  </data>
+  <data name="GetEtapasResolucion" xml:space="preserve">
+    <value>SELECT T1.ICodEtapaResolucion,T1.ICodResolucion,T1.CodProyecto,T1.AnoResolucion,T1.NumeroResolucion,	T1.Etapa,T1.FechaInicio,T1.FechaTermino,T1.MontoInversion,T1.MontoOperacion,T1.MontoPersonal,T1.FechaActualizacion,	T1.IdusuarioActualizacion,T1.FactorEtapa
+From EtapasResolucion T1 Where T1.ICodResolucion =
+ </value>
+  </data>
+  <data name="GetGrillaPerRel" xml:space="preserve">
+    <value>SELECT T1.CodPersonaRelacionada, T2.Nombres, T2.Apellido_Paterno, T2.Apellido_Materno, (T2.Apellido_Paterno + ' ' + T2.Apellido_Paterno + ' ' + T2.Nombres) as NombreCompleto, T3.Descripcion, T1.FechaRelacion FROM IngresoPersonaRelacionada T1 
+INNER JOIN PersonasRelacionadas T2 ON T1.CodPersonaRelacionada =T2.CodPersonaRelacionada 
+INNER JOIN parTipoRelacion T3 ON T3.TipoRelacion = T1.TipoRelacion where T1.ICodIE =</value>
+  </data>
+  <data name="GetHechosJudiciales" xml:space="preserve">
+    <value>Select T2.ICodHechosJudiciales, T1.CodDiagnostico, T4.Descripcion As MateriaCausa ,T3.descripcion AS tribunal,T2.FechaHechoJudicial
+From DiagnosticoGeneral T1 
+Inner Join HechosJudiciales T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+inner join parTribunales T3 On T2.CodTribunal = T3.CodTribunal
+INNER join ParCausalesIngreso T4 On T4.CodCausalIngreso = T2.CodCausalIngreso
+WHERE T1.CodTipoDiagnosticoGlosa = 9 AND T1.ICodIE =</value>
+  </data>
+  <data name="GetHechosSalud" xml:space="preserve">
+    <value>SELECT T1.ICodHechosdeSalud,/* T1.CodDiagnostico,*/ T1.FechaDiagnostico, T1.CodHechoSalud,
+T1.CodAtencionHechoSalud, T1.CodLugarHechoSalud, T1.CodInstitucion, T1.CodTrabajador, 
+T1.Observacion, T1.IndVigencia, T1.FechaActualizacion, T1.IdUsuarioActualizacion,
+T3.Descripcion as DescripcionHecho,
+T4.Descripcion as DescripcionTipo,
+T5.Descripcion as DescripcionLugar,
+T6.Nombres, T6.Paterno, T6.Materno
+FROM HechosSalud T1
+INNER JOIN Ingresos_Egresos T2 ON  T1.IcodIe = T2.IcodIE --T1.CodDiagnostico = T2.CodDiagnostico
+INNER JOIN parHechosSalud T3 ON T1.CodHechoSalud = T3.CodHechoSalud 
+INNER JOIN parAtencionHechoSalud T4 ON T1.CodAtencionHechoSalud = T4.CodAtencionHechoSalud AND rtrim(T4.IndVigencia) = 'V'
+INNER JOIN parLugarHechoSalud T5 ON T1.CodLugarHechoSalud = T5.CodLugarHechoSalud AND rtrim(T5.IndVigencia) = 'V'
+INNER JOIN Trabajadores T6 ON T1.ICodTrabajador = T6.ICodTrabajador
+WHERE T2.ICodIE = </value>
+  </data>
+  <data name="GetHechosSaludById" xml:space="preserve">
+    <value>SELECT T1.ICodHechosdeSalud, T1.ICodIE,/*T1.CodDiagnostico,*/ T1.FechaDiagnostico, T1.CodHechoSalud,
+T1.CodAtencionHechoSalud, T1.CodLugarHechoSalud, T1.CodInstitucion, T1.CodTrabajador, 
+T1.Observacion, T1.IndVigencia, T1.FechaActualizacion, T1.IdUsuarioActualizacion,
+T3.Descripcion as DescripcionHecho,
+T4.Descripcion as DescripcionTipo,
+T5.Descripcion as DescripcionLugar,
+T6.Nombres, T6.Paterno, T6.Materno
+FROM HechosSalud T1 
+/*INNER JOIN DiagnosticoGeneral T2 ON T1.ICodIE = T2.ICodIE*/
+INNER JOIN parHechosSalud T3 ON T1.CodHechoSalud = T3.CodHechoSalud 
+INNER JOIN parTipoHechoSalud T4 ON T1.CodAtencionHechoSalud = T4.TipoHechoSalud AND rtrim(T4.IndVigencia) = 'V'
+INNER JOIN parLugarHechoSalud T5 ON T1.CodLugarHechoSalud = T5.CodLugarHechoSalud AND rtrim(T5.IndVigencia) = 'V'
+INNER JOIN Trabajadores T6 ON T1.CodTrabajador = T6.ICodTrabajador
+WHERE T1.ICodHechosdeSalud =</value>
+  </data>
+  <data name="GetInformesDiagnosticos" xml:space="preserve">
+    <value>SELECT T1.ICodInformeDiagnostico, T1.ICodIE, T1.FechaInicioInforme, 
+T1.CodTerminoDiagnostico, T1.TipoDiagnostico, T1.FechaTerminoInforme, T1.FechaActualizacion, 
+T1.IdUsuarioActualizacion 
+FROM InformesDiagnosticos T1
+WHERE T1.ICodIe = </value>
+  </data>
+  <data name="GetIngresoPersonaRelacionada" xml:space="preserve">
+    <value>SELECT T1.ICodIE, T1.CodPersonaRelacionada, T1.CodSituacion1, T1.CodSituacion2, T1.CodSituacion3, T1.FechaRelacion, T1.TipoRelacion, T1.CodEscolaridadAdulto, 
+T1.CodProfesion, T1.CodNacionalidad, T1.CodActividad, T1.FechaActualizacion, /*T1.IdUsuarioActualizacion,*/ T3.descripcion,
+T2.Rut, T2.Nombres, T2.Apellido_Paterno, T2.Apellido_Materno, T2.Sexo, T2.FechaNacimiento, T4.Descripcion AS DescrSitiacion
+FROM  ninospersonasrelacionadas T1 /*IngresoPersonaRelacionada T1*/
+INNER JOIN PersonasRelacionadas T2 ON T1.CodPersonaRelacionada = T2.CodPersonaRelacionada 
+INNER JOIN parTipoRelacion T3 ON T1.TipoRelacion = T3.TipoRelacion
+INNER JOIN parSituacionPersonaRelacionada T4 ON T4.CodSituacion = T1.CodSituacion1
+WHERE T1.ICodIE =</value>
+    <comment>SELECT T1.ICodIE, T1.CodPersonaRelacionada, T1.CodSituacion1, T1.CodSituacion2, T1.CodSituacion3, T1.FechaRelacion, T1.TipoRelacion, T1.CodEscolaridadAdulto, 
+T1.CodProfesion, T1.CodNacionalidad, T1.CodActividad, T1.FechaActualizacion, /*T1.IdUsuarioActualizacion,*/ T3.descripcion,
+T2.Rut, T2.Nombres, T2.Apellido_Paterno, T2.Apellido_Materno, T2.Sexo, T2.FechaNacimiento
+FROM  ninospersonasrelacionadas T1 /*IngresoPersonaRelacionada T1*/
+INNER JOIN PersonasRelacionadas T2 ON T1.CodPersonaRelacionada = T2.CodPersonaRelacionada 
+INNER JOIN parTipoRelacion T3 ON T1.TipoRelacion = T3.TipoRelacion
+WHERE T1.ICodIE =</comment>
+  </data>
+  <data name="Getinmueble" xml:space="preserve">
+    <value>SELECT T1.ICodInmueble, T1.CodInstitucion, T1.CodInmueble, T1.IdUsuarioActualizacion, T1.CodsituacionLegalInmueble, T1.CodComuna, T1.TipoInmueble, T1.Nombre, T1.Direccion, T1.Telefono, T1.Fax, T1.CodigoPostal, T1.m2Construidos, T1.m2totales, T1.NumeroDormitorios, T1.CapacidadNinos, T1.NumeroBanos, T1.CantidadPisos, T1.AreasVerdes, T1.IndVigencia, T1.FechaActualizacion 
+FROM Inmueble T1
+INNER JOIN ProyectoInmueble T2 ON T1.ICodInmueble = T2.ICodInmueble
+WHERE T1.IndVigencia ='V' and T2.CodProyecto = </value>
+    <comment>Obtiene Inmubles segun proyecto</comment>
+  </data>
+  <data name="GetInmuebletodos" xml:space="preserve">
+    <value>SELECT T1.ICodInmueble, T1.CodInstitucion, T1.CodInmueble, T1.IdUsuarioActualizacion, T1.CodsituacionLegalInmueble, T1.CodComuna, T1.TipoInmueble, T1.Nombre, T1.Direccion, T1.Telefono, T1.Fax, T1.CodigoPostal, T1.m2Construidos, T1.m2totales, T1.NumeroDormitorios, T1.CapacidadNinos, T1.NumeroBanos, T1.CantidadPisos, T1.AreasVerdes, T1.IndVigencia, T1.FechaActualizacion 
+FROM Inmueble T1</value>
+  </data>
+  <data name="GetIntervenciones" xml:space="preserve">
+    <value>SELECT  * FROM PlanIntervencion T1 Inner join Ingresos_Egresos T2 On T1.ICodIE = T2.ICodIE Where T2.CodNino =  </value>
+  </data>
+  <data name="GetMostrarDiagnosticoDroga" xml:space="preserve">
+    <value>select ICodDroga,FechaDiagnostico,CodDroga,TipoConsumoDroga,ICodTrabajador,Observacion,SeAtiendeConace  
+from DiagnosticosDroga T1 
+Where CodDiagnostico = </value>
+  </data>
+  <data name="GetMostrarDiagnosticoEscolar" xml:space="preserve">
+    <value>select T1.FechaDiagnostico, T1.AnoUltimoCursoAprobado,T1.Observaciones,
+T2.Descripcion As Descolar,
+/*(T3.Nombres + T3.Paterno + T3.Materno) AS NombreCompleto*/t3.IcodTrabajador,
+T4.Descripcion ,
+T1.CodEscolaridad,T1.TipoAsistenciaEscolar, T3.CodTrabajador
+from Diagnosticosescolar T1 
+inner Join ParEscolaridad T2 On T1.CodEscolaridad = T2.CodEscolaridad
+inner join Trabajadores T3 On T1.ICodTrabajador = T3.ICodTrabajador
+inner join parTipoAsistenciaEscolar T4 On T1.TipoAsistenciaEscolar = T4.TipoAsistenciaEscolar
+where T1.CodDiagnostico =</value>
+    <comment>select T1.FechaDiagnostico, T1.AnoUltimoCursoAprobado,T1.Observaciones,
+T2.Descripcion As Descolar,
+(T3.Nombres + T3.Paterno + T3.Materno) AS NombreCompleto,
+T4.Descripcion 
+from Diagnosticosescolar T1 
+inner Join ParEscolaridad T2 On T1.CodEscolaridad = T2.CodEscolaridad
+inner join Trabajadores T3 On T1.ICodTrabajador = T3.ICodTrabajador
+inner join parTipoAsistenciaEscolar T4 On T1.TipoAsistenciaEscolar = T4.TipoAsistenciaEscolar
+where T1.CodDiagnostico =</comment>
+  </data>
+  <data name="GetMostrarDiagnosticoMaltrato" xml:space="preserve">
+    <value>select T1.FechaDiagnostico,T1.PresentaMaltrato
+,T3.TipoMaltrato, T2.CodMaltrato, 
+T1.ConoceMaltratador,T1.TipoRelacion, T1.ViveConAgresor,
+T1.ExisteQuerellaSename,T1.ICodTrabajador, T1.observacion
+from  DiagnosticosMaltrato T1 
+inner Join parMaltrato T2 On T1.CodMaltrato = T2.CodMaltrato
+inner join parTipoMaltrato T3 
+On T2.TipoMaltrato = T3.TipoMaltrato 
+where T1.ICodMaltrato =</value>
+    <comment>Select  T4.CodProyecto,T4.CodModeloIntervencion,
+T5.CodCausalIngreso,
+T1.CodProyecto, 
+T1.CodNino,T1.ICodIE,T2.Nombres,T2.Apellido_paterno,T2.Apellido_Materno, T1.FechaIngreso,
+T2.MuestraADN AS Muestranino, T3.MuestraADN
+
+From Ingresos_Egresos T1 INNER JOIN  NINOS T2 ON T1.CODNINO = T2.CODNINO 
+
+left join MuestraADN T3  On T3.ICodIE = T1.ICodIE
+left join Proyectos T4   on T1.CodProyecto = T4.CodProyecto AND (T4.CodModeloIntervencion = 100 OR T4.CodModeloIntervencion = 101 OR T4.CodModeloIntervencion = 104)
+left join CausalesIngreso T5 on T1.ICodIE = T5.ICodIE and (T5.CodCausalIngreso = 2 or T5.CodCausalIngreso = 3 and T5.CodCausalIngreso = 7 or T5.CodCausalIngreso = 8 or T5.CodCausalIngreso = 20 or
+T5.CodCausalIngreso = 18 or T5.CodCausalIngreso = 19 or T5.CodCausalIngreso = 21 or T5.CodCausalIngreso = 22 or T5.CodCausalIngreso = 23 or T5.CodCausalIngreso = 25 or T5.CodCausalIngreso = 30 or T5.CodCausalIngreso = 34 or T5.CodCausalIngreso = 114 or T5.CodCausalIngreso = 119 or 
+T5.CodCausalIngreso = 120 or T5.CodCausalIngreso = 121 or T5.CodCausalIngreso = 122 or T5.CodCausalIngreso = 124 or T5.CodCausalIngreso = 138 or T5.CodCausalIngreso = 139 or T5.CodCausalIngreso = 144 or T5.CodCausalIngreso = 145 or T5.CodCausalIngreso = 146 or T5.CodCausalIngreso = 147 or T5.CodCausalIngreso = 148 or
+T5.CodCausalIngreso = 149 or T5.CodCausalIngreso = 156 or T5.CodCausalIngreso = 174 or T5.CodCausalIngreso = 176 or T5.CodCausalIngreso = 177 or T5.CodCausalIngreso = 178 or T5.CodCausalIngreso = 224 or T5.CodCausalIngreso = 234 or T5.CodCausalIngreso = 235 or T5.CodCausalIngreso = 236 or T5.CodCausalIngreso = 237 or
+T5.CodCausalIngreso = 239 or T5.CodCausalIngreso = 240 or T5.CodCausalIngreso = 242 or T5.CodCausalIngreso = 243)
+Where T5.CodCausalIngreso is not null and T1.FechaEgreso is null and T2.MuestraADN = 0 and T4.CodProyecto =</comment>
+  </data>
+  <data name="GetMostrarDiagnosticoPsicologico" xml:space="preserve">
+    <value>select  ICodPsicologico, CodInstrumentoDiagnostico, FechaDiagnostico, CodTipoDiagnosticoPsi, CodInstrumentoDiagnostico, CodMedicionesDiagnosticas, 
+ValorMedicion, CodTrastornoMental ,ICodTrabajador,Observaciones
+from DiagnosticosPsicologico  
+Where CodDiagnostico =</value>
+    <comment>select  FechaDiagnostico,CodInstrumentoDiagnostico,CodMedicionesDiagnosticas,
+ValorMedicion,ICodTrabajador,Observaciones
+from DiagnosticosPsicologico  
+Where CodDiagnostico = </comment>
+  </data>
+  <data name="GetNinosEnfermedadesCronicas" xml:space="preserve">
+    <value>SELECT DISTINCT T1.ICodEnfermedadCronica,T1.ICodIE, T1.CodEnfermedadCronica, 
+T1.FechaInicioDiagnostico,T1.Observacion, T1.IndVigencia, 
+T1.CodInstitucion, T1.CodTrabajador, T1.FechaActualizacion, T1.IdUsuarioActualizacion,
+T3.Descripcion,  T4.Nombres, T4.Paterno, T4.Materno
+FROM NinosEnfermedadesCronicas T1  
+INNER JOIN DiagnosticoGeneral T2 ON T1.ICodIE = T2.ICodIE              
+INNER JOIN parEnfermedadesCronicas T3 ON T1.CodEnfermedadCronica = T3.CodEnfermedadCronica
+INNER JOIN Trabajadores T4 ON T1.CodTrabajador = T4.ICodTrabajador
+WHERE T2.ICodIE = </value>
+    <comment>Select  T1.CodNino,T1.ICodIE,T2.Nombres,T2.Apellido_paterno,T2.Apellido_Materno, T1.FechaIngreso, T2.MuestraADN AS Muestranino, T3.MuestraADN
+From Ingresos_Egresos T1 INNER JOIN  NINOS T2 ON T1.CODNINO = T2.CODNINO 
+left join MuestraADN T3  On T1.ICodIE = T3.ICodIE
+Where   T1.FechaEgreso is null and T2.MuestraADN = 0 and T1.CodProyecto =</comment>
+  </data>
+  <data name="GetNinosEnfermedadesCronicasById" xml:space="preserve">
+    <value>SELECT DISTINCT T1.ICodEnfermedadCronica, T1.ICodIE, T1.CodEnfermedadCronica, 
+T1.FechaInicioDiagnostico,  T1.Observacion, T1.IndVigencia, 
+T1.CodInstitucion, T1.CodTrabajador, T1.FechaActualizacion, T1.IdUsuarioActualizacion,
+T3.Descripcion,  T4.Nombres, T4.Paterno, T4.Materno
+FROM NinosEnfermedadesCronicas T1  
+INNER JOIN DiagnosticoGeneral T2 ON T1.ICodIE = T2.ICodIE
+INNER JOIN parEnfermedadesCronicas T3 ON T1.CodEnfermedadCronica = T3.CodEnfermedadCronica
+INNER JOIN Trabajadores T4 ON T1.CodTrabajador = T4.ICodTrabajador
+WHERE T1.ICodEnfermedadCronica = </value>
+  </data>
+  <data name="GetparActividad" xml:space="preserve">
+    <value>SELECT T1.CodActividad, T1.Descripcion, T1.IndVigencia
+FROM parActividad T1
+Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparAreaCapacitacion" xml:space="preserve">
+    <value>select * from parAreaCapacitacion where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparAreaEspecializacion" xml:space="preserve">
+    <value>Select T1.CodAreaEspecializacion, T1.Descripcion, T1.IndVigencia
+From parAreaEspecializacion T1
+Where T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparAreaInsercionLAboral" xml:space="preserve">
+    <value>select * from parAreaInsercionLaboral Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparAtencionHechoSalud" xml:space="preserve">
+    <value>SELECT T1.CodAtencionHechoSalud, T1.Descripcion, T1.IndVigencia
+FROM parAtencionHechoSalud T1
+where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparBancos" xml:space="preserve">
+    <value>SELECT T1.CodBanco, T1.Descripcion, T1.DescCorta, T1.Convenio, T1.IndVigencia
+FROM parBancos T1 WHERE T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparCalidadJuridica" xml:space="preserve">
+    <value>SELECT T1.CodCalidadJuridica, T1.Descripcion, T1.IndVigencia 
+FROM parCalidadJuridica T1
+WHERE T1.IndVigencia = 'V'</value>
+    <comment>Obtiene Calidad Juridica</comment>
+  </data>
+  <data name="GetparCargos" xml:space="preserve">
+    <value>Select T1.CodCargo,T1.Descripcion,T1.IndVigencia
+From parCargos T1
+WHERE T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparCategoriasPFMI" xml:space="preserve">
+    <value>SELECT T1.CodCategoria, T1.CodClase, T1.Nombre, T1.Definicion
+From parCategoriasPFMI T1</value>
+  </data>
+  <data name="GetparCausalEgresoTrabajador" xml:space="preserve">
+    <value>
+Select T1.CodCausalEgresoTrabajador,T1.Descripcion,T1.IndVigencia
+From parCausalEgresoTrabajador T1 Where T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparCausalTerPro" xml:space="preserve">
+    <value>SELECT T1.CodCausalTerminoProyecto, T1.Descripcion, T1.IndVigencia
+FROM parCausalTerminoProyecto T1</value>
+  </data>
+  <data name="GetparComunas" xml:space="preserve">
+    <value>SELECT T1.CodComuna, T1.CodProvincia, T1.Descripcion, T1.PorcentajeAsignacion, T1.PorcentajeAsignacionNL, T1.IndVigencia
+FROM parComunas T1
+INNER JOIN parProvincia T2 ON T1.CodProvincia = T2.CodProvincia
+WHERE T2.CodRegion = 
+</value>
+  </data>
+  <data name="GetparDelitos" xml:space="preserve">
+    <value>Select * from parDelito where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparDepartamentosSENAME" xml:space="preserve">
+    <value>SELECT T1.CodDepartamentosSENAME, T1.Nombre, T1.NombreCorto, T1.IndVigencia
+FROM parDepartamentosSENAME T1</value>
+  </data>
+  <data name="GetparDepartamentosSENAMExModeloIntervencion" xml:space="preserve">
+    <value>Select T2.CodDepartamentosSENAME,T1.Nombre,T1.NombreCorto,T1.IndVigencia
+From  parModeloIntervencion_Tematica T2 inner join parDepartamentosSENAME T1 
+ON T1.CodDepartamentosSENAME  =  T2.CodDepartamentosSENAME
+Where   T2.CodModeloIntervencion=</value>
+  </data>
+  <data name="GetparDiagnosticoGlosa" xml:space="preserve">
+    <value>select * from parTipoDiagnosticoGlosa where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparDiasAtencion" xml:space="preserve">
+    <value>SELECT T1.CodDiasAtencion,T1.CodNemotecnico,T1.Descripcion,T1.DiasSemana,
+       T1.Feriado,T1.IndVigencia
+From parDiasAtencion T1 Where T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparDiligencia" xml:space="preserve">
+    <value>SELECT T1.CodDiligencia, T1.Descripcion, T1.IndVigencia, T1.PropuestaTecnica, T1.ResultadoDiscernimiento
+FROM parDiligencia T1 where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparDrogas" xml:space="preserve">
+    <value>SELECT T1.CodDroga, T1.Descripcion, T1.IndVigencia 
+From parDrogas T1 Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparEnfermedadesCronicas" xml:space="preserve">
+    <value>SELECT T1.CodEnfermedadCronica, T1.Descripcion, T1.IndVigencia
+FROM parEnfermedadesCronicas T1
+where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparEscolaridad" xml:space="preserve">
+    <value>SELECT T1.CodEscolaridad, T1.Tipo, T1.Descripcion, T1.CursoNivel, T1.EdadNivel, T1.IndVigencia
+FROM parEscolaridad T1 Where indvigencia = 'V' Order By T1.CodEscolaridad</value>
+  </data>
+  <data name="GetparEstadoAbandono" xml:space="preserve">
+    <value>SELECT T1.CodEstadoAbandono, T1.Descripcion, T1.Nemotecnico, T1.IndVigencia 
+From parEstadoAbandono T1 Where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparEstadoCapacitacion" xml:space="preserve">
+    <value>select * from parEstadoCapacitacion where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparEStadoIntervencion" xml:space="preserve">
+    <value>Select T1.CodEstadoIntervencion, T1.Descripcion From parEstadoIntervencion T1 INNER JOIN EstadosPlanIntervencion T2 ON T1.CodEstadoIntervencion = T2.CodEstadoIntervencion
+Where T2.CodPlanIntervencion = </value>
+  </data>
+  <data name="GetparEtapasIntervencion" xml:space="preserve">
+    <value>SELECT T1.CodEtapasIntervencion, T1.Descripcion, T1.IndVigencia 
+FROM parEtapasIntervencion T1 WHERE T1.IndVigencia  = 'V'</value>
+  </data>
+  <data name="GetparGradoCumplimiento" xml:space="preserve">
+    <value>SELECT CodGradoCumplimiento, Descripcion FROM parGradoCumplimientoIntervencion 
+ WHERE CodGradoCumplimiento =</value>
+  </data>
+  <data name="GetparHechosSalud" xml:space="preserve">
+    <value>SELECT T1.CodHechoSalud, T1.Descripcion, T1.IndVigencia
+FROM parHechosSalud T1
+where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparInstrumentosDiagnosticos" xml:space="preserve">
+    <value>SELECT T1.CodInstrumentoDiagnostico, T1.Descripcion, T1.IndVigencia 
+FROM parInstrumentosDiagnosticos T1 WHERE IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparLocalidad" xml:space="preserve">
+    <value>SELECT T1.CodLocalidad, T1.CodProvincia, T1.Descripcion, T1.PorcentajeAsignacion,T1.PorcentajeAsignacionNL,  T1.IndVigencia
+FROM parLocalidad T1
+INNER JOIN parProvincia T2 ON T1.CodLocalidad = T2.CodProvincia
+WHERE  T2.CodRegion = 
+</value>
+  </data>
+  <data name="GetparLugarHechoSalud" xml:space="preserve">
+    <value>SELECT T1.CodLugarHechoSalud, T1.Descripcion, T1.IndVigencia
+FROM parLugarHechosalud T1
+where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparMaltrato" xml:space="preserve">
+    <value>SELECT T1.CodMaltrato, T1.TipoMaltrato, T1.Descripcion, T1.IndVigencia
+From parMaltrato T1
+ where IndVigencia = 'V' AND T1.TipoMaltrato =</value>
+  </data>
+  <data name="GetparMateriaCausa" xml:space="preserve">
+    <value>SELECT     *
+FROM         parMateriaCausa
+WHERE     (IndVigencia = 'V')</value>
+  </data>
+  <data name="GetparMedicionesDiagnosticas" xml:space="preserve">
+    <value>select T1.CodMedicionesDiagnosticas, T1.Descripcion from parMedicionesDiagnosticas  T1
+inner JOIN intrumentoMedicion T2 On T1.CodMedicionesDiagnosticas = T2.CodMedicionesDiagnosticas
+WHERE T1.IndVigencia = 'V' AND T2.CodInstrumentoDiagnostico =</value>
+    <comment>SELECT T1.CodMedicionesDiagnosticas, T1.Descripcion, T1.IndVigencia 
+From parMedicionesDiagnosticas T1</comment>
+  </data>
+  <data name="GetparModeloIntervencion" xml:space="preserve">
+    <value>SELECT T1.CodModeloIntervencion, T1.Descripcion, T1.CreaPlanIntervencion, T1.CreaInformeDiagnostico, T1.IndVigencia, T1.Nemotecnico, T1.CantidadIntervenciones, T1.LRPA
+FROM parModeloIntervencion T1</value>
+  </data>
+  <data name="GetparModeloIntervencionxProyecto" xml:space="preserve">
+    <value>SELECT T1.CodModeloIntervencion, T1.Descripcion, T1.CreaPlanIntervencion, T1.CreaInformeDiagnostico, T1.IndVigencia, T1.Nemotecnico, T1.CantidadIntervenciones
+FROM parModeloIntervencion T1 inner join parModeloIntervencion_Tematica T2
+ON T1.CodModeloIntervencion = T2.CodModeloIntervencion
+Where T2.TipoProyecto = </value>
+  </data>
+  <data name="GetparNacionalidades" xml:space="preserve">
+    <value>SELECT T1.CodNacionalidad, T1.CodIntenacional, T1.Descripcion, T1.IndVigencia 
+FROM parNacionalidades T1  where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparNivelDiscapacidad" xml:space="preserve">
+    <value>SELECT T1.CodNivelDiscapacidad, T1.Descripcion, T1.IndVigencia
+FROM parNivelDiscapacidad T1  where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparNivelIntervencion" xml:space="preserve">
+    <value>SELECT * FROM parNivelIntervencion  where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparOrganismoCapacitador" xml:space="preserve">
+    <value>select CodOrganismoCapacitador, Nombre, IndVigencia  from parOrganismoCapacitador where indvigencia ='V'</value>
+  </data>
+  <data name="GetparProfesionOficio" xml:space="preserve">
+    <value>SELECT T1.CodProfesion, T1.Descripcion, T1.IndVigencia, t1.ProfesionOficio
+FROM parProfesionOficio T1
+Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparRegion" xml:space="preserve">
+    <value>SELECT T1.CodRegion, T1.Descripcion, T1.PorcentajeAsignacionNL, T1.IndVigencia, T1.TipoFlujo
+ from parRegion T1
+Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparSistemaAdministrativo" xml:space="preserve">
+    <value>Select codSistemaAdministrativo,Descripcion,IndVigencia
+From parSistemaAdministrativo
+Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparSituacionCalle" xml:space="preserve">
+    <value>SELECT T1.CodSituacionCalle, T1.Descripcion, T1.IndVigencia
+From parSituacionCalle T1 Where indVigencia = 'V'</value>
+  </data>
+  <data name="GetparSituacionesEspeciales" xml:space="preserve">
+    <value>SELECT T1.CodSituacionEspecial, T1.Descripcion, T1.IndVigencia
+From parSituacionesEspeciales T1 Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparSituacionLaboral" xml:space="preserve">
+    <value>select * from parSituacionLaboral Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparSituacionLegalInmueble" xml:space="preserve">
+    <value>
+Select T1.CodsituacionLegalInmueble, T1.Descripcion, T1.IndVigencia
+From parSituacionLegalInmueble T1 Where T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparSituacionPerRel" xml:space="preserve">
+    <value>select CodSituacion, Descripcion, IndVigencia   From parSituacionPersonaRelacionada where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparSituacionSocioEconomica" xml:space="preserve">
+    <value>SELECT T1.CodSituacionSocioEconomica, T1.Descripcion, T1.IndVigencia
+From parSituacionSocioEconomica T1</value>
+  </data>
+  <data name="GetparSituacionTuicion" xml:space="preserve">
+    <value>select T1.CodSituacionTuicion, T1.Descripcion, T1.IndVigencia from parSituacionTuicion  T1
+inner JOIN parestadoAbandono_SituacionTuicion T2 
+On T1.CodSituacionTuicion = T2.CodSituacionTuicion
+where T2.CodEstadoAbandono =</value>
+  </data>
+  <data name="GetparSolicitanteIngreso" xml:space="preserve">
+    <value>SELECT T1.CodSolicitanteIngreso, T1.TipoSolicitanteIngreso, T1.Descripcion, T1.IndVigencia 
+FROM parSolicitanteIngreso T1
+WHERE   T1.IndVigencia  = 'V' AND T1.TipoSolicitanteIngreso = </value>
+  </data>
+  <data name="GetparTematicaProyecto" xml:space="preserve">
+    <value>SELECT T1.CodTematicaProyecto, T1.Descripcion, T1.IndVigencia
+FROM parTematicaProyecto T1</value>
+  </data>
+  <data name="GetparTerminoDiagnostico" xml:space="preserve">
+    <value>SELECT     *
+FROM         parTerminoDiagnostico
+WHERE     (IndVigencia = 'V')</value>
+  </data>
+  <data name="GetparTipoAsistenciaEscolar" xml:space="preserve">
+    <value>SELECT T1.TipoAsistenciaEscolar, T1.Descripcion, T1.IndVigencia
+ from parTipoAsistenciaEscolar T1 Where T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoAtencion" xml:space="preserve">
+    <value>SELECT T1.CodTipoAtencion, T1.Descripcion, T1.IndVigencia
+FROM parTipoAtencion T1
+WHERE T1.IndVigencia = 'V' and lrpa = 0</value>
+    <comment>Obtiene Tipo de atenciones Vigentes</comment>
+  </data>
+  <data name="GetparTipoCapacitacion" xml:space="preserve">
+    <value>select * from parTipoCapacitacion where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoCargo" xml:space="preserve">
+    <value>Select T1.TipoCargo,T1.Descripcion,T1.IndVigencia
+From parTipoCargo T1
+WHERE T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoCausalIngreso" xml:space="preserve">
+    <value>Select * from parTipoCausalIngreso T1 WHERE T1.IndVigencia  = 'V' and T1.lrpa=0</value>
+  </data>
+  <data name="GetparTipoConsumoDroga" xml:space="preserve">
+    <value>SELECT T1.TipoConsumoDroga, T1.Descripcion, T1.IndVigencia 
+From parTipoConsumoDroga T1 Where T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoDiscapacidad" xml:space="preserve">
+    <value>SELECT T1.TipoDiscapacidad, T1.Descripcion, T1.IndVigencia
+
+FROM parTipoDiscapacidad T1
+
+where indvigencia ='V'
+
+order by descripcion
+</value>
+    <comment>SELECT T1.TipoDiscapacidad, T1.Descripcion, T1.IndVigencia
+FROM parTipoDiscapacidad T1</comment>
+  </data>
+  <data name="GetparTipoEventoIntervencion" xml:space="preserve">
+    <value>SELECT T1.TipoEventoIntervencion, T1.Descripcion, T1.IndVigencia
+FROM parTipoEventoIntervencion T1</value>
+  </data>
+  <data name="GetparTipoEventos" xml:space="preserve">
+    <value>SELECT Distinct T1.TipoEventos, T1.Descripcion, T1.IndVigencia
+
+FROM parTipoEventos T1 INNER JOIN parEventosProyectosModelos T2 ON T1.TipoEventos = T2.TipoEventos
+</value>
+    <comment>SELECT T1.TipoEventos, T1.Descripcion, T1.IndVigencia
+FROM parTipoEventos T1</comment>
+  </data>
+  <data name="GetparTipoInmueble" xml:space="preserve">
+    <value>SELECT T1.TipoInmueble, T1.Descripcion, T1.Indvigencia
+From parTipoInmueble T1</value>
+  </data>
+  <data name="GetparTipoInstitucion" xml:space="preserve">
+    <value>
+Select T1.TipoInstitucion, T1.Descripcion, T1.IndVigencia
+From parTipoInstitucion T1 </value>
+  </data>
+  <data name="GetparTipoIntervencion" xml:space="preserve">
+    <value>SELECT * FROM parTipoIntervencion </value>
+  </data>
+  <data name="GetparTipoMaltrato" xml:space="preserve">
+    <value>SELECT T1.TipoMaltrato, T1.Descripcion, T1.IndVigencia
+From parTipoMaltrato T1</value>
+  </data>
+  <data name="GetparTipoProyecto" xml:space="preserve">
+    <value>SELECT T1.TipoProyecto, T1.CodAreaProyecto, T1.Descripcion, T1.EsApoyo, T1.Es1385, T1.EsAdmDirecta, T1.IndVigencia
+FROM parTipoProyecto T1 Where T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoRelacionConQuienVive" xml:space="preserve">
+    <value>SELECT T1.CodTipoRelacionConQuienVive, T1.Descripcion, T1.IndVigencia 
+ From parTipoRelacionConQuienVive T1</value>
+  </data>
+  <data name="GetparTipoRelacionPersonaContacto" xml:space="preserve">
+    <value>SELECT T1.CodTipoRelacionPersonaContacto, T1.Descripcion, T1.IndVigencia 
+ From parTipoRelacionPersonaContacto T1</value>
+  </data>
+  <data name="GetparTipoSolicitanteDiligencia" xml:space="preserve">
+    <value>SELECT T1.TipoSolicitanteDiligencia, T1.Descripcion, T1.IndVigencia
+FROM parTipoSolicitanteDiligencia T1
+where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoSolicitanteIngreso" xml:space="preserve">
+    <value>SELECT T1.TipoSolicitanteIngreso, T1.Descripcion,T1.IndVigencia
+From parTipoSolicitanteIngreso T1 where T1.indVigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoSubvencion" xml:space="preserve">
+    <value>SELECT T1.TipoSubvencion, T1.TipoProyecto, T1.Descripcion , T1.IndVigencia 
+ From parTipoSubvencion T1</value>
+  </data>
+  <data name="GetparTipoSubvencionxModeloIntervencion" xml:space="preserve">
+    <value>Select  T2.Descripcion,T1.CodModeloIntervencion,T1.TipoSubvencion,T1.VidaFamiliar
+From ParPagoSubvencionLey20032 T1 
+INNER JOIN parTipoSubvencion T2 ON T1.TipoSubvencion = T2.TipoSubvencion 
+Where CodModeloIntervencion = </value>
+  </data>
+  <data name="GetparTipoTermino" xml:space="preserve">
+    <value>select * from parTerminoDiagnostico where indvigencia = 'V'</value>
+  </data>
+  <data name="GetparTipoTribunal" xml:space="preserve">
+    <value>Select * from parTipoTribunal T1 WHERE T1.IndVigencia  = 'V'</value>
+  </data>
+  <data name="GetParTribunales" xml:space="preserve">
+    <value>select CodTribunal, Descripcion from partribunales where Tipotribunal =  And Codregion = </value>
+  </data>
+  <data name="GetPeoresFormasdeTrabajo" xml:space="preserve">
+    <value>select FechaDiagnostico, PresentaAgresion, CodCategoria, CodPersonaRelacionada,
+ViveConExplotador, CodTrabajador,Observacion, isnull(t1.CodComuna, 0) as CodComuna, isnull(FechaSituacion, '01-01-1900') as FechaSituacion, isnull(TipoRelacion, 0) as TipoRelacion, isnull(t4.CodRegion, 0) as CodRegion
+from DiagnosticosPeoresFormaTrabajo t1
+	left join parComunas t2 ON t1.CodComuna = t2.CodComuna
+	left join parProvincia t3 ON t2.CodProvincia = t3.CodProvincia
+	left join parRegion t4 ON t3.CodRegion = t4.CodRegion
+where CodDiagnostico =</value>
+  </data>
+  <data name="GetPeoresFormasTrabajo" xml:space="preserve">
+    <value>select T1.CodDiagnostico, T2.FechaDiagnostico, T3.Definicion  
+FROM DiagnosticoGeneral T1 
+INNER JOIN  DiagnosticosPeoresFormaTrabajo T2
+ON T1.CodDiagnostico = T2.CodDiagnostico
+INNER JOIN parCategoriasPFMI T3 ON T3.CodCategoria = T2.CodCategoria
+where T1.ICodIE = </value>
+  </data>
+  <data name="GetPersonasRelacionadas" xml:space="preserve">
+    <value>SELECT T1.CodPersonaRelacionada, T1.Rut,T1.Nombres, T1.Apellido_Paterno, T1.Apellido_Materno, (T1.Nombres + ' ' + T1.Apellido_Paterno + ' ' + T1.Apellido_Materno)AS Agresor FROM PersonasRelacionadas T1 
+INNER JOIN NinosPersonasRelacionadas T2 ON
+T1.CodPersonaRelacionada = T2.CodPersonaRelacionada AND T2.ICodIE =</value>
+  </data>
+  <data name="GetPersonasRelacionadas2" xml:space="preserve">
+    <value>SELECT T1.CodPersonaRelacionada, T1.Rut, T1.Nombres, T1.Apellido_Paterno, T1.Apellido_Materno, T1.Sexo, T1.FechaNacimiento, T1.FechaActualizacion, T1.IdUsuarioActualizacion
+FROM PersonasRelacionadas T1 WHERE T1.CodPersonaRelacionada = </value>
+  </data>
+  <data name="GetProyectos" xml:space="preserve">
+    <value>SELECT T1.CodProyecto, T1.CodInstitucion, T1.CodRegion, T1.CodComuna, T1.Localidad, T1.TipoProyecto, T1.TipoSubvencion, T1.CodTipoAtencion, T1.CodTematicaProyecto, T1.CodModeloIntervencion, T1.CodSistemaAsistencial, T1.CodDepartamentosSENAME, T1.CodCausalTerminoProyecto, T1.CodInstitucionOrigen, T1.CodProyectoOrigen, T1.Nombre, T1.NombreCorto, T1.RutNumeroProyecto, T1.Direccion, T1.Telefono, T1.Mail, T1.Fax, T1.CalidadVidaFamiliar, T1.Director, T1.RutDirector, T1.FechaAniversario, T1.EdadMaximaPermanencia, T1.CodBanco, T1.CuentaCorrienteNumero, T1.FechaTermino, T1.EdadMinima, T1.EdadMaximaIngreso, T1.Etapas, T1.MontoInversion, T1.MontoOperacion, T1.MontoPersonal, T1.IdUsuarioTecnico, T1.IndVigencia, T1.FechaCreacion, T1.ProyectoDeContinuacion, T1.FechaActualizacion, T1.IdUsuarioActualizacion, T1.EstadoProyecto,T1.NumeroPlazas --T1.EstadoProyecto
+FROM Proyectos T1
+WHERE T1.CodProyecto =</value>
+  </data>
+  <data name="GetProyectosxInst" xml:space="preserve">
+    <value>SELECT T1.CodProyecto,T1.CodInstitucion,T1.Nombre,T1.NombreCorto
+From Proyectos T1
+Where T1.CodInstitucion =</value>
+  </data>
+  <data name="GetSituacionLaboral" xml:space="preserve">
+    <value>Select T2.IcodSituacionLaboral,T1.CodDiagnostico,T2.FechaSituacionLaboral,T3.Descripcion,T4.descripcion as SituacionLaboral 
+From DiagnosticoGeneral T1 
+Inner Join SituacionLaboralNino T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+inner join parsituacionlaboral T3 On T2.CodSituacionLaboral = T3.CodSituacionLaboral
+inner join parareainsercionlaboral T4 ON T2.CodAreaInsercionLAboral = T4.CodAreaInsercionLAboral
+WHERE  T1.ICodIE =</value>
+  </data>
+  <data name="GetSituacionLabralMostrar" xml:space="preserve">
+    <value>
+Select FechaSituacionLaboral, CodAreaInsercionLaboral,CodSituacionLaboral ,
+DireccionLaboral, CodigoPostal, TelefonoLaboral, PersonaReferencia,Email,DiagnosticoOcupacional
+from SituacionLaboralNino
+where IcodSituacionLaboral=</value>
+    <comment>Select FechaSituacionLaboral, CodAreaInsercionLaboral,CodSituacionLaboral ,
+DireccionLaboral, CodigoPostal, TelefonoLaboral, PersonaReferencia,Email,DiagnosticoOcupacional
+from SituacionLaboralNino
+where CodDiagnostico=</comment>
+  </data>
+  <data name="GetTerminoDiagnostico" xml:space="preserve">
+    <value>SELECT     *
+FROM         parTerminoDiagnostico</value>
+  </data>
+  <data name="GetTipoNivelIntervencion" xml:space="preserve">
+    <value>
+Select T1.IcodIntervenciones, T1.CodPlanIntervencion, T1.CodNivelIntervencion,
+ (T2.Descripcion +' '+'-'+' '+T3.Descripcion)  AS Tipos
+From Intervenciones T1
+inner join ParTipoIntervencion T2 On T1.TipoIntervencion = T2.TipoIntervencion 
+Inner Join  ParNivelIntervencion T3 On T1.CodNivelIntervencion = T3.CodNivelIntervencion 
+where T1.CodPlanIntervencion =</value>
+  </data>
+  <data name="GetTrabajadores" xml:space="preserve">
+    <value>SELECT  Top 10 T1.ICodTrabajador, T1.CodInstitucion, T1.CodProfesion, T1.Paterno, T1.Materno, T1.Nombres, T1.RutTrabajador, T1.Telefono, T1.Mail, T1.Fax, T1.CodigoPostal, T1.IndVigencia, T1.FechaActualizacion, T1.IdUsuarioActualizacion,T1.Codtrabajador,(T1.Paterno + ' ' + T1.Materno + ' ' + T1.Nombres) as NombreCompleto
+ From  Trabajadores T1  WHERE  T1.IndVigencia = 'V'</value>
+  </data>
+  <data name="GetTrabajadoresProyectoInst" xml:space="preserve">
+    <value>SELECT Distinct T2.CodInstitucion,T2.ICodTrabajador,T2.CodProfesion,
+(T2.Paterno + ' ' + T2.Materno + ' ' + T2.Nombres) as NombreCompleto
+FROM TRABAJADORES T2 LEFT JOIN TRABAJADORPROYECTO T1 ON
+T1.ICODTRABAJADOR = T2.ICODTRABAJADOR
+WHERE (T1.CODPROYECTO IS NULL OR T1.INDVIGENCIA ='C')
+AND T2.INDVIGENCIA ='V'
+AND T2.CODINSTITUCION = </value>
+  </data>
+  <data name="SetIngresos_Egresos" xml:space="preserve">
+    <value>INSERT  Ingresos_Egresos
+(CodProyecto, CodNino, FechaIngreso, CodSolicitanteIngreso, IdentidadConfirmada, CodTipoAtencion, CodCalidadJuridica, CodInstitucionInmueble , ICodInmueble, EdadAno, EdadMeses, CodTipoRelacionConQuienVive, PersonaContacto, TelefonoContacto, CodTipoRelacionPersonaContacto,CodInstitucion_Entrevistador, CodTrabajador_Entrevistador, CodTrabajador_Revisador, IngresoComunicadoFamiliaUOtro, HuellaDigital, PresentaLesiones, OrdenesTribunal, FechaActualizacion, IdUsuarioActualizacion, FechaEgreso, Glosa, CodCausalEgreso, TieneOrdenTribunal, CodMedidaAplicadaTribunal, CodMedidaSugeridaTribunal, CodConQuienEgresa, CodProyectoEgresa, EstadoIE )
+values(</value>
+  </data>
+  <data name="GetTipoAtencionxProyectoUno" xml:space="preserve">
+    <value>SELECT T1.CodTipoAtencion, T1.Descripcion, T1.IndVigencia
+FROM parTipoAtencion T1
+WHERE T1.IndVigencia = 'V' and Proyecto=1</value>
+  </data>
+  <data name="GetparModeloIntervencion_Tematica" xml:space="preserve">
+    <value>
+Select T2.Descripcion,T1.CodModeloIntervencion,T1.CodTematicaProyecto,T1.TipoProyecto,T1.CodDepartamentosSENAME
+From parModeloIntervencion_Tematica T1 inner join parTematicaProyecto T2
+ON T1.CodTematicaProyecto = T2.CodTematicaProyecto
+Where T1.CodModeloIntervencion = </value>
+  </data>
+  <data name="GetEstadoIntervencionxNino" xml:space="preserve">
+    <value>
+Select T1.ICodEstadoIntervencion, T1.CodPlanIntervencion, T1.CodEstadoIntervencion, T1.FechaCreacion
+From EstadosPlanIntervencion T1 inner join PlanIntervencion T2
+On T1.CodPlanIntervencion = T2.CodPlanIntervencion
+Where T2.CodPlanIntervencion = </value>
+  </data>
+  <data name="GetGrupoxCodProyecto" xml:space="preserve">
+    <value>
+Select Distinct T1.CodGrupo,T1.Descripcion
+From PlanIntervencionGrupo T1 inner Join PlanIntervencion T2
+     On T1.CodGrupo = T2.CodGrupo   
+Where T2.FechaTerminoRealPII='01/01/1900' and T2.CodGradoCumplimiento=-1 and T2.HabilitadoParaEgreso=-1 and T2.IntervencionCompleta=-1 
+and  T1.IndVigencia = 'V' and T2.CodProyecto =
+</value>
+    <comment>Select T2.ICodHechosJudiciales, T1.CodDiagnostico, T4.Descripcion As Causal ,T3.descripcion AS tribunal,T1.FechaDiagnostico
+From DiagnosticoGeneral T1 
+Inner Join HechosJudiciales T2 On  T1.CodDiagnostico = T2.CodDiagnostico
+inner join parTribunales T3 On T2.CodTribunal = T3.CodTribunal
+INNER join ParCausalesIngreso T4 On T4.CodCausalIngreso = T2.CodCausalIngreso
+
+
+WHERE T1.CodTipoDiagnosticoGlosa = 9 AND T1.ICodIE =</comment>
+  </data>
+  <data name="GetPersonaRelacionadaNinos" xml:space="preserve">
+    <value>
+select b.nombres,b.CodPersonaRelacionada,b.apellido_paterno,b.apellido_materno,c.descripcion,
+       a.fecharelacion
+from ninospersonasrelacionadas a inner join personasrelacionadas b on
+a.codpersonarelacionada = b.codpersonarelacionada
+inner join partiporelacion c on 
+a.tiporelacion = c.tiporelacion
+where a.icodie=
+</value>
+  </data>
+  <data name="GetPlanIntervencionxGrupo" xml:space="preserve">
+    <value>
+select distinct T1.CodProyecto,T1.FechaElaboracionPII, 
+T1.CodGradoCumplimiento, T1.ColaboracionNino, T1.ParticipacionFamilia, T1.ICodTrabajador, 
+T1.CodInstitucion, T1.CodTrabajador, T1.FechaInicioPII, T1.FechaTerminoEstimadaPII, T1.FechaTerminoRealPII, 
+T1.Descripcion, T1.ObservacionCumplimiento, T1.HabilitadoParaEgreso, T1.IntervencionCompleta, T1.IdUsuarioActualizacion, T1.CodGrupo
+From PlanIntervencion T1
+Where T1.CodGrupo = 
+</value>
+  </data>
+  <data name="GetPlanIntervencionxNino" xml:space="preserve">
+    <value>
+select distinct T1.CodPlanIntervencion,T1.CodProyecto,T1.FechaIngreso,T1.FechaElaboracionPII, 
+T1.CodGradoCumplimiento, T1.ColaboracionNino, T1.ParticipacionFamilia, T1.ICodTrabajador, 
+T1.CodInstitucion, T1.CodTrabajador, T1.FechaInicioPII, T1.FechaTerminoEstimadaPII, T1.FechaTerminoRealPII, 
+T1.Descripcion, T1.ObservacionCumplimiento, T1.HabilitadoParaEgreso, T1.IntervencionCompleta, T1.IdUsuarioActualizacion, T1.CodGrupo
+From PlanIntervencion T1
+Where T1.CodPlanIntervencion =
+</value>
+  </data>
+  <data name="GetTrabajadoresxCodProyecto" xml:space="preserve">
+    <value>
+Select Distinct T1.ICodTrabajador,T1.Nombres,T1.Paterno,T1.Materno
+From Trabajadores T1
+inner join PlanIntervencion T2
+On T1.ICodTrabajador = T2.ICodTrabajador
+Where T2.CodProyecto= 
+</value>
+  </data>
+  <data name="GetTrabajaEgreso" xml:space="preserve">
+    <value>Select Distinct (T2.Nombres+' '+T2.Apellido_Paterno + ' ' +T2.Apellido_Materno) as nombre,
+T4.Descripcion, T1.ICodTrabajaEgreso,T1.CodPlanIntervencion,T3.CodPersonaRelacionada,
+T1.IndVigencia,T3.icodie
+From TrabajaEgreso T1 Inner Join PersonasRelacionadas T2 
+on T1.CodPersonaRelacionada = T2.CodPersonaRelacionada
+Inner Join NinosPersonasRelacionadas T3 
+on T2.CodPersonaRelacionada = T3.CodPersonaRelacionada
+Inner Join parTipoRelacion T4 
+on T3.TipoRelacion = T4.TipoRelacion
+Where T1.IndVigencia = 'V' and T1.CodPlanIntervencion =</value>
+  </data>
+  <data name="GetEstadoIntervencionxGrupo" xml:space="preserve">
+    <value>
+Select T1.ICodEstadoIntervencion, T1.CodPlanIntervencion, T1.CodEstadoIntervencion, T1.FechaCreacion
+From EstadosPlanIntervencion T1 inner join PlanIntervencion T2
+On T1.CodPlanIntervencion = T2.CodPlanIntervencion
+Where T2.CodGrupo = 
+</value>
+  </data>
+  <data name="GetparEventosIntervencionCantidadxModelo" xml:space="preserve">
+    <value>
+SELECT DISTINCT a.TipoIntervencion,b.Descripcion
+FROM parEventosIntervencionCantidad a 
+INNER JOIN parTipoIntervencion b ON a.TipoIntervencion = b.TipoIntervencion and a.IndVigencia = 'V'
+INNER JOIN proyectos c ON c.codmodelointervencion = a.codmodelointervencion
+where c.codproyecto =
+</value>
+  </data>
+  <data name="GetDireccionNinos" xml:space="preserve">
+    <value>
+Select t1.ICodDireccion,t1.ICodIE, t1.CodProyecto, t1.CodNino, t1.FechaIngresoDireccion, t1.Direccion, t1.Telefono, 
+       t1.TelefonoRecado, t1.Mail, t1.Fax, t1.CodigoPostal, t1.CodComuna, t1.AlIngreso, t1.FechaActualizacion,
+       t1.IdUsuarioActualizacion, t1.IndVigencia,t2.Descripcion
+From DireccionNinos t1 
+inner join parcomunas t2 on t1.codcomuna = t2.codcomuna
+Where t1.ICodIE =
+</value>
+  </data>
+  <data name="GetparTipoRelacionNinos" xml:space="preserve">
+    <value>
+Select TipoRelacion, Descripcion, IndVigencia
+From parTipoRelacionNinos
+</value>
+  </data>
+  <data name="GetNinosRelacionadosPorNino" xml:space="preserve">
+    <value>
+Select T1.CodNino, T1.CodNinoRelacionado, T1.IdUsuarioActualizacion, T1.TipoRelacion, T1.Observacion,
+	T1.IndVigencia, T1.FechaActualizacion, T2.Rut, T2.Sexo, T2.Nombres, T2.Apellido_Paterno, T2.Apellido_Materno, T2.FechaNacimiento,
+	T3.Descripcion
+From NinosRelacionados T1 
+Inner Join Ninos T2 On T1.CodNinoRelacionado = T2.CodNino
+inner Join parTipoRelacionNinos T3 on T1.TipoRelacion = T3.TipoRelacion
+Where T1.CodNino =
+</value>
+  </data>
+  <data name="GetMantenedores" xml:space="preserve">
+    <value>Select idtabla,Descripcion  from Parmantenedores</value>
+  </data>
+  <data name="GetCodInstxCodProy" xml:space="preserve">
+    <value>Select T1.CodInstitucion
+From Instituciones T1
+Inner Join Proyectos T2 ON T1.CodInstitucion = T2.CodInstitucion
+Where CodProyecto = </value>
+  </data>
+  <data name="GetInmuebleProy" xml:space="preserve">
+    <value>SELECT T1.ICodInmueble, T1.Nombre
+FROM Inmueble T1
+LEFT JOIN ProyectoInmueble T2 ON 
+T1.ICodInmueble = T2.ICodInmueble
+WHERE T1.IndVigencia = 'V' and  T1.CodInstitucion = </value>
+  </data>
+  <data name="GetEstadosPlanIntevencion" xml:space="preserve">
+    <value>select t1.FechaCreacion,t2.Descripcion
+from EstadosPlanIntervencion t1 
+inner join parestadointervencion t2 on t1.codestadointervencion = t2.codestadointervencion
+Where CodPlanIntervencion = </value>
+  </data>
+  <data name="GetInstitucion_reporte" xml:space="preserve">
+    <value>Select T1.CodInstitucion, T1.Nombre from Instituciones T1</value>
+  </data>
+  <data name="GetInstitucion_reportexrgn" xml:space="preserve">
+    <value>Select distinct T1.CodInstitucion, T1.Nombre 
+from Instituciones T1
+inner join Proyectos T2 on  T1.CodInstitucion=T2.CodInstitucion
+where T2.CodRegion not in (-1,16) and  T2.CodRegion =
+</value>
+  </data>
+  <data name="GetparTipoInstitucion_reporte" xml:space="preserve">
+    <value>Select T1.TipoInstitucion, T1.Descripcion, T1.IndVigencia
+From parTipoInstitucion T1</value>
+  </data>
+  <data name="GetEstadoProyecto" xml:space="preserve">
+    <value>Select EstadoProyecto
+From Proyectos
+Where CodProyecto =</value>
+  </data>
+  <data name="GetTipoSubvencionxProyecto" xml:space="preserve">
+    <value>Select CodProyecto, TipoSubvencion
+From Proyectos
+Where CodProyecto = </value>
+  </data>
+  <data name="GetAccionesInformeDiagnosticoModifica" xml:space="preserve">
+    <value>
+SELECT Icodaccion, TipoEventoIntervencion,FechaAccion,ICodTrabajaor,Observaciones
+FROM AccionesInformeDiagnostico 
+WHERE Icodaccion = </value>
+  </data>
+  <data name="GetEtapasDeIntervencionModifica" xml:space="preserve">
+    <value>select CodEtapasIntervencion, FechaEtapa from EtapasInformeDiagnostico where IcodEtapa =</value>
+  </data>
+  <data name="GetTipoRelacion" xml:space="preserve">
+    <value>SELECT T1.TipoRelacion, T1.Descripcion, T1.IndVigencia 
+ From  parTipoRelacion T1 where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetparEscolaridadAdulto" xml:space="preserve">
+    <value>SELECT T1.CodEscolaridadAdulto, T1.Descripcion, T1.IndVigencia
+FROM parEscolaridadAdulto T1 
+where IndVigencia = 'V'Order By T1.CodEscolaridadAdulto</value>
+  </data>
+  <data name="GetTermino" xml:space="preserve">
+    <value>select CodTerminoDiagnostico, FechaTerminoInforme
+FROM InformesDiagnosticos
+where ICodInformeDiagnostico = </value>
+  </data>
+  <data name="GetCausalIngreso" xml:space="preserve">
+    <value>Select CodTipoCausalIngreso, Descripcion From ParcausalesIngreso where IndVigencia = 'V'AND CodTipoCausalIngreso =</value>
+  </data>
+  <data name="GetTipoCausal" xml:space="preserve">
+    <value>Select CodTipoCausalIngreso, Descripcion From PartipocausalIngreso where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetCodRegionxCodProy" xml:space="preserve">
+    <value>Select T1.CodRegion
+From Proyectos T1
+Where T1.CodProyecto = </value>
+  </data>
+  <data name="GetTerminoInfDiagnosticos" xml:space="preserve">
+    <value>select TipoDiagnostico, FechaInicioInforme from InformesDiagnosticos where IcodInformeDiagnostico = </value>
+  </data>
+  <data name="GetparEtnias" xml:space="preserve">
+    <value>Select CodEtnia,Descripcion
+From parEtnias
+Where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetParDireccionRegional" xml:space="preserve">
+    <value>Select CodDireccionRegional,Descripcion
+from pardireccionesregionales
+Where IndVigencia = 'V'</value>
+  </data>
+  <data name="ConsultaRutnino" xml:space="preserve">
+    <value>select rut from ninos
+where rut =</value>
+  </data>
+  <data name="GetTrabajadoresProyecto" xml:space="preserve">
+    <value>SELECT T1.ICodTrabajador, T1.CodProyecto, T1.FechaIngreso, T1.CodCargo, T1.TipoCargo, T1.CodProfesion, T1.CodCausalEgresoTrabajador, T1.ResponsableIngreso, T1.FechaEgreso, T1.ResponsableEgreso, T1.FechaUltimoIngresoEgreso, T1.IndVigencia, T1.FechaActualizacion, T1.IdUsuarioActualizacion, (T2.Paterno + ' ' + T2.Materno + ' ' + T2.Nombres) as NombreCompleto
+From TrabajadorProyecto T1
+INNER JOIN Trabajadores T2 ON T1.ICodTrabajador = T2.ICodTrabajador
+WHERE T1.IndVigencia ='V' AND T1.IndVigencia = 'V' and T1.CodProyecto =</value>
+  </data>
+  <data name="GetVigencia_Usuario" xml:space="preserve">
+    <value>select *
+from usuarios
+where usuario =</value>
+  </data>
+  <data name="GetVigencia_CodTrab" xml:space="preserve">
+    <value>       select indvigencia
+from trabajadores
+where icodtrabajador = </value>
+  </data>
+  <data name="GetparTipoCausalIngresoLRPA" xml:space="preserve">
+    <value>Select * from parTipoCausalIngreso T1 WHERE T1.IndVigencia  = 'V' AND T1.LRPA =1</value>
+  </data>
+  <data name="GetparTipoTribunalLRPA" xml:space="preserve">
+    <value>Select * from parTipoTribunal T1 WHERE T1.IndVigencia  = 'V' AND T1.LRPA = 1</value>
+  </data>
+  <data name="GetparCalidadJuridicaLRPA" xml:space="preserve">
+    <value>SELECT T1.CodCalidadJuridica, T1.Descripcion, T1.IndVigencia 
+FROM parCalidadJuridica T1
+WHERE T1.IndVigencia = 'V' and LRPA =1</value>
+  </data>
+  <data name="GetparDiligenciaLRPA" xml:space="preserve">
+    <value>SELECT T1.CodDiligencia, T1.Descripcion, T1.IndVigencia, T1.PropuestaTecnica, T1.ResultadoDiscernimiento
+FROM parDiligencia T1 where indvigencia = 'V' and LRPA = 1</value>
+  </data>
+  <data name="GetparEstadoAbandonoLRPA" xml:space="preserve">
+    <value>SELECT T1.CodEstadoAbandono, T1.Descripcion, T1.Nemotecnico, T1.IndVigencia 
+From parEstadoAbandono T1 Where indvigencia = 'V' and LRPA =1</value>
+  </data>
+  <data name="GetparSituacionTuicionLRPA" xml:space="preserve">
+    <value>select T1.CodSituacionTuicion, T1.Descripcion, T1.IndVigencia from parSituacionTuicion  T1
+inner JOIN parestadoAbandono_SituacionTuicion T2 
+On T1.CodSituacionTuicion = T2.CodSituacionTuicion
+where LRPA=1 and T2.CodEstadoAbandono =</value>
+  </data>
+  <data name="GetparTipoAtencionLRPA" xml:space="preserve">
+    <value>SELECT T1.CodTipoAtencion, T1.Descripcion, T1.IndVigencia
+FROM parTipoAtencion T1
+WHERE T1.IndVigencia = 'V' and lrpa = 1</value>
+  </data>
+  <data name="GetICodTribunalIngreso_LRPA" xml:space="preserve">
+    <value>select t1.ICodTribunalIngreso,t3.Descripcion,t1.Ruc
+From OrdenTribunalIngreso t1 
+inner join ingresos_egresos t2 on t1.ICodIE = t2.ICodIE
+inner join parTribunales t3 on t3.CodTribunal = t1.CodTribunal
+where t2.ICodIE =</value>
+  </data>
+  <data name="GetCalidadJuridica_IcodIE" xml:space="preserve">
+    <value>select codcalidadjuridica
+from ingresos_egresos
+where icodie =</value>
+  </data>
+  <data name="GetLRPA_ModeloIntervencion" xml:space="preserve">
+    <value>SELECT     LRPA
+FROM       parModeloIntervencion
+WHERE     CodModeloIntervencion =</value>
+  </data>
+  <data name="GetModeloIntevencion_ProyectosDAM" xml:space="preserve">
+    <value>SELECT T1.CodModeloIntervencion, T1.Descripcion, 
+T1.CreaPlanIntervencion, T1.CreaInformeDiagnostico, 
+T1.IndVigencia, T1.Nemotecnico, T1.CantidadIntervenciones
+FROM parModeloIntervencion T1 INNER JOIN proyectos T2 
+ON T1.CodModeloIntervencion=T2.CodModeloIntervencion
+Where</value>
+  </data>
+  <data name="GetTipoEgreso_bycod" xml:space="preserve">
+    <value>SELECT T1.CodTipoEgreso, T1.Descripcion
+FROM parTipoEgreso T1
+WHERE  T1.CodTipoEgreso =</value>
+  </data>
+  <data name="GetEncuestas" xml:space="preserve">
+    <value>SELECT a.CodEncuesta, a.Descripcion, isnull(b.CodPregunta, 0) as CodPregunta, isnull(b.Descripcion, 0) as Pregunta, isnull(c.CodSubPregunta, 0) as CodSubPregunta, isnull(c.Descripcion, '') as SubPregunta, a.Formulario, a.FechaObligatoria FROM Encuestas a LEFT join EncuestasPreguntas b ON a.CodEncuesta = b.CodEncuesta LEFT join EncuestasSubPreguntas c ON b.CodPregunta = c.CodPregunta WHERE GetDate() BETWEEN FechaInicio and FechaTermino order by a.CodEncuesta, b.CodPregunta, c.CodSubPregunta</value>
+  </data>
+  <data name="GetEncuestas2" xml:space="preserve">
+    <value>SELECT a.CodEncuesta, a.Descripcion, b.CodPregunta, b.Descripcion as Pregunta FROM Encuestas a inner join EncuestasPreguntas b ON a.CodEncuesta = b.CodEncuesta WHERE GetDate() BETWEEN FechaInicio and FechaTermino order by b.Descripcion</value>
+  </data>
+  <data name="Get_EstadoIExNino" xml:space="preserve">
+    <value>select EstadoIE
+from ingresos_egresos
+where codnino = </value>
+  </data>
+  <data name="GetparTipoDiagnosticoGlosaxRep" xml:space="preserve">
+    <value>select codtipodiagnosticoglosa,descripcion,reporte,indvigencia
+from partipodiagnosticoglosa
+where reporte = 1 and indvigencia ='V'</value>
+  </data>
+  <data name="Get_ninosIExCodNino" xml:space="preserve">
+    <value>select count(codnino) as cuentanino
+from ingresos_egresos
+where codnino = </value>
+  </data>
+  <data name="GetParTipoAudiencia" xml:space="preserve">
+    <value>Select * 
+from parTipoAudiencia T1 
+WHERE T1.IndVigencia  = 'V'</value>
+  </data>
+  <data name="GetOrdenTribunalCoor" xml:space="preserve">
+    <value>SELECT     T1.ruc,T2.Descripcion
+FROM         CoordinacionOrdenTribunal T1 INNER JOIN parTribunales T2 ON T1.CodTribunal = T2.CodTribunal</value>
+    <comment>Trae las Ordenes de tribunales SOLO PARA EL MODULO COORDINADORES.</comment>
+  </data>
+  <data name="GetInscritoFonadis" xml:space="preserve">
+    <value>SELECT CodNino, FechaAdoptabilidad, IdentidadConfirmada, Rut, Sexo, Nombres, Apellido_Paterno, Apellido_Materno, FechaNacimiento, CodNacionalidad, CodEtnia, OficinaInscripcion, AnoInscripcion, NumeroInscripcionCivil, AlergiasConocidas, InscritoFONADIS, InscritoFONASA 
+FROM Ninos
+WHERE CodNino =</value>
+  </data>
+  <data name="GetNinoADN" xml:space="preserve">
+    <value>Select distinct t3.consentimiento, T4.CodProyecto,T4.CodModeloIntervencion,
+T1.CodProyecto, 
+T1.CodNino,T1.ICodIE,T2.Nombres,T2.Apellido_paterno,T2.Apellido_Materno, T1.FechaIngreso,
+T2.MuestraADN AS Muestranino, T3.MuestraADN, T3.Notificacion, T3.FechaNotificacion, T3.FechaCita, T3.HoraCita, T3.MinutosCita, t3.SentenciaExpresa 
+From Ingresos_Egresos T1 
+INNER JOIN  NINOS T2 ON T1.CODNINO = T2.CODNINO 
+left join MuestraADN T3  On T3.ICodIE = T1.ICodIE
+inner join Proyectos T4   on T1.CodProyecto = T4.CodProyecto 
+left join CausalesIngreso T5 on T1.ICodIE = T5.ICodIE 
+left join parCausalesIngreso T6 ON T5.CodCausalIngreso = T6.CodCausalIngreso
+where  T4.CodModeloIntervencion in (77,99,101,103,104)
+and T6.ADN = 1
+and T5.CodCausalIngreso is not null 
+and T1.FechaEgreso is null 
+and T2.MuestraADN = 0 
+and t1.codcalidadjuridica &lt;&gt; 14
+and T4.CodProyecto =
+</value>
+    <comment>Select t3.consentimiento, T4.CodProyecto,T4.CodModeloIntervencion,
+T5.CodCausalIngreso,
+T1.CodProyecto, 
+T1.CodNino,T1.ICodIE,T2.Nombres,T2.Apellido_paterno,T2.Apellido_Materno, T1.FechaIngreso,
+T2.MuestraADN AS Muestranino, T3.MuestraADN, T3.Notificacion, T3.FechaNotificacion, T3.FechaCita, T3.HoraCita, T3.MinutosCita 
+From Ingresos_Egresos T1 
+INNER JOIN  NINOS T2 ON T1.CODNINO = T2.CODNINO 
+left join MuestraADN T3  On T3.ICodIE = T1.ICodIE
+inner join Proyectos T4   on T1.CodProyecto = T4.CodProyecto 
+left join CausalesIngreso T5 on T1.ICodIE = T5.ICodIE 
+left join parCausalesIngreso T6 ON T5.CodCausalIngreso = T6.CodCausalIngreso
+where  T4.CodModeloIntervencion in (77,99,101,103,104)
+and T6.ADN = 1
+and T5.CodCausalIngreso is not null 
+and T1.FechaEgreso is null 
+and T2.MuestraADN = 0 
+and t1.codcalidadjuridica &lt;&gt; 14
+and T4.CodProyecto =</comment>
+  </data>
+  <data name="GetADNNinos" xml:space="preserve">
+    <value>Select  T1.CodNino,T1.ICodIE,T2.Nombres,T1.FechaIngreso, T2.MuestraADN AS Muestranino
+From Ingresos_Egresos T1 INNER JOIN  NINOS T2 ON T1.CODNINO = T2.CODNINO 
+left join MuestraADN T3  On T1.ICodIE = T3.ICodIE
+Where   T1.FechaEgreso is null and T1.ICodIE =</value>
+  </data>
+  <data name="GetADN" xml:space="preserve">
+    <value>Select CodNino,Nombres, rut, Apellido_Materno, Apellido_Paterno, MuestraADN
+From NINOS  
+Where CodNino =</value>
+    <comment>Select  T1.CodNino,T1.ICodIE,T2.Nombres,T1.FechaIngreso, T2.MuestraADN AS Muestranino
+From Ingresos_Egresos T1 INNER JOIN  NINOS T2 ON T1.CODNINO = T2.CODNINO 
+left join MuestraADN T3  On T1.ICodIE = T3.ICodIE
+Where   T1.FechaEgreso is null and T2.CodNino =</comment>
+  </data>
+  <data name="GetTribunalADN" xml:space="preserve">
+    <value>SELECT t1.tipotribunal, t1.codregion, t1.codtribunal, t2.tipotribunal, t1.descripcion from partribunales t1 inner join partipotribunal t2 on t2.tipotribunal = t1.tipotribunal 
+where and Cod codregion =</value>
+    <comment>SELECT descripcion, tipotribunal, codregion from partribunales
+where codregion =</comment>
+  </data>
+  <data name="GetTipoTribunalADN" xml:space="preserve">
+    <value>
+SELECT t1.descripcion, t1.tipotribunal, t1.codregion, t1.codtribunal, t2.tipotribunal, t2.descripcion as tribunal from partribunales t1 inner join partipotribunal t2 on t2.tipotribunal = t1.tipotribunal 
+where  codregion =
+</value>
+  </data>
+  <data name="GetTipoTribunalADN2" xml:space="preserve">
+    <value>SELECT t1.tipotribunal, t1.codregion, t1.descripcion, t1.codtribunal, t2.tipotribunal, t2.descripcion from partribunales t1 inner join partipotribunal t2 on t2.tipotribunal = t1.tipotribunal 
+where  codtribunal = +' '+ and codregion =   </value>
+    <comment>SELECT t1.tipotribunal, t1.codregion, t1.codtribunal, t2.tipotribunal, t2.descripcion from partribunales t1 inner join partipotribunal t2 on t2.tipotribunal = t1.tipotribunal 
+where and Cod codregion =</comment>
+  </data>
+  <data name="GetTraeICodIE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GetADNCON" xml:space="preserve">
+    <value>Select  T4.CodProyecto, T3.IdUsuarioActualizacion, (T7.Nombres) +' '+ (T7.Paterno),T6.Descripcion,T4.CodModeloIntervencion,T5.CodCausalIngreso,T1.CodProyecto, 
+T1.CodNino,T1.ICodIE,T2.Nombres,T2.Apellido_paterno,T2.Apellido_Materno, T1.FechaIngreso,
+T2.MuestraADN AS Muestranino, T3.MuestraADN
+
+From Ingresos_Egresos T1 
+INNER JOIN  NINOS T2 		ON T1.CODNINO = T2.CODNINO 
+left join MuestraADN T3  	On T1.ICodIE = T3.ICodIE
+left join ParTribunales T6 	on T6.CodTribunal = T3.CodTribunal
+left join Trabajadores T7	ON T7.ICodTrabajador = T3.IdUsuarioActualizacion
+left join Proyectos T4   	on T1.CodProyecto = T4.CodProyecto AND (T4.CodModeloIntervencion = 100 OR T4.CodModeloIntervencion = 101 OR T4.CodModeloIntervencion = 104)
+left join CausalesIngreso T5 	on T1.ICodIE = T5.ICodIE and (T5.CodCausalIngreso = 2 or T5.CodCausalIngreso = 3 and T5.CodCausalIngreso = 7 or T5.CodCausalIngreso = 8 or T5.CodCausalIngreso = 20 or
+T5.CodCausalIngreso = 8 or T5.CodCausalIngreso = 18 or T5.CodCausalIngreso = 19 or T5.CodCausalIngreso = 21 or T5.CodCausalIngreso = 22 or T5.CodCausalIngreso = 23 or T5.CodCausalIngreso = 25 or T5.CodCausalIngreso = 30 or T5.CodCausalIngreso = 34 or T5.CodCausalIngreso = 114 or T5.CodCausalIngreso = 119 or 
+T5.CodCausalIngreso = 120 or T5.CodCausalIngreso = 121 or T5.CodCausalIngreso = 122 or T5.CodCausalIngreso = 124 or T5.CodCausalIngreso = 138 or T5.CodCausalIngreso = 139 or T5.CodCausalIngreso = 144 or T5.CodCausalIngreso = 145 or T5.CodCausalIngreso = 146 or T5.CodCausalIngreso = 147 or T5.CodCausalIngreso = 148 or
+T5.CodCausalIngreso = 149 or T5.CodCausalIngreso = 156 or T5.CodCausalIngreso = 174 or T5.CodCausalIngreso = 176 or T5.CodCausalIngreso = 177 or T5.CodCausalIngreso = 178 or T5.CodCausalIngreso = 224 or T5.CodCausalIngreso = 234 or T5.CodCausalIngreso = 235 or T5.CodCausalIngreso = 236 or T5.CodCausalIngreso = 237 or
+T5.CodCausalIngreso = 239 or T5.CodCausalIngreso = 240 or T5.CodCausalIngreso = 242 or T5.CodCausalIngreso = 243)
+
+Where T5.CodCausalIngreso 	is not null and T1.FechaEgreso is null and T2.MuestraADN = 1 and T4.CodProyecto =</value>
+  </data>
+  <data name="GetADNCON2" xml:space="preserve">
+    <value>Select  
+	t1.codproyecto,
+	T1.ICodIE,
+	T2.Nombres,
+	
+	T2.Apellido_paterno,
+	T2.Apellido_Materno, 
+	T1.FechaIngreso,
+	--T2.MuestraADN AS Muestranino, 
+	T3.MuestraADN, 
+	t3.MuestraDactilar,
+	t4.descripcion, 
+	t3.nue,
+	--t5.nombres,
+	(T5.Nombres+' '+t5.Paterno) as encargado, 
+	--t5.paterno,
+	t3.fechamuestra, 
+	t3.Notificacion, 
+	t3.FechaNotificacion, 
+	t3.FechaCita, 
+	t3.HoraCita, 
+	t3.MinutosCita
+From Ingresos_Egresos T1 INNER JOIN  NINOS T2 ON T2.CODNINO = T1.CODNINO
+inner JOIN MuestraADN T3 		      on T3.Icodie = t1.icodie
+left join Proyectos t6                        on T6.CodProyecto = T1.CodProyecto
+inner join ParTribunales t4 	              on t4.Codtribunal = t3.codtribunal
+left join Trabajadores t5                    on T5.Icodtrabajador = t3.idusuarioactualizacion
+where t3.muestraadn = 1 and t6.codproyecto =
+</value>
+    <comment>Select  
+	
+	T1.ICodIE,
+	T2.Nombres,
+	T2.Apellido_paterno,
+	T2.Apellido_Materno, 
+	T1.FechaIngreso,
+	--T2.MuestraADN AS Muestranino, 
+	T3.MuestraADN, 
+	t3.MuestraDactilar,
+	t4.descripcion, 
+	t3.nue,
+	t5.nombres, 
+	t5.paterno
+
+From Ingresos_Egresos T1 INNER JOIN  NINOS T2 ON T2.CODNINO = T1.CODNINO
+inner JOIN MuestraADN T3 		      on T3.Icodie = t1.icodie
+left join Proyectos t6                        on T6.CodProyecto = T1.CodProyecto
+inner join ParTribunales t4 	              on t4.Codtribunal = t3.codtribunal
+left join Trabajadores t5                    on T5.Icodtrabajador = t3.idusuarioactualizacion
+where t2.muestraadn = 1 and t6.codproyecto =</comment>
+  </data>
+  <data name="GetInsCordinador" xml:space="preserve">
+    <value>Select distinct  t1.codinstitucion ,t2.nombre
+from proyectos  t1 
+inner join instituciones t2 on t1.codinstitucion = t2.codinstitucion
+where codcausalterminoproyecto = 20084</value>
+  </data>
+  <data name="GetTipoSancion" xml:space="preserve">
+    <value>select codtiposancion, indvigencia, descripcion from partiposancion where indvigencia = 'V'</value>
+  </data>
+  <data name="Get_comuna_adulto" xml:space="preserve">
+    <value>SELECT     parRegion.CodRegion, parComunas.CodComuna, parComunas.Descripcion AS descripcion
+FROM         parRegion INNER JOIN
+                      parProvincia ON parRegion.CodRegion = parProvincia.CodRegion INNER JOIN
+                      parComunas ON parProvincia.CodProvincia = parComunas.CodProvincia
+WHERE     parRegion.CodRegion = </value>
+  </data>
+  <data name="GET_DATOS_PROYECTO_ADULTO" xml:space="preserve">
+    <value>SELECT     TrabajadorProyecto.CodProyecto AS codproyecto, Proyectos.CodModeloIntervencion AS CodModeloInternvencion, 
+                      parModeloIntervencion.Nemotecnico, Usuarios.Usuario,(Trabajadores.Nombres+' '+Trabajadores.Paterno +' '+Trabajadores.Materno) as Nombre, Usuarios.IdUsuario, 
+                      parModeloIntervencion.CodModeloIntervencion, Trabajadores.ICodTrabajador AS icot
+FROM         Proyectos INNER JOIN
+                      TrabajadorProyecto ON Proyectos.CodProyecto = TrabajadorProyecto.CodProyecto INNER JOIN
+                      Usuarios ON TrabajadorProyecto.ICodTrabajador = Usuarios.ICodTrabajador INNER JOIN
+                      Trabajadores ON TrabajadorProyecto.ICodTrabajador = Trabajadores.ICodTrabajador CROSS JOIN
+                      parModeloIntervencion
+WHERE     parModeloIntervencion.CodModeloIntervencion = 110 and parModeloIntervencion.Nemotecnico = 'PAG' and TrabajadorProyecto.CodProyecto =</value>
+    <comment>SELECT     TrabajadorProyecto.CodProyecto AS codproyecto, Proyectos.CodModeloIntervencion AS CodModeloIntervencion, 
+                      parModeloIntervencion.Nemotecnico, TrabajadorProyecto.ICodTrabajador, Usuarios.Usuario, 
+                      (Trabajadores.Nombres+' '+ Trabajadores.Materno+' '+Trabajadores.Paterno) as Nombre, Usuarios.IdUsuario
+FROM         Proyectos INNER JOIN
+                      TrabajadorProyecto ON Proyectos.CodProyecto = TrabajadorProyecto.CodProyecto INNER JOIN
+                      Usuarios ON TrabajadorProyecto.ICodTrabajador = Usuarios.ICodTrabajador INNER JOIN
+                      Trabajadores ON TrabajadorProyecto.ICodTrabajador = Trabajadores.ICodTrabajador CROSS JOIN
+                      parModeloIntervencion
+WHERE     parModeloIntervencion.Nemotecnico = 'pag' AND TrabajadorProyecto.CodProyecto = </comment>
+  </data>
+  <data name="consulta_filtro_adulto" xml:space="preserve">
+    <value>SELECT     parModeloIntervencion.CodModeloIntervencion AS Modelo, parModeloIntervencion.Nemotecnico AS nemotecnico
+FROM         parModeloIntervencion INNER JOIN
+                      Proyectos ON parModeloIntervencion.CodModeloIntervencion = Proyectos.CodModeloIntervencion AND Proyectos.CodProyecto =</value>
+  </data>
+  <data name="Get_TiporRelacionMaltrato" xml:space="preserve">
+    <value>select * from partiporelacion where IndVigencia = 'V'</value>
+  </data>
+  <data name="GetParCalidadJuridicaLRPA_II" xml:space="preserve">
+    <value>SELECT T1.CodCalidadJuridica, T1.Descripcion, T1.IndVigencia 
+FROM parCalidadJuridica T1 inner join parModeloIntervencion_CalidadJuridica T2 
+ON T1.CodCalidadJuridica = T2.CodCalidadJuridica
+WHERE T1.IndVigencia = 'V' and LRPA =1 and t2.CODMODELOINTERVENCION =</value>
+  </data>
+  <data name="GetNinoADN_Todos" xml:space="preserve">
+    <value>Select distinct t3.consentimiento, T4.CodProyecto,T4.CodModeloIntervencion,
+T1.CodProyecto, 
+T1.CodNino,T1.ICodIE,T2.Nombres,T2.Apellido_paterno,T2.Apellido_Materno, T1.FechaIngreso,
+T2.MuestraADN AS Muestranino, T3.MuestraADN, T3.Notificacion, T3.FechaNotificacion, T3.FechaCita, T3.HoraCita, T3.MinutosCita, t3.SentenciaExpresa 
+From Ingresos_Egresos T1 
+INNER JOIN  NINOS T2 ON T1.CODNINO = T2.CODNINO 
+left join MuestraADN T3  On T3.ICodIE = T1.ICodIE
+inner join Proyectos T4   on T1.CodProyecto = T4.CodProyecto 
+left join CausalesIngreso T5 on T1.ICodIE = T5.ICodIE 
+left join parCausalesIngreso T6 ON T5.CodCausalIngreso = T6.CodCausalIngreso
+where  T4.CodModeloIntervencion in (77,99,101,103,104)
+and T5.CodCausalIngreso is not null 
+and T1.FechaEgreso is null 
+and T2.MuestraADN = 0 
+and t1.codcalidadjuridica &lt;&gt; 14
+and T4.CodProyecto =</value>
+  </data>
+  <data name="GetparTipoDiagnosticoPsicologico" xml:space="preserve">
+    <value>select CodTipoDiagnosticoPsi, Descripcion 
+from parTipoDiagnoticoPsi 
+where CodTipoDiagnosticoPsi &gt; 0 
+</value>
+    <comment>Trae Tipos de Diagnosticos Solo para Diagnosticos Psicologicos Niños</comment>
+  </data>
+  <data name="GetVigencia_CodTrab2" xml:space="preserve">
+    <value>SELECT Trabajadores.IndVigencia, Paterno, Nombres, usuarios.contrasena
+FROM Trabajadores
+INNER JOIN  usuarios on Trabajadores.ICodTrabajador  = usuarios.ICodTrabajador
+where Trabajadores.ICodTrabajador =</value>
+  </data>
+  <data name="GetProyectoxIdusuario" xml:space="preserve">
+    <value>SELECT t1.CodProyecto, t3.CodInstitucion FROM TrabajadorProyecto t1 LEFT JOIN Usuarios t2 ON t1.ICodTrabajador = t2.ICodTrabajador LEFT JOIN Institucion_Proyecto t3 ON t1.CodProyecto = t3.CodProyecto WHERE t2.IdUsuario =</value>
+  </data>
+</root>

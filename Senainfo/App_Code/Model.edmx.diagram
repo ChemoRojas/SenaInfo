@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cab2ef13c472490c935d6588c6db2a40" Name="Diagrama1">
+        <EntityTypeShape EntityType="SenainfoModel.AccionesInformeDiagnostico" Width="1.5" PointX="23" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Alergias" Width="1.5" PointX="23.25" PointY="120.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_CATEGORIA" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_DETALLE" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_ESTADO" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_MODULO" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_PARAMETROS_CATEGORIA" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_REL_CATEGORIA_PARAMETROS" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_REL_CATEGORIA_SUBCATEGORIA" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_SUBCATEGORIA" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ALERTAS_TIPO" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.AnalisisCaso" Width="1.5" PointX="15" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.AnalisisCaso_Atendidos" Width="1.5" PointX="17.25" PointY="55.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.AntecedentesMorbidos" Width="1.5" PointX="23.25" PointY="122.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.atendidos_minju201110" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.aux_DPL_20090821" Width="1.5" PointX="14.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.aux_DPL_Balance" Width="1.5" PointX="21.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.aux_DPL_Egresados_OPD_con_PII_Logrado" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.aux_DPL_IngresosEliminados_Protectora" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.aux_DPL_MontosAsignados" Width="1.5" PointX="18.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.AUX_DPL_ResultadoEncuesta_200810" Width="1.5" PointX="22.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.AUX_DPL_ResultadoEncuesta_200910" Width="1.5" PointX="9.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.AUX_DPL_ResultadoEncuesta_200910_v2" Width="1.5" PointX="11.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.aux_kvg_Deprode_Atenciones" Width="1.5" PointX="23.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.aux_kvg_Deprode_Atenciones_Detalle" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.BUD_Egresos" Width="1.5" PointX="24.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.BUD_Ingresos" Width="1.5" PointX="24.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.BUD_Programas" Width="1.5" PointX="24.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.BUD_Proyectos" Width="1.5" PointX="25.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CapacitacionNino" Width="1.5" PointX="26" PointY="122.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CausalesIngreso" Width="1.5" PointX="12.5" PointY="84" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano_Capacitacion" Width="1.5" PointX="26.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano_Droga" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano_Escolar" Width="1.5" PointX="26.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano_Psicologico" Width="1.5" PointX="26.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano_SituacionLaboral" Width="1.5" PointX="27.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano_Social" Width="1.5" PointX="28.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano1" Width="1.5" PointX="28.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano1_201109" Width="1.5" PointX="29.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CESC_ArchivoPlano2" Width="1.5" PointX="26.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CierreMes" Width="1.5" PointX="13.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CierreMovimientoMensual" Width="1.5" PointX="15" PointY="59.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CoordinadorJudicial" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.CoordinadorJudicialRes" Width="1.5" PointX="28.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Cpacitacion_IGR" Width="1.5" PointX="0.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DEDEREJ_Indicador_11" Width="1.5" PointX="30.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Dederej_Indicador_11_porcentaje" Width="1.5" PointX="30.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DEDEREJ_Indicador_16" Width="1.5" PointX="30.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DEDEREJ_Indicador_68_Control" Width="1.5" PointX="32.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DelitosHechosJudiciales" Width="1.5" PointX="10" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DetalleLesiones" Width="1.5" PointX="9.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Diagnostico_Resumen" Width="1.5" PointX="32.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticoGeneral" Width="1.5" PointX="18.75" PointY="122.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Diagnosticos_8region" Width="1.5" PointX="32.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticoSalud" Width="1.5" PointX="11.75" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticoSaludFichaSaludInicial" Width="1.5" PointX="21" PointY="125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticoSaludFichaSaludPosterior" Width="1.5" PointX="23.25" PointY="125.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticosDiscapacidad" Width="1.5" PointX="24" PointY="71.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticosDroga" Width="1.5" PointX="21" PointY="111.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticosEscolar" Width="1.5" PointX="21" PointY="115.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticosMaltrato" Width="1.5" PointX="24" PointY="84.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticosPeoresFormaTrabajo" Width="1.5" PointX="24" PointY="90.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticosPsicologico" Width="1.5" PointX="26" PointY="117.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DiagnosticosSocial" Width="1.5" PointX="21" PointY="148.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Diligencias" Width="1.5" PointX="24" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DireccionNinos" Width="1.5" PointX="7.5" PointY="72" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DireccionPersonaRelacionada" Width="1.5" PointX="18" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DocumentacionMigratoria" Width="1.5" PointX="18.75" PointY="41.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DominioIdiomasMigratoria" Width="1.5" PointX="24.75" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.dtproperties" Width="1.5" PointX="32.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ElaboracionInformeAvance" Width="1.5" PointX="32.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestaEMAIL" Width="1.5" PointX="32.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestaPEG" Width="1.5" PointX="32.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Encuestas" Width="1.5" PointX="34.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasPreguntas" Width="1.5" PointX="34.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasPreguntasExperiencia" Width="1.5" PointX="34.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasRespuestas" Width="1.5" PointX="34.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasRespuestasDetalle" Width="1.5" PointX="34.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasRespuestasExperiencia" Width="1.5" PointX="34.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasRespuestasListasEspera" Width="1.5" PointX="34.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasRoles" Width="1.5" PointX="7.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasSubPreguntas" Width="1.5" PointX="34.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestasUsuarios" Width="1.5" PointX="34.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EncuestaTrabajadoresDetalle" Width="1.5" PointX="34.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EstadosPlanIntervencion" Width="1.5" PointX="26.75" PointY="102.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EtapasInformeDiagnostico" Width="1.5" PointX="23" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EtapasResolucion" Width="1.5" PointX="17.25" PointY="100.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EventosIntervencion" Width="1.5" PointX="26" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EventosIntervencion_2007" Width="1.5" PointX="34.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EventosIntervencion_2010" Width="1.5" PointX="36.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EventosProyecto" Width="1.5" PointX="18" PointY="67.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.EventosProyectoAsistenciaNinos" Width="1.5" PointX="20.25" PointY="64.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_atendidos" Width="1.5" PointX="36.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_atendidos_inconsistencias" Width="1.5" PointX="36.75" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_atendidos_old" Width="1.5" PointX="28.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_boletin_directorxdia" Width="1.5" PointX="30.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_boletin_directorxdia_AADD" Width="1.5" PointX="38.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_boletin_directorxdia_Fallecidos" Width="1.5" PointX="38.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_CausalesIngreso" Width="1.5" PointX="38.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_diagnosticos" Width="1.5" PointX="38.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_diagnosticos_egresosxTraspaso" Width="1.5" PointX="32.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_Diligencias_DAM" Width="1.5" PointX="23.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_Diligencias_InfomesDiagnosticos" Width="1.5" PointX="40.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_DireccionNinos" Width="1.5" PointX="25.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_egresos_xTraspaso" Width="1.5" PointX="40.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_EgresosFavorables" Width="1.5" PointX="40.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_eventosIntervencion" Width="1.5" PointX="0.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_EventosProyecto" Width="1.5" PointX="40.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_EventosProyectoAsistenciaNinos" Width="1.5" PointX="17.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_his_RendicionesCuenta" Width="1.5" PointX="42.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_his_RendicionesCuenta_Detalle" Width="1.5" PointX="42.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_Historial_Inimputables" Width="1.5" PointX="42.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_inconsistencias" Width="1.5" PointX="42.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_Infracciones" Width="1.5" PointX="42.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_ListaEspera" Width="1.5" PointX="42.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_OrdenTribunalEgreso" Width="1.5" PointX="44.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_OrdenTribunalIngreso" Width="1.5" PointX="44.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_PersonasRelacionadas" Width="1.5" PointX="44.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_PII" Width="1.5" PointX="44.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_PromedioAtencionDiaria" Width="1.5" PointX="44.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_PromedioAtencionDiariaTODOS" Width="1.5" PointX="44.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_PromedioAtencionIcodIE" Width="1.5" PointX="44.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_proyectospadres_hijos" Width="1.5" PointX="44.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_Simultaneos_Detalle" Width="1.5" PointX="44.75" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_Simultaneos_RESUMEN" Width="1.5" PointX="46.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_simultaneosRED" Width="1.5" PointX="46.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_TipoMedidasSanciones" Width="1.5" PointX="46.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ex_VariacionPlazas" Width="1.5" PointX="0.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Examenes" Width="1.5" PointX="23.25" PointY="132.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ExcepcionAsistencia" Width="1.5" PointX="46.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Faltas" Width="1.5" PointX="7.5" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Farmacos" Width="1.5" PointX="23.25" PointY="134.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.FichaDerivacion" Width="1.5" PointX="23.25" PointY="139" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Fonasa_Enviados" Width="1.5" PointX="46.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.HechosJudiciales" Width="1.5" PointX="21" PointY="81.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.HechosSalud" Width="1.5" PointX="7.5" PointY="51.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Historial_Lrpa_Causa" Width="1.5" PointX="46.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.HistoricoPagoFES" Width="1.5" PointX="48.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.HistoricoPagos" Width="1.5" PointX="48.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Indicador_AdopcionDeteccion" Width="1.5" PointX="48.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.INDICADOR_DEDEREJ_17" Width="1.5" PointX="48.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.INDICADOR_DEDEREJ_18" Width="1.5" PointX="50.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.INDICADOR_DN_CAPACITACION_2" Width="1.5" PointX="50.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_ATENDIDOS_INDICECALIDAD" Width="1.5" PointX="50.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_AtendidosVisitasIC" Width="1.5" PointX="50.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDDroga" Width="1.5" PointX="50.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDEscolar" Width="1.5" PointX="50.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDHechosJudiciales" Width="1.5" PointX="50.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDiligencias" Width="1.5" PointX="50.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDMaltrato" Width="1.5" PointX="40.75" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDPFTI" Width="1.5" PointX="52.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDPsicologico" Width="1.5" PointX="52.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDSLN" Width="1.5" PointX="52.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadDSocial" Width="1.5" PointX="52.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadEgresos" Width="1.5" PointX="52.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadEventosIntervencion" Width="1.5" PointX="52.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadEventosProyecto" Width="1.5" PointX="52.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadGral" Width="1.5" PointX="52.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadGral_Detalle" Width="1.5" PointX="52.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_OportunidadIngresos" Width="1.5" PointX="52.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_PersonaRelacionada" Width="1.5" PointX="52.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IndiceCalidad_SinDatoIngresos" Width="1.5" PointX="50.75" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.InformesDiagnosticos" Width="1.5" PointX="20.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.IngresoPersonaRelacionada" Width="1.5" PointX="16.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Ingresos_CalidadJuridica" Width="1.5" PointX="52.75" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Ingresos_Egresos" Width="1.5" PointX="5.25" PointY="53.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Ingresos_Egresos_DSC" Width="1.5" PointX="54.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Ingresos_Egresos_Respaldo" Width="1.5" PointX="54.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Ingresos_Traslados" Width="1.5" PointX="13.5" PointY="61.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Inmueble" Width="1.5" PointX="18.75" PointY="84.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Institucion_Proyecto" Width="1.5" PointX="54.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Instituciones" Width="1.5" PointX="10.5" PointY="68.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Interoperatividad_MINJU_Acta" Width="1.5" PointX="54.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Interoperatividad_MINJU_Instituciones" Width="1.5" PointX="23.75" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Interoperatividad_MINJU_InstitucionUsuario" Width="1.5" PointX="7.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Interoperatividad_MINJU_PerfilesInstituciones" Width="1.5" PointX="25.75" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Intervenciones" Width="1.5" PointX="23.75" PointY="99.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.JuecesAcceso" Width="1.5" PointX="54.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ListaEspera" Width="1.5" PointX="18" PointY="77.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ListaEsperaRespaldo" Width="1.5" PointX="54.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.LogExcepcionAsistencia" Width="1.5" PointX="54.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.LogMail" Width="1.5" PointX="54.75" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.LogUsuarios" Width="1.5" PointX="54.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Egresos_201101_201209" Width="1.5" PointX="54.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Egresos_201101_201210" Width="1.5" PointX="42.75" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Egresos_201101_201304" Width="1.5" PointX="44.75" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Egresos_201101_201306" Width="1.5" PointX="56.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados" Width="1.5" PointX="56.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201112" Width="1.5" PointX="56.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201203" Width="1.5" PointX="56.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201206" Width="1.5" PointX="56.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201209" Width="1.5" PointX="38.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201212" Width="1.5" PointX="56.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201212_2" Width="1.5" PointX="56.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201303" Width="1.5" PointX="56.75" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201306" Width="1.5" PointX="58.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201309" Width="1.5" PointX="58.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201401_201407" Width="1.5" PointX="58.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201506" Width="1.5" PointX="58.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201512" Width="1.5" PointX="58.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201605" Width="1.5" PointX="58.75" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Atendidos201606" Width="1.5" PointX="46.75" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Respaldo" Width="1.5" PointX="48.75" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Enviados_Vigentes201310" Width="1.5" PointX="58.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Mideplan_Test" Width="1.5" PointX="50.75" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Migra_CausalesIngreso" Width="1.5" PointX="52.75" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.MinisterioPublico_Delito" Width="1.5" PointX="12.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.MinisterioPublico_Ingresos" Width="1.5" PointX="7.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.MinisterioPublico_MedidaSancion" Width="1.5" PointX="12.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.MinisterioPublico_OrdenTribunal" Width="1.5" PointX="10" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.MontosAsignados_CatastroJueces" Width="1.5" PointX="58.75" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.MuestraADN" Width="1.5" PointX="7.5" PointY="58.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.NinoOrganizacionSocial" Width="1.5" PointX="10.25" PointY="46" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Ninos" Width="1.5" PointX="3" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.NinosEnfermedadesCronicas" Width="1.5" PointX="7.5" PointY="47.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.NinosPersonasRelacionadas" Width="1.5" PointX="24" PointY="53.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.NinosRelacionados" Width="1.5" PointX="18.25" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.NinosVisitados" Width="1.5" PointX="15" PointY="66.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.OrdenTribunalEgreso" Width="1.5" PointX="7.5" PointY="89.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.OrdenTribunalIngreso" Width="1.5" PointX="10.25" PointY="81.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parActividad" Width="1.5" PointX="21.75" PointY="46.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parActoresEventos" Width="1.5" PointX="60.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAdopcionTipoUsuario" Width="1.5" PointX="60.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAlergias" Width="1.5" PointX="60.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAntecedentesMorbidos" Width="1.5" PointX="60.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAntecedentesMorbidosPrueba" Width="1.5" PointX="60.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAplicacionIntervencion" Width="1.5" PointX="5.25" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAreaCapacitacion" Width="1.5" PointX="23.75" PointY="147.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAreaEspecializacion" Width="1.5" PointX="8.25" PointY="68.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAreaInsercionLaboral" Width="1.5" PointX="23.75" PointY="150.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAreasProyecto" Width="1.5" PointX="8.25" PointY="99" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parAtencionHechoSalud" Width="1.5" PointX="60.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parBancos" Width="1.5" PointX="10.5" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCalidadJuridica" Width="1.5" PointX="2.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCalificacionIntervencion" Width="1.5" PointX="60.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCargoPresupuestario" Width="1.5" PointX="60.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCargos" Width="1.5" PointX="23.75" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCategoriasPFMI" Width="1.5" PointX="19.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCausalEgreso" Width="1.5" PointX="20" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCausalEgresoTrabajador" Width="1.5" PointX="60.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCausalesIngreso" Width="1.5" PointX="15.75" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCausalesIngresoLRPA" Width="1.5" PointX="25.75" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCausalTerminoProyecto" Width="1.5" PointX="10.5" PointY="63.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parClases" Width="1.5" PointX="17" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parComunas" Width="1.5" PointX="5.25" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCondicionIngreso" Width="1.5" PointX="60.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parConfiguracion" Width="1.5" PointX="60.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parConfiguracionrespaldo" Width="1.5" PointX="60.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parConfirmaSRCEI" Width="1.5" PointX="0.75" PointY="56" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parConflictoCritico" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parConQuienEgresa" Width="1.5" PointX="60.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCorteApelaciones" Width="1.5" PointX="5.75" PointY="80.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parCriteriosModelo" Width="1.5" PointX="60.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDelito" Width="1.5" PointX="7.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDepartamentosSENAME" Width="1.5" PointX="10.5" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDetalleIngreso" Width="1.5" PointX="12" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDiasAtencion" Width="1.5" PointX="17" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDiligencia" Width="1.5" PointX="21.75" PointY="60.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDimensiones" Width="1.5" PointX="14.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDireccionesRegionales" Width="1.5" PointX="3" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDocumentacionMigratoria" Width="1.5" PointX="16.5" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDominios" Width="1.5" PointX="60.75" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDrogas" Width="1.5" PointX="60.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDuracionDiasSancion" Width="1.5" PointX="5.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDuracionMesSancion" Width="1.5" PointX="5.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDuracionSemanaSancion" Width="1.5" PointX="5.25" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parDuracionSeparacion" Width="1.5" PointX="5.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEncuestaRespuesta" Width="1.5" PointX="60.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEnfermedadesCronicas" Width="1.5" PointX="60.75" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEscolaridad" Width="1.5" PointX="60.75" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEscolaridadAdulto" Width="1.5" PointX="21.75" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEspacioSeparacion" Width="1.5" PointX="5.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEstablecimientosSalud" Width="1.5" PointX="60.75" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEstadoAbandono" Width="1.5" PointX="19.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEstadoCapacitacion" Width="1.5" PointX="58.75" PointY="61.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEstadoCivil" Width="1.5" PointX="0.75" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEstadoCuota" Width="1.5" PointX="60.75" PointY="61.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEstadoIntervencion" Width="1.5" PointX="24.5" PointY="107.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEstadoListaEspera" Width="1.5" PointX="62.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEtapasIntervencion" Width="1.5" PointX="20.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEtnias" Width="1.5" PointX="62.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEventosAnalisisCaso" Width="1.5" PointX="15" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEventosIntervencionCantidad" Width="1.5" PointX="25.75" PointY="49.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEventosIntervencionCantidadRESP" Width="1.5" PointX="62.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parEventosProyectosModelos" Width="1.5" PointX="19" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parExamen" Width="1.5" PointX="15" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parExcepcionesDiasAtencion" Width="1.5" PointX="19.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parExcepcionesFeriados" Width="1.5" PointX="17" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParFactorCoberturaCVF" Width="1.5" PointX="62.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parFactorDFL1385" Width="1.5" PointX="62.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParFactorReajuste" Width="1.5" PointX="62.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parFactorReajuste_Residencias" Width="1.5" PointX="62.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parFactorReajusteUSS" Width="1.5" PointX="62.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parFactorSubvencion" Width="1.5" PointX="12.75" PointY="98.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parFaltas" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parFarmacos" Width="1.5" PointX="62.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParFeriados" Width="1.5" PointX="14.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parGradoCumplimientoIntervencion" Width="1.5" PointX="62.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parHechosSalud" Width="1.5" PointX="62.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parIdiomas" Width="1.5" PointX="22.5" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parInstrumentosDiagnosticos" Width="1.5" PointX="23.75" PointY="115.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parItem" Width="1.5" PointX="62.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parLocalidad" Width="1.5" PointX="5.25" PointY="76.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parLugarFallecimiento" Width="1.5" PointX="62.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parLugarHechoSalud" Width="1.5" PointX="62.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMailReliquidacion" Width="1.5" PointX="62.75" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMaltrato" Width="1.5" PointX="21.75" PointY="107.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParMantenedores" Width="1.5" PointX="62.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMateriaCausa" Width="1.5" PointX="19" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMedicionesDiagnostica_TrastornoMental" Width="1.5" PointX="28.25" PointY="109.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMedicionesDiagnosticas" Width="1.5" PointX="26" PointY="113.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMedidasSugeridas" Width="1.5" PointX="62.75" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMedioDePago" Width="1.5" PointX="52.75" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMedioNotificacionTribunal" Width="1.5" PointX="5.25" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parModeloIntervencion" Width="1.5" PointX="5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parModeloIntervencion_Tematica" Width="1.5" PointX="12.75" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parModeloSancionMixta" Width="1.5" PointX="10.25" PointY="89" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parMotivoIngresoChile" Width="1.5" PointX="11.25" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parNacionalidades" Width="1.5" PointX="21.75" PointY="39.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parNivelDiscapacidad" Width="1.5" PointX="21.75" PointY="55.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parNivelIntervencion" Width="1.5" PointX="21.5" PointY="95.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parNotificacionJoven" Width="1.5" PointX="5.25" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parObjetivo" Width="1.5" PointX="15.75" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parOrganismoCapacitador" Width="1.5" PointX="62.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParPagoSubvencionLey20032" Width="1.5" PointX="62.75" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parParametricasFichaSalud" Width="1.5" PointX="10" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParParametros" Width="1.5" PointX="64.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parProfesionOficio" Width="1.5" PointX="18.75" PointY="60.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parProvincia" Width="1.5" PointX="3" PointY="74.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parQuienApela" Width="1.5" PointX="5.25" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parQuienOcasionaLesion" Width="1.5" PointX="64.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parRefuerzoNegativoAdicional" Width="1.5" PointX="5.25" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parRegion" Width="1.5" PointX="0.75" PointY="73.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parResolucionTribunal" Width="1.5" PointX="7.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parRestriccionPago" Width="1.5" PointX="26.75" PointY="86.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSancionCoordinador" Width="1.5" PointX="64.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSancionFalta" Width="1.5" PointX="5.25" PointY="46.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSeAcogeApelacion" Width="1.5" PointX="5.25" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSistemaAdministrativo" Width="1.5" PointX="8.25" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSistemaAsistencial" Width="1.5" PointX="10.5" PointY="53.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionCalle" Width="1.5" PointX="64.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionesEspeciales" Width="1.5" PointX="64.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionLaboral" Width="1.5" PointX="64.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionLegalInmueble" Width="1.5" PointX="64.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionMigratoria" Width="1.5" PointX="11.25" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionPersonaRelacionada" Width="1.5" PointX="21.75" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionSocioEconomica" Width="1.5" PointX="64.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSituacionTuicion" Width="1.5" PointX="22" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parSolicitanteIngreso" Width="1.5" PointX="15.75" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParTematicaGrupo" Width="1.5" PointX="12.75" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTematicaProyecto" Width="1.5" PointX="10.5" PointY="50.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTerminoDiagnostico" Width="1.5" PointX="18.5" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTerminoMedidaSancion" Width="1.5" PointX="10.25" PointY="91.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoActividad" Width="1.5" PointX="10.25" PointY="94" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoAreaTrabajo" Width="1.5" PointX="10.25" PointY="105.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoAsistenciaEscolar" Width="1.5" PointX="64.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoAtencion" Width="1.5" PointX="64.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoAudiencia" Width="1.5" PointX="64.75" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoCapacitacion" Width="1.5" PointX="64.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoCargo" Width="1.5" PointX="64.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoCausalIngreso" Width="1.5" PointX="13.5" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoCausalIngresoLRPA" Width="1.5" PointX="38.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoConsumoDroga" Width="1.5" PointX="64.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoDeuda" Width="1.5" PointX="40.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoDiagnostico" Width="1.5" PointX="18.5" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoDiagnosticoGlosa" Width="1.5" PointX="16.5" PointY="123.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoDiagnosticoPsi" Width="1.5" PointX="23.75" PointY="112.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoDiscapacidad" Width="1.5" PointX="21.75" PointY="88.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoEgreso" Width="1.5" PointX="17.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoEventoIntervencion" Width="1.5" PointX="20.75" PointY="91.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoEventos" Width="1.5" PointX="15.75" PointY="63.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoExamen" Width="1.5" PointX="12.75" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoFaltas" Width="1.5" PointX="5.25" PointY="66.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoHechoSalud" Width="1.5" PointX="64.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoIngreso" Width="1.5" PointX="9.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoInmueble" Width="1.5" PointX="42.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoInstitucion" Width="1.5" PointX="8.25" PointY="86" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoIntervencion" Width="1.5" PointX="21.5" PointY="98.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoLesiones" Width="1.5" PointX="64.75" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoMaltrato" Width="1.5" PointX="19.5" PointY="108" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoMateriaCausa" Width="1.5" PointX="16.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoNacionalidad" Width="1.5" PointX="0.75" PointY="61.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoOrganizacionSocial" Width="1.5" PointX="8" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoParametricaFichaSalud" Width="1.5" PointX="7.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoProyecto" Width="1.5" PointX="10.5" PointY="98.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ParTipoReconocimiento" Width="1.5" PointX="64.75" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoRelacion" Width="1.5" PointX="21.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoRelacionConQuienVive" Width="1.5" PointX="64.75" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoRelacionIntervencionEgreso" Width="1.5" PointX="64.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoRelacionNinos" Width="1.5" PointX="16" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoRelacionPersonaContacto" Width="1.5" PointX="64.75" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoReparacion" Width="1.5" PointX="10.25" PointY="108.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoSancion" Width="1.5" PointX="10.25" PointY="110.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoSancionAccesoria" Width="1.5" PointX="10.25" PointY="113.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoSolicitanteDiligencia" Width="1.5" PointX="21.75" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoSolicitanteIngreso" Width="1.5" PointX="13.5" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoSubvencion" Width="1.5" PointX="10.5" PointY="102.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoSupervision" Width="1.5" PointX="58.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTipoTribunal" Width="1.5" PointX="5.75" PointY="82.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTraslados" Width="1.5" PointX="11.25" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTrastornosMentales" Width="1.5" PointX="23.75" PointY="104.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parTribunales" Width="1.5" PointX="8" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.parUso" Width="1.5" PointX="18" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PermanenciaCIPMCA_20112011" Width="1.5" PointX="64.75" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PersonasRelacionadas" Width="1.5" PointX="15.75" PointY="47" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PersonasRelacionadasRespaldo" Width="1.5" PointX="60.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.pfti" Width="1.5" PointX="34.75" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PlanIntervencion" Width="1.5" PointX="21.5" PointY="101.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PlanIntervencionGrupo" Width="1.5" PointX="0.75" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PLANRPA_MARZO2016_2" Width="1.5" PointX="50.75" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PresupuestosProyectosCaja" Width="1.5" PointX="52.75" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.PresupuestosProyectosGlobal" Width="1.5" PointX="54.75" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ProyectoInmueble" Width="1.5" PointX="21" PointY="73" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Proyectos" Width="1.5" PointX="12.75" PointY="66.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.proyectos_termino" Width="1.5" PointX="66.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.proyectosamedir" Width="1.5" PointX="66.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ProyectosAsistencia" Width="1.5" PointX="66.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Recepcion_CMM" Width="1.5" PointX="66.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RecepcionRendicionCuentas" Width="1.5" PointX="66.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Registro_Entradas" Width="1.5" PointX="66.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RegistroAtencion" Width="1.5" PointX="66.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionCuentas" Width="1.5" PointX="15" PointY="80.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionCuentasInstituciones" Width="1.5" PointX="12.75" PointY="103.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionDeudas" Width="1.5" PointX="20.25" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionDeudas_Instituciones" Width="1.5" PointX="15" PointY="86.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesEgreso" Width="1.5" PointX="15" PointY="91.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesEgresoDetalle" Width="1.5" PointX="17.25" PointY="91.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesEgresoDetalle_Traspaso" Width="1.5" PointX="66.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesEgresoInstituciones" Width="1.5" PointX="22" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesEgresoInstitucionesDetalle" Width="1.5" PointX="24.25" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesIngreso" Width="1.5" PointX="15" PointY="96" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesIngresoDetalle" Width="1.5" PointX="17.25" PointY="95.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesIngresoDetalle_Traspaso" Width="1.5" PointX="66.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesIngresoInstituciones" Width="1.5" PointX="12" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.RendicionesIngresoInstitucionesDetalle" Width="1.5" PointX="14.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Reporte_ProgramasPAG" Width="1.5" PointX="66.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Reporte_ReportabilidadRPA" Width="1.5" PointX="66.75" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Reporte_ReportabilidadRPA_Capacitacion" Width="1.5" PointX="44.75" PointY="66.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Reporte_ReportabilidadRPA_Egresos" Width="1.5" PointX="46.75" PointY="66.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Reporte_ReportabilidadRPA_Escolaridad" Width="1.5" PointX="66.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Reporte_ReportabilidadRPA_Escolaridad_1" Width="1.5" PointX="66.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Reporte_ReportabilidadRPA_PII" Width="1.5" PointX="66.75" PointY="63.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Resoluciones" Width="1.5" PointX="15" PointY="99.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ResumenAsistencia" Width="1.5" PointX="28.75" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ResumenAsistenciaValidado" Width="1.5" PointX="36.75" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ResumenAtencionMensualFirma" Width="1.5" PointX="38.75" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ResumenMesValores" Width="1.5" PointX="40.75" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ResumenRendicionMensualFirma" Width="1.5" PointX="15" PointY="106" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ResumenRendicionMensualFirma_Instituciones" Width="1.5" PointX="12.75" PointY="108.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Retenciones" Width="1.5" PointX="56.75" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Semanal_Vigentes_CIP_MCA" Width="1.5" PointX="68.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Semanal_Vigentes_ML_PL_Otros" Width="1.5" PointX="68.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Semanal_Vigentes_SoloADN_LRPA" Width="1.5" PointX="68.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Sindromes" Width="1.5" PointX="23.25" PointY="142.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.SituacionLaboralNino" Width="1.5" PointX="26" PointY="127.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.SituacionMigratoria" Width="1.5" PointX="13.5" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.SolicitudesDiligencia" Width="1.5" PointX="68.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.sysdiagrams" Width="1.5" PointX="68.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.tbl_PFTI" Width="1.5" PointX="68.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.tblPareo" Width="1.5" PointX="68.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.tempescol" Width="1.5" PointX="68.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.TipoMedidaCondicion" Width="1.5" PointX="14.75" PointY="119.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.TipoMedidasSanciones" Width="1.5" PointX="12.5" PointY="88.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.tmp_buscar_Nino" Width="1.5" PointX="68.75" PointY="61.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.tmp_causales" Width="1.5" PointX="62.75" PointY="68.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.tmp_escolaridad" Width="1.5" PointX="68.75" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.tmpTraspasoRendiciones" Width="1.5" PointX="58.75" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Trabajadores" Width="1.5" PointX="15.75" PointY="71.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.TrabajadorProyecto" Width="1.5" PointX="21" PointY="67.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.TrabajaEgreso" Width="1.5" PointX="26.75" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Transferencias" Width="1.5" PointX="64.75" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Trastornos" Width="1.5" PointX="23.25" PointY="144.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Usuarios" Width="1.5" PointX="66.75" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_1130226_eventosdirectos" Width="1.5" PointX="68.75" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_Desinternacion_atendidos" Width="1.5" PointX="70.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_Desinternacion_VigentesPROD" Width="1.5" PointX="70.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dgs_Icodie" Width="1.5" PointX="9.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dgs_Meventos" Width="1.5" PointX="70.75" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dgs_Mintervenciones" Width="1.5" PointX="48.75" PointY="70.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dgs_MPII" Width="1.5" PointX="70.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dpl_Icodie" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_DPL_InstitucionesActualizaAntecedentes" Width="1.5" PointX="12.75" PointY="125.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dpl_Meventos" Width="1.5" PointX="70.75" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dpl_Mintervenciones" Width="1.5" PointX="70.75" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_dpl_MPII" Width="1.5" PointX="70.75" PointY="65.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_DPL_Ninos_20140722" Width="1.5" PointX="50.75" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_egresosfavorables_PRF" Width="1.5" PointX="52.75" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_eventos_2012" Width="1.5" PointX="54.75" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_EventosIntervencion_Migrados" Width="1.5" PointX="60.75" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_hisMontos20102013" Width="1.5" PointX="72.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_kvg_analisis_621018" Width="1.5" PointX="72.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_kvg_analisis_621018_798" Width="1.5" PointX="72.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_kvg_analisis_9054_ParteII" Width="1.5" PointX="72.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_kvg_Analisis_Final_623359_9054_2" Width="1.5" PointX="72.75" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_kvg_Icodie" Width="1.5" PointX="20.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_KVG_Mintervenciones" Width="1.5" PointX="72.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_KVG_MPII" Width="1.5" PointX="72.75" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_kvg_vigentesindicadores" Width="1.5" PointX="72.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_MesaAyuda_Icodie" Width="1.5" PointX="18.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_MesaAyuda_Meventos" Width="1.5" PointX="72.75" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_MesaAyuda_Mintervenciones" Width="1.5" PointX="62.75" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_MesaAyuda_Mpii" Width="1.5" PointX="72.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_Ninos_Test" Width="1.5" PointX="70.75" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_oz_Icodie" Width="1.5" PointX="22.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_personasrelacionadas_hermanos" Width="1.5" PointX="72.75" PointY="71.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_ProyectosSinCierres" Width="1.5" PointX="46.75" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_ReingresosPPC" Width="1.5" PointX="64.75" PointY="73.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_resumen_calugas" Width="1.5" PointX="74.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_sgf_Icodie" Width="1.5" PointX="7.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_sgf_Meventos" Width="1.5" PointX="74.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_sgf_Mintervenciones" Width="1.5" PointX="74.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_sgf_MPII" Width="1.5" PointX="74.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_Tabla_DPL_Residencias" Width="1.5" PointX="74.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_tbl_PFTI" Width="1.5" PointX="74.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_tmp_DPL_ProyectosVigentes" Width="1.5" PointX="74.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_tmp_tbl_PFTI" Width="1.5" PointX="30.75" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Candidatos_a_Egresar" Width="1.5" PointX="32.75" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Catastro_Jueces" Width="1.5" PointX="34.75" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Catastro_Proyectos" Width="1.5" PointX="74.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.crea_resumenasistencia" Width="1.5" PointX="74.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DEDEREJ_Indicador_47" Width="1.5" PointX="74.75" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DEDEREJ_Indicador_68_llll" Width="1.5" PointX="56.75" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DHW_ZZ_Instituciones" Width="1.5" PointX="74.75" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_DetalleLesiones" Width="1.5" PointX="66.75" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_Diagnostico_old" Width="1.5" PointX="74.75" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_DiagnosticoDrogas" Width="1.5" PointX="76.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_DiagnosticoEscolaridad" Width="1.5" PointX="76.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_DiagnosticoMaltrato" Width="1.5" PointX="76.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_DiagnosticoPSI" Width="1.5" PointX="76.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_DiagnosticoSitLaboral" Width="1.5" PointX="76.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_DiagnosticoSocial" Width="1.5" PointX="76.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_IngresosEgresos" Width="1.5" PointX="76.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_ListaEspera" Width="1.5" PointX="76.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_Ninos" Width="1.5" PointX="76.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_NroNinos" Width="1.5" PointX="46.75" PointY="76.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_OrdenTribunalEgreso" Width="1.5" PointX="76.75" PointY="55.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_OrdenTribunalIngreso" Width="1.5" PointX="76.75" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_OrdenTribunalIngresoSancion" Width="1.5" PointX="76.75" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_PlanIntervencion" Width="1.5" PointX="76.75" PointY="68.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.DWH_ZZ_Proyectos" Width="1.5" PointX="76.75" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.estadisticas" Width="1.5" PointX="40.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Informe_Atencion_Diligencias" Width="1.5" PointX="52.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.lista_AA_DD" Width="1.5" PointX="58.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.OPD_Direccion" Width="1.5" PointX="60.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.pazciudadana" Width="1.5" PointX="66.75" PointY="77.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.ProyectosCerradosAnticipados" Width="1.5" PointX="78.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.vista_ATENDIDOS_INDICECALIDAD" Width="1.5" PointX="0.75" PointY="78.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_CausalEgresoLRPA" Width="1.5" PointX="78.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_CausalIngresoLRPA" Width="1.5" PointX="78.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.VISTA_DIAGNOSTICO_SOCIAL_MALTRATO" Width="1.5" PointX="78.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Egresos_LRPA" Width="1.5" PointX="78.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Egresos_LRPA_dinamica" Width="1.5" PointX="78.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Eventos_Intervencion_Cantidad" Width="1.5" PointX="78.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_IC_Atendidos_Visitas" Width="1.5" PointX="78.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.VISTA_INDICADOR_1_Adopcion" Width="1.5" PointX="78.75" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.VISTA_INDICADOR_13_uno" Width="1.5" PointX="42.75" PointY="78.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Indicador_15_Escolaridad" Width="1.5" PointX="78.75" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Indicador_23_22_Escolaridad" Width="1.5" PointX="48.75" PointY="78.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_indicador_3_4_Adopcion" Width="1.5" PointX="78.75" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Indicador_38_Dederej" Width="1.5" PointX="78.75" PointY="58.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.VISTA_INDICADOR_4" Width="1.5" PointX="78.75" PointY="62.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.VISTA_INDICADOR_9_DEDEREJ" Width="1.5" PointX="78.75" PointY="70.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.vista_ingresos_ley" Width="1.5" PointX="78.75" PointY="78.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Ingresos_LRPA" Width="1.5" PointX="44.75" PointY="79.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_LRPA_Egreso_RUC" Width="1.5" PointX="72.75" PointY="79.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Medio_Libre_05112007" Width="1.5" PointX="80.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Parametricas_Causales" Width="1.5" PointX="2.75" PointY="80.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_parEventosIntervencionCantidad" Width="1.5" PointX="80.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.vista_personarelacionada" Width="1.5" PointX="80.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_PMI_PIA_por_PAS" Width="1.5" PointX="80.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_Proyectos_Para_Caducar" Width="1.5" PointX="80.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.vista_resolucion" Width="1.5" PointX="80.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.vista_sindatoingresos" Width="1.5" PointX="80.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.vista_sindatoingresos_prueba" Width="1.5" PointX="80.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.Vista_TipoyCausalingreso_LRPA" Width="1.5" PointX="80.75" PointY="40.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_mm_Fallecidos_sinrut_rc" Width="1.5" PointX="80.75" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_mm_fallecidos_vigentes" Width="1.5" PointX="80.75" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_mm_ninos_arevisar" Width="1.5" PointX="80.75" PointY="54.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_mm_resumen_niños_fallecidos" Width="1.5" PointX="80.75" PointY="59.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SenainfoModel.zz_nunos_fallecisdos_en_proyectos" Width="1.5" PointX="80.75" PointY="62.75" IsExpanded="true" />
+        <AssociationConnector Association="SenainfoModel.FK_AccionesInformeDiagnostico_InformesDiagnosticos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_AccionesInformeDiagnostico_parTipoEventoIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_AccionesInformeDiagnostico_Trabajadores" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Alergias_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_AnalisisCaso_Atendidos_AnalisisCaso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_AnalisisCaso_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_AnalisisCaso_Atendidos_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_AnalisisCaso_Atendidos_parEventosAnalisisCaso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_AntecedentesMorbidos_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_CapacitacionNino_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_CapacitacionNino_parAreaCapacitacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_CausalesIngreso_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_CausalesIngreso_OrdenTribunalIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_CausalesIngreso_parCausalesIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_CierreMes_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_CoordinadorJudicial_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DelitosHechosJudiciales_parDelito" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticoGeneral_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticoGeneral_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticoGeneral_parTipoDiagnosticoGlosa" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticoSaludFichaSaludInicial_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosDroga_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosEscolar_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosMaltrato_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosPeoresFormaTrabajo_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosPsicologico_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosSocial_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_HechosJudiciales_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_SituacionLaboralNino_DiagnosticoGeneral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticoSaludFichaSaludPosterior_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Examenes_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Farmacos_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_FichaDerivacion_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Sindromes_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Trastornos_DiagnosticoSaludFichaSaludInicial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosDiscapacidad_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosDiscapacidad_parNivelDiscapacidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosDiscapacidad_parTipoDiscapacidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosDiscapacidad_Trabajadores" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosMaltrato_parMaltrato" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosMaltrato_PersonasRelacionadas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosPeoresFormaTrabajo_parTipoRelacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosPeoresFormaTrabajo_PersonasRelacionadas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosPsicologico_parInstrumentosDiagnosticos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosPsicologico_parTipoDiagnosticoPsi" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DiagnosticosPsicologico_parTrastornosMentales" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Diligencias_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Diligencias_parDiligencia" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Diligencias_parTipoSolicitanteDiligencia" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Diligencias_Trabajadores" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DireccionNinos_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DireccionNinos_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DireccionNinos_parComunas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DireccionNinos_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DireccionPersonaRelacionada_PersonasRelacionadas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DireccionPersonaRelacionada_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DocumentacionMigratoria_parDocumentacionMigratoria" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DocumentacionMigratoria_SituacionMigratoria" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DominioIdiomas_parIdiomas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_DominioIdiomas_SituacionMigratoria" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EstadosPlanIntervencion_parEstadoIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EstadosPlanIntervencion_PlanIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EtapasInformeDiagnostico_InformesDiagnosticos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EtapasInformeDiagnostico_parEtapasIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EtapasResolucion_Resoluciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosIntervencion_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosIntervencion_Intervenciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosIntervencion_parTipoEventoIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosIntervencion_Trabajadores" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosProyecto_parTipoEventos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosProyecto_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosProyectoAsistenciaNinos_EventosProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_EventosProyectoAsistenciaNinos_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parAplicacionIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parConflictoCritico" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parDuracionDiasSancion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parDuracionMesSancion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parDuracionSemanaSancion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parDuracionSeparacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parEspacioSeparacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parFaltas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parFaltas1" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parFaltas2" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parFaltas3" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parMedioNotificacionTribunal" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parNotificacionJoven" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parQuienApela" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parRefuerzoNegativoAdicional" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parSancionFalta" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parSancionFalta1" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parSancionFalta2" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parSancionFalta3" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parSeAcogeApelacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Faltas_parTipoFaltas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_HechosJudiciales_parCausalesIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_HechosJudiciales_parTribunales" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_HechosJudiciales_Trabajadores" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_HechosSalud_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_InformesDiagnosticos_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_InformesDiagnosticos_parTerminoDiagnostico" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_InformesDiagnosticos_parTipoDiagnostico" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Ingresos_Egresos_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Ingresos_Traslados_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_MuestraADN_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosEnfermedadesCronicas_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_OrdenTribunalEgreso_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_OrdenTribunalIngreso_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_SituacionMigratoria_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_Ingresos_Egresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Ingresos_Traslados_parTraslados" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ProyectoInmueble_Inmueble" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Instituciones_parAreaEspecializacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Instituciones_parComunas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Instituciones_parSistemaAdministrativo" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Instituciones_parTipoInstitucion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_Instituciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_Instituciones1" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionCuentasInstituciones_Instituciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionDeudas_Instituciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ResumenRendicionMensual_Instituciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Trabajadores_Instituciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_zz_DPL_InstitucionesActualizaAntecedentes" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Intervenciones_parNivelIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Intervenciones_parTipoIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Intervenciones_PlanIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ListaEspera_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ListaEspera_parCausalesIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ListaEspera_parComunas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ListaEspera_parSolicitanteIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ListaEspera_parTribunales" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ListaEspera_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_MinisterioPublico_Delito_MinisterioPublico_OrdenTribunal" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_MinisterioPublico_OrdenTribunal_MinisterioPublico_Ingresos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_MinisterioPublico_MedidaSancion_MinisterioPublico_OrdenTribunal" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinoOrganizacionSocial_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinoOrganizacionSocial_parTipoOrganizacionSocial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Ninos_parConfirmaSRCEI" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Ninos_parEstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Ninos_parTipoNacionalidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosRelacionados_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosRelacionados_Ninos1" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosVisitados_Ninos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parActividad" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parEscolaridadAdulto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parNacionalidades" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parProfesionOficio" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parSituacionPersonaRelacionada" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parSituacionPersonaRelacionada1" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parSituacionPersonaRelacionada2" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_parTipoRelacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosPersonasRelacionadas_PersonasRelacionadas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosRelacionados_parTipoRelacionNinos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_NinosVisitados_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_OrdenTribunalIngreso_parTribunales" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_OrdenTribunalIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_SituacionLaboralNino_parAreaInsercionLaboral" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parTipoProyecto_parAreasProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parBancos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parCategorias_parClases" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parCausalEgreso_parTipoEgreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parCausalesIngreso_parTipoCausalIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parCausalTerminoProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parClases_parDimensiones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parComunas_parProvincia" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parComunas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parTribunales_parCorteApelaciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parDepartamentosSENAME" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parDetalleIngreso_parTipoIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesIngresoInstitucionesDetalle_parDetalleIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parExcepcionesDiasAtencion_parDiasAtencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parDireccionesRegionales_parRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parEventosIntervencionCantidad_parModeloIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parEventosIntervencionCantidad_parTipoEventoIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parEventosIntervencionCantidad_parTipoIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parEventosProyectosModelos_parModeloIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parEventosProyectosModelos_parTipoEventos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK__parExamen__CodTi__3CA2C87D" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parExcepcionesDiasAtencion_parExcepcionesFeriados" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parExcepcionesFeriados_ParFeriados" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parFactorSubvencion_parTipoProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parLocalidad_parProvincia" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parMaltrato_parTipoMaltratos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parMateriaCausa_parTipoMateriaCausa" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parMedicionesDiagnostica_TrastornoMental_parMedicionesDiagnosticas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parMedicionesDiagnostica_TrastornoMental_parTrastornosMentales" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parModeloIntervencion_Tematica_parTematicaProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parModeloSancionMixta" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_SituacionMigratoria_parMotivoIngresoChile" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parUso_parObjetivo" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK__parParame__CodTi__56629A80" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Trabajadores_parProfesionOficio" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TrabajadorProyecto_parProfesionOficio" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parProvincia_parRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parTribunales_parRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parRegion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parRestriccionPago_parSistemaAdministrativo" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parRestriccionPago_parTipoProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parRestriccionPago_parTipoSubvencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parSistemaAsistencial" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_SituacionMigratoria_parSituacionMigratoria" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parSolicitanteIngreso_parTipoSolicitanteIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ParTematicaGrupo_parTematicaProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parTematicaProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parTerminoMedidaSancion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parTipoActividad" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parTipoAreaTrabajo" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parTipoInstitucion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parTipoSubvencion_parTipoProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parTipoProyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parTipoReparacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parTipoSancion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_parTipoSubvencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_parTribunales_parTipoTribunal" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidasSanciones_parTribunales" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionDeudas_Instituciones_parUso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionDeudas_parUso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesEgresoInstitucionesDetalle_parUso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TrabajaEgreso_PersonasRelacionadas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TrabajaEgreso_PlanIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ProyectoInmueble_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Proyectos_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionCuentas_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionDeudas_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesEgreso_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesIngreso_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_Resoluciones_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_ResumenRendicionMensual_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TrabajadorProyecto_Proyectos" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionDeudas_RendicionCuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionDeudas_Instituciones_RendicionCuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesEgresoDetalle_RendicionesEgreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesEgresoInstitucionesDetalle_RendicionesInstitucionesEgreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesIngresoDetalle_RendicionesIngreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_RendicionesIngresoInstitucionesDetalle_RendicionesIngresoInstituciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TipoMedidaCondicion_TipoMedidasSanciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.FK_TrabajadorProyecto_Trabajadores" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.IntrumentoMedicion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.parEstadoAbandono_SituacionTuicion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.parModeloIntervencion_CalidadJuridica" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.parResolucionTribunal_ModeloIntervencion" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.parTipoDiagnosticoPsi_InstrumentoDiagnostico" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.ProyectosPH" ManuallyRouted="false" />
+        <AssociationConnector Association="SenainfoModel.TipoSancionAccesoria" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

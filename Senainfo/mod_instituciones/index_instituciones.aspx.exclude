@@ -1,0 +1,91 @@
+<%@ Page Language="C#" Culture="es-CL" UICulture="es"    AutoEventWireup="true" CodeFile="index_instituciones.aspx.cs" Inherits="mod_institucion_index_instituciones" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="../css/sename_aplica.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+         <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+
+      <table border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="20" colspan="3" >&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="20" colspan="3" align="center" class="titulo" >Instituciones/Proyectos</td>
+        </tr>
+        <tr>
+          <td height="20" colspan="3" >&nbsp;</td>
+        </tr>
+        <tr>
+          <td valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+              <tr>
+                <td align="center">
+                    <asp:ImageButton ID="Imb_Instituciones" runat="server" ImageUrl="../images/bot_inst_instituciones.jpg" OnClick="Imb_Instituciones_Click" />                </td>
+              </tr>
+              <tr>
+                <td align="center"><img src="../images/flecha_abajo.jpg" width="21" height="14" /></td>
+              </tr>
+              <tr>
+                <td align="center">
+                    <asp:ImageButton ID="Imb_Trabajadores" runat="server" ImageUrl="../images/bot_inst_trabajadores.jpg" OnClick="Imb_Trabajadores_Click" />                </td>
+              </tr>
+              <tr>
+                <td align="center"><img src="../images/flecha_abajo.jpg" width="21" height="14" /></td>
+              </tr>
+              <tr>
+                <td align="center">
+                    <asp:ImageButton ID="Imb_Inmuebles" runat="server" ImageUrl="../images/bot_inst_inmueble.jpg" OnClick="Imb_Inmuebles_Click" />                </td>
+              </tr>
+              <tr>
+                <td align="center"><img src="../images/flecha_abajo.jpg" width="21" height="14" /></td>
+              </tr>
+              <tr>
+                <td align="center">
+                    <asp:ImageButton ID="Imb_Proyectos" runat="server" ImageUrl="../images/bot_inst_proyectos.jpg" OnClick="Imb_Proyectos_Click" />                </td>
+              </tr>
+              <tr>
+                <td align="center"><img src="../images/flecha_abajo.jpg" width="21" height="14" /></td>
+              </tr>
+              <tr>
+                <td align="center">
+                    <asp:ImageButton ID="Imb_Resoluciones" runat="server" ImageUrl="../images/bot_inst_resoluciones.jpg" OnClick="Imb_Resoluciones_Click" />                </td>
+              </tr>
+          </table></td>
+          <td width="100" valign="bottom" ><img src="../images/flechas_instituciones.jpg" width="100" height="244" />&nbsp;</td>
+          <td valign="bottom" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+            <tr>
+              <td align="center"><asp:ImageButton ID="Imb_Reltrabajadores" runat="server" ImageUrl="../images/bot_inst_relactrabaj.jpg" OnClick="Imb_Reltrabajadores_Click" />                        </td>
+            </tr>
+            <tr>
+              <td align="center"><asp:ImageButton ID="Imb_Relinmuebles" runat="server" ImageUrl="../images/bot_inst_relacinmuebles.jpg" OnClick="Imb_Relinmuebles_Click" />                        </td>
+            </tr>
+            <tr>
+              <td align="center"><asp:ImageButton ID="Imb_Eventos" runat="server" ImageUrl="../images/bot_inst_eventos.jpg" OnClick="Imb_Eventos_Click" />                        </td>
+            </tr>
+            <tr>
+              <td align="center"><asp:ImageButton ID="Imb_Rendcuentas" runat="server" ImageUrl="../images/bot_inst_rendcuentas.jpg" OnClick="Imb_Rendcuentas_Click" />                        </td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td colspan="3" style="height: 15px" >&nbsp;</td>
+        </tr>
+      </table>
+                
+           </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    </form>
+</body>
+</html>

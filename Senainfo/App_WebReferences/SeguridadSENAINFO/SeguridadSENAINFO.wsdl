@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="ObtenerTokensUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTokensUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerTokensUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTokensUsuarioSSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTokensUsuarioSSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerTokensUsuarioSSOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IngresarSSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IngresarSSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IngresarSSOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdUsuarioMesa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearUsuarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarUsuarioEnRol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nuevorol" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarUsuarioEnRolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarUsuarioEnRolResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambiarContrasena">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasenaantigua" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambiarContrasenaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CambiarContrasenaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetContrasena">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetContrasenaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResetContrasenaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTokenSSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTokenSSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarTokenSSOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTokenSSONuevo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTokenSSONuevoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarTokenSSONuevoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioPorRol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passphrase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UsuarioPorRolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioPorRolResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokensPorIdUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="passphrase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokensPorIdUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TokensPorIdUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nameOrMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerUsuarioResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Usuario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contraseña" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoMaterno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenSSO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmailConfirmado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenMail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndVigenciaUsuario" type="s1:char" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaActualizacionUsuario" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimoIngresoUsuario" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndVigenciaTrabajador" type="s1:char" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaActualizacionTrabajador" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuarioSenainfo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaModTokenMail" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerUsuarioByMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioByMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerUsuarioByMailResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioByTokenMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioByTokenMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerUsuarioByTokenMailResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTokenMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="eMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="indVigencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTokenMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarTokenMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarMailUsuarioDesdeMesa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginMesa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenSSOMesa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuarioSenainfo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailUser" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarMailUsuarioDesdeMesaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarMailUsuarioDesdeMesaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarSolicitudUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginMesa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenSSOMesa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginUser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isMailLogin" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarSolicitudUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CancelarSolicitudUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarUsuarioMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tokenMail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarUsuarioMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarUsuarioMailResult" type="tns:Estado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Estado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ComparaContraseñaAnterior">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newPass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currentPassEncrypted" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComparaContraseñaAnteriorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ComparaContraseñaAnteriorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteMultipleMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteMultipleMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteMultipleMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExisteUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExisteUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CrearTokenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTokenMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuarioSenainfo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTokenMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerTokenMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioByIdSenainfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuarioSenainfo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarioByIdSenainfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerUsuarioByIdSenainfoResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaTokenMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IdUsuarioSenainfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaTokenMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminaTokenMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerTokensUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerTokensUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTokensUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerTokensUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTokensUsuarioSSOSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerTokensUsuarioSSO" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTokensUsuarioSSOSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerTokensUsuarioSSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IngresarSSOSoapIn">
+    <wsdl:part name="parameters" element="tns:IngresarSSO" />
+  </wsdl:message>
+  <wsdl:message name="IngresarSSOSoapOut">
+    <wsdl:part name="parameters" element="tns:IngresarSSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearUsuario" />
+  </wsdl:message>
+  <wsdl:message name="CrearUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarUsuarioEnRolSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioEnRol" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarUsuarioEnRolSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioEnRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaSoapIn">
+    <wsdl:part name="parameters" element="tns:CambiarContrasena" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaSoapOut">
+    <wsdl:part name="parameters" element="tns:CambiarContrasenaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetContrasenaSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetContrasena" />
+  </wsdl:message>
+  <wsdl:message name="ResetContrasenaSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetContrasenaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTokenSSOSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarTokenSSO" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTokenSSOSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarTokenSSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTokenSSONuevoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarTokenSSONuevo" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTokenSSONuevoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarTokenSSONuevoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioPorRolSoapIn">
+    <wsdl:part name="parameters" element="tns:UsuarioPorRol" />
+  </wsdl:message>
+  <wsdl:message name="UsuarioPorRolSoapOut">
+    <wsdl:part name="parameters" element="tns:UsuarioPorRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="TokensPorIdUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:TokensPorIdUsuario" />
+  </wsdl:message>
+  <wsdl:message name="TokensPorIdUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:TokensPorIdUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioByMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioByMail" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioByMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioByMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioByTokenMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioByTokenMail" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioByTokenMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioByTokenMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTokenMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarTokenMail" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTokenMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarTokenMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMailUsuarioDesdeMesaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarMailUsuarioDesdeMesa" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMailUsuarioDesdeMesaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarMailUsuarioDesdeMesaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelarSolicitudUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelarSolicitudUsuario" />
+  </wsdl:message>
+  <wsdl:message name="CancelarSolicitudUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelarSolicitudUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarUsuarioMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioMail" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarUsuarioMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarUsuarioMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ComparaContraseñaAnteriorSoapIn">
+    <wsdl:part name="parameters" element="tns:ComparaContraseñaAnterior" />
+  </wsdl:message>
+  <wsdl:message name="ComparaContraseñaAnteriorSoapOut">
+    <wsdl:part name="parameters" element="tns:ComparaContraseñaAnteriorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExisteMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteMail" />
+  </wsdl:message>
+  <wsdl:message name="ExisteMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExisteMultipleMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteMultipleMail" />
+  </wsdl:message>
+  <wsdl:message name="ExisteMultipleMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteMultipleMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExisteUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ExisteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ExisteUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ExisteUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearToken" />
+  </wsdl:message>
+  <wsdl:message name="CrearTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTokenMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerTokenMail" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTokenMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerTokenMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioByIdSenainfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioByIdSenainfo" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuarioByIdSenainfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarioByIdSenainfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminaTokenMailSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminaTokenMail" />
+  </wsdl:message>
+  <wsdl:message name="EliminaTokenMailSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminaTokenMailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SeguridadSENAINFOSoap">
+    <wsdl:operation name="ObtenerTokensUsuario">
+      <wsdl:input message="tns:ObtenerTokensUsuarioSoapIn" />
+      <wsdl:output message="tns:ObtenerTokensUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokensUsuarioSSO">
+      <wsdl:input message="tns:ObtenerTokensUsuarioSSOSoapIn" />
+      <wsdl:output message="tns:ObtenerTokensUsuarioSSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IngresarSSO">
+      <wsdl:input message="tns:IngresarSSOSoapIn" />
+      <wsdl:output message="tns:IngresarSSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearUsuario">
+      <wsdl:input message="tns:CrearUsuarioSoapIn" />
+      <wsdl:output message="tns:CrearUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuarioEnRol">
+      <wsdl:input message="tns:ActualizarUsuarioEnRolSoapIn" />
+      <wsdl:output message="tns:ActualizarUsuarioEnRolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <wsdl:input message="tns:CambiarContrasenaSoapIn" />
+      <wsdl:output message="tns:CambiarContrasenaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetContrasena">
+      <wsdl:input message="tns:ResetContrasenaSoapIn" />
+      <wsdl:output message="tns:ResetContrasenaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenSSO">
+      <wsdl:input message="tns:ActualizarTokenSSOSoapIn" />
+      <wsdl:output message="tns:ActualizarTokenSSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenSSONuevo">
+      <wsdl:input message="tns:ActualizarTokenSSONuevoSoapIn" />
+      <wsdl:output message="tns:ActualizarTokenSSONuevoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioPorRol">
+      <wsdl:input message="tns:UsuarioPorRolSoapIn" />
+      <wsdl:output message="tns:UsuarioPorRolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TokensPorIdUsuario">
+      <wsdl:input message="tns:TokensPorIdUsuarioSoapIn" />
+      <wsdl:output message="tns:TokensPorIdUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuario">
+      <wsdl:input message="tns:ObtenerUsuarioSoapIn" />
+      <wsdl:output message="tns:ObtenerUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByMail">
+      <wsdl:input message="tns:ObtenerUsuarioByMailSoapIn" />
+      <wsdl:output message="tns:ObtenerUsuarioByMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByTokenMail">
+      <wsdl:input message="tns:ObtenerUsuarioByTokenMailSoapIn" />
+      <wsdl:output message="tns:ObtenerUsuarioByTokenMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenMail">
+      <wsdl:input message="tns:ActualizarTokenMailSoapIn" />
+      <wsdl:output message="tns:ActualizarTokenMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMailUsuarioDesdeMesa">
+      <wsdl:input message="tns:ActualizarMailUsuarioDesdeMesaSoapIn" />
+      <wsdl:output message="tns:ActualizarMailUsuarioDesdeMesaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarSolicitudUsuario">
+      <wsdl:input message="tns:CancelarSolicitudUsuarioSoapIn" />
+      <wsdl:output message="tns:CancelarSolicitudUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuarioMail">
+      <wsdl:input message="tns:ActualizarUsuarioMailSoapIn" />
+      <wsdl:output message="tns:ActualizarUsuarioMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ComparaContraseñaAnterior">
+      <wsdl:input message="tns:ComparaContraseñaAnteriorSoapIn" />
+      <wsdl:output message="tns:ComparaContraseñaAnteriorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteMail">
+      <wsdl:input message="tns:ExisteMailSoapIn" />
+      <wsdl:output message="tns:ExisteMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteMultipleMail">
+      <wsdl:input message="tns:ExisteMultipleMailSoapIn" />
+      <wsdl:output message="tns:ExisteMultipleMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteUsuario">
+      <wsdl:input message="tns:ExisteUsuarioSoapIn" />
+      <wsdl:output message="tns:ExisteUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearToken">
+      <wsdl:input message="tns:CrearTokenSoapIn" />
+      <wsdl:output message="tns:CrearTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokenMail">
+      <wsdl:input message="tns:ObtenerTokenMailSoapIn" />
+      <wsdl:output message="tns:ObtenerTokenMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByIdSenainfo">
+      <wsdl:input message="tns:ObtenerUsuarioByIdSenainfoSoapIn" />
+      <wsdl:output message="tns:ObtenerUsuarioByIdSenainfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTokenMail">
+      <wsdl:input message="tns:EliminaTokenMailSoapIn" />
+      <wsdl:output message="tns:EliminaTokenMailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SeguridadSENAINFOSoap" type="tns:SeguridadSENAINFOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerTokensUsuario">
+      <soap:operation soapAction="http://tempuri.org/ObtenerTokensUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokensUsuarioSSO">
+      <soap:operation soapAction="http://tempuri.org/ObtenerTokensUsuarioSSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresarSSO">
+      <soap:operation soapAction="http://tempuri.org/IngresarSSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearUsuario">
+      <soap:operation soapAction="http://tempuri.org/CrearUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuarioEnRol">
+      <soap:operation soapAction="http://tempuri.org/ActualizarUsuarioEnRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <soap:operation soapAction="http://tempuri.org/CambiarContrasena" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetContrasena">
+      <soap:operation soapAction="http://tempuri.org/ResetContrasena" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenSSO">
+      <soap:operation soapAction="http://tempuri.org/ActualizarTokenSSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenSSONuevo">
+      <soap:operation soapAction="http://tempuri.org/ActualizarTokenSSONuevo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioPorRol">
+      <soap:operation soapAction="http://tempuri.org/UsuarioPorRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokensPorIdUsuario">
+      <soap:operation soapAction="http://tempuri.org/TokensPorIdUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuario">
+      <soap:operation soapAction="http://tempuri.org/ObtenerUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByMail">
+      <soap:operation soapAction="http://tempuri.org/ObtenerUsuarioByMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByTokenMail">
+      <soap:operation soapAction="http://tempuri.org/ObtenerUsuarioByTokenMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenMail">
+      <soap:operation soapAction="http://tempuri.org/ActualizarTokenMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMailUsuarioDesdeMesa">
+      <soap:operation soapAction="http://tempuri.org/ActualizarMailUsuarioDesdeMesa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarSolicitudUsuario">
+      <soap:operation soapAction="http://tempuri.org/CancelarSolicitudUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuarioMail">
+      <soap:operation soapAction="http://tempuri.org/ActualizarUsuarioMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComparaContraseñaAnterior">
+      <soap:operation soapAction="http://tempuri.org/ComparaContraseñaAnterior" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteMail">
+      <soap:operation soapAction="http://tempuri.org/ExisteMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteMultipleMail">
+      <soap:operation soapAction="http://tempuri.org/ExisteMultipleMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteUsuario">
+      <soap:operation soapAction="http://tempuri.org/ExisteUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearToken">
+      <soap:operation soapAction="http://tempuri.org/CrearToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokenMail">
+      <soap:operation soapAction="http://tempuri.org/ObtenerTokenMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByIdSenainfo">
+      <soap:operation soapAction="http://tempuri.org/ObtenerUsuarioByIdSenainfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTokenMail">
+      <soap:operation soapAction="http://tempuri.org/EliminaTokenMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SeguridadSENAINFOSoap12" type="tns:SeguridadSENAINFOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerTokensUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerTokensUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokensUsuarioSSO">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerTokensUsuarioSSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresarSSO">
+      <soap12:operation soapAction="http://tempuri.org/IngresarSSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearUsuario">
+      <soap12:operation soapAction="http://tempuri.org/CrearUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuarioEnRol">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarUsuarioEnRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <soap12:operation soapAction="http://tempuri.org/CambiarContrasena" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetContrasena">
+      <soap12:operation soapAction="http://tempuri.org/ResetContrasena" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenSSO">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarTokenSSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenSSONuevo">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarTokenSSONuevo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioPorRol">
+      <soap12:operation soapAction="http://tempuri.org/UsuarioPorRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TokensPorIdUsuario">
+      <soap12:operation soapAction="http://tempuri.org/TokensPorIdUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByMail">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerUsuarioByMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByTokenMail">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerUsuarioByTokenMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTokenMail">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarTokenMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMailUsuarioDesdeMesa">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarMailUsuarioDesdeMesa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarSolicitudUsuario">
+      <soap12:operation soapAction="http://tempuri.org/CancelarSolicitudUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsuarioMail">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarUsuarioMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComparaContraseñaAnterior">
+      <soap12:operation soapAction="http://tempuri.org/ComparaContraseñaAnterior" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteMail">
+      <soap12:operation soapAction="http://tempuri.org/ExisteMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteMultipleMail">
+      <soap12:operation soapAction="http://tempuri.org/ExisteMultipleMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ExisteUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearToken">
+      <soap12:operation soapAction="http://tempuri.org/CrearToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTokenMail">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerTokenMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarioByIdSenainfo">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerUsuarioByIdSenainfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTokenMail">
+      <soap12:operation soapAction="http://tempuri.org/EliminaTokenMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SeguridadSENAINFO">
+    <wsdl:port name="SeguridadSENAINFOSoap" binding="tns:SeguridadSENAINFOSoap">
+      <soap:address location="https://ws-lsip.senainfo.cl/SeguridadSENAINFO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SeguridadSENAINFOSoap12" binding="tns:SeguridadSENAINFOSoap12">
+      <soap12:address location="https://ws-lsip.senainfo.cl/SeguridadSENAINFO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

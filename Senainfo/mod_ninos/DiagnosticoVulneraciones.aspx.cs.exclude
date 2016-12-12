@@ -1,0 +1,2042 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+public partial class mod_ninos_DiagnosticoVulneraciones : System.Web.UI.Page
+{
+    public nino SSninoDiag
+    {
+        get
+        {
+            if (Session["neo_SSninoDiag"] == null)
+            { Session["neo_SSninoDiag"] = new nino(); }
+            return (nino)Session["neo_SSninoDiag"];
+        }
+        set { Session["neo_SSninoDiag"] = value; }
+    }
+    #region ViewState
+
+    public int VSCodDiagnosticoMaltrato
+    {
+        get
+        {
+            if (ViewState["VSCodDiagnosticoMaltrato"] == null)
+            { ViewState["VSCodDiagnosticoMaltrato"] = -1; }
+            return Convert.ToInt32(ViewState["VSCodDiagnosticoMaltrato"]);
+        }
+        set { ViewState["VSCodDiagnosticoMaltrato"] = value; }
+    }
+
+    public int VSCodDiagnosticoSituacionCalle
+    {
+        get
+        {
+            if (ViewState["VSCodDiagnosticoSituacionCalle"] == null)
+            { ViewState["VSCodDiagnosticoSituacionCalle"] = -1; }
+            return Convert.ToInt32(ViewState["VSCodDiagnosticoSituacionCalle"]);
+        }
+        set { ViewState["VSCodDiagnosticoSituacionCalle"] = value; }
+    }
+
+    public int VSCodDiagnosticoPFTI
+    {
+        get
+        {
+            if (ViewState["VSCodDiagnosticoPFTI"] == null)
+            { ViewState["VSCodDiagnosticoPFTI"] = -1; }
+            return Convert.ToInt32(ViewState["VSCodDiagnosticoPFTI"]);
+        }
+        set { ViewState["VSCodDiagnosticoPFTI"] = value; }
+    }
+
+    public int VSCodDiagnosticoTransgresionDerechos
+    {
+        get
+        {
+            if (ViewState["VSCodDiagnosticoTransgresionDerechos"] == null)
+            { ViewState["VSCodDiagnosticoTransgresionDerechos"] = -1; }
+            return Convert.ToInt32(ViewState["VSCodDiagnosticoTransgresionDerechos"]);
+        }
+        set { ViewState["VSCodDiagnosticoTransgresionDerechos"] = value; }
+    }
+
+    public int VSICodMaltrato
+    {
+        get
+        {
+            if (ViewState["VSICodMaltrato"] == null)
+            { ViewState["VSICodMaltrato"] = -1; }
+            return Convert.ToInt32(ViewState["VSICodMaltrato"]);
+        }
+        set { ViewState["VSICodMaltrato"] = value; }
+    }
+
+    public int VSICodPFTI
+    {
+        get
+        {
+            if (ViewState["VSICodPFTI"] == null)
+            { ViewState["VSICodPFTI"] = -1; }
+            return Convert.ToInt32(ViewState["VSICodPFTI"]);
+        }
+        set { ViewState["VSICodPFTI"] = value; }
+    }
+
+    public int VSICodSituacionCalle
+    {
+        get
+        {
+            if (ViewState["VSICodSituacionCalle"] == null)
+            { ViewState["VSICodSituacionCalle"] = -1; }
+            return Convert.ToInt32(ViewState["VSICodSituacionCalle"]);
+        }
+        set { ViewState["VSICodSituacionCalle"] = value; }
+    }
+
+    public int VSICodTransgresionDerechos
+    {
+        get
+        {
+            if (ViewState["VSICodTransgresionDerechos"] == null)
+            { ViewState["VSICodTransgresionDerechos"] = -1; }
+            return Convert.ToInt32(ViewState["VSICodTransgresionDerechos"]);
+        }
+        set { ViewState["VSICodTransgresionDerechos"] = value; }
+    }
+
+    # endregion
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        # region CargaInicial       
+
+        if (!IsPostBack)
+        {
+            //CalendarExtender328.StartDate = SSninoDiag.fchingdesde;
+            //CalendarExtender328.EndDate = DateTime.Now;            
+
+            # region Valida Usuraio
+            if (Session["tokens"] == null || ((DataSet)Session["tokens"]).Tables[0].Rows.Count == 0)
+            {
+                Response.Write("<script>parent.location.href='../autenticacion.aspx';</script>");
+            }
+            else
+            {                
+                GetData();
+                OcultarBotonesCancelar();
+            }
+            #endregion
+        }
+        # endregion
+    }
+
+    # region Carga Inicial de controles del formulario
+
+    private void OcultarBotonesCancelar()
+    {
+        BtnOcultarMaltrato.Style.Add("display", "none");
+        BtnOcultarPFTI.Style.Add("display", "none");
+        BtnOcultarSituacionCalle.Style.Add("display", "none");
+        BtnOcultarTransgresionDerechos.Style.Add("display", "none");    
+    }
+
+    private void getcomuna()
+    {
+        parcoll par = new parcoll();
+        DataView dvComuna = new DataView(par.GetparComunas(DdlRegionOcurrencia.SelectedValue));
+        DdlComunaOcurrencia.Items.Clear();
+        DdlComunaOcurrencia.DataSource = dvComuna;
+        DdlComunaOcurrencia.DataTextField = "Descripcion";
+        DdlComunaOcurrencia.DataValueField = "CodComuna";
+        dvComuna.Sort = "Descripcion";
+        DdlComunaOcurrencia.DataBind();
+    }
+
+    private void GetData()
+    {
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+        parcoll par = new parcoll();
+        ninocoll ncoll = new ninocoll();
+        trabajadorescoll tcoll = new trabajadorescoll();
+        DataSet ds = (DataSet)Session["dsParametricas"];
+
+        //diagnóstico maltrato - carga diagnosticos en el gridview y los valores por defecto
+
+        DataTable dtGridMaltrato = dcoll.GetDiagnosticoMaltrato(SSninoDiag.ICodIE);
+        DataView dvGridMaltrato = new DataView(dtGridMaltrato);
+        dvGridMaltrato.Sort = "FechaDiagnostico DESC";
+        GrdMaltrato.DataSource = dvGridMaltrato;
+        GrdMaltrato.DataBind();
+        GrdMaltrato.Visible = true;
+
+        if (dvGridMaltrato.Count == 0)
+        {
+            LblSinMaltrato.Text = "Este Niño(a) no Posee Diagnostico de Maltrato";
+            AlertLblSinMaltrato.Visible = true;
+        }
+        else
+        {
+            LblSinMaltrato.Text = "";
+            AlertLblSinMaltrato.Visible = false;
+        }
+
+        DataView dv16 = new DataView(par.GetparTipoMaltrato());
+        DdlTipoMaltrato.Items.Clear();
+        DdlTipoMaltrato.DataSource = dv16;
+        DdlTipoMaltrato.DataTextField = "Descripcion";
+        DdlTipoMaltrato.DataValueField = "TipoMaltrato";
+        dv16.Sort = "Descripcion";
+        DdlTipoMaltrato.DataBind();
+
+        DataView dv18 = new DataView(ncoll.Get_TipoRelacionMaltrato());
+        DdlRelacionMaltratador.Items.Clear();
+        DdlRelacionMaltratador.DataSource = dv18;
+        DdlRelacionMaltratador.DataTextField = "Descripcion";
+        DdlRelacionMaltratador.DataValueField = "TipoRelacion";
+        dv18.Sort = "Descripcion";
+        DdlRelacionMaltratador.DataBind();
+        DdlRelacionMaltratador.Items.Insert(0, new ListItem("Seleccionar", "0"));
+
+        DataView dv17 = new DataView(par.GetparFrecuenciaMaltrato());
+        DdlFrecuenciaMaltrato.Items.Clear();
+        DdlFrecuenciaMaltrato.DataSource = dv17;
+        DdlFrecuenciaMaltrato.DataTextField = "Descripcion";
+        DdlFrecuenciaMaltrato.DataValueField = "CodFrecuencia";
+        dv17.Sort = "Descripcion";
+        DdlFrecuenciaMaltrato.DataBind();
+        
+        DataView dvRespuestaDevelacion = new DataView(par.GetparRespuestaDevelacion());
+        DdlRespuestaMaltrato.Items.Clear();
+        DdlRespuestaMaltrato.DataSource = dvRespuestaDevelacion;
+        DdlRespuestaMaltrato.DataTextField = "Descripcion";
+        DdlRespuestaMaltrato.DataValueField = "CodRespuestaDevelacion";
+        dvRespuestaDevelacion.Sort = "Descripcion";
+        DdlRespuestaMaltrato.DataBind();
+
+        DataView dvProfesionalTecnico = new DataView(tcoll.GetTrabajadoresProyecto(SSninoDiag.CodProyecto.ToString()));        
+        DdlProfesionalTecnico.Items.Clear();
+        DdlProfesionalTecnico.DataSource = dvProfesionalTecnico;
+        DdlProfesionalTecnico.DataTextField = "NombreCompleto";
+        DdlProfesionalTecnico.DataValueField = "ICodTrabajador";
+        dvProfesionalTecnico.Sort = "NombreCompleto";
+        DdlProfesionalTecnico.DataBind();
+
+        //diagnóstico PFTI - carga diagnosticos en el gridview y los valores por defecto
+
+        DataTable dtGridPFTI = dcoll.GetDiagnosticoPeoresFormasMostrar(SSninoDiag.ICodIE);
+        DataView dvGridPFTI = new DataView(dtGridPFTI);
+        dvGridPFTI.Sort = "FechaDiagnostico DESC";
+        GrdPFTI.DataSource = dvGridPFTI;
+        GrdPFTI.DataBind();
+        GrdPFTI.Visible = true;
+
+        if (dvGridPFTI.Count == 0)
+        {
+            LblSinPFTI.Text = "Este Niño(a) no Posee Diagnostico PFTI";
+            AlertLblSinPFTI.Visible = true;
+        }
+        else
+        {
+            LblSinPFTI.Text = "";
+            AlertLblSinPFTI.Visible = false;
+        }
+
+        CeFechaDiagnosticoMaltrato.StartDate = SSninoDiag.fchingdesde;
+        CeFechaDiagnosticoMaltrato.EndDate = DateTime.Now;
+
+        DataView dvparRegion = new DataView(ds.Tables["dtparRegion"]);
+        dvparRegion.Sort = "CodigoRegion ASC";
+        DdlRegionOcurrencia.DataSource = dvparRegion;
+        DdlRegionOcurrencia.DataTextField = "Descripcion";
+        DdlRegionOcurrencia.DataValueField = "CodRegion";
+        //DdlRegionOcurrencia.Items.Insert(0, new ListItem("Seleccionar", "0"));
+        DdlRegionOcurrencia.DataBind();
+
+        DataView dvCategoriaPFTI = new DataView(par.GetparCategoriasPFMI());
+        ddlCategoríaPFTI.Items.Clear();
+        ddlCategoríaPFTI.DataSource = dvCategoriaPFTI;
+        ddlCategoríaPFTI.DataTextField = "Nombre";
+        ddlCategoríaPFTI.DataValueField = "CodCategoria";
+        dvCategoriaPFTI.Sort = "Nombre";
+        ddlCategoríaPFTI.DataBind();
+
+        DataView dvPresuntoExplotador = new DataView(ncoll.GetPersonasRelacionadas(SSninoDiag.ICodIE.ToString()));
+        DdlExplotadorPFTI.Items.Clear();
+        DdlExplotadorPFTI.DataSource = dvPresuntoExplotador;
+        DdlExplotadorPFTI.DataTextField = "Agresor";
+        DdlExplotadorPFTI.DataValueField = "CodPersonaRelacionada";
+        dvPresuntoExplotador.Sort = "Agresor";
+        DdlExplotadorPFTI.DataBind();
+
+        DataView dvRelacionExplotador = new DataView(par.GetparTipoRelacion());        
+        DdlRelacionExplotadorPFTI.Items.Clear();        
+        DdlRelacionExplotadorPFTI.DataSource = dvRelacionExplotador;
+        DdlRelacionExplotadorPFTI.DataTextField = "Descripcion";
+        DdlRelacionExplotadorPFTI.DataValueField = "TipoRelacion";
+        dvRelacionExplotador.Sort = "Descripcion";
+        DdlRelacionExplotadorPFTI.DataBind();
+
+        
+        DdlRespuestaDevelacionPFTI.Items.Clear();
+        DdlRespuestaDevelacionPFTI.DataSource = dvRespuestaDevelacion;
+        DdlRespuestaDevelacionPFTI.DataTextField = "Descripcion";
+        DdlRespuestaDevelacionPFTI.DataValueField = "CodRespuestaDevelacion";
+        dvRespuestaDevelacion.Sort = "Descripcion";
+        DdlRespuestaDevelacionPFTI.DataBind();
+
+        
+        DdlProfesionalTecnicoPFTI.Items.Clear();
+        DdlProfesionalTecnicoPFTI.DataSource = dvProfesionalTecnico;
+        DdlProfesionalTecnicoPFTI.DataTextField = "NombreCompleto";
+        DdlProfesionalTecnicoPFTI.DataValueField = "ICodTrabajador";        
+        DdlProfesionalTecnicoPFTI.DataBind();
+
+        //Situacion Calle - carga diagnosticos en el gridview y los valores por defecto
+
+        DataTable dtGridSituacionCalle = dcoll.GetDiagnosticoSituacionCalleMostrar(SSninoDiag.ICodIE);
+        DataView dvGridSituacionCalle = new DataView(dtGridSituacionCalle);
+        dvGridSituacionCalle.Sort = "FechaDiagnostico DESC";
+        GrdSituacionCalle.DataSource = dvGridSituacionCalle;
+        GrdSituacionCalle.DataBind();
+        GrdSituacionCalle.Visible = true;
+
+        if (dvGridSituacionCalle.Count == 0)
+        {
+            LblSinSituacionCalle.Text = "Este Niño(a) no Posee Diagnostico Situación de Calle";
+            AlertLblSinSituacionCalle.Visible = true;
+        }
+        else
+        {
+            LblSinSituacionCalle.Text = "";
+            AlertLblSinSituacionCalle.Visible = false;
+        }
+
+        DataView dvEstrategiasSobrevivencia = new DataView(par.GetparEstrategiasSobrevivencia());
+        DdlEstrategiasSobrevivencia.Items.Clear();
+        DdlEstrategiasSobrevivencia.DataSource = dvEstrategiasSobrevivencia;
+        DdlEstrategiasSobrevivencia.DataTextField = "Descripcion";
+        DdlEstrategiasSobrevivencia.DataValueField = "CodEstrategiasSobrevivencia";
+        dvEstrategiasSobrevivencia.Sort = "Descripcion";
+        DdlEstrategiasSobrevivencia.DataBind();
+
+        DataView dvEstadiaCalle = new DataView(par.GetparEstadiaCalle());
+        DdlEstadiaCalle.Items.Clear();
+        DdlEstadiaCalle.DataSource = dvEstadiaCalle;
+        DdlEstadiaCalle.DataTextField = "Descripcion";
+        DdlEstadiaCalle.DataValueField = "CodEstadiaCalle";
+        dvEstadiaCalle.Sort = "Descripcion";
+        DdlEstadiaCalle.DataBind();
+
+        DataView dvLugarPernocta = new DataView(par.GetparLugarPernocta());
+        DdlLugarPernocta.Items.Clear();
+        DdlLugarPernocta.DataSource = dvLugarPernocta;
+        DdlLugarPernocta.DataTextField = "Descripcion";
+        DdlLugarPernocta.DataValueField = "CodLugarPernocta";
+        dvLugarPernocta.Sort = "Descripcion";
+        DdlLugarPernocta.DataBind();
+
+        DdlProfesionalTecnicoSituacionCalle.Items.Clear();
+        DdlProfesionalTecnicoSituacionCalle.DataSource = dvProfesionalTecnico;
+        DdlProfesionalTecnicoSituacionCalle.DataTextField = "NombreCompleto";
+        DdlProfesionalTecnicoSituacionCalle.DataValueField = "ICodTrabajador";
+        DdlProfesionalTecnicoSituacionCalle.DataBind();
+
+        // Transgresión de derechos
+
+        DataTable dtGridTransgresionDerechos = dcoll.GetDiagnosticoTrangresionDerechosMostrar(SSninoDiag.ICodIE);
+        DataView dvGridTransgresionDerechos = new DataView(dtGridTransgresionDerechos);
+        dvGridTransgresionDerechos.Sort = "FechaDiagnostico DESC";
+        GrdTransgresionDerechos.DataSource = dvGridTransgresionDerechos;
+        GrdTransgresionDerechos.DataBind();
+        GrdTransgresionDerechos.Visible = true;
+
+        if (dvGridTransgresionDerechos.Count == 0)
+        {
+            LblSinTransgresionDerechos.Text = "Este Niño(a) no Posee Diagnostico Transgresión de Derechos";
+            AlertLblSinTransgresionDerechos.Visible = true;
+        }
+        else
+        {
+            LblSinTransgresionDerechos.Text = "";
+            AlertLblSinTransgresionDerechos.Visible = false;
+        }
+
+
+
+        DataView dvTipoTransgresion = new DataView(par.GetparTipoTransgresion());
+        DdlTipoTransgresion.Items.Clear();
+        DdlTipoTransgresion.DataSource = dvTipoTransgresion;
+        DdlTipoTransgresion.DataTextField = "Descripcion";
+        DdlTipoTransgresion.DataValueField = "CodTipoTransgresion";
+        dvTipoTransgresion.Sort = "Descripcion";
+        DdlTipoTransgresion.DataBind();
+
+        DdlRelacionNNA.Items.Clear();
+        DdlRelacionNNA.DataSource = dvRelacionExplotador;
+        DdlRelacionNNA.DataTextField = "Descripcion";
+        DdlRelacionNNA.DataValueField = "TipoRelacion";
+        dvRelacionExplotador.Sort = "Descripcion";
+        DdlRelacionNNA.DataBind();
+
+        DdlProfesionalTecnicoTransgresion.Items.Clear();
+        DdlProfesionalTecnicoTransgresion.DataSource = dvProfesionalTecnico;
+        DdlProfesionalTecnicoTransgresion.DataTextField = "NombreCompleto";
+        DdlProfesionalTecnicoTransgresion.DataValueField = "ICodTrabajador";
+        DdlProfesionalTecnicoTransgresion.DataBind();        
+    }    
+
+    # endregion
+
+    protected void rv_fecha_Init(object sender, EventArgs e)
+    {
+        ((RangeValidator)sender).MaximumValue = DateTime.Today.ToString("dd-MM-yyyy");
+        ((RangeValidator)sender).MinimumValue = DateTime.Today.AddYears(-100).ToString("dd-MM-yyyy");
+
+    }
+
+    protected void DdlTipoMaltrato_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("Maltrato", true);
+        parcoll par = new parcoll();
+
+        //CARGA Nivel de maltrato
+        DdlNivelMaltrato.Items.Clear();
+        DataView dvNivelMaltrato = new DataView(par.GetparNivelMaltrato(Convert.ToInt32(DdlTipoMaltrato.SelectedValue)));
+        DdlNivelMaltrato.DataSource = dvNivelMaltrato;
+        DdlNivelMaltrato.DataTextField = "Descripcion";
+        DdlNivelMaltrato.DataValueField = "CodNivelMaltrato";
+        dvNivelMaltrato.Sort = "CodNivelMaltrato ASC";
+        DdlNivelMaltrato.DataBind();
+
+        //CARGA MALTRATO
+        DdlMaltrato.Items.Clear();
+        DataView dvMaltrato = new DataView(par.GetparMaltrato(Convert.ToInt32(DdlTipoMaltrato.SelectedValue)));
+        DdlMaltrato.DataSource = dvMaltrato;
+        DdlMaltrato.DataTextField = "Descripcion";
+        DdlMaltrato.DataValueField = "CodMaltrato";
+        dvMaltrato.Sort = "Descripcion";
+        DdlMaltrato.DataBind();
+    }
+
+    // Validaciones para todos los controles 
+    private bool validateDdl(DropDownList Ddl)
+    {
+        bool a = true;
+        if (Convert.ToInt32(Ddl.SelectedValue) == 0)
+        {
+            a = false;
+            Ddl.BackColor = System.Drawing.Color.Pink;
+        }
+        else
+        {
+            Ddl.BackColor = System.Drawing.Color.Empty;
+        }
+        return a;
+    }
+    private bool validateTxt(TextBox Txt)
+    {
+        bool b = true;
+        if (Txt.Text == "")
+        {
+            b = false;
+            Txt.BackColor = System.Drawing.Color.Pink;
+        }
+        else
+        {
+            Txt.BackColor = System.Drawing.Color.Empty;
+        }
+        return b;
+    }
+    private bool validateRbtn(RadioButton RbtnSi, RadioButton RbtnNo)
+    {
+        bool c = true;
+        if (RbtnSi.Checked == false && RbtnNo.Checked == false)
+        {
+            c = false;
+            RbtnSi.BackColor = System.Drawing.Color.Pink;
+            RbtnNo.BackColor = System.Drawing.Color.Pink;
+        }
+        else
+        {
+            RbtnSi.BackColor = System.Drawing.Color.Empty;
+            RbtnNo.BackColor = System.Drawing.Color.Empty;
+        }
+        return c;
+    }
+
+    private bool validateTransgresion(bool ExisteTransgresion)
+    {
+        bool n = true;
+        if (ExisteTransgresion)
+        {
+            if (!validateDdl(DdlTipoTransgresion)) { n = false; }
+            if (!validateDdl(DdlCategoriaTransgresion)) { n = false; }
+
+            //Identificación de la victima de la transgresión
+            if (!validateDdl(DdlRelacionNNA)) { n = false; }
+            if (!validateRbtn(RbtnViveNNASI, RbtnViveNNANO)) { n = false; }
+        }
+        if (!validateDdl(DdlProfesionalTecnicoTransgresion)) { n = false; }
+        if (!validateTxt(TxtFechaDiagnosticoTransgresion)) { n = false; }
+        if (!validateRbtn(RbtnTransgresionSi, RbtnTransgresionNo)) { n = false; }
+        
+        return n;
+    }
+
+    private bool validateSituacionCalle(bool ExisteSituacionCalle)
+    {
+        bool n = true;
+
+        if (ExisteSituacionCalle)
+        {
+            if (!validateTxt(TxtAnoVivirCalle)) { n = false; }
+            if (!validateTxt(TxtMesVivirCalle)) { n = false; }
+
+            //Cronicidad Situacion Calle
+            if (!validateTxt(TxtEdadInicioSituacionCalle)) { n = false; }
+            if (!validateTxt(TxtMesesSituacionCalle)) { n = false; }
+            if (!validateTxt(TxtAnosSituacionCalle)) { n = false; }
+            if (!validateRbtn(RbtnPerteneceCaletaSI, RbtnPerteneceCaletaNO)) { n = false; }
+            if (!validateDdl(DdlEstrategiasSobrevivencia)) { n = false; }
+            if (!validateRbtn(RbtnContactoFamiliaresSI, RbtnContactoFamiliaresNO)) { n = false; }
+            if (!validateDdl(DdlEstadiaCalle)) { n = false; }
+            if (!validateDdl(DdlCategoriaCalle)) { n = false; }
+            if (!validateDdl(DdlLugarPernocta)) { n = false; }
+            
+        }
+        if (!validateTxt(TxtFechaDiagnosticoSituacionCalle)) { n = false; }
+        if (!validateRbtn(RbtnSituacionCalleSI, RbtnSituacionCalleNO)) { n = false; }
+        if (!validateDdl(DdlProfesionalTecnicoSituacionCalle)) { n = false; }
+        return n;
+    }
+
+
+    //Validación de PFTI 
+    private bool validatePFTI(bool ExistePFTI)
+    {
+        bool n = true;
+        if (ExistePFTI)
+        {
+
+            if (!validateRbtn(RbtnRiesgoLaboralPFTISi, RbtnRiesgoLaboralPFTINo)) { n = false; }
+            if (Convert.ToInt32(DdlRegionOcurrencia.SelectedValue) == -2)
+            {
+                n = false;
+                DdlRegionOcurrencia.BackColor = System.Drawing.Color.Pink;
+            }
+            else
+            {
+                DdlRegionOcurrencia.BackColor = System.Drawing.Color.Empty;
+            }
+            if (!validateDdl(DdlComunaOcurrencia)) { n = false; }
+            if (!validateDdl(ddlCategoríaPFTI)) { n = false; }
+            if (!validateDdl(DdlExplotadorPFTI)) { n = false; }
+            if (!validateDdl(DdlRelacionExplotadorPFTI)) { n = false; }
+            if (!validateTxt(TxtFechaDeteccionPFTI)) { n = false; }
+            if (!validateRbtn(RbtnExplotadorPFTISI, RbtnExplotadorPFTINO)) { n = false; }
+
+            //Cronicidad PFTI
+            if (!validateTxt(TxtEdadInicioPFTI)) { n = false; }
+            if (!validateTxt(TxtMesesPFTI)) { n = false; }
+            if (!validateTxt(TxtAnosPFTI)) { n = false; }
+            if (!validateDdl(DdlRespuestaDevelacionPFTI)) { n = false; }
+        }
+
+        if (!validateTxt(TxtFechaDiagnosticoPFTI)) { n = false; }
+        if (!validateRbtn(RbtnPresentaPFTISI, RbtnPresentaPFTINO)) { n = false; }
+        if (!validateDdl(DdlProfesionalTecnicoPFTI)) { n = false; }
+
+        return n;
+    }
+   
+
+    //Validación Maltrato
+    private bool validateMaltrato(bool ExisteMaltrato)
+    {
+        bool n = true;
+        if (ExisteMaltrato)
+        {
+            if (!validateDdl(DdlTipoMaltrato)) { n = false; }
+            if (!validateDdl(DdlNivelMaltrato)) { n = false; }
+            if (!validateDdl(DdlMaltrato)) { n = false; }
+            if (!validateDdl(DdlRelacionMaltratador)) { n = false; }
+            if (!validateDdl(DdlFrecuenciaMaltrato)) { n = false; }
+            if (!validateDdl(DdlRespuestaMaltrato)) { n = false; }
+            if (!validateRbtn(RbtnEmbarazoAbusoSi, RbtnEmbarazoAbusoNo)) { n = false; }
+            if (!validateRbtn(RbtnHijosSi, RbtnHijosNO)) { n = false; }
+            if (!validateRbtn(rbtnConoceSi, rbtnConoceNo)) { n = false; }
+            if (!validateRbtn(RbtnViveMaltratadorSi, RbtnViveMaltratadorNo)) { n = false; }
+            if (!validateRbtn(RbtnLesionesSi, RbtnLesionesNo)) { n = false; }
+
+            //Cronicidad Maltrato
+            if (!validateTxt(TxtEdadInicioMaltrato)) { n = false; }
+            if (!validateTxt(TxtMesesMaltrato)) { n = false; }
+            if (!validateTxt(TxtAnosMaltrato)) { n = false; }
+        }
+
+        if (!validateTxt(TxtFechaDiagnosticoMaltrato)) { n = false; }
+        if (!validateRbtn(RbtnPresentaMSi, RbtnPresentaMNo)) { n = false; }
+        if (!validateDdl(DdlProfesionalTecnico)) { n = false; }
+        return n;
+    }
+
+    private Boolean BoolPresentaMaltrato()
+    {
+        if (RbtnPresentaMSi.Checked)
+        {
+            return true;
+        }
+        else if (RbtnPresentaMNo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolEmbarazoAbuso()
+    {
+        if (RbtnEmbarazoAbusoSi.Checked)
+        {
+            return true;
+        }
+        else if (RbtnEmbarazoAbusoNo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolHijos()
+    {
+        if (RbtnHijosSi.Checked)
+        {
+            return true;
+        }
+        else if (RbtnHijosNO.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolConoceMaltratador()
+    {
+        if (rbtnConoceSi.Checked)
+        {
+            return true;
+        }
+        else if (rbtnConoceNo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolRelacionMaltratador()
+    {
+        if (rbtnConoceSi.Checked)
+        {
+            return true;
+        }
+        else if (rbtnConoceNo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }   
+    private Boolean BoolViveConMaltratador()
+    {
+        if (RbtnViveMaltratadorSi.Checked)
+        {
+            return true;
+        }
+        else if (RbtnViveMaltratadorNo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolConstataLesiones()
+    {
+        if (RbtnLesionesSi.Checked)
+        {
+            return true;
+        }
+        else if (RbtnLesionesNo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    private Boolean BoolPresentaPFTI()
+    {
+        if (RbtnPresentaPFTISI.Checked)
+        {
+            return true;
+        }
+        else if (RbtnPresentaPFTINO.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolCondicionRiesgoLaboral()
+    {
+        if (RbtnRiesgoLaboralPFTISi.Checked)
+        {
+            return true;
+        }
+        else if (RbtnRiesgoLaboralPFTINo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolViveConExplotador()
+    {
+        if (RbtnExplotadorPFTISI.Checked)
+        {
+            return true;
+        }
+        else if (RbtnExplotadorPFTINO.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolPresentaSituacionCalle()
+    {
+        if (RbtnSituacionCalleSI.Checked)
+        {
+            return true;
+        }
+        else if (RbtnSituacionCalleNO.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolPerteneceACaleta()
+    {
+        if (RbtnPerteneceCaletaSI.Checked)
+        {
+            return true;
+        }
+        else if (RbtnPerteneceCaletaNO.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolContactoConFamiliares()
+    {
+        if (RbtnContactoFamiliaresSI.Checked)
+        {
+            return true;
+        }
+        else if (RbtnContactoFamiliaresNO.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolPresentaTransgresion()
+    {
+        if (RbtnTransgresionSi.Checked)
+        {
+            return true;
+        }
+        else if (RbtnTransgresionNo.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    private Boolean BoolViveNNA()
+    {
+        if (RbtnViveNNASI.Checked)
+        {
+            return true;
+        }
+        else if (RbtnViveNNANO.Checked)
+        {
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    protected void BtnAgregarDiagnosticoDerechos_Click(object sender, EventArgs e)
+    {
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+        if (RbtnTransgresionSi.Checked == true)
+        {
+            if (validateTransgresion(true))
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(12, SSninoDiag.CodNino,
+                    SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoTransgresion.Text));
+
+                dcoll.Insert_DiagnosticosTransgresionDerechosVulneraciones(inden,Convert.ToDateTime(TxtFechaDiagnosticoTransgresion.Text),BoolPresentaTransgresion(),
+                    Convert.ToInt32(DdlCategoriaTransgresion.SelectedValue),Convert.ToInt32(DdlRelacionNNA.SelectedValue), BoolViveNNA(),
+                    Convert.ToInt32(DdlProfesionalTecnicoTransgresion.SelectedValue), SSninoDiag.CodInst, TxtObservacionesTransgresion.Text, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                MostrarAcordeon("TransgresionDerechos", false);
+            }
+            else
+            {
+                MostrarAcordeon("TransgresionDerechos", true);
+            }
+        }
+        else if (RbtnTransgresionNo.Checked == true)
+        {
+            if (validateTransgresion(false))
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(12, SSninoDiag.CodNino,
+                    SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoTransgresion.Text));
+
+                dcoll.Insert_DiagnosticosTransgresionDerechosVulneraciones(inden, Convert.ToDateTime(TxtFechaDiagnosticoTransgresion.Text), BoolPresentaTransgresion(),
+                    0, 0, false, Convert.ToInt32(DdlProfesionalTecnicoTransgresion.SelectedValue), SSninoDiag.CodInst,TxtObservacionesTransgresion.Text, DateTime.Now, 
+                    Convert.ToInt32(Session["IdUsuario"]));
+
+                MostrarAcordeon("TransgresionDerechos", false);
+            }
+            else
+            {
+                MostrarAcordeon("TransgresionDerechos", true);
+            }
+        }
+
+        DataTable dtGridTransgresionDerechos = dcoll.GetDiagnosticoTrangresionDerechosMostrar(SSninoDiag.ICodIE);
+        DataView dvGridTransgresionDerechos = new DataView(dtGridTransgresionDerechos);
+        dvGridTransgresionDerechos.Sort = "FechaDiagnostico DESC";
+        GrdTransgresionDerechos.DataSource = dvGridTransgresionDerechos;
+        GrdTransgresionDerechos.DataBind();
+        GrdTransgresionDerechos.Visible = true;
+
+        if (dvGridTransgresionDerechos.Count == 0)
+        {
+            LblSinTransgresionDerechos.Text = "Este Niño(a) no Posee Diagnostico Transgresión de Derechos";
+            AlertLblSinTransgresionDerechos.Visible = true;
+        }
+        else
+        {
+            LblSinTransgresionDerechos.Text = "";
+            AlertLblSinTransgresionDerechos.Visible = false;
+        }
+
+
+    }
+
+    protected void BtnAgregarDiagnosticoCalle_Click(object sender, EventArgs e)
+    {
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+        if (RbtnSituacionCalleSI.Checked == true)
+        {
+            if (validateSituacionCalle(true))
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(11, SSninoDiag.CodNino,
+                    SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoSituacionCalle.Text));
+
+                dcoll.Insert_DiagnosticosSituacionCalleVulneraciones(inden, Convert.ToDateTime(TxtFechaDiagnosticoSituacionCalle.Text), BoolPresentaSituacionCalle(),
+                    Convert.ToInt32(TxtAnoVivirCalle.Text), Convert.ToInt32(TxtMesVivirCalle.Text), Convert.ToInt32(TxtEdadInicioSituacionCalle.Text),
+                    Convert.ToInt32(TxtMesesSituacionCalle.Text), Convert.ToInt32(TxtAnosSituacionCalle.Text), BoolPerteneceACaleta(),
+                    Convert.ToInt32(DdlEstrategiasSobrevivencia.SelectedValue), BoolContactoConFamiliares(), Convert.ToInt32(DdlCategoriaCalle.SelectedValue),
+                    Convert.ToInt32(DdlLugarPernocta.SelectedValue), Convert.ToInt32(DdlProfesionalTecnicoSituacionCalle.SelectedValue), SSninoDiag.CodInst,
+                    DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                LimpiaSituacionCalle(true);
+                MostrarAcordeon("SituacionCalle", false);
+            }
+            else
+            {
+                MostrarAcordeon("SituacionCalle", true);
+            }
+        }
+        else if (RbtnSituacionCalleNO.Checked == true)
+        {
+            if (validateSituacionCalle(false))
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(11, SSninoDiag.CodNino,
+                    SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoSituacionCalle.Text));
+
+                dcoll.Insert_DiagnosticosSituacionCalleVulneraciones(inden, Convert.ToDateTime(TxtFechaDiagnosticoSituacionCalle.Text), BoolPresentaSituacionCalle(),
+                    0, 0, 0, 0, 0, false, 0, false, 0, 0, Convert.ToInt32(DdlProfesionalTecnicoSituacionCalle.SelectedValue), SSninoDiag.CodInst, DateTime.Now,
+                    Convert.ToInt32(Session["IdUsuario"]));
+                
+                   
+                LimpiaSituacionCalle(true);
+                MostrarAcordeon("SituacionCalle", false);
+            }
+            else
+            {
+                MostrarAcordeon("SituacionCalle", true);
+            }
+        }
+        
+        DataTable dtGridSituacionCalle = dcoll.GetDiagnosticoSituacionCalleMostrar(SSninoDiag.ICodIE);
+        DataView dvGridSituacionCalle = new DataView(dtGridSituacionCalle);
+        dvGridSituacionCalle.Sort = "FechaDiagnostico DESC";
+        GrdSituacionCalle.DataSource = dvGridSituacionCalle;
+        GrdSituacionCalle.DataBind();
+        GrdSituacionCalle.Visible = true;
+
+        if (dvGridSituacionCalle.Count == 0)
+        {
+            LblSinSituacionCalle.Text = "Este Niño(a) no Posee Diagnostico Situación de Calle";
+            AlertLblSinSituacionCalle.Visible = true;
+        }
+        else
+        {
+            LblSinSituacionCalle.Text = "";
+            AlertLblSinSituacionCalle.Visible = false;
+        }
+
+
+    }
+
+    protected void BtnAgregarDiagnosticoPFTI_Click(object sender, EventArgs e)
+    {
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+
+        if (RbtnPresentaPFTISI.Checked == true)
+        {
+            if (validatePFTI(true))
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(8, SSninoDiag.CodNino,
+                    SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoPFTI.Text));
+
+                dcoll.Insert_DiagnosticosPeoresFormasTrabajoVulneraciones(inden, Convert.ToDateTime(TxtFechaDiagnosticoPFTI.Text), BoolPresentaPFTI(), BoolCondicionRiesgoLaboral(),
+                    Convert.ToInt32(DdlComunaOcurrencia.SelectedValue), Convert.ToDateTime(TxtFechaDeteccionPFTI.Text), Convert.ToInt32(ddlCategoríaPFTI.SelectedValue),
+                    Convert.ToInt32(DdlExplotadorPFTI.SelectedValue), Convert.ToInt32(DdlRelacionExplotadorPFTI.SelectedValue), BoolViveConExplotador(), Convert.ToInt32(TxtEdadInicioPFTI.Text),
+                    Convert.ToInt32(TxtMesesPFTI.Text), Convert.ToInt32(TxtAnosPFTI.Text), Convert.ToInt32(DdlRespuestaDevelacionPFTI.SelectedValue), TxtObservacionesPFTI.Text,
+                    Convert.ToInt32(DdlProfesionalTecnicoPFTI.SelectedValue), SSninoDiag.CodInst, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                LimpiaPFTI(true);
+                MostrarAcordeon("PFTI", false);
+            }
+            else
+            {
+                MostrarAcordeon("PFTI", true);
+            }
+        }
+        else if (RbtnPresentaPFTINO.Checked == true)
+        {
+            if (validatePFTI(false))
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(8, SSninoDiag.CodNino,
+                    SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoPFTI.Text));
+
+                dcoll.Insert_DiagnosticosPeoresFormasTrabajoVulneraciones(inden, Convert.ToDateTime(TxtFechaDiagnosticoPFTI.Text), BoolPresentaPFTI(), false,
+                   0, DateTime.Now, 0, 0, 0, false, 0, 0, 0, 0, TxtObservacionesPFTI.Text, Convert.ToInt32(DdlProfesionalTecnicoPFTI.SelectedValue), 
+                   SSninoDiag.CodInst, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                
+                LimpiaPFTI(true);
+                MostrarAcordeon("PFTI", false);
+            }
+            else
+            {
+                MostrarAcordeon("PFTI", true);
+            }
+        }
+
+        DataTable dt8 = dcoll.GetDiagnosticoPeoresFormasMostrar(SSninoDiag.ICodIE);
+        DataView dv8 = new DataView(dt8);
+        dv8.Sort = "FechaDiagnostico DESC";
+        GrdPFTI.DataSource = dv8;
+        GrdPFTI.DataBind();
+        GrdPFTI.Visible = true;
+
+        if (dv8.Count == 0)
+        {
+            LblSinPFTI.Text = "Este Niño(a) no Posee Diagnostico PFTI";
+            AlertLblSinPFTI.Visible = true;
+        }
+        else
+        {
+            LblSinPFTI.Text = "";
+            AlertLblSinPFTI.Visible = false;
+        }
+
+
+    }
+    protected void BtnAgregarDiagnosticoMaltrato_Click(object sender, EventArgs e)
+    {        
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+        if (RbtnPresentaMSi.Checked == true)
+        {
+            if (validateMaltrato(true) == true)
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(2, SSninoDiag.CodNino,
+                SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoMaltrato.Text));
+
+                dcoll.Insert_DiagnosticosMaltratoVulneraciones(inden, Convert.ToDateTime(TxtFechaDiagnosticoMaltrato.Text),
+                    BoolPresentaMaltrato(), Convert.ToInt32(DdlNivelMaltrato.SelectedValue),
+                    Convert.ToInt32(DdlMaltrato.SelectedValue), BoolEmbarazoAbuso(), BoolHijos(),
+                    BoolConoceMaltratador(), Convert.ToInt32(DdlRelacionMaltratador.SelectedValue),
+                    BoolViveConMaltratador(), Convert.ToInt32(DdlProfesionalTecnico.SelectedValue), SSninoDiag.CodInst, TxtObservaciones.Text, Convert.ToInt32(TxtEdadInicioMaltrato.Text), Convert.ToInt32(TxtMesesMaltrato.Text),
+                    Convert.ToInt32(TxtAnosMaltrato.Text), Convert.ToInt32(DdlFrecuenciaMaltrato.SelectedValue), Convert.ToInt32(DdlRespuestaMaltrato.SelectedValue),
+                    BoolConstataLesiones(), DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                LimpiaMaltrato(true);
+
+                MostrarAcordeon("Maltrato", false);
+            }
+            else
+            {
+                MostrarAcordeon("Maltrato", true);                
+            }
+        }        
+        else if (RbtnPresentaMNo.Checked == true)
+        {
+            if (validateMaltrato(false) == true)
+            {
+                int inden = ncoll.Insert_DiagnosticoGeneral(2, SSninoDiag.CodNino,
+                SSninoDiag.ICodIE, Convert.ToDateTime(TxtFechaDiagnosticoMaltrato.Text));
+                dcoll.Insert_DiagnosticosMaltratoVulneraciones
+                    (inden, Convert.ToDateTime(TxtFechaDiagnosticoMaltrato.Text), false, 0, 0, false, false, false, 0,
+                    false, Convert.ToInt32(DdlProfesionalTecnico.SelectedValue), SSninoDiag.CodInst, TxtObservaciones.Text, 0, 0, 0, 0, 0, false, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                LimpiaMaltrato(true);                
+                MostrarAcordeon("Maltrato", false);
+            }
+        }        
+        else
+        {
+            MostrarAcordeon("Maltrato", true);            
+        }        
+
+        DataTable dtDatosGridMaltrato = dcoll.GetDiagnosticoMaltrato(SSninoDiag.ICodIE);
+        DataView dvDatosGridMaltrato = new DataView(dtDatosGridMaltrato);
+        dvDatosGridMaltrato.Sort = "FechaDiagnostico DESC";
+        GrdMaltrato.DataSource = dvDatosGridMaltrato;
+        GrdMaltrato.DataBind();
+        GrdMaltrato.Visible = true;
+
+        if (dvDatosGridMaltrato.Count == 0)
+        {
+            LblSinMaltrato.Text = "Este Niño(a) no Posee Diagnostico de Maltrato";
+            AlertLblSinMaltrato.Visible = true;
+        }
+        else
+        {
+            LblSinMaltrato.Text = "";
+            AlertLblSinMaltrato.Visible = false;
+        }
+    }
+
+    private void cleanTxt(TextBox Txt)
+    {
+        Txt.Text = "";
+        Txt.BackColor = System.Drawing.Color.Empty;
+    }
+    private void cleanRtbn(RadioButton Rbtn1,RadioButton Rbtn2)
+    {
+        Rbtn1.Checked = false;
+        Rbtn1.BackColor = System.Drawing.Color.Empty;
+        Rbtn2.Checked = false;
+        Rbtn2.BackColor = System.Drawing.Color.Empty;
+    }
+    private void cleanDdl(DropDownList Ddl)
+    {
+        Ddl.SelectedValue = "0";
+        Ddl.BackColor = System.Drawing.Color.Empty;
+    }
+
+    private void LimpiaTransgresion(bool total)
+    {
+        // si es true se realiza un limpiado total de las variables de transgresión de derechos
+        if (total == true)
+        {
+            cleanTxt(TxtFechaDiagnosticoTransgresion);
+            //cleanRtbn(RbtnTransgresionSi, RbtnTransgresionNo);
+            cleanDdl(DdlProfesionalTecnicoTransgresion);
+            cleanTxt(TxtObservacionesTransgresion);
+        }
+        cleanDdl(DdlTipoTransgresion);
+        cleanDdl(DdlCategoriaTransgresion);
+        cleanDdl(DdlRelacionNNA);
+        cleanRtbn(RbtnViveNNASI, RbtnViveNNANO);
+    }
+
+    private void LimpiaSituacionCalle(bool total)
+    {
+        // si es true se realiza un limpiado total de las variables de pfti
+        if (total == true)
+        {
+            cleanTxt(TxtFechaDiagnosticoSituacionCalle);
+            //cleanRtbn(RbtnSituacionCalleSI, RbtnSituacionCalleNO);
+            cleanDdl(DdlProfesionalTecnicoSituacionCalle);
+            cleanTxt(TxtObservacionesSituacionCalle);
+        }
+
+        cleanTxt(TxtAnoVivirCalle);
+        cleanTxt(TxtMesVivirCalle);
+        cleanTxt(TxtEdadInicioSituacionCalle);
+        cleanTxt(TxtMesesSituacionCalle);
+        cleanTxt(TxtAnosSituacionCalle);
+        cleanRtbn(RbtnPerteneceCaletaSI, RbtnPerteneceCaletaNO);
+        cleanDdl(DdlEstrategiasSobrevivencia);
+        cleanRtbn(RbtnContactoFamiliaresSI, RbtnContactoFamiliaresNO);
+        cleanDdl(DdlEstadiaCalle);
+        cleanDdl(DdlCategoriaCalle);
+        cleanDdl(DdlLugarPernocta);        
+    }
+    private void LimpiaPFTI(bool total)
+    {
+        // si es true se realiza un limpiado total de las variables de pfti
+        if (total == true)
+        {
+            cleanTxt(TxtFechaDiagnosticoPFTI);
+            //cleanRtbn(RbtnPresentaPFTISI, RbtnPresentaPFTINO);
+            cleanDdl(DdlProfesionalTecnicoPFTI);
+            cleanTxt(TxtObservacionesPFTI);
+
+            BtnAgregarDiagnosticoPFTI.Visible = true;
+            BtnModificarDiagnosticoPFTI.Visible = false;
+        }
+
+        cleanRtbn(RbtnRiesgoLaboralPFTISi, RbtnRiesgoLaboralPFTINo);        
+        DdlRegionOcurrencia.SelectedValue = "-2";
+        DdlRegionOcurrencia.BackColor = System.Drawing.Color.Empty;
+        cleanDdl(DdlComunaOcurrencia);
+        cleanTxt(TxtFechaDeteccionPFTI);
+        cleanDdl(ddlCategoríaPFTI);
+        cleanDdl(DdlExplotadorPFTI);
+        cleanDdl(DdlRelacionExplotadorPFTI);
+        cleanRtbn(RbtnExplotadorPFTISI, RbtnExplotadorPFTINO);
+        cleanTxt(TxtEdadInicioPFTI);
+        cleanTxt(TxtMesesPFTI);
+        cleanTxt(TxtAnosPFTI);
+        cleanDdl(DdlRespuestaDevelacionPFTI);
+        
+    }
+    private void LimpiaMaltrato(bool total)
+    {
+
+        // si es true se realiza un limpiado total de las variables de maltrato
+        if (total == true)
+        {
+            cleanTxt(TxtFechaDiagnosticoMaltrato);
+            //cleanRtbn(RbtnPresentaMSi, RbtnPresentaMNo);
+            cleanDdl(DdlProfesionalTecnico);
+            cleanTxt(TxtObservaciones);
+
+            BtnAgregarDiagnosticoMaltrato.Visible = true;
+            BtnModificarDiagnosticoMaltrato.Visible = false;
+        }
+
+        cleanDdl(DdlTipoMaltrato);
+        cleanDdl(DdlNivelMaltrato);
+        cleanDdl(DdlMaltrato);
+        cleanRtbn(RbtnEmbarazoAbusoSi,RbtnEmbarazoAbusoNo);
+        cleanRtbn(RbtnHijosSi,RbtnHijosNO);
+        cleanRtbn(rbtnConoceSi, rbtnConoceNo);
+        cleanDdl(DdlRelacionMaltratador);
+        cleanRtbn(RbtnViveMaltratadorSi, RbtnViveMaltratadorNo);
+        cleanTxt(TxtEdadInicioMaltrato);
+        cleanTxt(TxtMesesMaltrato);
+        cleanTxt(TxtAnosMaltrato);
+        cleanDdl(DdlFrecuenciaMaltrato);
+        cleanDdl(DdlRespuestaMaltrato);
+        cleanRtbn(RbtnLesionesSi, RbtnLesionesNo);
+    }
+
+    private void MostrarAcordeon(string Tipodiagnostico, bool valor)
+    {
+        switch (Tipodiagnostico)
+        {
+            case "Maltrato" :
+                if (valor == true)
+                {
+                    CollapseMaltrato.Attributes.Remove("Class");
+                    CollapseMaltrato.Attributes.Add("Class", "panel-collapse collapse in");            
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarMaltrato').hide();$('#BtnOcultarMaltrato').show();", true);
+                }
+                if (valor == false)
+                {
+                    CollapseMaltrato.Attributes.Remove("Class");
+                    CollapseMaltrato.Attributes.Add("Class", "panel-collapse collapse out");
+           
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarMaltrato').show();$('#BtnOcultarMaltrato').hide();", true);
+                }
+                break;
+
+            case "PFTI" :
+                if (valor == true)
+                {
+                    CollapsePeoresFormas.Attributes.Remove("Class");
+                    CollapsePeoresFormas.Attributes.Add("Class", "panel-collapse collapse in");
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarPFTI').hide();$('#BtnOcultarPFTI').show();", true);
+                }
+                if (valor == false)
+                {
+                    CollapsePeoresFormas.Attributes.Remove("Class");
+                    CollapsePeoresFormas.Attributes.Add("Class", "panel-collapse collapse out");
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarPFTI').show();$('#BtnOcultarPFTI').hide();", true);
+                }
+                break;
+
+            case "SituacionCalle":
+                if (valor == true)
+                {
+                    CollapseSituacionCalle.Attributes.Remove("Class");
+                    CollapseSituacionCalle.Attributes.Add("Class", "panel-collapse collapse in");
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarSituacionCalle').hide();$('#BtnOcultarSituacionCalle').show();", true);
+                }
+                if (valor == false)
+                {
+                    CollapseSituacionCalle.Attributes.Remove("Class");
+                    CollapseSituacionCalle.Attributes.Add("Class", "panel-collapse collapse out");
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarSituacionCalle').show();$('#BtnOcultarSituacionCalle').hide();", true);
+                }
+                break;
+
+            case "TransgresionDerechos":
+                if (valor == true)
+                {
+                    CollapseTransgresionDerechos.Attributes.Remove("Class");
+                    CollapseTransgresionDerechos.Attributes.Add("Class", "panel-collapse collapse in");
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarTransgresionDerechos').hide();$('#BtnOcultarTransgresionDerechos').show();", true);
+                }
+                if (valor == false)
+                {
+                    CollapseTransgresionDerechos.Attributes.Remove("Class");
+                    CollapseTransgresionDerechos.Attributes.Add("Class", "panel-collapse collapse out");
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "ShowCancelar", "$('#BtnMostrarTransgresionDerechos').show();$('#BtnOcultarTransgresionDerechos').hide();", true);
+                }
+                break;
+        }
+        
+    }
+    
+    protected void BtnLimpiarMaltrato_Click(object sender, EventArgs e)
+    {
+        MostrarAcordeon("Maltrato",true);
+        LimpiaMaltrato(true);
+    }
+    protected void BtnLimpiarPFTI_Click(object sender, EventArgs e)
+    {
+        MostrarAcordeon("PFTI", true);
+        LimpiaPFTI(true);
+
+    }
+    protected void BtnLimpiarCalle_Click(object sender, EventArgs e)
+    {
+        MostrarAcordeon("SituacionCalle", true);
+        LimpiaSituacionCalle(true);
+    }
+    protected void BtnLimpiarDerechos_Click(object sender, EventArgs e)
+    {
+        MostrarAcordeon("TransgresionDerechos", true);
+        LimpiaTransgresion(true);
+    }
+
+    protected void GrdMaltrato_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+        parcoll par = new parcoll();
+        string codMaltrato = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text;
+        VSICodMaltrato = Convert.ToInt32(codMaltrato);
+        string codDiagnostico = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
+        VSCodDiagnosticoMaltrato = Convert.ToInt32(codDiagnostico);
+        DataTable DtDatosMaltrato = dcoll.GetMostrarDiagnosticoMaltrato(VSICodMaltrato);
+
+
+        TxtFechaDiagnosticoMaltrato.Text = Convert.ToDateTime(DtDatosMaltrato.Rows[0][2].ToString()).ToShortDateString();
+
+        if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][3]) == true)
+        {
+            //No funciona el RbtnPresentaMSi.Checked = true; pierde el postback para realizar el cambio, se utiliza javascript
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnPresentaMSi').click();", true);           
+
+
+            DdlTipoMaltrato.Items.FindByValue(DdlTipoMaltrato.SelectedValue).Selected = false;
+            DdlTipoMaltrato.Items.FindByValue(DtDatosMaltrato.Rows[0][4].ToString()).Selected = true;
+
+            //CARGA Nivel de maltrato
+            DdlNivelMaltrato.Items.Clear();
+            DataView dvNivelMaltrato = new DataView(par.GetparNivelMaltrato(Convert.ToInt32(DtDatosMaltrato.Rows[0][4].ToString())));
+            DdlNivelMaltrato.DataSource = dvNivelMaltrato;
+            DdlNivelMaltrato.DataTextField = "Descripcion";
+            DdlNivelMaltrato.DataValueField = "CodNivelMaltrato";
+            dvNivelMaltrato.Sort = "CodNivelMaltrato ASC";
+            DdlNivelMaltrato.DataBind();
+
+            //CARGA MALTRATO
+            DdlMaltrato.Items.Clear();
+            DataView dvMaltrato = new DataView(par.GetparMaltrato(Convert.ToInt32(DtDatosMaltrato.Rows[0][4].ToString())));
+            DdlMaltrato.DataSource = dvMaltrato;
+            DdlMaltrato.DataTextField = "Descripcion";
+            DdlMaltrato.DataValueField = "CodMaltrato";
+            dvMaltrato.Sort = "Descripcion";
+            DdlMaltrato.DataBind();
+
+            // BUSCA SI EL NIVEL DE MALTRATO DEL DIAGNOSTICO SELECCIONADO EXISTE EN LAS OPCIONES DEL DROPDOWN NIVEL DE MALTRATO
+            DdlNivelMaltrato.Items.FindByValue(DdlNivelMaltrato.SelectedValue).Selected = false;
+            int c = 0;
+            for (int i = 0; i < DdlNivelMaltrato.Items.Count; i++)
+            {
+                if (DdlNivelMaltrato.Items[i].Value == DtDatosMaltrato.Rows[0][18].ToString())
+                {
+                    c = c + 1;
+                }
+            }
+            if (c > 1)
+            {
+                DdlNivelMaltrato.Items.FindByValue(DtDatosMaltrato.Rows[0][18].ToString()).Selected = true;
+            }
+            else
+            {
+                DdlNivelMaltrato.SelectedValue = "0";
+            }
+
+            DdlMaltrato.Items.FindByValue(DdlMaltrato.SelectedValue).Selected = false;
+            DdlMaltrato.Items.FindByValue(DtDatosMaltrato.Rows[0][5].ToString()).Selected = true;
+
+            if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][19]) == true)
+            {
+                RbtnEmbarazoAbusoSi.Checked = true;
+            }
+            else if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][19]) == false)
+            {
+                RbtnEmbarazoAbusoNo.Checked = true;
+            }
+
+            if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][20]) == true)
+            {
+                RbtnHijosSi.Checked = true;
+            }
+            else if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][20]) == false)
+            {
+                RbtnHijosNO.Checked = true;
+            }
+
+            if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][7]) == true)
+            {
+                rbtnConoceSi.Checked = true;
+            }
+            else if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][7]) == false)
+            {
+                rbtnConoceNo.Checked = true;
+            }
+
+            DdlRelacionMaltratador.Items.FindByValue(DdlRelacionMaltratador.SelectedValue).Selected = false;
+            DdlRelacionMaltratador.Items.FindByValue(DtDatosMaltrato.Rows[0][17].ToString()).Selected = true;
+
+            if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][9]) == true)
+            {
+                RbtnViveMaltratadorSi.Checked = true;
+            }
+            else if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][9]) == false)
+            {
+                RbtnViveMaltratadorNo.Checked = true;
+            }
+
+            TxtEdadInicioMaltrato.Text = DtDatosMaltrato.Rows[0][21].ToString();
+            TxtMesesMaltrato.Text = DtDatosMaltrato.Rows[0][22].ToString();
+            TxtAnosMaltrato.Text = DtDatosMaltrato.Rows[0][23].ToString();
+
+
+            DdlFrecuenciaMaltrato.Items.FindByValue(DdlFrecuenciaMaltrato.SelectedValue).Selected = false;
+            DdlFrecuenciaMaltrato.Items.FindByValue(DtDatosMaltrato.Rows[0][24].ToString()).Selected = true;
+
+            DdlRespuestaMaltrato.Items.FindByValue(DdlRespuestaMaltrato.SelectedValue).Selected = false;
+            DdlRespuestaMaltrato.Items.FindByValue(DtDatosMaltrato.Rows[0][25].ToString()).Selected = true;
+
+            if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][26]) == true)
+            {
+                RbtnLesionesSi.Checked = true;
+            }
+            else if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][26]) == false)
+            {
+                RbtnLesionesNo.Checked = true;
+            }           
+            
+        }
+        else if (Convert.ToBoolean(DtDatosMaltrato.Rows[0][3]) == false)
+        {
+            //No funciona el RbtnPresentaMNo.Checked = true; pierde el postback para realizar el cambio, se utiliza javascript
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnPresentaMNo').click();", true);         
+        }
+
+        DdlProfesionalTecnico.Items.FindByValue(DdlProfesionalTecnico.SelectedValue).Selected = false;
+        DdlProfesionalTecnico.Items.FindByValue(DtDatosMaltrato.Rows[0][11].ToString()).Selected = true;
+
+        TxtObservaciones.Text = DtDatosMaltrato.Rows[0][14].ToString();
+
+        MostrarAcordeon("Maltrato", true);
+
+        BtnAgregarDiagnosticoMaltrato.Visible = false;
+        BtnModificarDiagnosticoMaltrato.Visible = true;
+    }
+
+    protected void GrdPFTI_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+        string ICodPFTI = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text;
+        VSICodPFTI = Convert.ToInt32(ICodPFTI);
+
+        string codDiagnostico = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
+        VSCodDiagnosticoPFTI = Convert.ToInt32(codDiagnostico);
+
+        DataTable DatosPFTI = dcoll.GetMostrarDiagnosticoPFTI(VSCodDiagnosticoPFTI);
+
+        TxtFechaDiagnosticoPFTI.Text = Convert.ToDateTime(DatosPFTI.Rows[0][0].ToString()).ToShortDateString();
+
+        if (Convert.ToBoolean(DatosPFTI.Rows[0][1]) == true)
+        {
+            //No funciona el RbtnPresentaPFTISI.Checked = true; pierde el postback para realizar el cambio, se utiliza javascript
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnPresentaPFTISI').click();", true); 
+
+            if (Convert.ToBoolean(DatosPFTI.Rows[0][3]) == true)
+            {
+                RbtnRiesgoLaboralPFTISi.Checked = true;
+            }
+            else if (Convert.ToBoolean(DatosPFTI.Rows[0][3]) == false)
+            {
+                RbtnRiesgoLaboralPFTINo.Checked = true;
+            }
+
+            DdlRegionOcurrencia.Items.FindByValue(DdlRegionOcurrencia.SelectedValue).Selected = false;
+            DdlRegionOcurrencia.Items.FindByValue(DatosPFTI.Rows[0][3].ToString()).Selected = true;
+
+            parcoll par = new parcoll();
+            DataView dvComuna = new DataView(par.GetparComunas(DatosPFTI.Rows[0][3].ToString()));
+            DdlComunaOcurrencia.Items.Clear();
+            DdlComunaOcurrencia.DataSource = dvComuna;
+            DdlComunaOcurrencia.DataTextField = "Descripcion";
+            DdlComunaOcurrencia.DataValueField = "CodComuna";
+            dvComuna.Sort = "Descripcion";
+            DdlComunaOcurrencia.DataBind();
+
+            DdlComunaOcurrencia.Items.FindByValue(DdlComunaOcurrencia.SelectedValue).Selected = false;
+            DdlComunaOcurrencia.Items.FindByValue(DatosPFTI.Rows[0][4].ToString()).Selected = true;
+
+            TxtFechaDeteccionPFTI.Text = Convert.ToDateTime(DatosPFTI.Rows[0][5].ToString()).ToShortDateString();
+
+            ddlCategoríaPFTI.Items.FindByValue(ddlCategoríaPFTI.SelectedValue).Selected = false;
+            ddlCategoríaPFTI.Items.FindByValue(DatosPFTI.Rows[0][6].ToString()).Selected = true;
+
+            DdlExplotadorPFTI.Items.FindByValue(DdlExplotadorPFTI.SelectedValue).Selected = false;
+            DdlExplotadorPFTI.Items.FindByValue(DatosPFTI.Rows[0][7].ToString()).Selected = true;
+
+            DdlRelacionExplotadorPFTI.Items.FindByValue(DdlRelacionExplotadorPFTI.SelectedValue).Selected = false;
+            DdlRelacionExplotadorPFTI.Items.FindByValue(DatosPFTI.Rows[0][8].ToString()).Selected = true;
+
+            if (Convert.ToBoolean(DatosPFTI.Rows[0][9]) == true)
+            {
+                RbtnExplotadorPFTISI.Checked = true;
+            }
+            else if (Convert.ToBoolean(DatosPFTI.Rows[0][9]) == false)
+            {
+                RbtnExplotadorPFTINO.Checked = true;
+            }
+
+            TxtEdadInicioPFTI.Text = DatosPFTI.Rows[0][10].ToString();
+            TxtMesesPFTI.Text = DatosPFTI.Rows[0][11].ToString();
+            TxtAnosPFTI.Text = DatosPFTI.Rows[0][12].ToString();
+
+            DdlRespuestaDevelacionPFTI.Items.FindByValue(DdlRespuestaDevelacionPFTI.SelectedValue).Selected = false;
+            DdlRespuestaDevelacionPFTI.Items.FindByValue(DatosPFTI.Rows[0][13].ToString()).Selected = true;
+        }
+        else if (Convert.ToBoolean(DatosPFTI.Rows[0][1]) == false)
+        {
+            //No funciona el RbtnPresentaPFTINO.Checked = true; pierde el postback para realizar el cambio, se utiliza javascript
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnPresentaPFTINO').click();", true); 
+            GrdPFTI.Focus();
+        }
+
+        DdlProfesionalTecnicoPFTI.Items.FindByValue(DdlProfesionalTecnicoPFTI.SelectedValue).Selected = false;
+        DdlProfesionalTecnicoPFTI.Items.FindByValue(DatosPFTI.Rows[0][14].ToString()).Selected = true;
+
+        TxtObservacionesPFTI.Text = DatosPFTI.Rows[0][15].ToString();
+
+        MostrarAcordeon("PFTI", true);
+
+        BtnAgregarDiagnosticoPFTI.Visible = false;
+        BtnModificarDiagnosticoPFTI.Visible = true;
+    }
+
+    protected void GrdSituacionCalle_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        MostrarAcordeon("SituacionCalle",true);
+
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+        parcoll par = new parcoll();
+
+        string ICodSituacionCalle = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text;
+        VSICodSituacionCalle = Convert.ToInt32(ICodSituacionCalle);
+
+        string codDiagnostico = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
+        VSCodDiagnosticoSituacionCalle = Convert.ToInt32(codDiagnostico);
+
+        DataTable DatosSituacionCalle = dcoll.GetMostrarDiagnosticoSituacionCalle(VSCodDiagnosticoSituacionCalle);
+
+        TxtFechaDiagnosticoSituacionCalle.Text = Convert.ToDateTime(DatosSituacionCalle.Rows[0][0].ToString()).ToShortDateString();
+
+
+        //Presenta situación calle
+        if (Convert.ToBoolean(DatosSituacionCalle.Rows[0][1]) == true)
+        {
+            //No funciona el RbtnSituacionCalleSI.Checked = true; pierde el postback para realizar el cambio, se utiliza javascript
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnSituacionCalleSI').click();", true); 
+
+            TxtAnoVivirCalle.Text = DatosSituacionCalle.Rows[0][2].ToString();
+            TxtMesVivirCalle.Text = DatosSituacionCalle.Rows[0][3].ToString();
+            TxtEdadInicioSituacionCalle.Text = DatosSituacionCalle.Rows[0][4].ToString();
+            TxtMesesSituacionCalle.Text = DatosSituacionCalle.Rows[0][5].ToString();
+            TxtAnosSituacionCalle.Text = DatosSituacionCalle.Rows[0][6].ToString();
+
+            if (Convert.ToBoolean(DatosSituacionCalle.Rows[0][7]) == true)
+            {
+                RbtnPerteneceCaletaSI.Checked = true;
+            }
+            else if (Convert.ToBoolean(DatosSituacionCalle.Rows[0][7]) == false)
+            {
+                RbtnPerteneceCaletaNO.Checked = true;
+            }
+
+            DdlEstrategiasSobrevivencia.Items.FindByValue(DdlEstrategiasSobrevivencia.SelectedValue).Selected = false;
+            DdlEstrategiasSobrevivencia.Items.FindByValue(DatosSituacionCalle.Rows[0][8].ToString()).Selected = true;
+
+            if (Convert.ToBoolean(DatosSituacionCalle.Rows[0][9]) == true)
+            {
+                RbtnContactoFamiliaresSI.Checked = true;
+            }
+            else if (Convert.ToBoolean(DatosSituacionCalle.Rows[0][9]) == false)
+            {
+                RbtnContactoFamiliaresNO.Checked = true;
+            }
+
+            DdlEstadiaCalle.Items.FindByValue(DdlEstadiaCalle.SelectedValue).Selected = false;
+            DdlEstadiaCalle.Items.FindByValue(DatosSituacionCalle.Rows[0][10].ToString()).Selected = true;
+
+            //CARGA Categoria Estadía en Calle
+            DdlCategoriaCalle.Items.Clear();
+            DataView dvCategoriaEstadiaCalle = new DataView(par.GetparCategoriaEstadiaCalle(Convert.ToInt32(DatosSituacionCalle.Rows[0][10])));
+            DdlCategoriaCalle.DataSource = dvCategoriaEstadiaCalle;
+            DdlCategoriaCalle.DataTextField = "Descripcion";
+            DdlCategoriaCalle.DataValueField = "CodCategoriaEstadiaCalle";
+            dvCategoriaEstadiaCalle.Sort = "CodCategoriaEstadiaCalle ASC";
+            DdlCategoriaCalle.DataBind();
+            //
+
+            DdlCategoriaCalle.Items.FindByValue(DdlCategoriaCalle.SelectedValue).Selected = false;
+            DdlCategoriaCalle.Items.FindByValue(DatosSituacionCalle.Rows[0][11].ToString()).Selected = true;
+
+            DdlLugarPernocta.Items.FindByValue(DdlLugarPernocta.SelectedValue).Selected = false;
+            DdlLugarPernocta.Items.FindByValue(DatosSituacionCalle.Rows[0][12].ToString()).Selected = true;
+        }
+        else if (Convert.ToBoolean(DatosSituacionCalle.Rows[0][1]) == false)
+        {
+            
+            //No funciona el RbtnSituacionCalleNO.Checked = true; pierde el postback para realizar el cambio, se utiliza javascript
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnSituacionCalleNO').click();", true); 
+        }
+
+        DdlProfesionalTecnicoSituacionCalle.Items.FindByValue(DdlProfesionalTecnicoSituacionCalle.SelectedValue).Selected = false;
+        DdlProfesionalTecnicoSituacionCalle.Items.FindByValue(DatosSituacionCalle.Rows[0][13].ToString()).Selected = true;
+
+        TxtObservacionesSituacionCalle.Text = DatosSituacionCalle.Rows[0][14].ToString();
+
+        MostrarAcordeon("SituacionCalle", true);
+
+        BtnAgregarDiagnosticoCalle.Visible = false;
+        BtnModificarDiagnosticoSituacionCalle.Visible = true;
+
+    }
+
+    protected void GrdTransgresionDerechos_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        
+
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+        parcoll par = new parcoll();
+
+        string ICodTransgresionDerechos = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[0].Text;
+        VSICodTransgresionDerechos = Convert.ToInt32(ICodTransgresionDerechos);
+
+        string codDiagnostico = ((GridView)sender).Rows[Convert.ToInt32(e.CommandArgument)].Cells[1].Text;
+        VSCodDiagnosticoTransgresionDerechos = Convert.ToInt32(codDiagnostico);
+
+        DataTable DatosTransgresionDerechos = dcoll.GetMostrarDiagnosticoTransgresionDerechos(VSCodDiagnosticoTransgresionDerechos);
+
+        TxtFechaDiagnosticoTransgresion.Text = Convert.ToDateTime(DatosTransgresionDerechos.Rows[0][0].ToString()).ToShortDateString();
+
+        //Presenta Transgresión de derechos
+        if (Convert.ToBoolean(DatosTransgresionDerechos.Rows[0][1]) == true)
+        {
+            //No funciona el RbtnTransgresionSi.Checked = true; pierde el postback para realizar el cambio, se utiliza javascript
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnTransgresionSi').click();", true);
+
+            DdlTipoTransgresion.Items.FindByValue(DdlTipoTransgresion.SelectedValue).Selected = false;
+            DdlTipoTransgresion.Items.FindByValue(DatosTransgresionDerechos.Rows[0][2].ToString()).Selected = true;
+
+            // Carga categoria de transgresión
+            DdlCategoriaTransgresion.Items.Clear();
+            DataView dvCategoriaTipoTransgresion = new DataView(par.GetparCategoriaTipoTransgresion(Convert.ToInt32(DatosTransgresionDerechos.Rows[0][2])));
+            DdlCategoriaTransgresion.DataSource = dvCategoriaTipoTransgresion;
+            DdlCategoriaTransgresion.DataTextField = "Descripcion";
+            DdlCategoriaTransgresion.DataValueField = "CodCategoriaTipoTransgresion";
+            dvCategoriaTipoTransgresion.Sort = "CodCategoriaTipoTransgresion ASC";
+            DdlCategoriaTransgresion.DataBind();
+
+            DdlCategoriaTransgresion.Items.FindByValue(DdlCategoriaTransgresion.SelectedValue).Selected = false;
+            DdlCategoriaTransgresion.Items.FindByValue(DatosTransgresionDerechos.Rows[0][3].ToString()).Selected = true;
+
+            DdlRelacionNNA.Items.FindByValue(DdlRelacionNNA.SelectedValue).Selected = false;
+            DdlRelacionNNA.Items.FindByValue(DatosTransgresionDerechos.Rows[0][4].ToString()).Selected = true;
+
+            if (Convert.ToBoolean(DatosTransgresionDerechos.Rows[0][5]) == true)
+            {
+                RbtnViveNNASI.Checked = true;
+            }
+            else if (Convert.ToBoolean(DatosTransgresionDerechos.Rows[0][5]) == false)
+            {
+                RbtnViveNNANO.Checked = true;
+            }
+        }
+        else if (Convert.ToBoolean(DatosTransgresionDerechos.Rows[0][1]) == false)
+        {
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "click", "document.getElementById('RbtnTransgresionNo').click();", true);
+        }
+
+        DdlProfesionalTecnicoTransgresion.Items.FindByValue(DdlProfesionalTecnicoTransgresion.SelectedValue).Selected = false;
+        DdlProfesionalTecnicoTransgresion.Items.FindByValue(DatosTransgresionDerechos.Rows[0][6].ToString()).Selected = true;
+
+        TxtObservacionesTransgresion.Text = DatosTransgresionDerechos.Rows[0][6].ToString();
+
+        BtnAgregarDiagnosticoDerechos.Visible = false;
+        BtnModificarDiagnosticoDerechos.Visible = true;
+        MostrarAcordeon("TransgresionDerechos", true);
+    }
+
+    protected void RbtnPresentaMSi_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("Maltrato", true);        
+
+        if (RbtnPresentaMSi.Checked == true)
+        {
+            DivDatosMaltrato.Visible = true;
+            //LimpiaMaltrato(false);
+        }
+    }
+    protected void RbtnPresentaMNo_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("Maltrato", true);        
+
+        if (RbtnPresentaMNo.Checked == true)
+        {
+            DivDatosMaltrato.Visible = false;
+            LimpiaMaltrato(false);
+        }
+    }
+
+    protected void BtnModificarDiagnosticoDerechos_Click(object sender, EventArgs e)
+    {
+        MostrarAcordeon("TransgresionDerechos", true);
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+        if (RbtnTransgresionSi.Checked == true)
+        {
+            if (validateTransgresion(true))
+            {
+                dcoll.Update_DiagnosticosTransgresionDerechos(VSICodTransgresionDerechos,VSCodDiagnosticoTransgresionDerechos,Convert.ToDateTime(TxtFechaDiagnosticoTransgresion.Text),
+                    BoolPresentaTransgresion(),Convert.ToInt32(DdlCategoriaTransgresion.SelectedValue),Convert.ToInt32(DdlRelacionNNA.SelectedValue),BoolViveNNA(),
+                    Convert.ToInt32(DdlProfesionalTecnicoTransgresion.SelectedValue), SSninoDiag.CodInst, TxtObservacionesTransgresion.Text, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                MostrarAcordeon("TransgresionDerechos", false);                
+
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "MensajeGuardadoExitoso", "$('#GrdTransgresionDerechos').notify('Modificación realizada exitosamente', 'success');", true);
+                
+            }
+            else
+            {
+                MostrarAcordeon("TransgresionDerechos", true);
+            }
+        }
+        else if (RbtnTransgresionNo.Checked == true)
+        {
+            if (validateTransgresion(false))
+            {
+                dcoll.Update_DiagnosticosTransgresionDerechos(VSICodTransgresionDerechos, VSCodDiagnosticoTransgresionDerechos, Convert.ToDateTime(TxtFechaDiagnosticoTransgresion.Text),
+                    false, 0, 0, false, Convert.ToInt32(DdlProfesionalTecnicoTransgresion.SelectedValue), SSninoDiag.CodInst, TxtObservacionesTransgresion.Text, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));               
+
+                MostrarAcordeon("TransgresionDerechos", false);
+                
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "MensajeGuardadoExitoso", "$('#GrdTransgresionDerechos').notify('Modificación realizada exitosamente', 'success');", true);
+                
+            }
+            else
+            {
+                MostrarAcordeon("TransgresionDerechos", true);
+            }
+        }
+
+        DataTable dtGridTransgresionDerechos = dcoll.GetDiagnosticoTrangresionDerechosMostrar(SSninoDiag.ICodIE);
+        DataView dvGridTransgresionDerechos = new DataView(dtGridTransgresionDerechos);
+        dvGridTransgresionDerechos.Sort = "FechaDiagnostico DESC";
+        GrdTransgresionDerechos.DataSource = dvGridTransgresionDerechos;
+        GrdTransgresionDerechos.DataBind();
+        GrdTransgresionDerechos.Visible = true;
+
+        if (dvGridTransgresionDerechos.Count == 0)
+        {
+            LblSinTransgresionDerechos.Text = "Este Niño(a) no Posee Diagnostico Transgresión de Derechos";
+            AlertLblSinTransgresionDerechos.Visible = true;
+        }
+        else
+        {
+            LblSinTransgresionDerechos.Text = "";
+            AlertLblSinTransgresionDerechos.Visible = false;
+        }
+    }
+
+    protected void BtnModificarDiagnosticoSituacionCalle_Click(object sender, EventArgs e)
+    {
+        MostrarAcordeon("SituacionCalle", true);
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+        if (RbtnSituacionCalleSI.Checked == true)
+        {
+            if (validateSituacionCalle(true))
+            {
+                dcoll.Update_DiagnosticosSituacionCalle(VSICodSituacionCalle, VSCodDiagnosticoSituacionCalle, Convert.ToDateTime(TxtFechaDiagnosticoSituacionCalle.Text),
+                    BoolPresentaSituacionCalle(),Convert.ToInt32(TxtAnoVivirCalle.Text),Convert.ToInt32(TxtMesVivirCalle.Text),Convert.ToInt32(TxtEdadInicioSituacionCalle.Text),
+                    Convert.ToInt32(TxtMesesSituacionCalle.Text),Convert.ToInt32(TxtAnosSituacionCalle.Text),BoolPerteneceACaleta(),Convert.ToInt32(DdlEstrategiasSobrevivencia.SelectedValue),
+                    BoolContactoConFamiliares(),Convert.ToInt32(DdlCategoriaCalle.SelectedValue),Convert.ToInt32(DdlLugarPernocta.SelectedValue),Convert.ToInt32(DdlProfesionalTecnicoSituacionCalle.SelectedValue),
+                    SSninoDiag.CodInst,TxtObservacionesSituacionCalle.Text,DateTime.Now,Convert.ToInt32(Session["IdUsuario"]));
+
+                LimpiaSituacionCalle(true);
+                MostrarAcordeon("SituacionCalle", false);
+            }
+            else
+            {
+                MostrarAcordeon("SituacionCalle", true);
+            }
+        }
+        else if (RbtnSituacionCalleNO.Checked == true)
+        {
+            if (validateSituacionCalle(false))
+            {
+                dcoll.Update_DiagnosticosSituacionCalle(VSICodSituacionCalle, VSCodDiagnosticoSituacionCalle, Convert.ToDateTime(TxtFechaDiagnosticoSituacionCalle.Text),
+                   BoolPresentaSituacionCalle(), 0, 0, 0, 0, 0, false, 0, false, 0, 0, Convert.ToInt32(DdlProfesionalTecnicoSituacionCalle.SelectedValue),
+                   SSninoDiag.CodInst, TxtObservacionesSituacionCalle.Text, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+                     
+                LimpiaSituacionCalle(true);
+                MostrarAcordeon("SituacionCalle", false);
+            }
+            else
+            {
+               
+
+                MostrarAcordeon("SituacionCalle", true);
+            }
+        }
+
+        DataTable dtGridSituacionCalle = dcoll.GetDiagnosticoSituacionCalleMostrar(SSninoDiag.ICodIE);
+        DataView dvGridSituacionCalle = new DataView(dtGridSituacionCalle);
+        dvGridSituacionCalle.Sort = "FechaDiagnostico DESC";
+        GrdSituacionCalle.DataSource = dvGridSituacionCalle;
+        GrdSituacionCalle.DataBind();
+        GrdSituacionCalle.Visible = true;
+
+        if (dvGridSituacionCalle.Count == 0)
+        {
+            LblSinSituacionCalle.Text = "Este Niño(a) no Posee Diagnostico Situación de Calle";
+            AlertLblSinSituacionCalle.Visible = true;
+        }
+        else
+        {
+            LblSinSituacionCalle.Text = "";
+            AlertLblSinSituacionCalle.Visible = false;
+        }
+    }
+
+    protected void BtnModificarDiagnosticoPFTI_Click(object sender, EventArgs e)
+    {
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+        if (TxtObservacionesPFTI.Text == null)
+        {
+            TxtObservacionesPFTI.Text = "SIN OBSERVACIÓN";
+        }
+
+        if (RbtnPresentaPFTISI.Checked == true)
+        {
+            if (validatePFTI(true))
+            {
+                dcoll.Update_DiagnosticosPeoresFormaTrabajoVulneraciones(VSICodPFTI, VSCodDiagnosticoPFTI, Convert.ToDateTime(TxtFechaDiagnosticoPFTI.Text),
+                    BoolPresentaPFTI(), BoolCondicionRiesgoLaboral(), Convert.ToInt32(DdlComunaOcurrencia.SelectedValue), Convert.ToDateTime(TxtFechaDeteccionPFTI.Text),
+                    Convert.ToInt32(ddlCategoríaPFTI.SelectedValue), Convert.ToInt32(DdlExplotadorPFTI.SelectedValue), Convert.ToInt32(DdlRelacionExplotadorPFTI.SelectedValue),
+                     BoolViveConExplotador(),Convert.ToInt32(TxtEdadInicioPFTI.Text), Convert.ToInt32(TxtMesesPFTI.Text), Convert.ToInt32(TxtAnosPFTI.Text),
+                    Convert.ToInt32(DdlRespuestaDevelacionPFTI.SelectedValue),TxtObservacionesPFTI.Text,Convert.ToInt32(DdlProfesionalTecnicoPFTI.SelectedValue),
+                    SSninoDiag.CodInst,DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+                    
+                LimpiaPFTI(true);
+                MostrarAcordeon("PFTI", false);
+            }
+            else
+            {
+               MostrarAcordeon("PFTI", true);
+            }
+        }
+        else if (RbtnPresentaPFTINO.Checked == true)
+        {
+            if (validatePFTI(false))
+            {
+                dcoll.Update_DiagnosticosPeoresFormaTrabajoVulneraciones(VSICodPFTI, VSCodDiagnosticoPFTI, Convert.ToDateTime(TxtFechaDiagnosticoPFTI.Text),
+                   BoolPresentaPFTI(), false, 0, DateTime.Now, 0, 0, 0, false, 0, 0, 0, 0, TxtObservacionesPFTI.Text, Convert.ToInt32(DdlProfesionalTecnicoPFTI.SelectedValue),
+                   SSninoDiag.CodInst, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+                
+                LimpiaPFTI(true);
+                MostrarAcordeon("PFTI", false);
+            }
+            else
+            {
+                MostrarAcordeon("PFTI", true);
+            }
+        }
+
+        DataTable dt8 = dcoll.GetDiagnosticoPeoresFormasMostrar(SSninoDiag.ICodIE);
+        DataView dv8 = new DataView(dt8);
+        dv8.Sort = "FechaDiagnostico DESC";
+        GrdPFTI.DataSource = dv8;
+        GrdPFTI.DataBind();
+        GrdPFTI.Visible = true;
+
+        if (dv8.Count == 0)
+        {
+            LblSinPFTI.Text = "Este Niño(a) no Posee Diagnostico PFTI";
+            AlertLblSinPFTI.Visible = true;
+        }
+        else
+        {
+            LblSinPFTI.Text = "";
+            AlertLblSinPFTI.Visible = false;
+        }
+    }
+    protected void BtnModificarDiagnosticoMaltrato_Click(object sender, EventArgs e)
+    {
+
+        ninocoll ncoll = new ninocoll();
+        diagnosticoscoll dcoll = new diagnosticoscoll();
+
+        if (TxtObservaciones.Text == null)
+        {
+            TxtObservaciones.Text = "SIN OBSERVACIÓN";
+        }
+
+        if (RbtnPresentaMSi.Checked == true)
+        {
+            if (validateMaltrato(true) == true)
+            {
+                ncoll.Update_DiagnosticosMaltratoVulneraciones(VSICodMaltrato, VSCodDiagnosticoMaltrato, Convert.ToDateTime(TxtFechaDiagnosticoMaltrato.Text),
+                    BoolPresentaMaltrato(), Convert.ToInt32(DdlNivelMaltrato.SelectedValue),
+                    Convert.ToInt32(DdlMaltrato.SelectedValue), BoolEmbarazoAbuso(), BoolHijos(),
+                    BoolConoceMaltratador(), Convert.ToInt32(DdlRelacionMaltratador.SelectedValue),
+                    BoolViveConMaltratador(), Convert.ToInt32(DdlProfesionalTecnico.SelectedValue), SSninoDiag.CodInst, TxtObservaciones.Text, Convert.ToInt32(TxtEdadInicioMaltrato.Text), Convert.ToInt32(TxtMesesMaltrato.Text),
+                    Convert.ToInt32(TxtAnosMaltrato.Text), Convert.ToInt32(DdlFrecuenciaMaltrato.SelectedValue), Convert.ToInt32(DdlRespuestaMaltrato.SelectedValue),
+                    BoolConstataLesiones(), DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));                
+
+                LimpiaMaltrato(true);
+                
+                MostrarAcordeon("Maltrato", false);
+            }
+        }
+        else if (RbtnPresentaMNo.Checked == true)
+        {
+            if (validateMaltrato(false) == true)
+            {
+                ncoll.Update_DiagnosticosMaltratoVulneraciones(VSICodMaltrato, VSCodDiagnosticoMaltrato, Convert.ToDateTime(TxtFechaDiagnosticoMaltrato.Text), false, 0, 0, false, false, false, 0,
+                false, Convert.ToInt32(DdlProfesionalTecnico.SelectedValue), SSninoDiag.CodInst, TxtObservaciones.Text, 0, 0, 0, 0, 0, false, DateTime.Now, Convert.ToInt32(Session["IdUsuario"]));
+
+                LimpiaMaltrato(true);
+                
+                MostrarAcordeon("Maltrato", false);
+            }
+        }
+        else
+        {
+            MostrarAcordeon("Maltrato", true);
+        }
+        DataTable dt1 = dcoll.GetDiagnosticoMaltrato(SSninoDiag.ICodIE);
+        DataView dv1 = new DataView(dt1);
+        dv1.Sort = "FechaDiagnostico DESC";
+        GrdMaltrato.DataSource = dv1;
+        GrdMaltrato.DataBind();
+        GrdMaltrato.Visible = true;
+        if (dv1.Count == 0)
+        {
+            LblSinMaltrato.Text = "Este Niño(a) no Posee Diagnostico de Maltrato";
+            AlertLblSinMaltrato.Visible = true;
+        }
+        else
+        {
+            LblSinMaltrato.Text = "";
+            AlertLblSinMaltrato.Visible = false;
+        }
+    }
+    protected void RbtnPresentaPFTISI_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("PFTI", true);
+
+        if (RbtnPresentaPFTISI.Checked == true)
+        {
+            DivDatosPFTI.Visible = true;
+            //LimpiaPFTI(false);
+        }
+    }
+    protected void RbtnPresentaPFTINO_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("PFTI", true);
+
+        if (RbtnPresentaPFTINO.Checked == true)
+        {
+            DivDatosPFTI.Visible = false;
+            LimpiaPFTI(false);
+        }
+    }
+    protected void DdlRegionOcurrencia_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("PFTI", true);
+        DdlComunaOcurrencia.Items.Clear();
+        getcomuna();
+    }
+    protected void DdlEstadiaCalle_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("SituacionCalle", true);
+
+        parcoll par = new parcoll();
+
+        //CARGA Categoria Estadía en Calle
+        DdlCategoriaCalle.Items.Clear();
+        DataView dvCategoriaEstadiaCalle = new DataView(par.GetparCategoriaEstadiaCalle(Convert.ToInt32(DdlEstadiaCalle.SelectedValue)));
+        DdlCategoriaCalle.DataSource = dvCategoriaEstadiaCalle;
+        DdlCategoriaCalle.DataTextField = "Descripcion";
+        DdlCategoriaCalle.DataValueField = "CodCategoriaEstadiaCalle"; 
+        dvCategoriaEstadiaCalle.Sort = "CodCategoriaEstadiaCalle ASC";
+        DdlCategoriaCalle.DataBind();
+    }
+    protected void DdlTipoTransgresion_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("TransgresionDerechos", true);
+
+        parcoll par = new parcoll();
+
+        DdlCategoriaTransgresion.Items.Clear();
+        DataView dvCategoriaTipoTransgresion = new DataView(par.GetparCategoriaTipoTransgresion(Convert.ToInt32(DdlTipoTransgresion.SelectedValue)));
+        DdlCategoriaTransgresion.DataSource = dvCategoriaTipoTransgresion;
+        DdlCategoriaTransgresion.DataTextField = "Descripcion";
+        DdlCategoriaTransgresion.DataValueField = "CodCategoriaTipoTransgresion";
+        dvCategoriaTipoTransgresion.Sort = "CodCategoriaTipoTransgresion ASC";
+        DdlCategoriaTransgresion.DataBind();
+
+    }
+    
+    protected void RbtnSituacionCalleSI_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("SituacionCalle", true);
+        if (RbtnSituacionCalleSI.Checked == true)
+        {
+            DivDatosSituacionCalle.Visible = true;
+            //LimpiaSituacionCalle(false);
+        }
+    }
+    protected void RbtnSituacionCalleNO_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("SituacionCalle", true);
+        if (RbtnSituacionCalleNO.Checked == true)
+        {
+            DivDatosSituacionCalle.Visible = false;
+            LimpiaSituacionCalle(false);
+        }
+    }
+    protected void RbtnTransgresionSi_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("TransgresionDerechos", true);
+        if (RbtnTransgresionSi.Checked == true)
+        {
+            DivDatosTransgresion.Visible = true;
+            //LimpiaTransgresion(false);
+        }
+        
+    }
+    protected void RbtnTransgresionNo_CheckedChanged(object sender, EventArgs e)
+    {
+        MostrarAcordeon("TransgresionDerechos", true);
+        if (RbtnTransgresionNo.Checked == true)
+        {
+            DivDatosTransgresion.Visible = false;
+            LimpiaTransgresion(false);
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsVigenciaDiaria" targetNamespace="http://tempuri.org/dsVigenciaDiaria.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsVigenciaDiaria.xsd" xmlns:mstns="http://tempuri.org/dsVigenciaDiaria.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="AsistenciaDiariaAADD_A">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="codigoregion" type="xs:int" minOccurs="0" />
+        <xs:element name="codregion" type="xs:int" minOccurs="0" />
+        <xs:element name="Region" type="xs:string" minOccurs="0" />
+        <xs:element name="CodProyecto" type="xs:int" minOccurs="0" />
+        <xs:element name="Nombre" type="xs:string" minOccurs="0" />
+        <xs:element name="PLAZAS" type="xs:int" minOccurs="0" />
+        <xs:element name="NEMOTECNICO" type="xs:string" />
+        <xs:element name="CIP_CAUSA_NUEVA_M" type="xs:int" minOccurs="0" />
+        <xs:element name="CIP_CAUSA_NUEVA_F" type="xs:int" minOccurs="0" />
+        <xs:element name="CRC_CAUSA_NUEVA_M" type="xs:int" minOccurs="0" />
+        <xs:element name="CRC_CAUSA_NUEVA_F" type="xs:int" minOccurs="0" />
+        <xs:element name="TOTAL_CAUSA_NUEVA_M" type="xs:int" minOccurs="0" />
+        <xs:element name="TOTAL_CAUSA_NUEVA_F" type="xs:int" minOccurs="0" />
+        <xs:element name="CIP_DE_GENCHI_M" type="xs:int" minOccurs="0" />
+        <xs:element name="CIP_DE_GENCHI_F" type="xs:int" minOccurs="0" />
+        <xs:element name="CRC_DE_GENCHI_M" type="xs:int" minOccurs="0" />
+        <xs:element name="CRC_DE_GENCHI_F" type="xs:int" minOccurs="0" />
+        <xs:element name="TOTAL_De_GenchiM" type="xs:int" minOccurs="0" />
+        <xs:element name="TOTAL_De_GenchiF" type="xs:int" minOccurs="0" />
+        <xs:element name="PresentesM" type="xs:int" minOccurs="0" />
+        <xs:element name="PresentesF" type="xs:int" minOccurs="0" />
+        <xs:element name="AusentesM" type="xs:int" minOccurs="0" />
+        <xs:element name="AusentesF" type="xs:int" minOccurs="0" />
+        <xs:element name="PermisosM" type="xs:int" minOccurs="0" />
+        <xs:element name="PermisosF" type="xs:int" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

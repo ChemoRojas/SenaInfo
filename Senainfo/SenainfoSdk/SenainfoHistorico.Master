@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SenainfoHistorico.master.cs" Inherits="SenainfoSdk.UI.SenainfoHistorico" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Src="C_menu_colgante.ascx" TagPrefix="uc1" TagName="menu_colgante" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+        <asp:ContentPlaceHolder ID="TitleHead" runat="server"></asp:ContentPlaceHolder>
+    </title>
+
+    <script type="text/javascript">
+
+        function funcionsuma() {
+            if (trim(document.getElementById("txt003").value) == "") {
+                a = 0;
+            } else {
+                a = parseInt(trim(document.getElementById("txt003").value));
+            }
+            if (trim(document.getElementById("txt004").value) == "") {
+                b = 0;
+
+            } else {
+                b = parseInt(trim(document.getElementById("txt004").value));
+            }
+            if (trim(document.getElementById("txt005").value) == "") {
+                c = 0;
+            }
+            else {
+                c = parseInt(trim(document.getElementById("txt005").value));
+            }
+
+            if (trim(document.getElementById("txt006").value) == "") {
+                d = 0;
+            } else {
+                d = parseInt(trim(document.getElementById("txt006").value));
+            }
+
+            var textoprop = a + b + c + d;
+
+            //alert(textoprop);
+            document.getElementById("txt002").value = textoprop.toString();
+
+        }
+        function trim(str) {
+            str = str.toString();
+            while (1) {
+                if (str.substring(0, 1) != " ") {
+                    break;
+                }
+                str = str.substring(1, str.length);
+            }
+            while (1) {
+                if (str.substring(str.length - 1, str.length) != " ") {
+                    break;
+                }
+                str = str.substring(0, str.length - 1);
+            }
+            return str;
+        }
+
+        function AcceptNum(evt) {
+            var nav4 = window.Event ? true : false;
+            var key = nav4 ? evt.which : evt.keyCode;
+            return (key <= 13 || (key >= 48 && key <= 57) || key == 44);
+        }
+        function f_SoloNumeros() {
+            var key = window.event.keyCode;
+            if (key < 48 || key > 57) {
+                window.event.keyCode = 0;
+            }
+        }
+
+    </script>
+
+
+
+    <asp:ContentPlaceHolder ID="MainHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body role="document" <%--onmousemove="SetProgressPosition(event)"--%>>
+
+    <link href='<%=this.ResolveUrl("~/css/historico.css") %>' rel="stylesheet" />
+
+    <script src='<%=this.ResolveUrl("~/js/jquery-1.11.1.min.js") %>'></script>
+    <link href='<%=this.ResolveUrl("~/css/jquery-ui.css") %>' rel="stylesheet">
+    <script src='<%=this.ResolveUrl("~/js/jquery-ui.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/bootstrap.min.js") %>'></script>
+
+    <link href='<%=this.ResolveUrl("~/css/bootstrap.min.css") %>' rel="stylesheet" />
+    <link href='<%=this.ResolveUrl("~/css/bootstrap-theme.min.css") %>' rel="stylesheet" />
+    <link href='<%=this.ResolveUrl("~/css/theme.css") %>' rel="stylesheet" />
+
+    <script src='<%=this.ResolveUrl("~/js/jquery-2.1.4.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/jquery-2.1.4.min.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/jquery-ui.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/senainfoTools.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/ie-emulation-modes-warning.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/Script/jquery.mousewheel-3.0.4.pack.js") %>'></script>
+    <script src='<%=this.ResolveUrl("~/js/jquery.Rut.js") %>'></script>
+    <form id="form1" runat="server">
+        <div>
+            <uc1:menu_colgante ID="menu_colgante" runat="server" />
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+            <div class="container theme-showcase" role="main">
+                <ol class="breadcrumb">
+                    <asp:ContentPlaceHolder ID="BreadcrumbContent" runat="server"></asp:ContentPlaceHolder>
+                </ol>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+            <ProgressTemplate>
+                <div id="divProgress" class="ajax_cargando">
+                    <img alt="Cargando" src='<%=this.ResolveUrl("~/images/Cursors/ajax-loader.gif") %>' />
+                    Cargando...       
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+
+    </form>
+    <footer class="footer" aria-hidden="False">
+        <div class="container">
+            <p>
+                Para tus dudas y consultas, escribe a:
+                <br />
+                mesadeayuda@sename.cl
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

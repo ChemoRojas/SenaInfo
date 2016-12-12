@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIngresos" targetNamespace="http://tempuri.org/dsIngresos.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsIngresos.xsd" xmlns:mstns="http://tempuri.org/dsIngresos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="dsIngresos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="FechaComprobante" type="xs:dateTime" />
+        <xs:element name="NroComprobante" type="xs:int" />
+        <xs:element name="Correlativo" type="xs:int" />
+        <xs:element name="TipoIngreso" type="xs:string" />
+        <xs:element name="DetalleIngreso" type="xs:string" />
+        <xs:element name="Monto" type="xs:int" />
+        <xs:element name="MontoNoNulo" type="xs:int"/>
+        <xs:element name="Glosa" type="xs:string" />
+        <xs:element name="Nulo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

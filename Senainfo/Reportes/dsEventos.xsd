@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEventos" targetNamespace="http://tempuri.org/dsEventos.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/dsEventos.xsd" xmlns:mstns="http://tempuri.org/dsEventos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="dsEventos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="codinstitucion" type="xs:int" />
+        <xs:element name="nombinst" type="xs:string" minOccurs="0" />
+        <xs:element name="CodProyecto" type="xs:int" />
+        <xs:element name="nombre" type="xs:string" />
+        <xs:element name="CodRegion" type="xs:int" />
+        <xs:element name="CodNino" type="xs:int" />
+        <xs:element name="apellido_paterno" type="xs:string" minOccurs="0" />
+        <xs:element name="apellido_materno" type="xs:string" minOccurs="0" />
+        <xs:element name="nombres" type="xs:string" minOccurs="0" />
+        <xs:element name="Fechanacimiento" type="xs:string" minOccurs="0" />
+        <xs:element name="run" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaIngreso" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaEgreso" type="xs:string" minOccurs="0" />
+        <xs:element name="Grupo" type="xs:string" minOccurs="0" />
+        <xs:element name="DescripcionGrupo" type="xs:string" minOccurs="0" />
+        <xs:element name="CodPlanIntervencion" type="xs:int" />
+        <xs:element name="FechaElaboracionPII" type="xs:string" minOccurs="0" />
+        <xs:element name="EstadoPlan" type="xs:string" minOccurs="0" />
+        <xs:element name="Grado" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaTerminoRealPII" type="xs:string" minOccurs="0" />
+        <xs:element name="TipoIntervencion" type="xs:string" minOccurs="0" />
+        <xs:element name="Nivel" type="xs:string" minOccurs="0" />
+        <xs:element name="FechaEvento" type="xs:string" minOccurs="0" />
+        <xs:element name="TipoEvento" type="xs:string" minOccurs="0" />
+        <xs:element name="DescripcionEvento" type="xs:string" minOccurs="0" />
+        <xs:element name="ICodIE" type="xs:int" />
+        <xs:element name="desde" type="xs:string" minOccurs="0" />
+        <xs:element name="hasta" type="xs:string" minOccurs="0" />
+        <xs:element name="reporte" type="xs:string" minOccurs="0" />
+        <xs:element name="Tpaterno" type="xs:string" />
+        <xs:element name="Tmaterno" type="xs:string" />
+        <xs:element name="Tnombres" type="xs:string" />
+        <xs:element name="FechaActualizacion" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

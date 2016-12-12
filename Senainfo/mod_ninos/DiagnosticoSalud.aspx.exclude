@@ -1,0 +1,161 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="DiagnosticoSalud.aspx.cs" Inherits="mod_ninos_DiagnosticoSalud" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Assembly="SenameWebTextbox" Namespace="CustomWebControls" TagPrefix="cc1" %>
+
+<html lang="es">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="S">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+    <title>Diagnóstico Salud :: Senainfo :: Servicio Nacional de Menores</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <script src="../js/jquery-1.10.2.js"></script> 
+    <script src="../js/bootstrap.min.js"></script> 
+    <script src="../js/jquery-1.7.2.min.js"></script>        
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        function SetProgressPosition(e) {
+            var posx = 0;
+            var posy = 0;
+            if (!e) var e = window.event;
+            if (e.pageX || e.pageY) {
+                posx = e.pageX;
+                posy = e.pageY;
+            }
+            else if (e.clientX || e.clientY) {
+                posx = e.clientX + document.documentElement.scrollLeft;
+                posy = e.clientY + document.documentElement.scrollTop;
+            }
+
+            document.getElementById('divProgress').style.top = posy + "px";
+        }
+ </script>
+</head>
+<body class="body-form well" onmousemove="SetProgressPosition(event)">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <Triggers>
+            </Triggers>
+            <ContentTemplate>
+                <div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="titulo-form">Diagnóstico Psicológico/Psiquiátrico </p>
+                            <a id="BtnCollapsePsico" data-toggle="collapse" data-parent="#accordion" href="#CollapsePsico" aria-expanded="false" aria-controls="CollapsePsico">
+                                <span id="IconPsico" class="glyphicon glyphicon-plus"></span>
+                                <asp:Label ID="lbl_acordeonPsico" runat="server" Visible="true" Text="Pinche aquí para Agregar o modificar un diagnóstico Psicológico/Psiquiátrico"></asp:Label>
+                            </a>
+                            <div id="CollapsePsico" runat="server" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                    <tbody>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Fecha de diagnóstico</th>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:TextBox ID="TxtFechaDiagnosticoPsico" CssClass="form-control form-control-fecha input-sm" MaxLength="10" runat="server" placeholder="Seleccionar" />
+                                                            <ajax:FilteredTextBoxExtender ID="FTEFechaDiagnosticoPsico" runat="server" TargetControlID="TxtFechaDiagnosticoPsico" ValidChars="0123456789-/" />
+                                                            <ajax:CalendarExtender ID="CeFechaDiagnosticoPsico" runat="server" Enabled="true" Format="dd-MM-yyyy" TargetControlID="TxtFechaDiagnosticoPsico" ValidateRequestMode="Enabled" ViewStateMode="Enabled" />
+                                                        </td>
+                                                        <td>
+                                                            <asp:RangeValidator ID="RvFechaDiagnosticoPsico" runat="server" ForeColor="Red" Text="Fecha Invalida" ControlToValidate="TxtFechaDiagnosticoPsico" Type="Date" OnInit="rv_fecha_Init" /><br />
+                                                            <asp:RequiredFieldValidator ID="RfvFechaDiagnosticoPsico" ValidationGroup="FechaDiag" runat="server" ControlToValidate="TxtFechaDiagnosticoPsico" Font-Bold="true" ForeColor="Red" ErrorMessage="Fecha Diagn&oacute;stico Requerida">
+                                                            </asp:RequiredFieldValidator>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Acciones diagnóstico Psicológico</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlAccionesPsico" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Quién lo realiza</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlRealiza" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Quién lo realiza</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlInstrumentoDiagnóstico" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Ámbitos del desarrollo</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlAmbitosDesarrollo" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Categorías ámbitos del desarrollo</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlCategoriasAmbitos" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Trástornos Psicológicos o de salud mental</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlTrastornosPsico" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Resumen Diagnóstico</th>
+                                            <td>
+                                                <asp:DropDownList ID="DdlResumenDiagnostico" CssClass="form-control input-sm" runat="server" AppendDataBoundItems="True" AutoPostBack="True">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <p class="titulo-form">Diagnóstico Consumo de drogas </p>
+                            <a id="BtnCollapseDrogas" data-toggle="collapse" data-parent="#accordion" href="#CollapseDrogas" aria-expanded="false" aria-controls="CollapseDrogas">
+                                <span id="IconDrogas" class="glyphicon glyphicon-plus"></span>
+                                <asp:Label ID="lbl_acordeonDrogas" runat="server" Visible="true" Text="Pinche aquí para Agregar o modificar un diagnóstico de consumo de drogas"></asp:Label>
+                            </a>
+
+                            <div id="CollapseDrogas" runat="server" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <table class="table table-bordered table-col-fix table-condensed">
+                                    <tbody>
+                                        <tr>
+                                            <th class="titulo-tabla" scope="row">Fecha de diagnóstico</th>
+                                            <td></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+            </asp:UpdatePanel>
+    </form>
+</body>
+</html>

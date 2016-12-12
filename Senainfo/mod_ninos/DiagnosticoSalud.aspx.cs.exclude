@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class mod_ninos_DiagnosticoSalud : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void rv_fecha_Init(object sender, EventArgs e)
+    {
+        ((RangeValidator)sender).MaximumValue = DateTime.Today.ToString("dd-MM-yyyy");
+        ((RangeValidator)sender).MinimumValue = DateTime.Today.AddYears(-100).ToString("dd-MM-yyyy");
+
+    }
+}

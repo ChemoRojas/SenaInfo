@@ -1,0 +1,131 @@
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+h3 {
+    color:#1071c3;
+    padding-left: 5px;
+}
+.help-block {
+    font-size: 13px;
+    color:crimson;    
+}
+.text-btn {
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*body {
+    background: #efefef;
+}*/
+
+.bkg {
+    background-color: aqua;
+}
+
+header {
+	/*background: #29abe2;*/
+    background-image: linear-gradient(to bottom, #1384e3 0, #0f69b4 100%);
+	color: #fff;
+    height: 120px;
+	margin-bottom: 20px;
+}
+header h1 {
+    font-size: 24px;   
+    padding-top: 20px;
+}
+
+.main {
+	background: #f2f2f2;
+}
+
+/*.row ´{
+	margin-top: 10px;
+}*/
+
+.color1 {
+	background: #34495e;
+	color: #fff;
+}
+
+aside {
+	background: #c0392b;
+	color: #fff;
+}
+
+footer {
+	background: #95a3ae;
+	color: #fff;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    height: 50px;
+	margin-top: 80px;
+        
+}
+.form-signin-heading {
+    color: #3071a9;
+    font-size: 18Px;
+    
+}
+
+.navbar {
+position: relative;
+min-height: 110px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+}
+
+.navbar-brand {
+float: left;
+padding: 8px 15px 8px 15px;
+font-size: 18px;
+line-height: 20px;
+height: 110px;
+}
+.titulo-header {
+    color: #fff;
+    font-size: 22px;
+    margin-top: 70px;
+}
+
+.subitulo-form {
+    color: #1071c3;
+}
+
+.caja-portada {
+    padding: 10px;
+    height: 250px;
+   
+}
+
+.caja-portada h4 {
+    color: #154c7c;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.caja-portada ul {
+    list-style: none;
+
+}
+.caja-portada ul li a:hover {
+    background: #29abe2;
+    color: #fff;
+
+}
+
+
+.caja-portada h4 a {
+    text-decoration: none;
+}
+
+.caja-portada h4 a:hover {
+    background: #29abe2;
+    color: #fff;
+}
+
+
+.img-seccion  {
+    text-align: center;
+}
